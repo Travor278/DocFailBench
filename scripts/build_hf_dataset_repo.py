@@ -80,17 +80,18 @@ task_categories:
 - document-question-answering
 - feature-extraction
 task_ids:
-- optical-character-recognition
-- document-layout-analysis
+- document-question-answering
 pretty_name: DocFailBench
 tags:
 - benchmark
 - ocr
+- optical-character-recognition
 - document-ai
 - document-parsing
 - pdf-to-markdown
 - table-extraction
 - layout-analysis
+- document-layout-analysis
 - vlm
 - leaderboard
 - chinese
