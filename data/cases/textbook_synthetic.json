@@ -1,0 +1,295 @@
+{
+  "version": "0.1",
+  "cases": [
+    {
+      "case_id": "textbook_physics_v2_p05",
+      "title": "Newton's Second Law section with formula and example",
+      "document": {
+        "path": "data/source_pdfs/placeholder/textbook_physics_v2.pdf",
+        "page": 5,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh",
+        "document_type": "textbook",
+        "layout": ["scanned", "formula_dense"],
+        "risk_tags": ["ocr", "formula", "cjk_spacing"]
+      },
+      "assertions": [
+        {
+          "id": "newton_title_present",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Chapter title on Newton's laws must survive extraction.",
+          "tags": ["text"],
+          "params": {
+            "text": "牛顿运动定律"
+          }
+        },
+        {
+          "id": "newton_second_law_para",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Core paragraph on Newton's second law must be preserved.",
+          "tags": ["text"],
+          "params": {
+            "text": "物体的加速度与作用在它上面的合外力成正比"
+          }
+        },
+        {
+          "id": "force_formula",
+          "type": "formula_contains",
+          "severity": "blocker",
+          "description": "F = ma formula must be present.",
+          "tags": ["formula"],
+          "params": {
+            "latex": "F = ma"
+          }
+        },
+        {
+          "id": "example_problem",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Worked example with numerical answer must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "a = F/m = 20/10 = 2 m/s"
+          }
+        },
+        {
+          "id": "no_vertical_noise",
+          "type": "regex_absence",
+          "severity": "minor",
+          "description": "Vertical noise bars should not appear in parsed text.",
+          "tags": ["ocr", "noise"],
+          "params": {
+            "pattern": "\\|{10,}"
+          }
+        },
+        {
+          "id": "no_tail_repetition",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        },
+        {
+          "id": "newton_title_cjk_spacing",
+          "type": "cjk_spacing",
+          "severity": "major",
+          "description": "Chapter title must not have spurious spaces between CJK characters.",
+          "tags": ["cjk", "quality"],
+          "params": {
+            "text": "牛顿运动定律"
+          }
+        }
+      ],
+      "notes": "Synthetic textbook page testing formula extraction and CJK rendering for Newton's second law."
+    },
+    {
+      "case_id": "textbook_physics_v2_p10",
+      "title": "Conservation of Momentum section with collision table",
+      "document": {
+        "path": "data/source_pdfs/placeholder/textbook_physics_v2.pdf",
+        "page": 10,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh",
+        "document_type": "textbook",
+        "layout": ["scanned", "formula_dense", "markdown_table"],
+        "risk_tags": ["ocr", "formula", "table", "cjk_spacing"]
+      },
+      "assertions": [
+        {
+          "id": "momentum_title",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Chapter title on momentum must survive extraction.",
+          "tags": ["text"],
+          "params": {
+            "text": "动量与冲量"
+          }
+        },
+        {
+          "id": "momentum_formula",
+          "type": "formula_contains",
+          "severity": "blocker",
+          "description": "p = mv formula must be present.",
+          "tags": ["formula"],
+          "params": {
+            "latex": "p = mv"
+          }
+        },
+        {
+          "id": "collision_table_shape",
+          "type": "table_shape",
+          "severity": "major",
+          "description": "Collision data table must have 4 rows and 3 columns.",
+          "tags": ["table"],
+          "params": {
+            "row_count": 4,
+            "col_count": 3
+          }
+        },
+        {
+          "id": "elastic_row",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "description": "Elastic collision row must be present in table.",
+          "tags": ["table"],
+          "params": {
+            "text": "完全弹性"
+          }
+          },
+        {
+          "id": "inelastic_row",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "description": "Inelastic collision row must be present in table.",
+          "tags": ["table"],
+          "params": {
+            "text": "完全非弹性"
+          }
+        },
+        {
+          "id": "momentum_conservation_para",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Explanation paragraph on momentum conservation must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "碰撞前后的总动量保持不变"
+          }
+        },
+        {
+          "id": "no_tail_repetition",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        },
+        {
+          "id": "momentum_title_cjk_spacing",
+          "type": "cjk_spacing",
+          "severity": "major",
+          "description": "Momentum title must not have spurious CJK character spacing.",
+          "tags": ["cjk", "quality"],
+          "params": {
+            "text": "动量与冲量"
+          }
+        }
+      ],
+      "notes": "Synthetic textbook page testing table extraction and formula parsing for momentum conservation."
+    },
+    {
+      "case_id": "textbook_physics_v2_p15",
+      "title": "Conservation of Mechanical Energy section with figure caption and footnote",
+      "document": {
+        "path": "data/source_pdfs/placeholder/textbook_physics_v2.pdf",
+        "page": 15,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh",
+        "document_type": "textbook",
+        "layout": ["scanned", "formula_dense"],
+        "risk_tags": ["ocr", "formula", "figure_caption", "footnote"]
+      },
+      "assertions": [
+        {
+          "id": "energy_title",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Chapter title on mechanical energy must survive extraction.",
+          "tags": ["text"],
+          "params": {
+            "text": "机械能守恒"
+          }
+        },
+        {
+          "id": "energy_formula",
+          "type": "formula_contains",
+          "severity": "blocker",
+          "description": "E_k + E_p = E formula must be present.",
+          "tags": ["formula"],
+          "params": {
+            "latex": "E_k + E_p = E"
+          }
+        },
+        {
+          "id": "figure_caption_present",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Figure caption for the pendulum diagram must appear.",
+          "tags": ["figure"],
+          "params": {
+            "text": "图 3-1 单摆运动能量变化示意图"
+          }
+        },
+        {
+          "id": "footnote_reference",
+          "type": "text_presence",
+          "severity": "minor",
+          "description": "Footnote reference to Halliday textbook must be preserved.",
+          "tags": ["footnote"],
+          "params": {
+            "text": "Halliday, Fundamentals of Physics"
+          }
+        },
+        {
+          "id": "no_loop_artifacts",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        },
+        {
+          "id": "energy_condition",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Condition for conservation must be stated.",
+          "tags": ["text"],
+          "params": {
+            "text": "只有保守力做功"
+          }
+        },
+        {
+          "id": "no_profanity",
+          "type": "text_absence",
+          "severity": "blocker",
+          "description": "Must not contain placeholder garbage text.",
+          "tags": ["quality"],
+          "params": {
+            "text": "TODO"
+          }
+        },
+        {
+          "id": "pendulum_caption_binding",
+          "type": "caption_binding",
+          "severity": "major",
+          "description": "Pendulum figure caption must be within 3 lines of its anchor.",
+          "tags": ["figure", "caption"],
+          "params": {
+            "anchor": "图 3-1",
+            "caption": "单摆运动能量变化示意图",
+            "max_lines": 3
+          }
+        }
+      ],
+      "notes": "Synthetic textbook page testing figure caption extraction, footnote handling, and formula parsing for energy conservation."
+    }
+  ]
+}

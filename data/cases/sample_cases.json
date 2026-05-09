@@ -1,0 +1,198 @@
+{
+  "version": "0.1",
+  "cases": [
+    {
+      "case_id": "zh_paper_double_column_001_p3",
+      "title": "Chinese/English double-column paper page with table and formula",
+      "document": {
+        "path": "data/source_pdfs/placeholder/zh_paper_double_column_001.pdf",
+        "page": 3,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh_en_mixed",
+        "document_type": "academic_paper",
+        "layout": ["double_column", "formula_dense", "markdown_table"],
+        "risk_tags": ["reading_order", "formula", "table"]
+      },
+      "assertions": [
+        {
+          "id": "title_present",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "The page title must survive extraction.",
+          "tags": ["text"],
+          "params": {
+            "text": "基于视觉语言模型的文档理解"
+          }
+        },
+        {
+          "id": "running_header_removed",
+          "type": "text_absence",
+          "severity": "major",
+          "description": "Repeated journal headers should not pollute Markdown.",
+          "tags": ["pollution"],
+          "params": {
+            "text": "中国人工智能学会通讯 2026 年第 3 期"
+          }
+        },
+        {
+          "id": "caption_after_figure_anchor",
+          "type": "reading_order",
+          "severity": "blocker",
+          "description": "Figure caption should appear after the figure anchor.",
+          "tags": ["reading_order", "figure"],
+          "params": {
+            "before": "图 2",
+            "after": "图 2 实验流程"
+          }
+        },
+        {
+          "id": "model_cell_qwen_exists",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "description": "Model names inside comparison table should be preserved.",
+          "tags": ["table"],
+          "params": {
+            "text": "Qwen2.5-VL"
+          }
+        },
+        {
+          "id": "core_sum_formula",
+          "type": "formula_contains",
+          "severity": "blocker",
+          "description": "The summation formula must be preserved as LaTeX.",
+          "tags": ["formula"],
+          "params": {
+            "latex": "\\sum_{i=1}^{n}"
+          }
+        },
+        {
+          "id": "title_grounded",
+          "type": "element_grounded",
+          "severity": "blocker",
+          "description": "Title text must be spatially grounded in a bbox.",
+          "tags": ["grounding"],
+          "params": {
+            "text": "基于视觉语言模型的文档理解"
+          }
+        }
+      ],
+      "notes": "Synthetic placeholder case. Replace document path with a redistributable PDF page before release."
+    },
+    {
+      "case_id": "cn_textbook_formula_002_p12",
+      "title": "Scanned Chinese textbook paragraph with inline and display formulas",
+      "document": {
+        "path": "data/source_pdfs/placeholder/cn_textbook_formula_002.pdf",
+        "page": 12,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh",
+        "document_type": "textbook",
+        "layout": ["scanned", "formula_dense", "vertical_noise"],
+        "risk_tags": ["ocr", "formula", "cjk_spacing"]
+      },
+      "assertions": [
+        {
+          "id": "paragraph_present",
+          "type": "text_presence",
+          "severity": "major",
+          "params": {
+            "text": "动能定理表明合外力做功等于物体动能的变化量"
+          }
+        },
+        {
+          "id": "energy_formula",
+          "type": "formula_contains",
+          "severity": "blocker",
+          "params": {
+            "latex": "E_k=\\frac{1}{2}mv^2"
+          }
+        },
+        {
+          "id": "no_tail_loop",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        },
+        {
+          "id": "paragraph_grounded",
+          "type": "element_grounded",
+          "severity": "major",
+          "description": "Core paragraph text must be spatially grounded.",
+          "tags": ["grounding"],
+          "params": {
+            "text": "动能定理"
+          }
+        },
+        {
+          "id": "formula_text_grounded",
+          "type": "element_grounded",
+          "severity": "major",
+          "description": "Formula text must be spatially grounded.",
+          "tags": ["grounding"],
+          "params": {
+            "text": "E_k=\\frac{1}{2}mv^2"
+          }
+        }
+      ],
+      "notes": "Designed for OCR degradation and formula corruption analysis."
+    },
+    {
+      "case_id": "finance_table_mixed_003_p8",
+      "title": "Chinese annual-report table with English abbreviations and merged headers",
+      "document": {
+        "path": "data/source_pdfs/placeholder/finance_table_mixed_003.pdf",
+        "page": 8,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh_en_mixed",
+        "document_type": "financial_report",
+        "layout": ["borderless_table", "merged_header", "dense_numbers"],
+        "risk_tags": ["table", "numeric_fidelity"]
+      },
+      "assertions": [
+        {
+          "id": "revenue_cell_exists",
+          "type": "table_cell_exists",
+          "severity": "blocker",
+          "params": {
+            "text": "营业收入"
+          }
+        },
+        {
+          "id": "table_shape_minimal",
+          "type": "table_shape",
+          "severity": "major",
+          "params": {
+            "row_count": 4,
+            "col_count": 4
+          }
+        },
+        {
+          "id": "amount_regex",
+          "type": "regex_match",
+          "severity": "blocker",
+          "params": {
+            "pattern": "1,234\\.56"
+          }
+        },
+        {
+          "id": "page_number_removed",
+          "type": "regex_absence",
+          "severity": "minor",
+          "params": {
+            "pattern": "^\\s*8\\s*$"
+          }
+        }
+      ],
+      "notes": "Targets numeric and structure failures that silently poison financial RAG."
+    }
+  ]
+}

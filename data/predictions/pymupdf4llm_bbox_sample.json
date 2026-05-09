@@ -1,0 +1,268 @@
+{
+  "predictions": [
+    {
+      "case_id": "zh_paper_double_column_001_p3",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "中国人工智能学会通讯 2026 年第 3 期 \n\n## 基于视觉语言模型的文档理解 \n\n近年来，视觉语言模型在文档理解领域取得了显著进展。本文提出了一种新的多模态文档 分析框架，结合了视觉编码器和语言解码器的优势。 \n\n|模型|语言|得分|\n|---|---|---|\n|Qwen2.5-VL|中英|88.2|\n|MinerU|中英|81.4|\n|Docling|中英|76.5|\n\n\n\n图 2 图 2 实验流程 \n\n核心目标为 $\\sum_{i=1}^{n} x_i$ 的稳定识别与验证。 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "中国人工智能学会通讯 2026 年第 3 期",
+          "page": 3,
+          "bbox": [
+            156.0,
+            159.09375,
+            541.0,
+            181.09375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "基于视觉语言模型的文档理解",
+          "page": 3,
+          "bbox": [
+            156.0,
+            215.1771240234375,
+            572.0,
+            247.1771240234375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "近年来，视觉语言模型在文档理解领域取得了显著进展。本文提出了一种新的多模态文档 分析框架，结合了视觉编码器和语言解码器的优势。",
+          "page": 3,
+          "bbox": [
+            156.0,
+            292.4481201171875,
+            1014.0,
+            346.4481201171875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "模型 语言 得分",
+          "page": 3,
+          "bbox": [
+            309.6377868652344,
+            379.4559326171875,
+            807.18115234375,
+            401.4559326171875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Qwen2.5-VL 中英 88.2",
+          "page": 3,
+          "bbox": [
+            309.6377868652344,
+            423.4559326171875,
+            807.18115234375,
+            445.4559326171875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "MinerU 中英 81.4",
+          "page": 3,
+          "bbox": [
+            309.6377868652344,
+            467.4559326171875,
+            807.18115234375,
+            489.4559326171875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Docling 中英 76.5",
+          "page": 3,
+          "bbox": [
+            309.6377868652344,
+            511.4559326171875,
+            807.18115234375,
+            533.4559326171875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "图 2 图 2 实验流程",
+          "page": 3,
+          "bbox": [
+            156.0,
+            572.133056640625,
+            299.0,
+            626.133056640625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "核心目标为 $\\sum_{i=1}^{n} x_i$ 的稳定识别与验证。",
+          "page": 3,
+          "bbox": [
+            156.0,
+            653.14111328125,
+            706.0,
+            675.14111328125
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\zh_paper_double_column_001.pdf",
+        "page": 3,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\zh_paper_double_column_001.pdf\" --page \"3\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-6ci1jxxk\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.478,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\zh_paper_double_column_001.pdf",
+        "case_id": "zh_paper_double_column_001_p3",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "cn_textbook_formula_002_p12",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "第四章 动能与动能定理 \n\n动能定理表明合外力做功等于物体动能的变化量。当一个质量为 m 的物体在力的作用下获得速度 v 时，其动能表达式为： \n\n$E_k=\\frac{1}{2}mv^2$ \n\n其中 m 为物体质量，v 为物体速度。这一公式在经典力学中有广泛应用。 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "第四章 动能与动能定理",
+          "page": 12,
+          "bbox": [
+            156.0,
+            159.09375,
+            387.0,
+            181.09375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "动能定理表明合外力做功等于物体动能的变化量。当一个质量为 m 的物体在力的作用下获得速度 v 时，其动能表达式为：",
+          "page": 12,
+          "bbox": [
+            156.0,
+            213.7708740234375,
+            794.0,
+            267.7708740234375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "$E_k=\\frac{1}{2}mv^2$",
+          "page": 12,
+          "bbox": [
+            156.0,
+            289.1094970703125,
+            387.0,
+            311.1094970703125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "其中 m 为物体质量，v 为物体速度。这一公式在经典力学中有广泛应用。",
+          "page": 12,
+          "bbox": [
+            156.0,
+            332.4481201171875,
+            871.0,
+            354.4481201171875
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\cn_textbook_formula_002.pdf",
+        "page": 12,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\cn_textbook_formula_002.pdf\" --page \"12\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-mtihfsqb\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.147,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\cn_textbook_formula_002.pdf",
+        "case_id": "cn_textbook_formula_002_p12",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "finance_table_mixed_003_p8",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## 合并利润表 \n\n|项目|2025|2024|YoY|\n|---|---|---|---|\n|营业收入|1,234.56|1,010.30|22.2%|\n|净利润|98.70|80.10|23.2%|\n|R&D;|45.00|39.00|15.4%|\n\n\n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "合并利润表",
+          "page": 8,
+          "bbox": [
+            156.0,
+            158.8125,
+            256.0,
+            178.8125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "项目 2025 2024 YoY",
+          "page": 8,
+          "bbox": [
+            281.2914123535156,
+            215.4896240234375,
+            821.527587890625,
+            235.4896240234375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "营业收入 1,234.56 1,010.30 22.2%",
+          "page": 8,
+          "bbox": [
+            281.2914123535156,
+            255.4896240234375,
+            841.527587890625,
+            275.4896240234375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "净利润 98.70 80.10 23.2%",
+          "page": 8,
+          "bbox": [
+            281.2914123535156,
+            295.4896240234375,
+            841.527587890625,
+            315.4896240234375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "R&D; 45.00 39.00 15.4%",
+          "page": 8,
+          "bbox": [
+            281.2914123535156,
+            335.4896240234375,
+            841.527587890625,
+            355.4896240234375
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_table_mixed_003.pdf",
+        "page": 8,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_table_mixed_003.pdf\" --page \"8\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-7twobk19\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 3.047,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_table_mixed_003.pdf",
+        "case_id": "finance_table_mixed_003_p8",
+        "output_source": "file"
+      }
+    }
+  ]
+}

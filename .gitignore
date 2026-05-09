@@ -1,0 +1,49 @@
+# Python caches and build output
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+
+# Local environments and parser installs
+.venv/
+venv/
+env/
+.parser_envs/
+.conda/
+
+# Local agent/browser/editor state
+.claude/
+.codex/
+.playwright-cli/
+.vscode/
+.idea/
+
+# Runtime outputs. Frozen public release artifacts live under data/releases/.
+runs/
+data/raw_outputs/
+data/private/
+tmp/
+temp/
+*.tmp
+*.log
+
+# Source PDFs are intentionally not bundled in the git repo. Use manifests and
+# fetch scripts/URLs instead; keep only the placeholder for directory shape.
+data/source_pdfs/**/*.pdf
+data/source_pdfs/**/*.png
+!data/source_pdfs/real/.gitkeep
+
+# Secrets and local configuration
+.env
+.env.*
+*.local
+*.local.*
+settings.local.json
+config.local.*

@@ -1,0 +1,84 @@
+name: Parser result submission
+description: Submit reproducible DocFailBench parser results.
+title: "[parser-result] <parser name> on DocFailBench-v0.1-combined-public-rc"
+labels:
+  - parser-result
+  - benchmark
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for submitting a parser result. Use the frozen combined public RC
+        for comparable community scores. Public-real and diagnostic results are
+        welcome as secondary targets when clearly labelled.
+  - type: input
+    id: parser_name
+    attributes:
+      label: Parser name and version
+      placeholder: "ExampleParser 1.2.3"
+    validations:
+      required: true
+  - type: dropdown
+    id: target
+    attributes:
+      label: Evaluation target
+      options:
+        - DocFailBench-v0.1-combined-public-rc
+        - DocFailBench-v0.1-public-real-rc
+        - DocFailBench-v0.1-non-gov-public-stage7-rc
+        - DocFailBench-v0.1-diagnostic
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Exact command
+      description: Include the command that generated predictions and the evaluate command.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: Artifacts
+      description: Link or attach prediction JSON, result JSON, and optional raw outputs.
+      placeholder: |
+        predictions.json:
+        results.json:
+        report.html:
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python/runtime, GPU, parser install notes.
+      placeholder: "Windows 11, Python 3.13, CUDA 13.0, RTX ..."
+    validations:
+      required: true
+  - type: textarea
+    id: api_metadata
+    attributes:
+      label: API/model metadata, if applicable
+      description: Include requested model, endpoint host, run date, and wrapper metadata. Mark latest aliases as unpinned.
+      placeholder: |
+        execution: remote_api
+        endpoint_host:
+        requested_model:
+        run_date:
+        metadata fields present: model/base_url_host/status/elapsed_seconds
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I evaluated against a frozen case file for any official leaderboard claim.
+          required: true
+        - label: The prediction file covers every case in the selected target.
+          required: true
+        - label: I included parser version and exact commands.
+          required: true
+        - label: I did not include private PDFs, API keys, or proprietary raw outputs.
+          required: true
+        - label: I understand text-only chat/embedding/reranker models are not parser leaderboard baselines unless they directly parse PDF/page images.
+          required: true

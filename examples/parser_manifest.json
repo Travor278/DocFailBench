@@ -1,0 +1,76 @@
+{
+  "parsers": [
+    {
+      "name": "pymupdf4llm",
+      "output_kind": "markdown",
+      "timeout_seconds": 120,
+      "command": "python examples/run_pymupdf4llm.py --input \"$document_path\" --page \"$page\" --output \"$output_path\""
+    },
+    {
+      "name": "pymupdf4llm_no_header",
+      "output_kind": "markdown",
+      "timeout_seconds": 120,
+      "command": "python examples/run_pymupdf4llm.py --input \"$document_path\" --page \"$page\" --output \"$output_path\" --no-header"
+    },
+    {
+      "name": "pymupdf4llm_bbox",
+      "output_kind": "json",
+      "timeout_seconds": 120,
+      "command": "python examples/run_pymupdf4llm_bbox.py --input \"$document_path\" --page \"$page\" --output \"$output_path\""
+    },
+    {
+      "name": "pymupdf4llm_bbox_no_header",
+      "output_kind": "json",
+      "timeout_seconds": 120,
+      "command": "python examples/run_pymupdf4llm_bbox.py --input \"$document_path\" --page \"$page\" --output \"$output_path\" --no-header"
+    },
+    {
+      "name": "docling",
+      "output_kind": "markdown",
+      "timeout_seconds": 900,
+      "command": "python examples/run_docling.py --input \"$document_path\" --page \"$page\" --output \"$output_path\""
+    },
+    {
+      "name": "mineru",
+      "output_kind": "markdown",
+      "timeout_seconds": 900,
+      "command": "python examples/run_mineru.py --input \"$document_path\" --page \"$page\" --output \"$output_path\""
+    },
+    {
+      "name": "marker",
+      "output_kind": "markdown",
+      "timeout_seconds": 600,
+      "command": "python examples/run_marker.py --input \"$document_path\" --page \"$page\" --output \"$output_path\""
+    },
+    {
+      "name": "mineru_latest",
+      "output_kind": "markdown",
+      "timeout_seconds": 600,
+      "command": "python examples/run_mineru.py --input \"$document_path\" --page \"$page\" --output \"$output_path\""
+    },
+    {
+      "name": "paddleocr",
+      "output_kind": "markdown",
+      "timeout_seconds": 600,
+      "command": "python examples/run_paddleocr.py --input \"$document_path\" --page \"$page\" --output \"$output_path\""
+    },
+    {
+      "name": "olmocr",
+      "output_kind": "markdown",
+      "timeout_seconds": 600,
+      "command": "python examples/run_olmocr.py --input \"$document_path\" --page \"$page\" --output \"$output_path\""
+    },
+    {
+      "name": "vlm_api_placeholder",
+      "output_kind": "json",
+      "timeout_seconds": 900,
+      "command": "python examples/run_vlm_placeholder.py --input \"$document_path\" --page \"$page\" --output \"$output_path\""
+    },
+    {
+      "name": "qwen_vl_api",
+      "output_kind": "json",
+      "timeout_seconds": 900,
+      "command": "python examples/run_qwen_vl.py --input \"$document_path\" --page \"$page\" --output \"$output_path\""
+    }
+  ]
+}

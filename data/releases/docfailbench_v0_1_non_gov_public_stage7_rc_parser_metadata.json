@@ -1,0 +1,292 @@
+{
+  "name": "Stage7 structural-v2 parser metadata",
+  "status": "staging_not_release",
+  "generated_at": "2026-05-09T09:32:05.916530+00:00",
+  "parsers": [
+    {
+      "label": "bbox",
+      "parser": "pymupdf_text_bbox_non_gov_public",
+      "score": 0.19393939393939394,
+      "passed": 32,
+      "failed": 133,
+      "assertion_count": 165,
+      "case_count": 24,
+      "metadata_samples": [
+        {
+          "source": "D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf",
+          "page": 2,
+          "bbox_coordinate_space": "image pixels at 144 DPI"
+        },
+        {
+          "source": "D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf",
+          "page": 4,
+          "bbox_coordinate_space": "image pixels at 144 DPI"
+        },
+        {
+          "source": "D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf",
+          "page": 6,
+          "bbox_coordinate_space": "image pixels at 144 DPI"
+        }
+      ]
+    },
+    {
+      "label": "docling",
+      "parser": "docling",
+      "score": 0.7696969696969697,
+      "passed": 127,
+      "failed": 38,
+      "assertion_count": 165,
+      "case_count": 24,
+      "metadata_samples": [
+        {
+          "command": "python examples/run_docling.py --input \"D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf\" --page \"2\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-k4lc0bpy\\output.md\"",
+          "returncode": 0,
+          "elapsed_seconds": 11.109,
+          "stderr": "\nLoading weights:   0%|          | 0/770 [00:00<?, ?it/s]\nLoading weights: 100%|██████████| 770/770 [00:00<00:00, 12422.50it/s]\n",
+          "stdout": "",
+          "document_path": "D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf",
+          "page": 2,
+          "case_id": "non_gov_public_acl_ocl_corpus_p002",
+          "output_source": "file"
+        },
+        {
+          "command": "python examples/run_docling.py --input \"D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf\" --page \"4\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-1c6zz3q8\\output.md\"",
+          "returncode": 0,
+          "elapsed_seconds": 11.105,
+          "stderr": "\nLoading weights:   0%|          | 0/770 [00:00<?, ?it/s]\nLoading weights: 100%|██████████| 770/770 [00:00<00:00, 11602.63it/s]\n",
+          "stdout": "",
+          "document_path": "D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf",
+          "page": 4,
+          "case_id": "non_gov_public_acl_ocl_corpus_p004",
+          "output_source": "file"
+        },
+        {
+          "command": "python examples/run_docling.py --input \"D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf\" --page \"6\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-1baneii5\\output.md\"",
+          "returncode": 0,
+          "elapsed_seconds": 11.546,
+          "stderr": "\nLoading weights:   0%|          | 0/770 [00:00<?, ?it/s]\nLoading weights: 100%|██████████| 770/770 [00:00<00:00, 11445.39it/s]\n",
+          "stdout": "",
+          "document_path": "D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf",
+          "page": 6,
+          "case_id": "non_gov_public_acl_ocl_corpus_p006",
+          "output_source": "file"
+        }
+      ]
+    },
+    {
+      "label": "marker",
+      "parser": "marker",
+      "score": 0.5454545454545454,
+      "passed": 90,
+      "failed": 75,
+      "assertion_count": 165,
+      "case_count": 24,
+      "metadata_samples": [
+        {
+          "command": "python examples/run_marker.py --input \"D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf\" --page \"2\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-hahfzl31\\output.md\"",
+          "returncode": 0,
+          "elapsed_seconds": 53.699,
+          "stderr": "",
+          "stdout": "",
+          "document_path": "D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf",
+          "page": 2,
+          "case_id": "non_gov_public_acl_ocl_corpus_p002",
+          "output_source": "file"
+        },
+        {
+          "command": "python examples/run_marker.py --input \"D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf\" --page \"4\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-f8hwjdhg\\output.md\"",
+          "returncode": 0,
+          "elapsed_seconds": 11.927,
+          "stderr": "",
+          "stdout": "",
+          "document_path": "D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf",
+          "page": 4,
+          "case_id": "non_gov_public_acl_ocl_corpus_p004",
+          "output_source": "file"
+        },
+        {
+          "command": "python examples/run_marker.py --input \"D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf\" --page \"6\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-an7grgtb\\output.md\"",
+          "returncode": 0,
+          "elapsed_seconds": 14.366,
+          "stderr": "",
+          "stdout": "",
+          "document_path": "D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf",
+          "page": 6,
+          "case_id": "non_gov_public_acl_ocl_corpus_p006",
+          "output_source": "file"
+        }
+      ]
+    },
+    {
+      "label": "mineru",
+      "parser": "mineru",
+      "score": 0.5636363636363636,
+      "passed": 93,
+      "failed": 72,
+      "assertion_count": 165,
+      "case_count": 24,
+      "metadata_samples": [
+        {
+          "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf\" --page \"2\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-cs0o0_1q\\output.md\"",
+          "returncode": 0,
+          "elapsed_seconds": 30.562,
+          "stderr": "",
+          "stdout": "",
+          "document_path": "D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf",
+          "page": 2,
+          "case_id": "non_gov_public_acl_ocl_corpus_p002",
+          "output_source": "file"
+        },
+        {
+          "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf\" --page \"4\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-ck9e9p_b\\output.md\"",
+          "returncode": 0,
+          "elapsed_seconds": 27.182,
+          "stderr": "",
+          "stdout": "",
+          "document_path": "D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf",
+          "page": 4,
+          "case_id": "non_gov_public_acl_ocl_corpus_p004",
+          "output_source": "file"
+        },
+        {
+          "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf\" --page \"6\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-gmf4jiyb\\output.md\"",
+          "returncode": 0,
+          "elapsed_seconds": 29.517,
+          "stderr": "",
+          "stdout": "",
+          "document_path": "D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf",
+          "page": 6,
+          "case_id": "non_gov_public_acl_ocl_corpus_p006",
+          "output_source": "file"
+        }
+      ]
+    },
+    {
+      "label": "paddleocr",
+      "parser": "paddleocr",
+      "score": 0.07272727272727272,
+      "passed": 12,
+      "failed": 153,
+      "assertion_count": 165,
+      "case_count": 24,
+      "metadata_samples": [
+        {
+          "command": "python examples/run_paddleocr.py --input \"D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf\" --page \"2\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-69b9cbgs\\output.md\"",
+          "returncode": 0,
+          "elapsed_seconds": 17.329,
+          "stderr": "",
+          "stdout": "",
+          "document_path": "D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf",
+          "page": 2,
+          "case_id": "non_gov_public_acl_ocl_corpus_p002",
+          "output_source": "file"
+        },
+        {
+          "command": "python examples/run_paddleocr.py --input \"D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf\" --page \"4\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-rrodsggt\\output.md\"",
+          "returncode": 0,
+          "elapsed_seconds": 16.71,
+          "stderr": "",
+          "stdout": "",
+          "document_path": "D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf",
+          "page": 4,
+          "case_id": "non_gov_public_acl_ocl_corpus_p004",
+          "output_source": "file"
+        },
+        {
+          "command": "python examples/run_paddleocr.py --input \"D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf\" --page \"6\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-rynv8ws7\\output.md\"",
+          "returncode": 0,
+          "elapsed_seconds": 16.751,
+          "stderr": "",
+          "stdout": "",
+          "document_path": "D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf",
+          "page": 6,
+          "case_id": "non_gov_public_acl_ocl_corpus_p006",
+          "output_source": "file"
+        }
+      ]
+    },
+    {
+      "label": "plain",
+      "parser": "pymupdf_text_non_gov_public",
+      "score": 0.15151515151515152,
+      "passed": 25,
+      "failed": 140,
+      "assertion_count": 165,
+      "case_count": 24,
+      "metadata_samples": [
+        {
+          "source": "D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf",
+          "page": 2
+        },
+        {
+          "source": "D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf",
+          "page": 4
+        },
+        {
+          "source": "D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf",
+          "page": 6
+        }
+      ]
+    },
+    {
+      "label": "qwen_vl_api",
+      "parser": "qwen_vl_api",
+      "score": 0.6303030303030303,
+      "passed": 104,
+      "failed": 61,
+      "assertion_count": 165,
+      "case_count": 24,
+      "metadata_samples": [
+        {
+          "parser": "qwen_vl_api",
+          "model": "qwen-vl-ocr-latest",
+          "base_url_host": "dashscope.aliyuncs.com",
+          "page": 2,
+          "elapsed_seconds": 11.093,
+          "status": "ok",
+          "command": "python examples/run_qwen_vl.py --input \"D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf\" --page \"2\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-384w7933\\output.json\"",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "",
+          "document_path": "D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf",
+          "case_id": "non_gov_public_acl_ocl_corpus_p002",
+          "output_source": "file"
+        },
+        {
+          "parser": "qwen_vl_api",
+          "model": "qwen-vl-ocr-latest",
+          "base_url_host": "dashscope.aliyuncs.com",
+          "page": 4,
+          "elapsed_seconds": 9.871,
+          "status": "ok",
+          "command": "python examples/run_qwen_vl.py --input \"D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf\" --page \"4\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-bze0inun\\output.json\"",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "",
+          "document_path": "D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf",
+          "case_id": "non_gov_public_acl_ocl_corpus_p004",
+          "output_source": "file"
+        },
+        {
+          "parser": "qwen_vl_api",
+          "model": "qwen-vl-ocr-latest",
+          "base_url_host": "dashscope.aliyuncs.com",
+          "page": 6,
+          "elapsed_seconds": 9.332,
+          "status": "ok",
+          "command": "python examples/run_qwen_vl.py --input \"D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf\" --page \"6\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-i5r7lpeb\\output.json\"",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "",
+          "document_path": "D:\\Code\\Project\\DocFailBench\\runs\\stage7_non_gov_public\\source_pdfs\\acl_2023_emnlp_main_640_ocl_corpus.pdf",
+          "case_id": "non_gov_public_acl_ocl_corpus_p006",
+          "output_source": "file"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Stage7 parser scores are curation diagnostics only.",
+    "Hosted API models should be treated as moving unless model IDs are pinned by provider."
+  ]
+}

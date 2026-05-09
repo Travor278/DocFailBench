@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="510" viewBox="0 0 920 510" role="img" aria-labelledby="title desc">
+<title id="title">DocFailBench assertion distribution</title>
+<desc id="desc">Top assertion types in the frozen v0.1 diagnostic release.</desc>
+<rect width="920" height="100%" rx="18" fill="#fbfcfe"/>
+<text x="42" y="48" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="700" fill="#111827">Assertion Distribution</text>
+<text x="42" y="75" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#475569">Top 10 assertion families in the 506-check diagnostic release</text>
+<text x="42" y="129" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">text_presence</text>
+<rect x="280" y="112" width="430" height="24" rx="7" fill="#e5e7eb"/>
+<rect x="280" y="112" width="430" height="24" rx="7" fill="#1d4ed8"/>
+<text x="730" y="130" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="650" fill="#111827">156</text>
+<text x="42" y="167" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">table_cell_exists</text>
+<rect x="280" y="150" width="430" height="24" rx="7" fill="#e5e7eb"/>
+<rect x="280" y="150" width="248" height="24" rx="7" fill="#0f766e"/>
+<text x="730" y="168" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="650" fill="#111827">90</text>
+<text x="42" y="205" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">reading_order</text>
+<rect x="280" y="188" width="430" height="24" rx="7" fill="#e5e7eb"/>
+<rect x="280" y="188" width="160" height="24" rx="7" fill="#7c3aed"/>
+<text x="730" y="206" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="650" fill="#111827">58</text>
+<text x="42" y="243" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">regex_absence</text>
+<rect x="280" y="226" width="430" height="24" rx="7" fill="#e5e7eb"/>
+<rect x="280" y="226" width="121" height="24" rx="7" fill="#c2410c"/>
+<text x="730" y="244" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="650" fill="#111827">44</text>
+<text x="42" y="281" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">no_repeated_ngram_tail</text>
+<rect x="280" y="264" width="430" height="24" rx="7" fill="#e5e7eb"/>
+<rect x="280" y="264" width="94" height="24" rx="7" fill="#be123c"/>
+<text x="730" y="282" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="650" fill="#111827">34</text>
+<text x="42" y="319" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">table_grid_cell</text>
+<rect x="280" y="302" width="430" height="24" rx="7" fill="#e5e7eb"/>
+<rect x="280" y="302" width="85" height="24" rx="7" fill="#0369a1"/>
+<text x="730" y="320" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="650" fill="#111827">31</text>
+<text x="42" y="357" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">regex_match</text>
+<rect x="280" y="340" width="430" height="24" rx="7" fill="#e5e7eb"/>
+<rect x="280" y="340" width="83" height="24" rx="7" fill="#4d7c0f"/>
+<text x="730" y="358" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="650" fill="#111827">30</text>
+<text x="42" y="395" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">formula_contains</text>
+<rect x="280" y="378" width="430" height="24" rx="7" fill="#e5e7eb"/>
+<rect x="280" y="378" width="69" height="24" rx="7" fill="#9333ea"/>
+<text x="730" y="396" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="650" fill="#111827">25</text>
+<text x="42" y="433" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">table_shape</text>
+<rect x="280" y="416" width="430" height="24" rx="7" fill="#e5e7eb"/>
+<rect x="280" y="416" width="28" height="24" rx="7" fill="#b45309"/>
+<text x="730" y="434" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="650" fill="#111827">10</text>
+<text x="42" y="471" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">element_grounded</text>
+<rect x="280" y="454" width="430" height="24" rx="7" fill="#e5e7eb"/>
+<rect x="280" y="454" width="25" height="24" rx="7" fill="#334155"/>
+<text x="730" y="472" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="650" fill="#111827">9</text>
+</svg>

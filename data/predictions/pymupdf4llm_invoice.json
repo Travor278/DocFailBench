@@ -1,0 +1,89 @@
+{
+  "predictions": [
+    {
+      "case_id": "invoice_vat_001_p1",
+      "parser": "pymupdf4llm",
+      "markdown": "## 增值税电子普通发票 \n\n发票代码：011002500311 发票号码：08726145 开票日期：2026年04月18日 \n\n## 购买方 \n\n购方名称：杭州星辰智能科技有限公司 纳税人识别号：91330100MA2KEXAMPLE 地址电话：杭州市西湖区文三路 478 号 0571-88886666 开户行及账号：中国工商银行杭州西湖支行 1202020009876543210 \n\n## 销售方 \n\n销方名称：北京云计算服务有限公司 纳税人识别号：91110108MA01EXAMPLE \n\n## 货物或应税劳务、服务名称 \n\n|项目名称|规格型号|单位|数量|单价|金额|\n|---|---|---|---|---|---|\n|API服务费|企业版|月|12|15,000.00|180,000.00|\n|SDK技术支持|VIP套餐|年|2|50,000.00|100,000.00|\n|云服务器租赁|16核64G|月|12|8,500.00|102,000.00|\n|数据库服务|高可用版|月|12|3,200.00|38,400.00|\n|SSL证书服务|OV型|年|3|2,000.00|6,000.00|\n|CDN加速服务|500GB套餐|月|12|1,800.00|21,600.00|\n\n\n\n增值税电子普通发票 · 第1页 \n\n",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_pymupdf4llm.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf\" --page \"1\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-sek58s8x\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 3.114,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf",
+        "page": 1,
+        "case_id": "invoice_vat_001_p1",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "invoice_vat_001_p2",
+      "parser": "pymupdf4llm",
+      "markdown": "## 增值税电子普通发票 \n\n发票号码：08726145 \n\n## 合计金额与税额 \n\n合计金额：448,000.00 元 合计金额（大写）：肆拾肆万捌仟元整 税率：6% 税额：26,880.00 元 价税合计（小写）：人民币474,880.00 价税合计（大写）：肆拾柒万肆仟捌佰捌拾元整 \n\n增值税电子普通发票 · 第2页 \n\n",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_pymupdf4llm.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf\" --page \"2\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-34lppk2s\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.515,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf",
+        "page": 2,
+        "case_id": "invoice_vat_001_p2",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "invoice_vat_001_p3",
+      "parser": "pymupdf4llm",
+      "markdown": "## 增值税电子普通发票 \n\n## 备注 \n\n备注：本发票对应合同编号HT-2026-00158，服务期间2026年4月至2027年3月。如有疑问请联系财务 部：finance@cloudcompute.example.com。 \n\n## 校验码 \n\n校验码：A7F3B9C2D1E5 \n\n[二维码] \n\n增值税电子普通发票 · 第3页 \n\n",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_pymupdf4llm.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf\" --page \"3\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-whruw_1y\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.567,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf",
+        "page": 3,
+        "case_id": "invoice_vat_001_p3",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "invoice_vat_001_p4",
+      "parser": "pymupdf4llm",
+      "markdown": "## 增值税电子普通发票 \n\n## 开票信息确认 \n\n收款人：王芳 \n\n复核：李明 开票人：张伟 \n\n[发票专用章] \n\n销方（章）：________________ 购方（章）：________________ \n\n增值税电子普通发票 · 第4页 \n\n",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_pymupdf4llm.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf\" --page \"4\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-vmwfc8hu\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.777,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf",
+        "page": 4,
+        "case_id": "invoice_vat_001_p4",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "invoice_vat_001_p5",
+      "parser": "pymupdf4llm",
+      "markdown": "## 增值税电子普通发票 \n\n## 发票联 \n\n此联为购方记账凭证。请妥善保管，作为财务报销及入账依据。 \n\n销方名称：北京云计算服务有限公司 发票代码：011002500311 发票号码：08726145 \n\n温馨提示：本发票已通过国家税务总局全国增值税发票查验平台验证。 \n\n增值税电子普通发票 · 第5页 \n\n",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_pymupdf4llm.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf\" --page \"5\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-_6t20lx6\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.589,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf",
+        "page": 5,
+        "case_id": "invoice_vat_001_p5",
+        "output_source": "file"
+      }
+    }
+  ]
+}

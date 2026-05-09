@@ -1,0 +1,718 @@
+{
+  "predictions": [
+    {
+      "case_id": "arxiv_mulco_p4",
+      "parser": "mineru",
+      "markdown": "![](images/21e11eb856df5f7fa58f4ec0a9c24bf56d9151fa764552ab9e6756bdae5e7b5e.jpg)  \nFigure 1: An example of recognizing nested named entities in “Haidian District People’s Government of Beijing Municipality”.\n\nother entity. Moreover, ChiNesE is specially designed for CNNER, most of the sentences in the validation set and the test set have nested named entities, which can best test the model performance on CNNER.\n\n## Methodology\n\nIn this section, we introduce our proposed approach Mulco, a novel solution to CNNER problem. It can recognize named entities by adapting multiple scopes for accurate entity identification from nested structures.\n\n## Recognition through a Scope\n\nThe NNER task aims to recognize all entities from a given sentence. Inspired by modern Computer Vision methods (Jiang et al. 2022), we use scopes to locate the named entities in a sentence under a sequence labeling scheme, which recognizes named entities by finding their anchor and predicting its length. We define P-x as the scope which uses the $x ^ { \\mathrm { { t h } } }$ token of the named entity to locate it. For example, if we use P-1 to locate “Beijing Tiananmen” in “I am going to Beijing Tiananmen”, we first find the position of the word “Beijing” (first token of “Beijing Tiananmen”), which is the 5th token of the sentence. Next, by knowing the length of the “Beijing Tiananmen” is 2, we can locate the last token “Tiananmen”, which is $6 ^ { \\tt t h }$ token of the sentence. The entity “Beijing Tiananmen” can then be extracted from the sentence.\n\nWe employ the sequence labeling method to enable the above recognition method. Specifically, for a given sentence $T ~ = ~ \\{ t _ { i } \\} _ { 1 \\leq i \\leq N }$ , where $t _ { i }$ represent the $i ^ { \\mathrm { t h } }$ character of the sentence, and N is the total number of characters. In Chinese, a character acts as a token, just like a word in English. We use two sequences of labels to locate entities. The first sequence of labels are the anchor labels $C ^ { \\mathtt { P - x } } = \\{ c _ { i } ^ { \\mathtt { P - x } } \\} _ { 1 \\leq i \\leq N } ,$ where $c _ { i } ^ { \\mathsf { P - x } }$ is the anchor label of character $t _ { i }$ for the scope P-x. We have\n\n$$\nc _ { i } ^ { \\mathsf { P - x } } = \\left\\{ { \\begin{array} { l l } { \\mathtt { N A } , } & { t _ { i } { \\mathrm { ~ i s ~ n o t ~ a n ~ a n c h o r } } } \\\\ { \\mathtt { c a t e } , } & { { \\mathrm { o t h e r w i s e } } } \\end{array} } , \\right.\n$$\n\nwhere $c _ { i } ^ { \\mathtt { P - x } } = { \\mathsf { c a t e } } \\operatorname { i f } t _ { i }$ is the $x ^ { \\mathrm { t h } }$ token of an named entity, and cate is the category of the entity with the anchor $t _ { i } .$ . NA means “not an anchor”.\n\nBy predicting the anchor labels, we can locate a certain character of an entity and know its category. However, to fully recognize the named entity, we also need a sequence of the length labels $L ^ { \\mathtt { P - X } } = \\{ l _ { i } ^ { \\mathtt { P - X } } \\} _ { 1 \\leq i \\leq N }$ to obtain the lengths of the entities, where $l _ { i } ^ { \\mathtt { P - x } }$ is the length label of $t _ { i }$ . We define\n\n$$\nl _ { i } ^ { \\mathrm { P - x } } = \\left\\{ \\begin{array} { l l } { { 0 , } } & { { t _ { i } { \\mathrm { ~ i s ~ n o t ~ a n ~ a n c h o r } } } } \\\\ { { z , } } & { { \\mathrm { o t h e r w i s e } } } \\end{array} \\right. ,\n$$\n\nwhere z is the length of the entity which has $t _ { i }$ as its anchor for the scope P-x.\n\nIt is obvious that in flat NER, where no nested named entity is considered, we can recognize all named entities by locating anchors and their lengths with a scope P-x. However, when recognizing named entities from NNER, using single scope will no longer work. For example, if we also define “Beijing” as a named entity of location while having “Beijing Tiananmen”, when we use P-1 as the scope, “Beijing” will then be the anchor of both “Beijing” and “Beijing Tiananmen”, and that will cause critical problems on the sequence labeling.\n\n## Recognition through Multiple Scopes\n\nAn intuitive way to recognize nested named entities is to employ multiple scopes to handle the nested structures between named entities. Thus, in Mulco, we use four different scopes to solve CNNER problem.\n\nFigure 1 gives an example of how the four scopes work. For convenience, we use B-min, B-max, E-min and E-max to denote the four scopes used in Mulco. B-min, B-max use the first token of an entity as the anchor and predict the named entities of the shortest and the longest length, while E-min and E-max use the last token of an entity as the anchor and recognize the named entities with the shortest and the longest lengths. The example gives a heavily nested structure of name entities. None of the four scopes can find all named entities only by itself. For example, B-min is unable to recognize “Haidian District People’s Government”, “Haidian District, Beijing Municipality” or “Haidian District People’s Government of Beijing Municipality”. On the other hand, B-max failed to recognize “Beijing Municipality”, “Haidian District” and “Haidian District, Beijing Municipality”. However, if we combine the two scopes, we can",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\real\\mulco_chinese_nner.pdf\" --page \"4\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-p1apm18f\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 25.049,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\real\\mulco_chinese_nner.pdf",
+        "page": 4,
+        "case_id": "arxiv_mulco_p4",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "arxiv_mulco_p7",
+      "parser": "mineru",
+      "markdown": "<table><tr><td rowspan=\"2\"></td><td rowspan=\"2\">Approach</td><td colspan=\"3\">ACE 2005</td><td colspan=\"3\">ChiNesE</td></tr><tr><td>P</td><td>R</td><td>F1</td><td>P</td><td>R</td><td>F1</td></tr><tr><td>Innermost</td><td>Sequence Labeling</td><td>89.27</td><td>65.74</td><td>75.72</td><td>93.79</td><td>54.42</td><td>68.88</td></tr><tr><td>Outermost</td><td>Sequence Labeling</td><td>89.38</td><td>61.54</td><td>72.83</td><td>94.21</td><td>43.94</td><td>59.93</td></tr><tr><td>Wang et al. (2018)</td><td>Transition-based</td><td>77.62</td><td>81.60</td><td>79.56</td><td>86.56</td><td>76.34</td><td>81.13</td></tr><tr><td>Wang et al. (2020)</td><td>Layer-based</td><td>83.22</td><td>76.29</td><td>84.72</td><td>90.79</td><td>77.71</td><td>84.02</td></tr><tr><td>Yu, Bohnet,and Poesio (2020)</td><td>Span-based</td><td>81.57</td><td>86.63</td><td>84.02</td><td>92.14</td><td>77.69</td><td>84.30</td></tr><tr><td>Mulco</td><td>Sequence Labeling</td><td>83.89</td><td>88.17</td><td>85.98</td><td>90.57</td><td>80.47</td><td>85.23</td></tr></table>\n\nTable 3: The experimental results on ChiNesE and ACE 2005.\n\n<table><tr><td rowspan=\"2\"></td><td colspan=\"3\">ACE 2005</td><td colspan=\"3\">ChiNesE</td></tr><tr><td>P</td><td>R</td><td>F1</td><td>P</td><td>R</td><td>F1</td></tr><tr><td>Mulco</td><td>83.89</td><td>88.17</td><td>85.98</td><td>90.57</td><td>80.47</td><td>85.23</td></tr><tr><td>B-min</td><td>86.87</td><td>69.41</td><td>77.16</td><td>92.11</td><td>57.44</td><td>70.75</td></tr><tr><td>B-max</td><td>84.66</td><td>67.60</td><td>75.17</td><td>91.12</td><td>56.85</td><td>70.02</td></tr><tr><td>E-min</td><td>86.19</td><td>87.73</td><td>86.95</td><td>93.14</td><td>72.13</td><td>81.30</td></tr><tr><td>E-max</td><td>86.20</td><td>87.59</td><td>86.89</td><td>93.19</td><td>72.05</td><td>81.27</td></tr><tr><td>-LSTM</td><td>82.20</td><td>87.15</td><td>84.60</td><td>89.71</td><td>80.71</td><td>84.98</td></tr></table>\n\nTable 4: The results of the ablation studies.\n\nlabeling method can not recognize, which results in a higher recall rate and overall performance.\n\nTake B-max in Figure 1 as an example, it can properly recognize “Haidian District People’s Government of Beijing Municipality” and “Haidian District People’s Government” with a single scope: B-max recognizes an entity only by the anchor label and the length label of its first token. The two entities have two different start characters, thus can be distinguished by B-max. In contrast, the Outermost method can only recognize “Haidian District People’s Government of Beijing Municipality”, since the traditional sequence labeling method considers all characters in an entity when recognizing thus only allowing one character to have one label even it is an element of more than one entities.\n\nDiversity of nested named entities. We also have some interesting funding on the experiment results of E-min and E-max. As shown in Table 4, E-min and E-max have higher performance than B-min and B-max on both datasets, they even achieve higher performance than the default Mulco scope setting on ACE 2005 with only single scope. This is because, in Chinese, nested named entities are more likely to share the same start characters with other named entities. Among 1801 nested named entities in the test set of ACE 2005, 1479 of them are in such a situation, while there are only 4 named entities that have the same end characters as other entities. We can see that the ratio (1479:4) is extremely unbalanced. This is why a single scope using the end character as the anchor can achieve even higher performance than the combination of four scopes. However, ChiNesE has a more balanced ratio, which is 7371:3218. Our dataset is collected from online passages of multiple domains, thus being more diverse and closer to the real-word CNNER application. Although E-min and E-max still outperforms B-min and B-max on ChiNesE, the portion of named entities they can cover is much smaller than it on ACE 2005. By combining the four scopes, Mulco reaches a much higher performance than the performance of any single scope on ChiNesE.\n\nNecessity of contextual information. In Table 4, “- LSTM” reports the performance of Mulco without Bi-LSTM encoder on ACE 2005 and ChiNesE. The F1 drops 1.38 on ACE 2005 and 0.25 on ChiNesE. The drop on ChiNesE is much lower than it on ACE 2005. This is because BERT, as a transformer-based pre-trained language model, also can grab contextual information for an input character. With a large enough dataset, BERT can better understand how to pay attention to the contextual information for the CNNER task. Thus, Mulco can have enough contextual information for prediction even without LSTM on ChiNesE. However, on ACE 2005, the data size can not sufficiently support BERT to learn how to extract the contextual information, where a Bi-LSTM model is in need to enhance such an ability. Moreover, the recognition of scope depends on the embedding of a single character, thus including the contextual information into the embeddings becomes critical to the performance of our model. If we use a pre-trained word vector instead of BERT embedding as input, a contextualization model such as LSTM will then become necessary.\n\n## Conclusion\n\nIn this paper, to facilitate research on Chinese Nested Named Entity Recognition (CNNER), we construct ChiNesE, a CN-NER dataset containing 20,000 high-quality samples with 117,284 named entities falling into 10 categories, where 43.8 percent of them are nested. ChiNesE are sampled from online passages of multiple domains, which have more diverse nested named entities and are closer to the real-world CNNER application today. To fill the gaps in sequence labeling and CNNER, we propose a scope-based labeling method, where each scope extracts named entities by predicting the anchor and the length of an entity. It can avoid the limitation of the traditional sequence labeling scheme. We then propose Mulco, a novel method that utilizes four different scopes to effectively recognize nested named entities. Experimental results show that Mulco has achieved the best performance on ChiNesE and ACE 2005.",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\real\\mulco_chinese_nner.pdf\" --page \"7\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-1czmkxbp\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 24.987,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\real\\mulco_chinese_nner.pdf",
+        "page": 7,
+        "case_id": "arxiv_mulco_p7",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "arxiv_cluener_p2",
+      "parser": "mineru",
+      "markdown": "(1) A new fine-grained NER dataset for Chinese which is more challenging and with more categories.\n\n(2) Several strong state-of-the-art baselines and their performance for better researches on this task.\n\n(3) A two-stage human performance to compare with modern models.\n\n(4) A public leader-board 2 to automatic test models for this task.\n\nIn the following parts, we give a detailed introduction to the construction of the CLUENER2020, the results of baseline methods and human performance on this dataset.\n\n## 2 Dataset Construction and Task Description\n\n<table><tr><td>Dataset</td><td>Train</td><td>Dev</td><td></td><td>Test丨Avg length</td><td>Max length |Classes </td><td></td></tr><tr><td>CLUENER2020</td><td>10,748</td><td>1,343</td><td>1,345</td><td>37.4</td><td>50</td><td>10</td></tr></table>\n\nTable 1: Attribute of CLUENER2020. Avg length (Max length) means the average (max) sentence length of the CLUENER2020.\n\n<table><tr><td>sentence: sentence (en): label: label(en):</td><td>中国国际数码互动娱乐展览会ChinaJoy于2010年7月29日在上海国际博览中心开幕。 ChinaJoy,the China international digital interactiveentertainment exhibition,openedat the Shanghai international expo center on July 29,2010. address:上海国际博览中心;organization:中国国际数码互动娱乐展览会ChinaJoy</td></tr><tr><td>sentence:</td><td>addres: the Shanghai international expo center; organization: ChinaJoy, China international digital interac- tive entertainment exhibition. 环顾脚下的路易港城区，你可以看到硬币上的中央银行，象征着这个国家的金融系统。</td></tr><tr><td>sentence (en): label:</td><td>Looking around the city of port Louis, you can see the central bank on a coin, a symbol of the country&#x27;s financial system. government:中央银行;scene:路易港城区</td></tr><tr><td>label(en): sentence: sentence (en):</td><td>government: the central bank; scene: the city of port Louis. 新世纪周星驰逐渐的&quot;慢工出细活”，其自编自导自演的《少林足球》、《功夫》。 In the new century, Zhou Xingchi gradually became more and more careful in his work. He wrote,directed</td></tr><tr><td>label:</td><td>andactedin Shaolin Soccer and KungFu. movie:《少林足球》，《功夫》;name:周星驰</td></tr><tr><td>label(en):</td><td>movie:Shaolin Soccer, Kung Fu; name:Zhou Xingchi.</td></tr></table>\n\nTable 2: Examples of CLUENER2020. As you can see from the last row of this table, there are two entities belong to same category in a given example.\n\nCLUENER2020 was created from THUCNews[5], which contains around 740,000 news articles retrieved from Sina News RSS. It has 14 news categories from diverse areas , including finance, stock, education, fashion, sports, games, entertainment, and many others.\n\nWe use the distant-supervised method [6] with the help of vocabulary to pre-labeling our dataset, then we check and alter some labels manually. We pre-defined some categories of the entity based on sample data. We randomly sample some articles from THUCNews. Each article is a piece of news that belongs to the news category, which has many sentences. We label each sentence one by one through the whole article and ignore those sentences with no entity or too difficult for people to annotate. After labeling, we get distribution for each category and filter those categories with too few data.\n\nTo ensure that our dataset is challenging for modern models, we apply data filter technical to the labeled dataset. We call it a cross-validation and filter method. We first split the labeled dataset into a k-folder. For each folder, we train a small size of the modern model(albert_tiny_zh), which represents low model capability compare to other full-model. We predict other folders using a model trained from the current folder; we apply the same process for each folder; eventually, for each folder, we have k-1 predictions. We remove those samples from the folder that all k-1 predictions are all right, which we think are easy samples for our model. We set k equals to 4. We finally get 13,436 labeled dataset with 10 entity categories. The statistical information for CLUENER2020 can be found in Table 1. As is shown in Figure 1, the entity categories distribution is similar for both the training and validation sets. For your better understanding of our dataset, we also list some examples in Table 2.",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\real\\cluener2020.pdf\" --page \"2\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-x9pz84b6\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 26.16,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\real\\cluener2020.pdf",
+        "page": 2,
+        "case_id": "arxiv_cluener_p2",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "arxiv_cluener_p4",
+      "parser": "mineru",
+      "markdown": "<table><tr><td rowspan=1 colspan=1>Dataset</td><td rowspan=1 colspan=1>Examples</td><td rowspan=1 colspan=1>Entity Categories</td><td rowspan=1 colspan=1>Size</td></tr><tr><td rowspan=1 colspan=1>MSRANER</td><td rowspan=1 colspan=1>据说/o应/o老友/o之/o邀/o，/o梁实秋/nr还/o坐/o着/滑竿/o来/o此/o品/o过/o玉峰/ns茶/o。/0(en) It is said that (/o)Liang Shiqiu (/nr) sat on (/o) thepole (/o) to taste(/o) Yufeng(/ns) tea(/o) invited by(/o)old friends(/o).</td><td rowspan=1 colspan=1>person name,location, andorganization</td><td rowspan=1 colspan=1>50k</td></tr><tr><td rowspan=1 colspan=1>PeopleDairyNER</td><td rowspan=1 colspan=1>19980131-03-001-001/m克林顿/nr：/w警告/v伊拉克/ns萨达姆/nr：/w不/d希望/v战争/n(en)19980131-03-001-001 (/m) Clinton (/nr) warns (/v)Iraq&#x27;s (/ns) Saddam Hussein (/nr) : (/w) we do not (/d)want (/v) war (/n).</td><td rowspan=1 colspan=1>person name,location andorganization</td><td rowspan=1 colspan=1>23k</td></tr><tr><td rowspan=1 colspan=1>BOSONNER</td><td rowspan=1 colspan=1>此次{{location:中国}个展，{{person_name:苏珊菲利普斯}将与她80多岁高龄的父亲一起合作，哼唱一首古老的{{location:威尔士}}民..(en)In this solo exhibition in {{location:China}},{{per-son_name:Susan ·Phillips}} will sing an old {{loca-tion:welsh}} folk song with her 8O-year-old father.</td><td rowspan=1 colspan=1>person name,location,organization, time, product name,company name</td><td rowspan=1 colspan=1>2k</td></tr><tr><td rowspan=1 colspan=1>WeiboNER</td><td rowspan=1 colspan=1>我/0参/O与/O了/O 南/B-GPE.NAM都/I-GPE.NAM深/B-GPE.NAM圳/I-GPE.NAM读/O 本/O 发/O 起/0的/0投/0票/0涨/0薪/0最/0慢/0十/0大/0 行/0业/0....(en) I participated in the poll of the 1O industries withthe slowest salary increases launched by South (/B-GPE.NAM) Shenzhen (/I-GPE.NAM)..</td><td rowspan=1 colspan=1>person name,location,organization, geo-political</td><td rowspan=1 colspan=1>2k</td></tr><tr><td rowspan=1 colspan=1>Resume NER</td><td rowspan=1 colspan=1>美/B-LOC国/E-LOC的/o华/B-PER莱/I-PER士/E-PER，我/o跟/o他/o谈/o笑/o风/生./..(en)Wallace(/B-PER),American(/B-LOC),I(/o) talk(/o)cheerfully(/o) with him(/o)....</td><td rowspan=1 colspan=1>country, educationalinstitution,location,personal name,organization,profession, ethnicitybackground and jobtitle</td><td rowspan=1 colspan=1>2k</td></tr><tr><td rowspan=1 colspan=1>CLUENER2020</td><td rowspan=1 colspan=1>sentence:市住建委相关负责人昨天表示，《北京市公共租赁房管理办法》已经获得市委常委会审议原则通过。sentence (en): The charge of municipal commission ofhousing and urban-rural development said, yesterday,that the measures on the administration of public rentalhousing in Beijing have been approved by the standingcommittee of the municipal committee of the communistparty of China.label:government:市住建委,市常委会;book:《北京市公共租赁房管理办法》；position:负责人label(en) :government: the municipal commission ofhousing and urban-rural development, the standing com-mittee of the municipal; book:Measures for the admin-istration of public rental housing in Beijing; position:charge</td><td rowspan=1 colspan=1>address,book,company, game,government, movie,name,organization,position and scene</td><td rowspan=1 colspan=1>13K</td></tr></table>\n\nTable 3: Comparison with other Chinese NER datasets.\n\nBERT-NER: BERT [1] is a Transformer based model that uses pre-training to learn from the raw corpus, and fine-tuning on downstream tasks including NER task.\n\nRoBERTa-NER: RoBERTa [3] is an improved version of BERT, which is trained better, longer, and with more data. It removes the next sentence prediction task during the pre-training stage, compared with BERT.",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\real\\cluener2020.pdf\" --page \"4\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-nhje_6oy\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 26.974,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\real\\cluener2020.pdf",
+        "page": 4,
+        "case_id": "arxiv_cluener_p4",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "contract_service_001_p1",
+      "parser": "mineru",
+      "markdown": "技术服务合同\n\n合同编号：HT-2026-00158\n\n甲方（委托方）：北京云智联科技有限公司\n\n乙方（服务方）：上海数据前沿信息技术有限公司\n\n签订日期：2026年3月15日\n\n技术服务合同 · 第1页",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf\" --page \"1\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-i1xaeq23\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 23.842,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "page": 1,
+        "case_id": "contract_service_001_p1",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "contract_service_001_p2",
+      "parser": "mineru",
+      "markdown": "## 第一条 定义与术语\n\n本合同中使用的术语定义如下：SLA（Service Level\n\nAgreement）指服务等级协议，API（Application Programming\n\nInterface）指应用程序编程接口，SDK（Software Development\n\nKit）指软件开发工具包。上述术语在合同各条款中的含义均以本条定义为准。\n\n## 第二条 服务内容与范围\n\n乙方为甲方提供以下技术服务：（1）技术咨询服务；（2）系统开发与集成服务；（3）API接口对接与联调服务；（4）SDK集成与技术支持服务。乙方应按照SLA约定的服务标准提供服务，系统可用性不低于99.9%（按月度统计），平均响应时间不超过200毫秒。\n\n技术服务合同 · 第2页",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf\" --page \"2\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-hs7j24tv\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 24.283,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "page": 2,
+        "case_id": "contract_service_001_p2",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "contract_service_001_p3",
+      "parser": "mineru",
+      "markdown": "## 第三条 服务费用与支付方式\n\n本合同总服务费用为人民币壹佰贰拾万元整（人民币1,200,000.00），采用分期付款方式。各阶段付款金额及条件详见下表。\n\n<table><tr><td rowspan=1 colspan=1>项目阶段</td><td rowspan=1 colspan=1>金额 (元)</td><td rowspan=1 colspan=1>付款时间</td><td rowspan=1 colspan=1>付款条件</td></tr><tr><td rowspan=1 colspan=1>项目预付款</td><td rowspan=1 colspan=1>360,000.00</td><td rowspan=1 colspan=1>合同签订后5个工作日</td><td rowspan=1 colspan=1>甲方确认合同生效</td></tr><tr><td rowspan=1 colspan=1>需求分析完成</td><td rowspan=1 colspan=1>240,000.00</td><td rowspan=1 colspan=1>需求确认后10个工作日</td><td rowspan=1 colspan=1>甲方书面确认需求文档</td></tr><tr><td rowspan=1 colspan=1>系统开发完成</td><td rowspan=1 colspan=1>360,000.00</td><td rowspan=1 colspan=1>开发验收后10个工作日</td><td rowspan=1 colspan=1>甲方签署验收报告</td></tr><tr><td rowspan=1 colspan=1>系统上线运行</td><td rowspan=1 colspan=1>180,000.00</td><td rowspan=1 colspan=1>上线后30个工作日</td><td rowspan=1 colspan=1>系统稳定运行30天</td></tr><tr><td rowspan=1 colspan=1>质保期满</td><td rowspan=1 colspan=1>60,000.00</td><td rowspan=1 colspan=1>质保期满后10个工作日</td><td rowspan=1 colspan=1>无重大故障</td></tr></table>\n\n技术服务合同 · 第3页",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf\" --page \"3\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-ju9yzwog\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 25.017,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "page": 3,
+        "case_id": "contract_service_001_p3",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "contract_service_001_p4",
+      "parser": "mineru",
+      "markdown": "## 第四条 交付物与验收标准\n\n## 4.1 交付物清单\n\n交付物清单：（1）数据分析平台系统；（2）API网关系统；（3）数据迁移工具；（4）运维监控面板。\n\n## 4.2 验收标准\n\n验收标准：甲方应在收到交付物后15个工作日内完成验收。验收不通过的，乙方应在10个工作日内完成整改并重新提交验收。\n\n技术服务合同 · 第4页",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf\" --page \"4\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-z2vei005\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 23.715,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "page": 4,
+        "case_id": "contract_service_001_p4",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "contract_service_001_p5",
+      "parser": "mineru",
+      "markdown": "## 第五条 保密条款\n\n乙方应对甲方提供的所有商业秘密和技术资料严格保密，保密期限为合同终止后三年内有效。未经甲方书面同意，乙方不得向任何第三方披露、转让或允许他人使用上述保密信息。甲方的保密信息包括但不限于：用户数据、业务流程、技术文档、源代码及相关的知识产权。\n\n技术服务合同 · 第5页",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf\" --page \"5\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-jr1qroct\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 21.428,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "page": 5,
+        "case_id": "contract_service_001_p5",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "contract_service_001_p6",
+      "parser": "mineru",
+      "markdown": "## 第六条 违约责任与终止条款\n\n任何一方违反本合同约定的，应承担违约责任，违约金为合同总额的20%。甲方逾期付款的，应按未付金额每日0.05%的标准支付滞纳金。因不可抗力导致合同无法履行的，双方均不承担违约责任。\n\n## 第七条 合同终止\n\n任何一方可提前30天书面通知对方终止本合同。合同终止后，乙方应在15个工作日内完成工作交接，并将已完成的交付物移交给甲方。\n\n技术服务合同 · 第6页",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf\" --page \"6\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-hjbmzf2y\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 23.698,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "page": 6,
+        "case_id": "contract_service_001_p6",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "contract_service_001_p7",
+      "parser": "mineru",
+      "markdown": "甲方：北京云智联科技有限公司\n\n法定代表人/授权代表：\n\n签字日期： （盖章）\n\n乙方：上海数据前沿信息技术有限公司\n\n法定代表人/授权代表：\n\n签字日期： （盖章）\n\n本合同一式四份，甲乙双方各执两份，具有同等法律效力。\n\n技术服务合同 · 第7页",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf\" --page \"7\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-jqz3ofbh\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 22.844,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "page": 7,
+        "case_id": "contract_service_001_p7",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "contract_service_001_p8",
+      "parser": "mineru",
+      "markdown": "## 附件一：技术规范文档\n\n本文档包含项目相关的API接口规范、SDK集成指南及系统架构设计说明。详细技术参数请参阅附件二《系统部署手册》。\n\n附件二：系统部署手册\n\n本手册包含系统部署的详细步骤、环境配置要求及运维管理规范。部署环境要求：LinuxCentOS 7+ 或 Ubuntu 20.04+，Docker 20.10+，Kubernetes 1.24+。\n\n技术服务合同 · 第8页",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf\" --page \"8\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-fstzlt93\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 22.412,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "page": 8,
+        "case_id": "contract_service_001_p8",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "exam_physics_final_p2",
+      "parser": "mineru",
+      "markdown": "## 一、选择题（每题3分，共30分）\n\n1. 一个物体从静止开始做匀加速直线运动，加速度为2 m/s\u0000，则经过5 s后物体的速度为：\n\nA. 5 m/s B. 10 m/s C. 15 m/s D. 20 m/s\n\n2. 关于牛顿第二定律，下列说法正确的是：\n\nA. 物体所受合力越大，加速度越大 B. 物体的质量越大，加速度越大 C.\n\n物体的加速度与速度成正比 D. 物体的加速度与位移成正比\n\n3. 一辆汽车以20 m/s的速度行驶，刹车后做匀减速直线运动，加速度大小为4\n\nm/s\u0000，则汽车刹车后6 s内的位移为：\n\nA. 40 m B. 48 m C. 50 m D. 60 m\n\n4. 在光滑水平面上，质量为2 kg的物体受到水平方向的力F = 10 N，物体的加速度为：\n\nA. 2 m/s\u0000 B. 5 m/s\u0000 C. 10 m/s\u0000 D. 20 m/s\u0000\n\n第2页 共4页",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\exam_physics_final.pdf\" --page \"2\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-y_gp5v5o\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 22.506,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\exam_physics_final.pdf",
+        "page": 2,
+        "case_id": "exam_physics_final_p2",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "exam_physics_final_p3",
+      "parser": "mineru",
+      "markdown": "## 二、计算题（共40分）\n\n1.（10分）一质量为 ${ \\mathfrak { m } } = 5 \\ { \\mathsf { k g } }$ 的物体放在粗糙水平面上，受到水平拉力 $\\textsf { F } = 2 0 \\textsf { N }$ 的作用，物体与水平面之间的动摩擦因数为 $\\mu \\ = \\ 0 . 2 ,$ 。已知重力加速度 $\\tt { g } = \\tt { 1 0 }$ $\\mathfrak { m } / \\mathfrak { s U }$ ，求物体的加速度 a。\n\n提示： $\\textsf { f } = \\textsf { \\mu N } , \\textsf { F } - \\textsf { f } = \\textsf { m a }$\n\n2.（10分）一辆汽车从静止开始做匀加速直线运动，经过 $\\mathrm { ~  ~ t ~ } = \\mathrm { ~  ~ 1 0 ~ } \\mathrm { ~ \\bf ~ s ~ }$ 后速度达到 $\\textsf { v } = \\ 3 0 \\ \\textsf { m } / \\mathsf { s }$ 。求：\n\n公式： $\\mathsf { v } = \\mathsf { a t } , \\mathsf { s } = \\bigsqcup \\mathsf { a t } \\bigsqcup$\n\n3.（10分）一个电阻 $\\textsf { R } = \\textsf { 1 0 } \\textsf { \\Omega }$ 的导体，两端加上电压 $\\mathsf { U } = 2 0 \\mathrm { ~ \\mathsf { V } ~ }$ ，求通过导体的电流 I 和通电 t$= \\ 6 0 \\ \\mathsf { s }$ 内产生的热量 Q。\n\n$$\n1 ~ = ~ \\mathsf { U } / \\mathsf { R } , ~ \\mathsf { 0 } ~ = ~ \\mathsf { I } \\bigcup \\mathsf { R } \\mathsf { t }\n$$\n\n第3页 共4页",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\exam_physics_final.pdf\" --page \"3\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-wkizv2vy\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 23.69,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\exam_physics_final.pdf",
+        "page": 3,
+        "case_id": "exam_physics_final_p3",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "exam_physics_final_p4",
+      "parser": "mineru",
+      "markdown": "## 三、评分标准\n\n<table><tr><td rowspan=1 colspan=1>题号</td><td rowspan=1 colspan=1>题型</td><td rowspan=1 colspan=1>分值</td><td rowspan=1 colspan=1>得分</td></tr><tr><td rowspan=1 colspan=1>-1~10</td><td rowspan=1 colspan=1>选择题</td><td rowspan=1 colspan=1>30</td><td rowspan=1 colspan=1></td></tr><tr><td rowspan=1 colspan=1>二1</td><td rowspan=1 colspan=1>计算题</td><td rowspan=1 colspan=1>10</td><td rowspan=1 colspan=1></td></tr><tr><td rowspan=1 colspan=1>二2</td><td rowspan=1 colspan=1>计算题</td><td rowspan=1 colspan=1>10</td><td rowspan=1 colspan=1></td></tr><tr><td rowspan=1 colspan=1>二3</td><td rowspan=1 colspan=1>计算题</td><td rowspan=1 colspan=1>10</td><td rowspan=1 colspan=1></td></tr><tr><td rowspan=1 colspan=1>实验题</td><td rowspan=1 colspan=1>实验题</td><td rowspan=1 colspan=1>10</td><td rowspan=1 colspan=1></td></tr><tr><td rowspan=1 colspan=1>合计</td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1>100</td><td rowspan=1 colspan=1></td></tr></table>\n\n阅卷人签名： 复核人签名：\n\n第4页 共4页",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\exam_physics_final.pdf\" --page \"4\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-vz8axjhn\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 26.611,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\exam_physics_final.pdf",
+        "page": 4,
+        "case_id": "exam_physics_final_p4",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "exam_physics_final_p1",
+      "parser": "mineru",
+      "markdown": "北京师范大学附属中学\n\n2025—2026学年度第一学期期末考试\n\n# 高一年级物理试卷\n\n考试时间：90分钟 满分：100分\n\n注意事项：1. 本试卷共4页，满分100分。2.\n\n请用黑色签字笔在答题卡上作答，在试卷上作答无效。3.\n\n考试结束后，请将试卷和答题卡一并交回。\n\n第1页 共4页",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\exam_physics_final.pdf\" --page \"1\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-g2gb4ihw\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 24.333,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\exam_physics_final.pdf",
+        "page": 1,
+        "case_id": "exam_physics_final_p1",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "finance_annual2024_p4",
+      "parser": "mineru",
+      "markdown": "## 主要财务数据和财务指标\n\n<table><tr><td rowspan=1 colspan=1>项目</td><td rowspan=1 colspan=1>2024年度</td><td rowspan=1 colspan=1>2023年度</td><td rowspan=1 colspan=1>本年比上年增减 (%)</td></tr><tr><td rowspan=1 colspan=1>营业收入 (万元)</td><td rowspan=1 colspan=1>1, 285,432. 67</td><td rowspan=1 colspan=1>1, 042,118.35</td><td rowspan=1 colspan=1>23.35</td></tr><tr><td rowspan=1 colspan=1>归属于上市公司股东的净利润 (万元)</td><td rowspan=1 colspan=1>186,521. 43</td><td rowspan=1 colspan=1>152, 087.96</td><td rowspan=1 colspan=1>22. 64</td></tr><tr><td rowspan=1 colspan=1>归属于上市公司股东的扣除非经常性损益的净利润 (万元）</td><td rowspan=1 colspan=1>178,305.21</td><td rowspan=1 colspan=1>145,632. 18</td><td rowspan=1 colspan=1>22.43</td></tr><tr><td rowspan=1 colspan=1>经营活动产生的现金流量净额 (万元)</td><td rowspan=1 colspan=1>215, 678.90</td><td rowspan=1 colspan=1>178, 432. 56</td><td rowspan=1 colspan=1>20.88</td></tr><tr><td rowspan=1 colspan=1>基本每股收益 (元/股)</td><td rowspan=1 colspan=1>2.35</td><td rowspan=1 colspan=1>1.92</td><td rowspan=1 colspan=1>22.40</td></tr><tr><td rowspan=1 colspan=1>加权平均净资产收益率(%)</td><td rowspan=1 colspan=1>18.76</td><td rowspan=1 colspan=1>16.43</td><td rowspan=1 colspan=1>增加2.33个百分点</td></tr><tr><td rowspan=1 colspan=1>总资产（万元）</td><td rowspan=1 colspan=1>3, 542, 187. 65</td><td rowspan=1 colspan=1>2,987,423. 10</td><td rowspan=1 colspan=1>18.57</td></tr><tr><td rowspan=1 colspan=1>归属于上市公司股东的净资产 (万元)</td><td rowspan=1 colspan=1>1,085,432. 78</td><td rowspan=1 colspan=1>912, 345.67</td><td rowspan=1 colspan=1>18.97</td></tr></table>",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_annual_report_2024.pdf\" --page \"4\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-_g2po2t8\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 24.318,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_annual_report_2024.pdf",
+        "page": 4,
+        "case_id": "finance_annual2024_p4",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "finance_annual2024_p6",
+      "parser": "mineru",
+      "markdown": "## 合并资产负债表\n\n编制单位：华信科技股份有限公司 单位：万元 币种：人民币\n<table><tr><td>资产</td><td>附注</td><td>2024年12月31日</td><td>2023年12月31日</td></tr><tr><td>流动资产：</td><td></td><td></td><td></td></tr><tr><td>货币资金</td><td>六、1</td><td>856,234.56</td><td>723,456.78</td></tr><tr><td>交易性金融资产</td><td>六、2</td><td>45,000.00</td><td>38,500.00</td></tr><tr><td>应收票据</td><td>六、3</td><td>12, 345. 67</td><td>10,234.56</td></tr><tr><td>应收账款</td><td>六、4</td><td>234, 567. 89</td><td>198,765.43</td></tr><tr><td>预付款项</td><td>六、5</td><td>23,456.78</td><td>19,876.54</td></tr><tr><td>存货</td><td>六、6</td><td>345, 678.90</td><td>287, 654. 32</td></tr><tr><td>合同资产</td><td>六、7</td><td>56,789. 01</td><td>45,678.90</td></tr><tr><td>其他流动资产</td><td>六、8</td><td>34, 567.89</td><td>28,765.43</td></tr><tr><td>流动资产合计</td><td></td><td>1,608, 640.70</td><td>1, 352, 931.96</td></tr><tr><td>非流动资产：</td><td></td><td></td><td></td></tr><tr><td>长期股权投资</td><td>六、9</td><td>123, 456. 78</td><td>98,765.43</td></tr><tr><td>固定资产</td><td>六、10</td><td>1, 234, 567. 89</td><td>1,023,456. 78</td></tr><tr><td>在建工程</td><td>六、11</td><td>234, 567.89</td><td>187, 654. 32</td></tr><tr><td>无形资产</td><td>六、12</td><td>187, 654. 32</td><td>156,789. 01</td></tr><tr><td>商誉</td><td>六、13</td><td>89,012.34</td><td>89,012.34</td></tr><tr><td>递延所得税资产</td><td>六、14</td><td>34, 567.89</td><td>28,765.43</td></tr><tr><td>其他非流动资产</td><td>六、15</td><td>29,719.84</td><td>50,047.83</td></tr><tr><td>非流动资产合计</td><td></td><td>1,933, 546. 95</td><td>1, 634, 491. 14</td></tr><tr><td>资产总计</td><td></td><td>3,542,187.65</td><td>2, 987, 423. 10</td></tr><tr><td>流动负债：</td><td></td><td></td><td></td></tr><tr><td>短期借款</td><td>六、16</td><td>156,789. 01</td><td>123,456.78</td></tr><tr><td>应付票据</td><td>六、17</td><td>45,678.90</td><td>34,567.89</td></tr><tr><td>应付账款</td><td>六、18</td><td>234, 567.89</td><td>198,765.43</td></tr><tr><td>合同负债</td><td>六、19</td><td>67,890.12</td><td>56,789.01</td></tr><tr><td>应付职工薪酬</td><td>六、20</td><td>23,456.78</td><td>19,876.54</td></tr><tr><td>应交税费</td><td>六、21</td><td>34, 567. 89</td><td>28,765. 43</td></tr><tr><td>其他应付款</td><td>六、22</td><td>45, 678.90</td><td>38,765.43</td></tr><tr><td>一年内到期的非流动负债</td><td>六、23</td><td>89,012.34</td><td>67, 890.12</td></tr><tr><td>流动负债合计</td><td></td><td>697, 641. 83</td><td>568,876.63</td></tr><tr><td>非流动负债：</td><td></td><td></td><td></td></tr><tr><td>长期借款</td><td>六、24</td><td>456,789. 01</td><td>345,678.90</td></tr><tr><td>应付债券</td><td>六、25</td><td>200,000.00</td><td>200,000.00</td></tr><tr><td>递延所得税负债</td><td>六、26</td><td>23,456.78</td><td>19,876.54</td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td>预计负债</td><td>六、27</td><td>12, 345. 67</td><td>10,234.56</td></tr></table>",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_annual_report_2024.pdf\" --page \"6\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-zc59oevg\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 25.334,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_annual_report_2024.pdf",
+        "page": 6,
+        "case_id": "finance_annual2024_p6",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "finance_annual2024_p8",
+      "parser": "mineru",
+      "markdown": "## 合并资产负债表（续）\n\n<table><tr><td colspan=\"4\">所有者权益：</td></tr><tr><td>股本</td><td>六、28</td><td>80,000.00</td><td>80,000.00</td></tr><tr><td>资本公积</td><td>六、29</td><td>456,789.01</td><td>412, 345. 67</td></tr><tr><td>其他综合收益</td><td>六、30</td><td>12, 345. 67</td><td>8,765. 43</td></tr><tr><td>盈余公积</td><td>六、31</td><td>89,012. 34</td><td>72, 345. 67</td></tr><tr><td>未分配利润</td><td>六、32</td><td>447,285.76</td><td>338,888.90</td></tr><tr><td>归属于母公司所有者权益合计</td><td></td><td>1, 085,432. 78</td><td>912, 345. 67</td></tr><tr><td>少数股东权益</td><td></td><td>66,521. 58</td><td>-69,589.20</td></tr><tr><td>所有者权益合计</td><td></td><td>1,151, 954. 36</td><td>842,756.47</td></tr><tr><td>负债和所有者权益总计</td><td></td><td>3, 542, 187. 65</td><td>2,987,423.10</td></tr></table>",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_annual_report_2024.pdf\" --page \"8\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-q6mvimje\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 25.444,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_annual_report_2024.pdf",
+        "page": 8,
+        "case_id": "finance_annual2024_p8",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "finance_annual2024_p9",
+      "parser": "mineru",
+      "markdown": "## 合并利润表\n\n编制单位：华信科技股份有限公司 单位：万元 币种：人民币\n<table><tr><td>项目</td><td>附注</td><td>2024年度</td><td>2023年度</td></tr><tr><td>一、营业收入</td><td>六、33</td><td>1,285, 432. 67</td><td>1,042, 118. 35</td></tr><tr><td>减：营业成本</td><td>六、34</td><td>856,234.56</td><td>698,765.43</td></tr><tr><td>税金及附加</td><td>六、35</td><td>12, 345. 67</td><td>10, 234.56</td></tr><tr><td>销售费用</td><td>六、36</td><td>89, 012. 34</td><td>72, 345. 67</td></tr><tr><td>管理费用</td><td>六、37</td><td>56,789. 01</td><td>45, 678. 90</td></tr><tr><td>研发费用</td><td>六、38</td><td>67,890.12</td><td>56,789.01</td></tr><tr><td>财务费用</td><td>六、39</td><td>23,456.78</td><td>19,876.54</td></tr><tr><td>加：投资收益</td><td>六、40</td><td>34, 567. 89</td><td>28, 765.43</td></tr><tr><td>二、营业利润</td><td></td><td>214,272. 08</td><td>167, 193. 60</td></tr><tr><td>加：营业外收入</td><td>六、41</td><td>5,678.90</td><td>4,567. 89</td></tr><tr><td>减：营业外支出</td><td>六、42</td><td>2,345. 67</td><td>1,876. 54</td></tr><tr><td>三、利润总额</td><td></td><td>217,605. 31</td><td>169, 884.95</td></tr><tr><td>减：所得税费用</td><td>六、43</td><td>31,083.88</td><td>17, 796. 99</td></tr><tr><td>四、净利润</td><td></td><td>186,521. 43</td><td>152, 087.96</td></tr><tr><td>（一）持续经营净利润</td><td></td><td>186,521. 43</td><td>152, 087.96</td></tr><tr><td>（二）终止经营净利润</td><td></td><td>1</td><td>1</td></tr><tr><td>五、其他综合收益的税后净额</td><td></td><td>3,580. 24</td><td>2, 123. 45</td></tr><tr><td>六、综合收益总额</td><td></td><td>190, 101. 67</td><td>154, 211. 41</td></tr><tr><td>归属于母公司所有者的综合收益总额</td><td></td><td>184, 567. 89</td><td>148,765. 43</td></tr><tr><td>归属于少数股东的综合收益总额</td><td></td><td>5,533.78</td><td>5,445.98</td></tr></table>",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_annual_report_2024.pdf\" --page \"9\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-4uerzal_\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 25.215,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_annual_report_2024.pdf",
+        "page": 9,
+        "case_id": "finance_annual2024_p9",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "invoice_vat_001_p1",
+      "parser": "mineru",
+      "markdown": "## 增值税电子普通发票\n\n发票代码：011002500311\n\n发票号码：08726145\n\n开票日期：2026年04月18日\n\n## 购买方\n\n购方名称：杭州星辰智能科技有限公司\n\n纳税人识别号：91330100MA2KEXAMPLE\n\n地址电话：杭州市西湖区文三路 478 号 0571-88886666\n\n开户行及账号：中国工商银行杭州西湖支行 1202020009876543210\n\n## 销售方\n\n销方名称：北京云计算服务有限公司\n\n纳税人识别号：91110108MA01EXAMPLE\n\n## 货物或应税劳务、服务名称\n\n<table><tr><td rowspan=1 colspan=1>项目名称</td><td rowspan=1 colspan=1>规格型号</td><td rowspan=1 colspan=1>单位</td><td rowspan=1 colspan=1>数量</td><td rowspan=1 colspan=1>单价</td><td rowspan=1 colspan=1>金额</td></tr><tr><td rowspan=1 colspan=1>API服务费</td><td rowspan=1 colspan=1>企业版</td><td rowspan=1 colspan=1>月</td><td rowspan=1 colspan=1>12</td><td rowspan=1 colspan=1>15,000.00</td><td rowspan=1 colspan=1>180,000.00</td></tr><tr><td rowspan=1 colspan=1>SDK技术支持</td><td rowspan=1 colspan=1>VIP套餐</td><td rowspan=1 colspan=1>年</td><td rowspan=1 colspan=1>2</td><td rowspan=1 colspan=1>50,000.00</td><td rowspan=1 colspan=1>100,000.00</td></tr><tr><td rowspan=1 colspan=1>云服务器租赁</td><td rowspan=1 colspan=1>16核64G</td><td rowspan=1 colspan=1>月</td><td rowspan=1 colspan=1>12</td><td rowspan=1 colspan=1>8,500.00</td><td rowspan=1 colspan=1>102,000.00</td></tr><tr><td rowspan=1 colspan=1>数据库服务</td><td rowspan=1 colspan=1>高可用版</td><td rowspan=1 colspan=1>月</td><td rowspan=1 colspan=1>12</td><td rowspan=1 colspan=1>3,200.00</td><td rowspan=1 colspan=1>38,400.00</td></tr><tr><td rowspan=1 colspan=1>SSL证书服务</td><td rowspan=1 colspan=1>OV型</td><td rowspan=1 colspan=1>年</td><td rowspan=1 colspan=1>3</td><td rowspan=1 colspan=1>2,000.00</td><td rowspan=1 colspan=1>6,000.00</td></tr><tr><td rowspan=1 colspan=1>CDN加速服务</td><td rowspan=1 colspan=1>500GB套餐</td><td rowspan=1 colspan=1>月</td><td rowspan=1 colspan=1>12</td><td rowspan=1 colspan=1>1,800.00</td><td rowspan=1 colspan=1>21,600.00</td></tr></table>\n\n增值税电子普通发票 · 第1页",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf\" --page \"1\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-vl0euzvl\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 25.483,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf",
+        "page": 1,
+        "case_id": "invoice_vat_001_p1",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "invoice_vat_001_p2",
+      "parser": "mineru",
+      "markdown": "## 增值税电子普通发票\n\n发票号码：08726145\n\n## 合计金额与税额\n\n合计金额：448,000.00 元\n\n合计金额（大写）：肆拾肆万捌仟元整\n\n税率：6%\n\n税额：26,880.00 元\n\n价税合计（小写）：人民币474,880.00\n\n价税合计（大写）：肆拾柒万肆仟捌佰捌拾元整\n\n增值税电子普通发票 · 第2页",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf\" --page \"2\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-u2x6he6h\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 25.217,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf",
+        "page": 2,
+        "case_id": "invoice_vat_001_p2",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "invoice_vat_001_p3",
+      "parser": "mineru",
+      "markdown": "# 增值税电子普通发票\n\n备注\n\n备注：本发票对应合同编号HT-2026-00158，服务期间2026年4月至2027年3月。如有疑问请联系财务部：finance@cloudcompute.example.com。\n\n校验码\n\n校验码：A7F3B9C2D1E5\n\n[二维码]\n\n增值税电子普通发票 · 第3页",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf\" --page \"3\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-u0pygbyi\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 23.252,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf",
+        "page": 3,
+        "case_id": "invoice_vat_001_p3",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "invoice_vat_001_p4",
+      "parser": "mineru",
+      "markdown": "# 增值税电子普通发票\n\n开票信息确认\n\n收款人：王芳\n\n复核：李明\n\n开票人：张伟\n\n[发票专用章]\n\n销方（章）： 购方（章）：\n\n增值税电子普通发票 · 第4页",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf\" --page \"4\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-p395s9v3\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 23.956,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf",
+        "page": 4,
+        "case_id": "invoice_vat_001_p4",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "invoice_vat_001_p5",
+      "parser": "mineru",
+      "markdown": "## 增值税电子普通发票\n\n发票联\n\n此联为购方记账凭证。请妥善保管，作为财务报销及入账依据。\n\n销方名称：北京云计算服务有限公司\n\n发票代码：011002500311\n\n发票号码：08726145\n\n温馨提示：本发票已通过国家税务总局全国增值税发票查验平台验证。\n\n增值税电子普通发票 · 第5页",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf\" --page \"5\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-oj3yxit4\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 25.269,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf",
+        "page": 5,
+        "case_id": "invoice_vat_001_p5",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "zh_paper_double_column_001_p3",
+      "parser": "mineru",
+      "markdown": "中国人工智能学会通讯 2026 年第 3 期\n\n基于视觉语言模型的文档理解\n\n近年来，视觉语言模型在文档理解领域取得了显著进展。本文提出了一种新的多模态文档分析框架，结合了视觉编码器和语言解码器的优势。\n\n<table><tr><td rowspan=1 colspan=1>模型</td><td rowspan=1 colspan=1>语言</td><td rowspan=1 colspan=1>得分</td></tr><tr><td rowspan=1 colspan=1>Qwen2.5-VL</td><td rowspan=1 colspan=1>中英</td><td rowspan=1 colspan=1>88.2</td></tr><tr><td rowspan=1 colspan=1>MinerU</td><td rowspan=1 colspan=1>中英</td><td rowspan=1 colspan=1>81.4</td></tr><tr><td rowspan=1 colspan=1>Docling</td><td rowspan=1 colspan=1>中英</td><td rowspan=1 colspan=1>76.5</td></tr></table>\n\n图 2\n\n图 2 实验流程\n\n核心目标为 \\$\\sum_{i=1}^{n} x_i\\$ 的稳定识别与验证。",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\zh_paper_double_column_001.pdf\" --page \"3\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-ktmjd4wh\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 26.032,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\zh_paper_double_column_001.pdf",
+        "page": 3,
+        "case_id": "zh_paper_double_column_001_p3",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "cn_textbook_formula_002_p12",
+      "parser": "mineru",
+      "markdown": "第四章 动能与动能定理\n\n动能定理表明合外力做功等于物体动能的变化量。当一个质量为 m\n\n的物体在力的作用下获得速度 v 时，其动能表达式为：\n\n\\$E_k=\\frac{1}{2}mv^2\\$\n\n其中 m 为物体质量，v 为物体速度。这一公式在经典力学中有广泛应用。",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\cn_textbook_formula_002.pdf\" --page \"12\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-5y1bjwsx\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 25.114,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\cn_textbook_formula_002.pdf",
+        "page": 12,
+        "case_id": "cn_textbook_formula_002_p12",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "finance_table_mixed_003_p8",
+      "parser": "mineru",
+      "markdown": "## 合并利润表\n\n<table><tr><td rowspan=1 colspan=1>项目</td><td rowspan=1 colspan=1>2025</td><td rowspan=1 colspan=1>2024</td><td rowspan=1 colspan=1>YoY</td></tr><tr><td rowspan=1 colspan=1>营业收入</td><td rowspan=1 colspan=1>1,234.56</td><td rowspan=1 colspan=1>1,010.30</td><td rowspan=1 colspan=1>22. 2%</td></tr><tr><td rowspan=1 colspan=1>净利润</td><td rowspan=1 colspan=1>98.70</td><td rowspan=1 colspan=1>80.10</td><td rowspan=1 colspan=1>23. 2%</td></tr><tr><td rowspan=1 colspan=1>R&amp;D；</td><td rowspan=1 colspan=1>45.00</td><td rowspan=1 colspan=1>39.00</td><td rowspan=1 colspan=1>15.4%</td></tr></table>",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_table_mixed_003.pdf\" --page \"8\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-15y1nbe_\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 26.432,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_table_mixed_003.pdf",
+        "page": 8,
+        "case_id": "finance_table_mixed_003_p8",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "zh_paper_double_column_001_p3",
+      "parser": "mineru",
+      "markdown": "中国人工智能学会通讯 2026 年第 3 期\n\n基于视觉语言模型的文档理解\n\n近年来，视觉语言模型在文档理解领域取得了显著进展。本文提出了一种新的多模态文档分析框架，结合了视觉编码器和语言解码器的优势。\n\n<table><tr><td rowspan=1 colspan=1>模型</td><td rowspan=1 colspan=1>语言</td><td rowspan=1 colspan=1>得分</td></tr><tr><td rowspan=1 colspan=1>Qwen2.5-VL</td><td rowspan=1 colspan=1>中英</td><td rowspan=1 colspan=1>88.2</td></tr><tr><td rowspan=1 colspan=1>MinerU</td><td rowspan=1 colspan=1>中英</td><td rowspan=1 colspan=1>81.4</td></tr><tr><td rowspan=1 colspan=1>Docling</td><td rowspan=1 colspan=1>中英</td><td rowspan=1 colspan=1>76.5</td></tr></table>\n\n图 2\n\n图 2 实验流程\n\n核心目标为 \\$\\sum_{i=1}^{n} x_i\\$ 的稳定识别与验证。",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\zh_paper_double_column_001.pdf\" --page \"3\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-bqkz4lyt\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 24.687,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\zh_paper_double_column_001.pdf",
+        "page": 3,
+        "case_id": "zh_paper_double_column_001_p3",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "cn_textbook_formula_002_p12",
+      "parser": "mineru",
+      "markdown": "第四章 动能与动能定理\n\n动能定理表明合外力做功等于物体动能的变化量。当一个质量为 m\n\n的物体在力的作用下获得速度 v 时，其动能表达式为：\n\n\\$E_k=\\frac{1}{2}mv^2\\$\n\n其中 m 为物体质量，v 为物体速度。这一公式在经典力学中有广泛应用。",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\cn_textbook_formula_002.pdf\" --page \"12\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-xvilc_gw\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 22.942,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\cn_textbook_formula_002.pdf",
+        "page": 12,
+        "case_id": "cn_textbook_formula_002_p12",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "finance_table_mixed_003_p8",
+      "parser": "mineru",
+      "markdown": "## 合并利润表\n\n<table><tr><td rowspan=1 colspan=1>项目</td><td rowspan=1 colspan=1>2025</td><td rowspan=1 colspan=1>2024</td><td rowspan=1 colspan=1>YoY</td></tr><tr><td rowspan=1 colspan=1>营业收入</td><td rowspan=1 colspan=1>1,234.56</td><td rowspan=1 colspan=1>1,010.30</td><td rowspan=1 colspan=1>22. 2%</td></tr><tr><td rowspan=1 colspan=1>净利润</td><td rowspan=1 colspan=1>98.70</td><td rowspan=1 colspan=1>80.10</td><td rowspan=1 colspan=1>23. 2%</td></tr><tr><td rowspan=1 colspan=1>R&amp;D；</td><td rowspan=1 colspan=1>45.00</td><td rowspan=1 colspan=1>39.00</td><td rowspan=1 colspan=1>15.4%</td></tr></table>",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_table_mixed_003.pdf\" --page \"8\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-ttw13dwc\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 24.94,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_table_mixed_003.pdf",
+        "page": 8,
+        "case_id": "finance_table_mixed_003_p8",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "slides_ai_course_001_p1",
+      "parser": "mineru",
+      "markdown": "# 人工智能导论\n\n# 深度学习基础与应用\n\n北京大学计算机科学与技术学院\n\n主讲人：张明教授\n\n2026年春季学期\n\n北京大学 · 人工智能导论 · 第1页",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf\" --page \"1\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-5kol4jc1\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 24.124,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf",
+        "page": 1,
+        "case_id": "slides_ai_course_001_p1",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "slides_ai_course_001_p2",
+      "parser": "mineru",
+      "markdown": "## 课程大纲\n\n\u0000 第一章 机器学习基础：监督学习、无监督学习与强化学习\n\n\u0000 第二章 神经网络：前馈网络、反向传播与梯度下降\n\n\u0000 第三章 卷积神经网络：LeNet、ResNet 与 Vision Transformer\n\n\u0000 第四章 循环神经网络：LSTM、GRU 与序列建模\n\n\u0000 第五章 Transformer 架构：Self-Attention 与 Multi-Head Attention\n\n\u0000 第六章 大语言模型：BERT、GPT-4 与 Qwen2.5-VL\n\n\u0000 第七章 多模态学习：CLIP、BLIP-2 与视觉语言对齐\n\n北京大学 · 人工智能导论 · 第2页",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf\" --page \"2\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-tmfzppyp\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 22.626,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf",
+        "page": 2,
+        "case_id": "slides_ai_course_001_p2",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "slides_ai_course_001_p3",
+      "parser": "mineru",
+      "markdown": "## 主流模型对比\n\n<table><tr><td rowspan=1 colspan=1>模型</td><td rowspan=1 colspan=1>参数量</td><td rowspan=1 colspan=1>主要特点</td><td rowspan=1 colspan=1>适用场景</td></tr><tr><td rowspan=1 colspan=1>BERT</td><td rowspan=1 colspan=1>340M</td><td rowspan=1 colspan=1>双向编码器</td><td rowspan=1 colspan=1>文本分类、NER</td></tr><tr><td rowspan=1 colspan=1>GPT-4</td><td rowspan=1 colspan=1>~1.8T</td><td rowspan=1 colspan=1>自回归生成</td><td rowspan=1 colspan=1>对话、代码生成</td></tr><tr><td rowspan=1 colspan=1>Qwen2.5-VL</td><td rowspan=1 colspan=1>7B-72B</td><td rowspan=1 colspan=1>视觉语言对齐</td><td rowspan=1 colspan=1>文档理解、OCR</td></tr><tr><td rowspan=1 colspan=1>ResNet-152</td><td rowspan=1 colspan=1>60M</td><td rowspan=1 colspan=1>残差连接</td><td rowspan=1 colspan=1>图像分类</td></tr></table>\n\n北京大学 · 人工智能导论 · 第3页",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf\" --page \"3\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-n2emvpx4\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 24.577,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf",
+        "page": 3,
+        "case_id": "slides_ai_course_001_p3",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "slides_ai_course_001_p4",
+      "parser": "mineru",
+      "markdown": "## Transformer 架构详解\n\n## 编码器 Encoder\n\n编码器（Encoder）由 N 个相同的层堆叠而成。每层包含两个子层：Multi-Head Self-Attention 机制和位置前馈网络（Position-wiseFeed-Forward Network）。每个子层之后都有残差连接（Residual Connection）和层归一化（Layer Normalization）。\n\n## 解码器 Decoder\n\n解码器（Decoder）同样由 N 个相同层组成。除了编码器中的两个子层外，解码器还额外增加了第三个子层：Masked Multi-HeadAttention，用于对编码器输出执行注意力计算。自回归生成时使用因果掩码（Causal Mask）防止信息泄露。\n\n北京大学 · 人工智能导论 · 第4页",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf\" --page \"4\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-xu5d5ahj\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 23.071,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf",
+        "page": 4,
+        "case_id": "slides_ai_course_001_p4",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "slides_ai_course_001_p5",
+      "parser": "mineru",
+      "markdown": "## 注意力机制\n\n缩放点积注意力（Scaled Dot-Product Attention）是 Transformer 的核心组件。给定查询矩阵 Q、键矩阵 K 和值矩阵 V，注意力输出定义为：\n\n\\$Attention(Q,K,V) = softmax\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V\\$\n\n[示意图：Q、K、V 矩阵运算流程图]\n\n图 3-1 Scaled Dot-Product Attention 计算流程\n\n其中 d_k 为键向量的维度。缩放因子 1/√d_k 用于防止点积值过大导致 softmax 梯度消失。\n\n北京大学 · 人工智能导论 · 第5页",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf\" --page \"5\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-i77me41v\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 24.476,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf",
+        "page": 5,
+        "case_id": "slides_ai_course_001_p5",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "slides_ai_course_001_p6",
+      "parser": "mineru",
+      "markdown": "## 训练技巧与实践\n\n\u0000 学习率调度：Warmup + Cosine Annealing，初始 lr = 3e-4\n\n\u0000 权重初始化：Xavier / He 初始化，避免梯度消失或爆炸\n\n\u0000 正则化：Dropout (p=0.1)、Label Smoothing (ε=0.1)\n\n\u0000 混合精度训练：FP16 + Loss Scaling，加速 2-3x\n\n\u0000 梯度累积：等效增大 batch_size，适用于显存受限场景\n\n\u0000 数据增强：RandomCrop、ColorJitter、MixUp、CutMix\n\n\u0000 分布式训练：DataParallel / DDP / FSDP，多卡并行\n\n北京大学 · 人工智能导论 · 第6页",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf\" --page \"6\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-0rdoshde\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 25.168,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf",
+        "page": 6,
+        "case_id": "slides_ai_course_001_p6",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "html_table_grid_004_p8",
+      "parser": "mineru",
+      "markdown": "## 合并利润表\n\n<table><tr><td rowspan=1 colspan=1>项目</td><td rowspan=1 colspan=1>2025</td><td rowspan=1 colspan=1>2024</td><td rowspan=1 colspan=1>YoY</td></tr><tr><td rowspan=1 colspan=1>营业收入</td><td rowspan=1 colspan=1>1,234.56</td><td rowspan=1 colspan=1>1,010.30</td><td rowspan=1 colspan=1>22. 2%</td></tr><tr><td rowspan=1 colspan=1>净利润</td><td rowspan=1 colspan=1>98.70</td><td rowspan=1 colspan=1>80.10</td><td rowspan=1 colspan=1>23. 2%</td></tr><tr><td rowspan=1 colspan=1>R&amp;D；</td><td rowspan=1 colspan=1>45.00</td><td rowspan=1 colspan=1>39.00</td><td rowspan=1 colspan=1>15.4%</td></tr></table>",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_table_mixed_003.pdf\" --page \"8\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-3rytix8j\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 26.532,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_table_mixed_003.pdf",
+        "page": 8,
+        "case_id": "html_table_grid_004_p8",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "formula_visual_005_p12",
+      "parser": "mineru",
+      "markdown": "第四章 动能与动能定理\n\n动能定理表明合外力做功等于物体动能的变化量。当一个质量为 m\n\n的物体在力的作用下获得速度 v 时，其动能表达式为：\n\n\\$E_k=\\frac{1}{2}mv^2\\$\n\n其中 m 为物体质量，v 为物体速度。这一公式在经典力学中有广泛应用。",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\cn_textbook_formula_002.pdf\" --page \"12\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-4461f_x3\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 22.779,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\cn_textbook_formula_002.pdf",
+        "page": 12,
+        "case_id": "formula_visual_005_p12",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "textbook_physics_v2_p05",
+      "parser": "mineru",
+      "markdown": "## 第三章 牛顿运动定律\n\n牛顿第二定律指出，物体的加速度与作用在它上面的合外力成正比，与物体的质量成反比。这一定律是经典力学的基石之一，在工程学、天文学和日常生活中有着广泛的应用。当多个力同时作用于一个物体时，需要先求出合力，再计算加速度。\n\n其数学表达式为：\n\n$$\n\\$ 5\n$$\n\n式中 F 表示合外力（单位：牛顿），m 表示物体质量（单位：千克），a\n\n表示加速度（单位：米每二次方秒）。若 F = 0，则 a =\n\n0，物体保持匀速直线运动状态，这便是牛顿第一定律。\n\n例题：一个质量为 10 kg 的物体受到水平方向 20 N 的力，求其加速度。根据 F =ma，可得 $\\mathsf { a } = \\mathsf { F / m } = 2 0 / 1 0 = 2 ~ \\mathsf { m / s } \\bigsqcup$ 。\n\n|||||||| |||||||||||||",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\textbook_physics_v2.pdf\" --page \"5\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-3oz1hv8q\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 23.743,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\textbook_physics_v2.pdf",
+        "page": 5,
+        "case_id": "textbook_physics_v2_p05",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "textbook_physics_v2_p10",
+      "parser": "mineru",
+      "markdown": "## 第五章 动量与冲量\n\n动量守恒定律是物理学中最重要的守恒定律之一。在一个没有外力作用的系统中，碰撞前后的总动量保持不变。设物体的质量为 m，速度为 v，则动量定义为 p =mv。完全弹性碰撞中，动能和动量同时守恒；非弹性碰撞中，仅动量守恒。\n\n动量的定义式为：\n\n$$\n\\$ 0=mvee\n$$\n\n下表列出三种典型碰撞的前后速度数据：\n\n<table><tr><td rowspan=1 colspan=1>碰撞类型</td><td rowspan=1 colspan=1>初速度 (m/s)</td><td rowspan=1 colspan=1>末速度(m/s)</td></tr><tr><td rowspan=1 colspan=1>完全弹性</td><td rowspan=1 colspan=1>5.0</td><td rowspan=1 colspan=1>5.0</td></tr><tr><td rowspan=1 colspan=1>完全非弹性</td><td rowspan=1 colspan=1>5.0</td><td rowspan=1 colspan=1>2.5</td></tr><tr><td rowspan=1 colspan=1>部分弹性</td><td rowspan=1 colspan=1>5.0</td><td rowspan=1 colspan=1>3.8</td></tr></table>\n\n在完全弹性碰撞中，系统动能守恒；在完全非弹性碰撞中，两物体粘连后以相同速度运动，动能损失最大。\n\n||||||||||||| |||||||||||||||",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\textbook_physics_v2.pdf\" --page \"10\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-chzx1b5j\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 26.413,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\textbook_physics_v2.pdf",
+        "page": 10,
+        "case_id": "textbook_physics_v2_p10",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "textbook_physics_v2_p15",
+      "parser": "mineru",
+      "markdown": "## 第七章 机械能守恒\n\n在只有保守力做功的情况下，系统的机械能守恒。即动能与势能之和保持不变。这一原理在分析单摆运动、斜面滑块和弹簧振子等问题时非常有用。机械能守恒的条件是：系统不受非保守力（如摩擦力）做功。\n\n机械能守恒的表达式为：\n\n$$\n\\$ 123,456,7\n$$\n\n其中 E_k 为动能 $( \\mathsf E \\_ \\mathsf k = \\sqsubseteq \\sqcap \\mathsf { m } \\mathsf { v } \\bigsqcup )$ ，E_p 为势能（重力势能 $\\mathsf { E \\_ p } = \\mathsf { m g h } )$ ，E为系统的总机械能。\n\n[示意图：单摆从最高点到最低点的能量转换]\n\n图 3-1 单摆运动能量变化示意图\n\n参见 Halliday, Fundamentals of Physics, 第 10 版, 第 7 章",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\textbook_physics_v2.pdf\" --page \"15\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-0rjxnz6e\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 22.596,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\textbook_physics_v2.pdf",
+        "page": 15,
+        "case_id": "textbook_physics_v2_p15",
+        "output_source": "file"
+      }
+    }
+  ]
+}

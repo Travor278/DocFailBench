@@ -1,0 +1,52 @@
+{
+  "predictions": [
+    {
+      "case_id": "zh_paper_double_column_001_p3",
+      "parser": "sample_parser",
+      "markdown": "# 基于视觉语言模型的文档理解\n\n中国人工智能学会通讯 2026 年第 3 期\n\n图 2\n\n图 2 实验流程\n\n模型比较如下：\n\n| 模型 | 语言 | 得分 |\n| --- | --- | --- |\n| Qwen2.5-VL | 中英 | 88.2 |\n| MinerU | 中英 | 81.4 |\n\n核心目标为 $\\sum_{i=1}^{n} x_i$ 的稳定识别。",
+      "elements": [
+        {
+          "type": "text",
+          "text": "基于视觉语言模型的文档理解",
+          "page": 3,
+          "bbox": [80, 120, 520, 156]
+        }
+      ],
+      "metadata": {
+        "note": "Synthetic prediction with intentional header pollution."
+      }
+    },
+    {
+      "case_id": "cn_textbook_formula_002_p12",
+      "parser": "sample_parser",
+      "markdown": "动 能 定 理 表 明 合 外 力 做 功 等 于 物 体 动 能 的 变 化 量。\n\n公式写作 Ek = 1/2 m v 2。\n\n结论 结论 结论 结论 结论 结论 结论 结论 结论 结论 结论 结论 结论 结论 结论 结论。",
+      "elements": [
+        {
+          "type": "text",
+          "text": "动能定理表明合外力做功等于物体动能的变化量。",
+          "page": 12,
+          "bbox": [95, 210, 480, 250]
+        }
+      ],
+      "metadata": {
+        "note": "Synthetic prediction with formula corruption and OCR spacing."
+      }
+    },
+    {
+      "case_id": "finance_table_mixed_003_p8",
+      "parser": "sample_parser",
+      "markdown": "| 项目 | 2025 | 2024 | YoY |\n| --- | --- | --- | --- |\n| 营业收入 | 1,234.56 | 1,010.30 | 22.2% |\n| 净利润 | 98.70 | 80.10 | 23.2% |\n| R&D | 45.00 | 39.00 | 15.4% |",
+      "elements": [
+        {
+          "type": "table",
+          "text": "营业收入 1,234.56",
+          "page": 8,
+          "bbox": [72, 280, 540, 430]
+        }
+      ],
+      "metadata": {
+        "note": "Synthetic prediction that should mostly pass."
+      }
+    }
+  ]
+}

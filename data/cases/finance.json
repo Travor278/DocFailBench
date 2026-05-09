@@ -1,0 +1,405 @@
+{
+  "version": "0.1",
+  "cases": [
+    {
+      "case_id": "finance_annual2024_p4",
+      "title": "Financial highlights table with merged header and dense numeric data",
+      "document": {
+        "path": "data/source_pdfs/placeholder/finance_annual_report_2024.pdf",
+        "page": 4,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh",
+        "document_type": "financial_report",
+        "layout": ["merged_header", "dense_numbers"],
+        "risk_tags": ["table", "numeric_fidelity"]
+      },
+      "assertions": [
+        {
+          "id": "highlights_title",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Financial highlights section title must survive extraction.",
+          "tags": ["text"],
+          "params": {
+            "text": "主要财务数据和财务指标"
+          }
+        },
+        {
+          "id": "revenue_cell",
+          "type": "table_cell_exists",
+          "severity": "blocker",
+          "description": "Revenue row label must appear as a table cell.",
+          "tags": ["table"],
+          "params": {
+            "text": "营业收入"
+          }
+        },
+        {
+          "id": "net_profit_cell",
+          "type": "table_cell_exists",
+          "severity": "blocker",
+          "description": "Net profit row label must appear.",
+          "tags": ["table"],
+          "params": {
+            "text": "净利润"
+          }
+        },
+        {
+          "id": "revenue_amount_regex",
+          "type": "regex_match",
+          "severity": "blocker",
+          "description": "Revenue amount with comma-separated digits must be preserved.",
+          "tags": ["numeric"],
+          "params": {
+            "pattern": "1,285,432\\.67"
+          }
+        },
+        {
+          "id": "roe_cell",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "description": "ROE metric label must appear in table.",
+          "tags": ["table"],
+          "params": {
+            "text": "净资产收益率"
+          }
+        },
+        {
+          "id": "highlights_shape",
+          "type": "table_shape",
+          "severity": "major",
+          "description": "Highlights table should have at least 6 rows and 4 columns.",
+          "tags": ["table"],
+          "params": {
+            "row_count": 9,
+            "col_count": 4
+          }
+        },
+        {
+          "id": "no_tail_loop",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        }
+      ],
+      "notes": "Tests merged-header financial highlights table. Parsers must preserve row labels and numeric amounts with comma formatting."
+    },
+    {
+      "case_id": "finance_annual2024_p6",
+      "title": "Balance sheet with borderless tables and dense accounting line items",
+      "document": {
+        "path": "data/source_pdfs/placeholder/finance_annual_report_2024.pdf",
+        "page": 6,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh",
+        "document_type": "financial_report",
+        "layout": ["borderless_table", "merged_header", "dense_numbers"],
+        "risk_tags": ["table", "numeric_fidelity", "borderless"]
+      },
+      "assertions": [
+        {
+          "id": "balance_title",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Balance sheet title must be present.",
+          "tags": ["text"],
+          "params": {
+            "text": "合并资产负债表"
+          }
+        },
+        {
+          "id": "cash_cell",
+          "type": "table_cell_exists",
+          "severity": "blocker",
+          "description": "Cash and cash equivalents line item must appear.",
+          "tags": ["table"],
+          "params": {
+            "text": "货币资金"
+          }
+        },
+        {
+          "id": "ar_cell",
+          "type": "table_cell_exists",
+          "severity": "blocker",
+          "description": "Trading financial assets line item must appear.",
+          "tags": ["table"],
+          "params": {
+            "text": "交易性金融资产"
+          }
+        },
+        {
+          "id": "cash_amount_regex",
+          "type": "regex_match",
+          "severity": "blocker",
+          "description": "Cash amount must be preserved with comma formatting.",
+          "tags": ["numeric"],
+          "params": {
+            "pattern": "856,234\\.56"
+          }
+        },
+        {
+          "id": "total_assets_regex",
+          "type": "regex_match",
+          "severity": "major",
+          "description": "Total assets amount must be preserved.",
+          "tags": ["numeric"],
+          "params": {
+            "pattern": "3,542,187\\.65"
+          }
+        },
+        {
+          "id": "balance_shape",
+          "type": "table_shape",
+          "severity": "major",
+          "description": "Balance sheet table should have at least 15 rows and 4 columns.",
+          "tags": ["table"],
+          "params": {
+            "row_count": 36,
+            "col_count": 4
+          }
+        },
+        {
+          "id": "no_page_number",
+          "type": "regex_absence",
+          "severity": "minor",
+          "description": "Bare page number should not appear as standalone text.",
+          "tags": ["pollution"],
+          "params": {
+            "pattern": "^\\s*6\\s*$"
+          }
+        },
+        {
+          "id": "no_standalone_page6",
+          "type": "no_page_number",
+          "severity": "minor",
+          "description": "Standalone page number 6 must not pollute balance sheet text.",
+          "tags": ["pollution", "page_number"],
+          "params": {
+            "page": 6
+          }
+        },
+        {
+          "id": "no_tail_loop",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        }
+      ],
+      "notes": "Tests borderless table extraction for balance sheet assets section."
+    },
+    {
+      "case_id": "finance_annual2024_p8",
+      "title": "Balance sheet continuation with owners equity section",
+      "document": {
+        "path": "data/source_pdfs/placeholder/finance_annual_report_2024.pdf",
+        "page": 8,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh",
+        "document_type": "financial_report",
+        "layout": ["borderless_table", "dense_numbers"],
+        "risk_tags": ["table", "numeric_fidelity"]
+      },
+      "assertions": [
+        {
+          "id": "balance_continuation_title",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Balance sheet continuation title must be present.",
+          "tags": ["text"],
+          "params": {
+            "text": "合并资产负债表（续）"
+          }
+        },
+        {
+          "id": "equity_section_header",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Owners equity section header must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "所有者权益"
+          }
+        },
+        {
+          "id": "share_capital_cell",
+          "type": "table_cell_exists",
+          "severity": "blocker",
+          "description": "Share capital (股本) line item must appear.",
+          "tags": ["table"],
+          "params": {
+            "text": "股本"
+          }
+        },
+        {
+          "id": "capital_reserve_cell",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "description": "Capital reserve (资本公积) line item must appear.",
+          "tags": ["table"],
+          "params": {
+            "text": "资本公积"
+          }
+        },
+        {
+          "id": "retained_earnings_cell",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "description": "Retained earnings (未分配利润) must appear.",
+          "tags": ["table"],
+          "params": {
+            "text": "未分配利润"
+          }
+        },
+        {
+          "id": "capital_reserve_amount",
+          "type": "regex_match",
+          "severity": "blocker",
+          "description": "Capital reserve amount must be preserved.",
+          "tags": ["numeric"],
+          "params": {
+            "pattern": "456,789\\.01"
+          }
+        },
+        {
+          "id": "total_equity_amount",
+          "type": "regex_match",
+          "severity": "major",
+          "description": "Total equity amount must be preserved.",
+          "tags": ["numeric"],
+          "params": {
+            "pattern": "1,151,954\\.36"
+          }
+        },
+        {
+          "id": "no_tail_loop",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        }
+      ],
+      "notes": "Tests owners equity section extraction from balance sheet continuation. Dense numeric data in borderless table."
+    },
+    {
+      "case_id": "finance_annual2024_p9",
+      "title": "Income statement with line-item flow and year-over-year comparison",
+      "document": {
+        "path": "data/source_pdfs/placeholder/finance_annual_report_2024.pdf",
+        "page": 9,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh",
+        "document_type": "financial_report",
+        "layout": ["borderless_table", "merged_header", "dense_numbers"],
+        "risk_tags": ["table", "numeric_fidelity", "reading_order"]
+      },
+      "assertions": [
+        {
+          "id": "income_title",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Income statement title must be present.",
+          "tags": ["text"],
+          "params": {
+            "text": "合并利润表"
+          }
+        },
+        {
+          "id": "revenue_line",
+          "type": "table_cell_exists",
+          "severity": "blocker",
+          "description": "Revenue line item must appear in income statement.",
+          "tags": ["table"],
+          "params": {
+            "text": "营业收入"
+          }
+        },
+        {
+          "id": "cost_of_sales_cell",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "description": "Cost of sales line item must appear.",
+          "tags": ["table"],
+          "params": {
+            "text": "营业成本"
+          }
+        },
+        {
+          "id": "rd_expense_cell",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "description": "R&D expense line must be present.",
+          "tags": ["table"],
+          "params": {
+            "text": "研发费用"
+          }
+        },
+        {
+          "id": "net_profit_amount",
+          "type": "regex_match",
+          "severity": "blocker",
+          "description": "Net profit amount must be preserved with comma formatting.",
+          "tags": ["numeric"],
+          "params": {
+            "pattern": "186,521\\.43"
+          }
+        },
+        {
+          "id": "revenue_before_profit",
+          "type": "reading_order",
+          "severity": "major",
+          "description": "Revenue line must appear before net profit line.",
+          "tags": ["reading_order"],
+          "params": {
+            "before": "营业收入",
+            "after": "净利润"
+          }
+        },
+        {
+          "id": "income_shape",
+          "type": "table_shape",
+          "severity": "major",
+          "description": "Income statement table should have at least 15 rows and 4 columns.",
+          "tags": ["table"],
+          "params": {
+            "row_count": 21,
+            "col_count": 4
+          }
+        },
+        {
+          "id": "no_tail_loop",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        }
+      ],
+      "notes": "Tests income statement extraction. Reading order assertion catches parsers that scramble line items."
+    }
+  ]
+}

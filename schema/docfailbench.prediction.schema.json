@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docfailbench.org/schema/prediction.schema.json",
+  "title": "DocFailBench Prediction File",
+  "type": "object",
+  "required": ["predictions"],
+  "properties": {
+    "predictions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/prediction"
+      }
+    }
+  },
+  "$defs": {
+    "prediction": {
+      "type": "object",
+      "required": ["case_id", "parser", "markdown"],
+      "properties": {
+        "case_id": { "type": "string" },
+        "parser": { "type": "string" },
+        "markdown": { "type": "string" },
+        "elements": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "text": { "type": "string" },
+              "bbox": {
+                "type": "array",
+                "items": { "type": "number" },
+                "minItems": 4
+              },
+              "poly": {
+                "type": "array",
+                "items": { "type": "number" },
+                "minItems": 8
+              },
+              "page": { "type": "integer" },
+              "type": { "type": "string" }
+            },
+            "additionalProperties": true
+          }
+        },
+        "metadata": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

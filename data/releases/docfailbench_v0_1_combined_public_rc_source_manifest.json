@@ -1,0 +1,37 @@
+{
+  "release_name": "DocFailBench-v0.1-combined-public-rc",
+  "status": "release_candidate_frozen_combined_public",
+  "profiles": {
+    "public_real_rc": {
+      "cases": 74,
+      "assertions": 674
+    },
+    "non_gov_stage7_structural": {
+      "cases": 24,
+      "assertions": 165
+    },
+    "non_gov_stage8_reviewed": {
+      "cases": 18,
+      "assertions": 38
+    }
+  },
+  "source_manifests": [
+    {
+      "path": "data/releases/docfailbench_v0_1_public_real_rc_manifest.json",
+      "sha256": "4d8c98f9c178a7b5ac36d9cb7dab4c1c2dfdcb38aaec448a92d20c4e945e46b0"
+    },
+    {
+      "path": "data/releases/docfailbench_v0_1_non_gov_public_stage7_rc_manifest.json",
+      "sha256": "66bcf8924fdfbe59800aaf66b963c10193b9870ac9ad80fdad83a25ff359df1a"
+    },
+    {
+      "path": "runs/stage8_non_gov_public_batch2/stage8_source_license_manifest.json",
+      "sha256": "fdd44480232fe0ab522d504a926a666f93da0223bf178aabc4b9e978e8fbfde8"
+    }
+  ],
+  "notes": [
+    "OpenStax Calculus is CC BY-NC-SA 4.0 and remains visible in downstream cards.",
+    "Stage8 reuses Stage7 cached source PDFs and license evidence.",
+    "Profile labels must remain visible in combined release reporting."
+  ]
+}

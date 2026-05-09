@@ -1,0 +1,55 @@
+{
+  "predictions": [
+    {
+      "case_id": "zh_paper_double_column_001_p3",
+      "parser": "mineru",
+      "markdown": "中国人工智能学会通讯 2026 年第 3 期\n\n基于视觉语言模型的文档理解\n\n近年来，视觉语言模型在文档理解领域取得了显著进展。本文提出了一种新的多模态文档分析框架，结合了视觉编码器和语言解码器的优势。\n\n<table><tr><td rowspan=1 colspan=1>模型</td><td rowspan=1 colspan=1>语言</td><td rowspan=1 colspan=1>得分</td></tr><tr><td rowspan=1 colspan=1>Qwen2.5-VL</td><td rowspan=1 colspan=1>中英</td><td rowspan=1 colspan=1>88.2</td></tr><tr><td rowspan=1 colspan=1>MinerU</td><td rowspan=1 colspan=1>中英</td><td rowspan=1 colspan=1>81.4</td></tr><tr><td rowspan=1 colspan=1>Docling</td><td rowspan=1 colspan=1>中英</td><td rowspan=1 colspan=1>76.5</td></tr></table>\n\n图 2\n\n图 2 实验流程\n\n核心目标为 \\$\\sum_{i=1}^{n} x_i\\$ 的稳定识别与验证。",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\zh_paper_double_column_001.pdf\" --page \"3\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-7rztn7ai\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 46.303,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\zh_paper_double_column_001.pdf",
+        "page": 3,
+        "case_id": "zh_paper_double_column_001_p3",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "cn_textbook_formula_002_p12",
+      "parser": "mineru",
+      "markdown": "第四章 动能与动能定理\n\n动能定理表明合外力做功等于物体动能的变化量。当一个质量为 m\n\n的物体在力的作用下获得速度 v 时，其动能表达式为：\n\n\\$E_k=\\frac{1}{2}mv^2\\$\n\n其中 m 为物体质量，v 为物体速度。这一公式在经典力学中有广泛应用。",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\cn_textbook_formula_002.pdf\" --page \"12\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-iymqp29b\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 36.588,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\cn_textbook_formula_002.pdf",
+        "page": 12,
+        "case_id": "cn_textbook_formula_002_p12",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "finance_table_mixed_003_p8",
+      "parser": "mineru",
+      "markdown": "## 合并利润表\n\n<table><tr><td rowspan=1 colspan=1>项目</td><td rowspan=1 colspan=1>2025</td><td rowspan=1 colspan=1>2024</td><td rowspan=1 colspan=1>YoY</td></tr><tr><td rowspan=1 colspan=1>营业收入</td><td rowspan=1 colspan=1>1,234.56</td><td rowspan=1 colspan=1>1,010.30</td><td rowspan=1 colspan=1>22. 2%</td></tr><tr><td rowspan=1 colspan=1>净利润</td><td rowspan=1 colspan=1>98.70</td><td rowspan=1 colspan=1>80.10</td><td rowspan=1 colspan=1>23. 2%</td></tr><tr><td rowspan=1 colspan=1>R&amp;D；</td><td rowspan=1 colspan=1>45.00</td><td rowspan=1 colspan=1>39.00</td><td rowspan=1 colspan=1>15.4%</td></tr></table>",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_mineru.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_table_mixed_003.pdf\" --page \"8\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-8vjb79lt\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 45.187,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_table_mixed_003.pdf",
+        "page": 8,
+        "case_id": "finance_table_mixed_003_p8",
+        "output_source": "file"
+      }
+    }
+  ]
+}

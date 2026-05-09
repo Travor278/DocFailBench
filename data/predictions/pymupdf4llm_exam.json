@@ -1,0 +1,72 @@
+{
+  "predictions": [
+    {
+      "case_id": "exam_physics_final_p2",
+      "parser": "pymupdf4llm",
+      "markdown": "北京师范大学附属中学 \n\n## 一、选择题（每题3分，共30分） \n\n1. 一个物体从静止开始做匀加速直线运动，加速度为2 m/s�，则经过5 s后物体的速度为： \n\n- A. 5 m/s B. 10 m/s C. 15 m/s D. 20 m/s \n\n## 2. 关于牛顿第二定律，下列说法正确的是： \n\n- A. 物体所受合力越大，加速度越大 B. 物体的质量越大，加速度越大 C. 物体的加速度与速度成正比 D. 物体的加速度与位移成正比 \n\n3. 一辆汽车以20 m/s的速度行驶，刹车后做匀减速直线运动，加速度大小为4 m/s�，则汽车刹车后6 s内的位移为： \n\n- A. 40 m B. 48 m C. 50 m D. 60 m \n\n4. 在光滑水平面上，质量为2 kg的物体受到水平方向的力F = 10 N，物体的加速度为： \n\n- A. 2 m/s� B. 5 m/s� C. 10 m/s� D. 20 m/s� \n\n第2页 共4页 \n\n",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_pymupdf4llm.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\exam_physics_final.pdf\" --page \"2\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-i60gmyky\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 1.516,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\exam_physics_final.pdf",
+        "page": 2,
+        "case_id": "exam_physics_final_p2",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "exam_physics_final_p3",
+      "parser": "pymupdf4llm",
+      "markdown": "北京师范大学附属中学 \n\n## 二、计算题（共40分） \n\n1.（10分）一质量为 m = 5 kg 的物体放在粗糙水平面上，受到水平拉力 F = 20 N 的作用，物体与水平面之间的动摩擦因数为 μ = 0.2。已知重力加速度 g = 10 m/s�，求物体的加速度 a。 提示：f = μN，F - f = ma \n\n2.（10分）一辆汽车从静止开始做匀加速直线运动，经过 t = 10 s 后速度达到 v = 30 m/s。求： （1）汽车的加速度 a； （2）汽车在前10 s 内的位移 s。 公式：v = at，s = �at� \n\n3.（10分）一个电阻 R = 10 Ω 的导体，两端加上电压 U = 20 V，求通过导体的电流 I 和通电 t \n\n= 60 s 内产生的热量 Q。 \n\n公式：I = U/R，Q = I�Rt \n\n第3页 共4页 \n\n",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_pymupdf4llm.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\exam_physics_final.pdf\" --page \"3\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-evdr2efj\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 1.356,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\exam_physics_final.pdf",
+        "page": 3,
+        "case_id": "exam_physics_final_p3",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "exam_physics_final_p4",
+      "parser": "pymupdf4llm",
+      "markdown": "北京师范大学附属中学 \n\n## 三、评分标准 \n\n|题号|题型|分值|得分|\n|---|---|---|---|\n|一1~10|选择题|30||\n|二1|计算题|10||\n|二2|计算题|10||\n|二3|计算题|10||\n|实验题|实验题|10||\n|合计||100||\n\n\n\n## 阅卷人签名：__________ 复核人签名：__________ \n\n第4页 共4页 \n\n",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_pymupdf4llm.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\exam_physics_final.pdf\" --page \"4\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-2965jyy4\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 1.504,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\exam_physics_final.pdf",
+        "page": 4,
+        "case_id": "exam_physics_final_p4",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "exam_physics_final_p1",
+      "parser": "pymupdf4llm",
+      "markdown": "北京师范大学附属中学 2025—2026学年度第一学期期末考试 高一年级物理试卷 \n\n考试时间：90分钟 满分：100分 \n\n注意事项：1. 本试卷共4页，满分100分。2. 请用黑色签字笔在答题卡上作答，在试卷上作答无效。3. 考试结束后，请将试卷和答题卡一并交回。 \n\n第1页 共4页 \n\n",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_pymupdf4llm.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\exam_physics_final.pdf\" --page \"1\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-hhx3xhsu\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 1.489,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\exam_physics_final.pdf",
+        "page": 1,
+        "case_id": "exam_physics_final_p1",
+        "output_source": "file"
+      }
+    }
+  ]
+}

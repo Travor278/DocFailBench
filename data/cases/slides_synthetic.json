@@ -1,0 +1,728 @@
+{
+  "version": "0.1",
+  "cases": [
+    {
+      "case_id": "slides_ai_course_001_p1",
+      "title": "Lecture title slide with course metadata and repeated footer",
+      "document": {
+        "path": "data/source_pdfs/placeholder/slides_ai_course_001.pdf",
+        "page": 1,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh_en_mixed",
+        "document_type": "lecture_slides",
+        "layout": ["title_slide", "repeated_footer"],
+        "risk_tags": ["header_pollution", "reading_order", "cjk_en_mix"]
+      },
+      "assertions": [
+        {
+          "id": "course_title",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Course title must survive extraction.",
+          "tags": ["text"],
+          "params": {
+            "text": "人工智能导论"
+          }
+        },
+        {
+          "id": "subtitle_present",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Subtitle with mixed Chinese must be preserved.",
+          "tags": ["text"],
+          "params": {
+            "text": "深度学习基础与应用"
+          }
+        },
+        {
+          "id": "school_name",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "School/department name must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "北京大学计算机科学与技术学院"
+          }
+        },
+        {
+          "id": "instructor_name",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Instructor name must be extracted.",
+          "tags": ["text"],
+          "params": {
+            "text": "张明教授"
+          }
+        },
+        {
+          "id": "semester_info",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Semester information must be present.",
+          "tags": ["text"],
+          "params": {
+            "text": "2026年春季学期"
+          }
+        },
+        {
+          "id": "school_before_instructor",
+          "type": "reading_order",
+          "severity": "major",
+          "description": "School name must appear before instructor name.",
+          "tags": ["reading_order"],
+          "params": {
+            "before": "北京大学计算机科学与技术学院",
+            "after": "张明教授"
+          }
+        },
+        {
+          "id": "no_slide_footer_p1",
+          "type": "regex_absence",
+          "severity": "minor",
+          "description": "Slide footer page number text should not pollute body content.",
+          "tags": ["pollution"],
+          "params": {
+            "pattern": "第1页"
+          }
+        },
+        {
+          "id": "no_tail_repetition",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        }
+      ],
+      "notes": "Tests title slide metadata extraction with repeated footer pollution detection."
+    },
+    {
+      "case_id": "slides_ai_course_001_p2",
+      "title": "Course outline slide with bullet hierarchy and reading order",
+      "document": {
+        "path": "data/source_pdfs/placeholder/slides_ai_course_001.pdf",
+        "page": 2,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh_en_mixed",
+        "document_type": "lecture_slides",
+        "layout": ["bullet_list", "repeated_footer"],
+        "risk_tags": ["reading_order", "cjk_en_mix", "header_pollution"]
+      },
+      "assertions": [
+        {
+          "id": "outline_title",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Section title '课程大纲' must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "课程大纲"
+          }
+        },
+        {
+          "id": "chapter_1_bullet",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "First chapter bullet about machine learning basics must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "机器学习基础"
+          }
+        },
+        {
+          "id": "chapter_3_cnn",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "CNN chapter must mention ResNet and Vision Transformer.",
+          "tags": ["text", "cjk_en_mix"],
+          "params": {
+            "text": "Vision Transformer"
+          }
+        },
+        {
+          "id": "chapter_5_transformer",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Transformer chapter must mention Self-Attention.",
+          "tags": ["text", "cjk_en_mix"],
+          "params": {
+            "text": "Self-Attention"
+          }
+        },
+        {
+          "id": "chapter_6_llm",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "LLM chapter must mention specific model names.",
+          "tags": ["text", "cjk_en_mix"],
+          "params": {
+            "text": "Qwen2.5-VL"
+          }
+        },
+        {
+          "id": "chapter_7_multimodal",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Multimodal chapter must mention CLIP and BLIP-2.",
+          "tags": ["text", "cjk_en_mix"],
+          "params": {
+            "text": "BLIP-2"
+          }
+        },
+        {
+          "id": "ch1_before_ch5",
+          "type": "reading_order",
+          "severity": "major",
+          "description": "Chapter 1 must appear before chapter 5.",
+          "tags": ["reading_order"],
+          "params": {
+            "before": "机器学习基础",
+            "after": "Transformer 架构"
+          }
+        },
+        {
+          "id": "ch5_before_ch7",
+          "type": "reading_order",
+          "severity": "major",
+          "description": "Chapter 5 must appear before chapter 7.",
+          "tags": ["reading_order"],
+          "params": {
+            "before": "Self-Attention",
+            "after": "多模态学习"
+          }
+        },
+        {
+          "id": "no_slide_footer_p2",
+          "type": "regex_absence",
+          "severity": "minor",
+          "description": "Slide footer page number text should not pollute body content.",
+          "tags": ["pollution"],
+          "params": {
+            "pattern": "第2页"
+          }
+        },
+        {
+          "id": "no_tail_repetition",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        }
+      ],
+      "notes": "Tests outline bullet extraction with reading order across 7 chapters and mixed zh-en model names."
+    },
+    {
+      "case_id": "slides_ai_course_001_p3",
+      "title": "Model comparison table with structure and mixed zh-en cell content",
+      "document": {
+        "path": "data/source_pdfs/placeholder/slides_ai_course_001.pdf",
+        "page": 3,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh_en_mixed",
+        "document_type": "lecture_slides",
+        "layout": ["markdown_table", "repeated_footer"],
+        "risk_tags": ["table", "cjk_en_mix", "numeric_fidelity"]
+      },
+      "assertions": [
+        {
+          "id": "table_title",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Table title '主流模型对比' must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "主流模型对比"
+          }
+        },
+        {
+          "id": "bert_cell",
+          "type": "table_cell_exists",
+          "severity": "blocker",
+          "description": "BERT model name must appear in the table.",
+          "tags": ["table", "cjk_en_mix"],
+          "params": {
+            "text": "BERT"
+          }
+        },
+        {
+          "id": "gpt4_cell",
+          "type": "table_cell_exists",
+          "severity": "blocker",
+          "description": "GPT-4 model name must appear in the table.",
+          "tags": ["table", "cjk_en_mix"],
+          "params": {
+            "text": "GPT-4"
+          }
+        },
+        {
+          "id": "qwen_cell",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "description": "Qwen2.5-VL model name must appear in the table.",
+          "tags": ["table", "cjk_en_mix"],
+          "params": {
+            "text": "Qwen2.5-VL"
+          }
+        },
+        {
+          "id": "resnet_cell",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "description": "ResNet-152 model name must appear in the table.",
+          "tags": ["table", "cjk_en_mix"],
+          "params": {
+            "text": "ResNet-152"
+          }
+        },
+        {
+          "id": "table_shape",
+          "type": "table_shape",
+          "severity": "major",
+          "description": "Table should have 5 rows and 4 columns.",
+          "tags": ["table"],
+          "params": {
+            "row_count": 5,
+            "col_count": 4
+          }
+        },
+        {
+          "id": "bert_params",
+          "type": "regex_match",
+          "severity": "major",
+          "description": "BERT parameter count 340M must appear.",
+          "tags": ["numeric"],
+          "params": {
+            "pattern": "340M"
+          }
+        },
+        {
+          "id": "ner_scenario",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "NER use-case label must appear in table.",
+          "tags": ["table", "cjk_en_mix"],
+          "params": {
+            "text": "NER"
+          }
+        },
+        {
+          "id": "no_slide_footer_p3",
+          "type": "regex_absence",
+          "severity": "minor",
+          "description": "Slide footer page number text should not pollute body content.",
+          "tags": ["pollution"],
+          "params": {
+            "pattern": "第3页"
+          }
+        },
+        {
+          "id": "no_tail_repetition",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        }
+      ],
+      "notes": "Tests table extraction from a lecture slide: 5x4 comparison table with English model names and Chinese descriptions."
+    },
+    {
+      "case_id": "slides_ai_course_001_p4",
+      "title": "Transformer architecture slide with encoder-decoder reading order",
+      "document": {
+        "path": "data/source_pdfs/placeholder/slides_ai_course_001.pdf",
+        "page": 4,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh_en_mixed",
+        "document_type": "lecture_slides",
+        "layout": ["two_section", "repeated_footer"],
+        "risk_tags": ["reading_order", "cjk_en_mix", "header_pollution"]
+      },
+      "assertions": [
+        {
+          "id": "arch_title",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Architecture slide title must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "Transformer 架构详解"
+          }
+        },
+        {
+          "id": "encoder_section",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Encoder section header must appear.",
+          "tags": ["text", "cjk_en_mix"],
+          "params": {
+            "text": "编码器 Encoder"
+          }
+        },
+        {
+          "id": "decoder_section",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Decoder section header must appear.",
+          "tags": ["text", "cjk_en_mix"],
+          "params": {
+            "text": "解码器 Decoder"
+          }
+        },
+        {
+          "id": "encoder_before_decoder",
+          "type": "reading_order",
+          "severity": "blocker",
+          "description": "Encoder section must appear before decoder section.",
+          "tags": ["reading_order"],
+          "params": {
+            "before": "编码器 Encoder",
+            "after": "解码器 Decoder"
+          }
+        },
+        {
+          "id": "multihead_attention",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Multi-Head Self-Attention term must be preserved.",
+          "tags": ["text", "cjk_en_mix"],
+          "params": {
+            "text": "Multi-Head Self-Attention"
+          }
+        },
+        {
+          "id": "layer_norm",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Layer Normalization term must be preserved.",
+          "tags": ["text", "cjk_en_mix"],
+          "params": {
+            "text": "Layer Normalization"
+          }
+        },
+        {
+          "id": "causal_mask",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Causal Mask concept must appear in decoder description.",
+          "tags": ["text", "cjk_en_mix"],
+          "params": {
+            "text": "Causal Mask"
+          }
+        },
+        {
+          "id": "residual_connection",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Residual Connection concept must appear.",
+          "tags": ["text", "cjk_en_mix"],
+          "params": {
+            "text": "Residual Connection"
+          }
+        },
+        {
+          "id": "no_slide_footer_p4",
+          "type": "regex_absence",
+          "severity": "minor",
+          "description": "Slide footer page number text should not pollute body content.",
+          "tags": ["pollution"],
+          "params": {
+            "pattern": "第4页"
+          }
+        },
+        {
+          "id": "no_tail_repetition",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        }
+      ],
+      "notes": "Tests encoder-decoder reading order and preservation of mixed zh-en technical terms (Multi-Head Attention, Layer Normalization, Causal Mask)."
+    },
+    {
+      "case_id": "slides_ai_course_001_p5",
+      "title": "Attention mechanism slide with formula and figure caption binding",
+      "document": {
+        "path": "data/source_pdfs/placeholder/slides_ai_course_001.pdf",
+        "page": 5,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh_en_mixed",
+        "document_type": "lecture_slides",
+        "layout": ["formula_dense", "figure_caption", "repeated_footer"],
+        "risk_tags": ["formula", "caption_binding", "reading_order", "cjk_en_mix"]
+      },
+      "assertions": [
+        {
+          "id": "attn_title",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Attention mechanism slide title must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "注意力机制"
+          }
+        },
+        {
+          "id": "scaled_dot_product",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Full name 'Scaled Dot-Product Attention' must be preserved.",
+          "tags": ["text", "cjk_en_mix"],
+          "params": {
+            "text": "Scaled Dot-Product Attention"
+          }
+        },
+        {
+          "id": "attention_formula",
+          "type": "formula_contains",
+          "severity": "blocker",
+          "description": "Attention formula must be preserved as LaTeX.",
+          "tags": ["formula"],
+          "params": {
+            "latex": "Attention(Q,K,V)"
+          }
+        },
+        {
+          "id": "softmax_in_formula",
+          "type": "formula_contains",
+          "severity": "blocker",
+          "description": "Softmax function must appear in the attention formula.",
+          "tags": ["formula"],
+          "params": {
+            "latex": "softmax"
+          }
+        },
+        {
+          "id": "diagram_label",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Diagram placeholder label must be present.",
+          "tags": ["text"],
+          "params": {
+            "text": "Q、K、V 矩阵运算流程图"
+          }
+        },
+        {
+          "id": "figure_caption_present",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Figure caption text must survive extraction.",
+          "tags": ["text"],
+          "params": {
+            "text": "Scaled Dot-Product Attention 计算流程"
+          }
+        },
+        {
+          "id": "formula_before_caption",
+          "type": "reading_order",
+          "severity": "major",
+          "description": "Formula should appear before figure caption.",
+          "tags": ["reading_order", "formula"],
+          "params": {
+            "before": "Attention(Q,K,V)",
+            "after": "图 3-1"
+          }
+        },
+        {
+          "id": "attention_caption_binding",
+          "type": "caption_binding",
+          "severity": "major",
+          "description": "Attention flow chart caption must be near its figure anchor.",
+          "tags": ["figure", "caption"],
+          "params": {
+            "anchor": "图 3-1",
+            "caption": "Scaled Dot-Product Attention 计算流程",
+            "max_lines": 3
+          }
+        },
+        {
+          "id": "scaling_factor_explained",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Explanation of scaling factor 1/√d_k must appear.",
+          "tags": ["text", "formula"],
+          "params": {
+            "text": "1/√d_k"
+          }
+        },
+        {
+          "id": "no_slide_footer_p5",
+          "type": "regex_absence",
+          "severity": "minor",
+          "description": "Slide footer page number text should not pollute body content.",
+          "tags": ["pollution"],
+          "params": {
+            "pattern": "第5页"
+          }
+        },
+        {
+          "id": "no_tail_repetition",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        }
+      ],
+      "notes": "Tests formula extraction, figure-caption binding, and reading order on a technical slide with LaTeX notation and diagram labels."
+    },
+    {
+      "case_id": "slides_ai_course_001_p6",
+      "title": "Training techniques slide with dense English-embedded bullets and footer pollution",
+      "document": {
+        "path": "data/source_pdfs/placeholder/slides_ai_course_001.pdf",
+        "page": 6,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh_en_mixed",
+        "document_type": "lecture_slides",
+        "layout": ["bullet_list", "repeated_footer"],
+        "risk_tags": ["reading_order", "cjk_en_mix", "header_pollution"]
+      },
+      "assertions": [
+        {
+          "id": "train_title",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Training techniques title must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "训练技巧与实践"
+          }
+        },
+        {
+          "id": "lr_scheduling",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Learning rate scheduling bullet must appear.",
+          "tags": ["text", "cjk_en_mix"],
+          "params": {
+            "text": "Cosine Annealing"
+          }
+        },
+        {
+          "id": "lr_value",
+          "type": "regex_match",
+          "severity": "major",
+          "description": "Learning rate value 3e-4 must be preserved.",
+          "tags": ["numeric"],
+          "params": {
+            "pattern": "3e-4"
+          }
+        },
+        {
+          "id": "dropout_bullet",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Dropout regularization bullet must be present.",
+          "tags": ["text", "cjk_en_mix"],
+          "params": {
+            "text": "Dropout"
+          }
+        },
+        {
+          "id": "mixed_precision",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Mixed precision training bullet must be present.",
+          "tags": ["text", "cjk_en_mix"],
+          "params": {
+            "text": "混合精度训练"
+          }
+        },
+        {
+          "id": "fp16_mentioned",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "FP16 precision type must appear.",
+          "tags": ["text", "cjk_en_mix"],
+          "params": {
+            "text": "FP16"
+          }
+        },
+        {
+          "id": "distributed_training",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Distributed training methods must appear.",
+          "tags": ["text", "cjk_en_mix"],
+          "params": {
+            "text": "FSDP"
+          }
+        },
+        {
+          "id": "data_augmentation",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Data augmentation techniques must appear.",
+          "tags": ["text", "cjk_en_mix"],
+          "params": {
+            "text": "MixUp"
+          }
+        },
+        {
+          "id": "warmup_before_augmentation",
+          "type": "reading_order",
+          "severity": "major",
+          "description": "Learning rate scheduling must appear before data augmentation.",
+          "tags": ["reading_order"],
+          "params": {
+            "before": "学习率调度",
+            "after": "数据增强"
+          }
+        },
+        {
+          "id": "no_slide_footer_p6",
+          "type": "regex_absence",
+          "severity": "minor",
+          "description": "Slide footer page number text should not pollute body content.",
+          "tags": ["pollution"],
+          "params": {
+            "pattern": "第6页"
+          }
+        },
+        {
+          "id": "no_tail_repetition",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        }
+      ],
+      "notes": "Tests dense bullet extraction with heavy English-embedded technical terms (Cosine Annealing, Dropout, FP16, FSDP, MixUp) and repeated footer pollution."
+    }
+  ]
+}

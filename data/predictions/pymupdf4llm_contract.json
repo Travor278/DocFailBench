@@ -1,0 +1,140 @@
+{
+  "predictions": [
+    {
+      "case_id": "contract_service_001_p1",
+      "parser": "pymupdf4llm",
+      "markdown": "## 技术服务合同 \n\n合同编号：HT-2026-00158 \n\n甲方（委托方）：北京云智联科技有限公司 乙方（服务方）：上海数据前沿信息技术有限公司 \n\n签订日期：2026年3月15日 \n\n技术服务合同 · 第1页 \n\n",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_pymupdf4llm.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf\" --page \"1\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-z14qky20\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 1.326,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "page": 1,
+        "case_id": "contract_service_001_p1",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "contract_service_001_p2",
+      "parser": "pymupdf4llm",
+      "markdown": "## 第一条 定义与术语 \n\n本合同中使用的术语定义如下：SLA（Service Level Agreement）指服务等级协议，API（Application Programming Interface）指应用程序编程接口，SDK（Software Development Kit）指软件开发工具包。上述术语在合同各条款中的含义均以本条定义为准。 \n\n## 第二条 服务内容与范围 \n\n乙方为甲方提供以下技术服务：（1）技术咨询服务；（2）系统开发与集成服务；（3）API接 口对接与联调服务；（4）SDK集成与技术支持服务。乙方应按照SLA约定的服务标准提供服务， 系统可用性不低于99.9%（按月度统计），平均响应时间不超过200毫秒。 \n\n技术服务合同 · 第2页 \n\n",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_pymupdf4llm.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf\" --page \"2\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-a8260bdp\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 1.328,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "page": 2,
+        "case_id": "contract_service_001_p2",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "contract_service_001_p3",
+      "parser": "pymupdf4llm",
+      "markdown": "## 第三条 服务费用与支付方式 \n\n本合同总服务费用为人民币壹佰贰拾万元整（人民币1,200,000.00），采用分期付款方式。各 阶段付款金额及条件详见下表。 \n\n|项目阶段|金额（元）|付款时间|付款条件|\n|---|---|---|---|\n|项目预付款|360,000.00|合同签订后5个工作日|甲方确认合同生效|\n|需求分析完成|240,000.00|需求确认后10个工作<br>日|甲方书面确认需求文<br>档|\n|系统开发完成|360,000.00|开发验收后10个工作<br>日|甲方签署验收报告|\n|系统上线运行|180,000.00|上线后30个工作日|系统稳定运行30天|\n|质保期满|60,000.00|质保期满后10个工作<br>日|无重大故障|\n\n\n\n技术服务合同 · 第3页 \n\n",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_pymupdf4llm.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf\" --page \"3\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-o7px9iu6\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 1.44,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "page": 3,
+        "case_id": "contract_service_001_p3",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "contract_service_001_p4",
+      "parser": "pymupdf4llm",
+      "markdown": "## 第四条 交付物与验收标准 \n\n## 4.1 交付物清单 \n\n交付物清单：（1）数据分析平台系统；（2）API网关系统；（3）数据迁移工具；（4）运维监 控面板。 \n\n## 4.2 验收标准 \n\n验收标准：甲方应在收到交付物后15个工作日内完成验收。验收不通过的，乙方应在10个工作 日内完成整改并重新提交验收。 \n\n技术服务合同 · 第4页 \n\n",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_pymupdf4llm.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf\" --page \"4\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-c9ymh49b\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 1.496,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "page": 4,
+        "case_id": "contract_service_001_p4",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "contract_service_001_p5",
+      "parser": "pymupdf4llm",
+      "markdown": "## 第五条 保密条款 \n\n乙方应对甲方提供的所有商业秘密和技术资料严格保密，保密期限为合同终止后三年内有效。 未经甲方书面同意，乙方不得向任何第三方披露、转让或允许他人使用上述保密信息。甲方的 保密信息包括但不限于：用户数据、业务流程、技术文档、源代码及相关的知识产权。 \n\n技术服务合同 · 第5页 \n\n",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_pymupdf4llm.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf\" --page \"5\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-wfqoh3r6\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 1.354,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "page": 5,
+        "case_id": "contract_service_001_p5",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "contract_service_001_p6",
+      "parser": "pymupdf4llm",
+      "markdown": "## 第六条 违约责任与终止条款 \n\n任何一方违反本合同约定的，应承担违约责任，违约金为合同总额的20%。甲方逾期付款的，应 按未付金额每日0.05%的标准支付滞纳金。因不可抗力导致合同无法履行的，双方均不承担违约 责任。 \n\n## 第七条 合同终止 \n\n任何一方可提前30天书面通知对方终止本合同。合同终止后，乙方应在15个工作日内完成工作 交接，并将已完成的交付物移交给甲方。 \n\n技术服务合同 · 第6页 \n\n",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_pymupdf4llm.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf\" --page \"6\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-othwzfr0\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 1.439,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "page": 6,
+        "case_id": "contract_service_001_p6",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "contract_service_001_p7",
+      "parser": "pymupdf4llm",
+      "markdown": "甲方：北京云智联科技有限公司 \n\n法定代表人/授权代表：________________ \n\n签字日期：________________ （盖章） \n\n乙方：上海数据前沿信息技术有限公司 \n\n法定代表人/授权代表：________________ 签字日期：________________ （盖章） \n\n本合同一式四份，甲乙双方各执两份，具有同等法律效力。 \n\n技术服务合同 · 第7页 \n\n",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_pymupdf4llm.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf\" --page \"7\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-ds8uzlbf\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 1.421,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "page": 7,
+        "case_id": "contract_service_001_p7",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "contract_service_001_p8",
+      "parser": "pymupdf4llm",
+      "markdown": "## 附件一：技术规范文档 \n\n本文档包含项目相关的API接口规范、SDK集成指南及系统架构设计说明。详细技术参数请参阅 附件二《系统部署手册》。 \n\n## 附件二：系统部署手册 \n\n本手册包含系统部署的详细步骤、环境配置要求及运维管理规范。部署环境要求：Linux CentOS 7+ 或 Ubuntu 20.04+，Docker 20.10+，Kubernetes 1.24+。 \n\n技术服务合同 · 第8页 \n\n",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_pymupdf4llm.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf\" --page \"8\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-jcvq2fa6\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 1.656,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "page": 8,
+        "case_id": "contract_service_001_p8",
+        "output_source": "file"
+      }
+    }
+  ]
+}

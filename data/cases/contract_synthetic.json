@@ -1,0 +1,1046 @@
+{
+  "version": "0.1",
+  "cases": [
+    {
+      "case_id": "contract_service_001_p1",
+      "title": "Contract cover page with party names, contract number, and date",
+      "document": {
+        "path": "data/source_pdfs/placeholder/contract_service_001.pdf",
+        "page": 1,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh",
+        "document_type": "contract",
+        "layout": ["cover_page", "repeated_footer"],
+        "risk_tags": ["reading_order", "date_fidelity", "party_name_loss"]
+      },
+      "assertions": [
+        {
+          "id": "contract_title",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Contract title '技术服务合同' must survive extraction.",
+          "tags": ["text"],
+          "params": {
+            "text": "技术服务合同"
+          }
+        },
+        {
+          "id": "contract_number",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Contract number must be extracted intact.",
+          "tags": ["text"],
+          "params": {
+            "text": "合同编号：HT-2026-00158"
+          }
+        },
+        {
+          "id": "party_a_name",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Party A full company name must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "北京云智联科技有限公司"
+          }
+        },
+        {
+          "id": "party_b_name",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Party B full company name must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "上海数据前沿信息技术有限公司"
+          }
+        },
+        {
+          "id": "sign_date",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Signing date must be preserved.",
+          "tags": ["date"],
+          "params": {
+            "text": "2026年3月15日"
+          }
+        },
+        {
+          "id": "party_a_label",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Party A label with role description must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "甲方（委托方）"
+          }
+        },
+        {
+          "id": "party_b_label",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Party B label with role description must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "乙方（服务方）"
+          }
+        },
+        {
+          "id": "title_before_parties",
+          "type": "reading_order",
+          "severity": "major",
+          "description": "Contract title must appear before party names.",
+          "tags": ["reading_order"],
+          "params": {
+            "before": "技术服务合同",
+            "after": "北京云智联科技有限公司"
+          }
+        },
+        {
+          "id": "party_a_before_b",
+          "type": "reading_order",
+          "severity": "major",
+          "description": "Party A must appear before Party B.",
+          "tags": ["reading_order"],
+          "params": {
+            "before": "甲方（委托方）",
+            "after": "乙方（服务方）"
+          }
+        },
+        {
+          "id": "no_cover_footer",
+          "type": "regex_absence",
+          "severity": "minor",
+          "description": "Page footer text should not pollute cover page body.",
+          "tags": ["pollution"],
+          "params": {
+            "pattern": "技术服务合同\\s*·\\s*第1页"
+          }
+        },
+        {
+          "id": "no_tail_repetition",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        }
+      ],
+      "notes": "Tests cover page metadata: contract title, number, both party names with roles, signing date, and reading order."
+    },
+    {
+      "case_id": "contract_service_001_p2",
+      "title": "Definitions and scope with Chinese-English mixed technical terms (SLA/API/SDK)",
+      "document": {
+        "path": "data/source_pdfs/placeholder/contract_service_001.pdf",
+        "page": 2,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh_en_mixed",
+        "document_type": "contract",
+        "layout": ["numbered_clauses", "repeated_footer"],
+        "risk_tags": ["cjk_en_mix", "term_definition", "reading_order", "header_pollution"]
+      },
+      "assertions": [
+        {
+          "id": "article1_title",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Article 1 section title must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "第一条 定义与术语"
+          }
+        },
+        {
+          "id": "sla_term",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "SLA abbreviation must be preserved in definitions.",
+          "tags": ["cjk_en_mix", "term"],
+          "params": {
+            "text": "SLA"
+          }
+        },
+        {
+          "id": "sla_full_name",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "SLA full English name must appear.",
+          "tags": ["cjk_en_mix"],
+          "params": {
+            "text": "Service Level Agreement"
+          }
+        },
+        {
+          "id": "api_term",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "API abbreviation must be preserved.",
+          "tags": ["cjk_en_mix", "term"],
+          "params": {
+            "text": "API"
+          }
+        },
+        {
+          "id": "sdk_term",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "SDK abbreviation must be preserved.",
+          "tags": ["cjk_en_mix", "term"],
+          "params": {
+            "text": "SDK"
+          }
+        },
+        {
+          "id": "article2_title",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Article 2 section title must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "第二条 服务内容与范围"
+          }
+        },
+        {
+          "id": "sla_availability",
+          "type": "regex_match",
+          "severity": "major",
+          "description": "SLA availability target 99.9% must be preserved.",
+          "tags": ["numeric"],
+          "params": {
+            "pattern": "99\\.9%"
+          }
+        },
+        {
+          "id": "response_time",
+          "type": "regex_match",
+          "severity": "major",
+          "description": "Response time target 200ms must be preserved.",
+          "tags": ["numeric"],
+          "params": {
+            "pattern": "200毫秒"
+          }
+        },
+        {
+          "id": "article1_before_article2",
+          "type": "reading_order",
+          "severity": "major",
+          "description": "Article 1 must appear before Article 2.",
+          "tags": ["reading_order"],
+          "params": {
+            "before": "第一条 定义与术语",
+            "after": "第二条 服务内容与范围"
+          }
+        },
+        {
+          "id": "no_page2_footer",
+          "type": "regex_absence",
+          "severity": "minor",
+          "description": "Page footer text should not appear as body content.",
+          "tags": ["pollution"],
+          "params": {
+            "pattern": "技术服务合同\\s*·\\s*第2页"
+          }
+        },
+        {
+          "id": "article1_title_cjk_spacing",
+          "type": "cjk_spacing",
+          "severity": "major",
+          "description": "Article 1 title must not have CJK character spacing.",
+          "tags": ["cjk", "quality"],
+          "params": {
+            "text": "定义与术语"
+          }
+        },
+        {
+          "id": "no_tail_repetition",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        }
+      ],
+      "notes": "Tests Chinese-English mixed term definitions (SLA, API, SDK), clause reading order, numeric SLA targets, and footer pollution."
+    },
+    {
+      "case_id": "contract_service_001_p3",
+      "title": "Payment schedule table with amount fidelity and structure",
+      "document": {
+        "path": "data/source_pdfs/placeholder/contract_service_001.pdf",
+        "page": 3,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh",
+        "document_type": "contract",
+        "layout": ["payment_table", "repeated_footer"],
+        "risk_tags": ["table", "amount_corruption", "numeric_fidelity", "header_pollution"]
+      },
+      "assertions": [
+        {
+          "id": "article3_title",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Article 3 section title must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "第三条 服务费用与支付方式"
+          }
+        },
+        {
+          "id": "total_amount_text",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Total contract amount in Chinese characters must appear.",
+          "tags": ["text", "amount"],
+          "params": {
+            "text": "壹佰贰拾万元整"
+          }
+        },
+        {
+          "id": "total_amount_number",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Total contract amount numeric value must be preserved.",
+          "tags": ["numeric", "amount"],
+          "params": {
+            "text": "人民币1,200,000.00"
+          }
+        },
+        {
+          "id": "payment_header_cell",
+          "type": "table_cell_exists",
+          "severity": "blocker",
+          "description": "Table header '项目阶段' must appear.",
+          "tags": ["table"],
+          "params": {
+            "text": "项目阶段"
+          }
+        },
+        {
+          "id": "payment_amount_header",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "description": "Table header '金额（元）' must appear.",
+          "tags": ["table"],
+          "params": {
+            "text": "金额（元）"
+          }
+        },
+        {
+          "id": "prepayment_row",
+          "type": "table_cell_exists",
+          "severity": "blocker",
+          "description": "Prepayment row label must appear in payment table.",
+          "tags": ["table"],
+          "params": {
+            "text": "项目预付款"
+          }
+        },
+        {
+          "id": "prepayment_amount",
+          "type": "table_cell_exists",
+          "severity": "blocker",
+          "description": "Prepayment amount must appear in payment table.",
+          "tags": ["table", "amount"],
+          "params": {
+            "text": "360,000.00"
+          }
+        },
+        {
+          "id": "go_live_row",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "description": "Go-live payment row must appear in payment table.",
+          "tags": ["table"],
+          "params": {
+            "text": "系统上线运行"
+          }
+        },
+        {
+          "id": "warranty_row",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "description": "Warranty completion payment row must appear.",
+          "tags": ["table"],
+          "params": {
+            "text": "质保期满"
+          }
+        },
+        {
+          "id": "payment_table_shape",
+          "type": "table_shape",
+          "severity": "major",
+          "description": "Payment table should have 6 rows and 4 columns.",
+          "tags": ["table"],
+          "params": {
+            "row_count": 6,
+            "col_count": 4
+          }
+        },
+        {
+          "id": "no_page3_footer",
+          "type": "regex_absence",
+          "severity": "minor",
+          "description": "Page footer text should not appear as body content.",
+          "tags": ["pollution"],
+          "params": {
+            "pattern": "技术服务合同\\s*·\\s*第3页"
+          }
+        },
+        {
+          "id": "no_tail_repetition",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        }
+      ],
+      "notes": "Tests payment schedule table extraction (6x4), total amount fidelity in both Chinese and numeric form, and specific row content."
+    },
+    {
+      "case_id": "contract_service_001_p4",
+      "title": "Deliverables list and acceptance criteria with reading order",
+      "document": {
+        "path": "data/source_pdfs/placeholder/contract_service_001.pdf",
+        "page": 4,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh_en_mixed",
+        "document_type": "contract",
+        "layout": ["numbered_clauses", "repeated_footer"],
+        "risk_tags": ["reading_order", "cjk_en_mix", "header_pollution"]
+      },
+      "assertions": [
+        {
+          "id": "article4_title",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Article 4 section title must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "第四条 交付物与验收标准"
+          }
+        },
+        {
+          "id": "deliverables_section",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Deliverables subsection title must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "交付物清单"
+          }
+        },
+        {
+          "id": "platform_deliverable",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Data analysis platform deliverable must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "数据分析平台系统"
+          }
+        },
+        {
+          "id": "gateway_deliverable",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "API gateway deliverable must appear.",
+          "tags": ["text", "cjk_en_mix"],
+          "params": {
+            "text": "API网关系统"
+          }
+        },
+        {
+          "id": "migration_tool",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Data migration tool deliverable must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "数据迁移工具"
+          }
+        },
+        {
+          "id": "monitoring_dashboard",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Operations monitoring panel deliverable must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "运维监控面板"
+          }
+        },
+        {
+          "id": "acceptance_section",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Acceptance criteria subsection must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "验收标准"
+          }
+        },
+        {
+          "id": "acceptance_period",
+          "type": "regex_match",
+          "severity": "major",
+          "description": "Acceptance period of 15 business days must be preserved.",
+          "tags": ["numeric"],
+          "params": {
+            "pattern": "15个工作日"
+          }
+        },
+        {
+          "id": "rectification_period",
+          "type": "regex_match",
+          "severity": "major",
+          "description": "Rectification period of 10 business days must be preserved.",
+          "tags": ["numeric"],
+          "params": {
+            "pattern": "10个工作日"
+          }
+        },
+        {
+          "id": "deliverables_before_acceptance",
+          "type": "reading_order",
+          "severity": "major",
+          "description": "Deliverables list must appear before acceptance criteria.",
+          "tags": ["reading_order"],
+          "params": {
+            "before": "交付物清单",
+            "after": "验收标准"
+          }
+        },
+        {
+          "id": "no_page4_footer",
+          "type": "regex_absence",
+          "severity": "minor",
+          "description": "Page footer text should not appear as body content.",
+          "tags": ["pollution"],
+          "params": {
+            "pattern": "技术服务合同\\s*·\\s*第4页"
+          }
+        },
+        {
+          "id": "no_tail_repetition",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        }
+      ],
+      "notes": "Tests deliverable items with mixed zh-en terms (API), acceptance criteria with numeric periods, subsection reading order, and footer pollution."
+    },
+    {
+      "case_id": "contract_service_001_p5",
+      "title": "Confidentiality clause with duration and scope",
+      "document": {
+        "path": "data/source_pdfs/placeholder/contract_service_001.pdf",
+        "page": 5,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh",
+        "document_type": "contract",
+        "layout": ["numbered_clauses", "repeated_footer"],
+        "risk_tags": ["reading_order", "numeric_fidelity", "header_pollution"]
+      },
+      "assertions": [
+        {
+          "id": "article5_title",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Article 5 section title must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "第五条 保密条款"
+          }
+        },
+        {
+          "id": "confidentiality_duty",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Core confidentiality obligation text must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "商业秘密和技术资料严格保密"
+          }
+        },
+        {
+          "id": "confidentiality_period",
+          "type": "regex_match",
+          "severity": "blocker",
+          "description": "Confidentiality period of 3 years must be preserved.",
+          "tags": ["numeric"],
+          "params": {
+            "pattern": "三年"
+          }
+        },
+        {
+          "id": "no_third_party",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Prohibition on third-party disclosure must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "不得向任何第三方披露"
+          }
+        },
+        {
+          "id": "written_consent",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Written consent requirement must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "书面同意"
+          }
+        },
+        {
+          "id": "user_data_mentioned",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "User data as confidential information must be mentioned.",
+          "tags": ["text"],
+          "params": {
+            "text": "用户数据"
+          }
+        },
+        {
+          "id": "source_code_mentioned",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Source code as confidential information must be mentioned.",
+          "tags": ["text"],
+          "params": {
+            "text": "源代码"
+          }
+        },
+        {
+          "id": "no_page5_footer",
+          "type": "regex_absence",
+          "severity": "minor",
+          "description": "Page footer text should not appear as body content.",
+          "tags": ["pollution"],
+          "params": {
+            "pattern": "技术服务合同\\s*·\\s*第5页"
+          }
+        },
+        {
+          "id": "no_tail_repetition",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        }
+      ],
+      "notes": "Tests confidentiality clause: period duration, scope of confidential information, third-party prohibition, and footer pollution."
+    },
+    {
+      "case_id": "contract_service_001_p6",
+      "title": "Liability, termination, and penalty clauses with section ordering",
+      "document": {
+        "path": "data/source_pdfs/placeholder/contract_service_001.pdf",
+        "page": 6,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh",
+        "document_type": "contract",
+        "layout": ["numbered_clauses", "repeated_footer"],
+        "risk_tags": ["reading_order", "amount_corruption", "numeric_fidelity", "header_pollution"]
+      },
+      "assertions": [
+        {
+          "id": "article6_title",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Article 6 section title must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "第六条 违约责任与终止条款"
+          }
+        },
+        {
+          "id": "penalty_amount",
+          "type": "regex_match",
+          "severity": "blocker",
+          "description": "Penalty rate of 20% must be preserved.",
+          "tags": ["numeric", "amount"],
+          "params": {
+            "pattern": "20%"
+          }
+        },
+        {
+          "id": "late_payment_rate",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Late payment daily rate must be preserved.",
+          "tags": ["numeric", "amount"],
+          "params": {
+            "text": "每日0.05%"
+          }
+        },
+        {
+          "id": "force_majeure",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Force majeure clause must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "不可抗力"
+          }
+        },
+        {
+          "id": "article7_title",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Article 7 section title must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "第七条 合同终止"
+          }
+        },
+        {
+          "id": "termination_notice",
+          "type": "regex_match",
+          "severity": "major",
+          "description": "30-day termination notice period must be preserved.",
+          "tags": ["numeric"],
+          "params": {
+            "pattern": "30天"
+          }
+        },
+        {
+          "id": "written_notice",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Written notice requirement for termination must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "书面通知"
+          }
+        },
+        {
+          "id": "handover_period",
+          "type": "regex_match",
+          "severity": "major",
+          "description": "15-day handover period must be preserved.",
+          "tags": ["numeric"],
+          "params": {
+            "pattern": "15个工作日"
+          }
+        },
+        {
+          "id": "confidentiality_before_liability",
+          "type": "reading_order",
+          "severity": "major",
+          "description": "Confidentiality clause reference must appear before liability clause.",
+          "tags": ["reading_order"],
+          "params": {
+            "before": "保密条款",
+            "after": "违约责任"
+          }
+        },
+        {
+          "id": "article6_before_article7",
+          "type": "reading_order",
+          "severity": "major",
+          "description": "Article 6 must appear before Article 7.",
+          "tags": ["reading_order"],
+          "params": {
+            "before": "第六条 违约责任",
+            "after": "第七条 合同终止"
+          }
+        },
+        {
+          "id": "no_page6_footer",
+          "type": "regex_absence",
+          "severity": "minor",
+          "description": "Page footer text should not appear as body content.",
+          "tags": ["pollution"],
+          "params": {
+            "pattern": "技术服务合同\\s*·\\s*第6页"
+          }
+        },
+        {
+          "id": "no_standalone_page6",
+          "type": "no_page_number",
+          "severity": "minor",
+          "description": "Standalone page number 6 must not pollute body text.",
+          "tags": ["pollution", "page_number"],
+          "params": {
+            "page": 6
+          }
+        },
+        {
+          "id": "no_tail_repetition",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        }
+      ],
+      "notes": "Tests liability/termination clauses: penalty percentage, late payment rate, force majeure, section reading order, and footer pollution."
+    },
+    {
+      "case_id": "contract_service_001_p7",
+      "title": "Signature page with party names and seal placeholders",
+      "document": {
+        "path": "data/source_pdfs/placeholder/contract_service_001.pdf",
+        "page": 7,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh",
+        "document_type": "contract",
+        "layout": ["signature_page", "repeated_footer"],
+        "risk_tags": ["party_name_loss", "reading_order", "header_pollution"]
+      },
+      "assertions": [
+        {
+          "id": "party_a_signature",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Party A name must appear on signature page.",
+          "tags": ["text"],
+          "params": {
+            "text": "甲方：北京云智联科技有限公司"
+          }
+        },
+        {
+          "id": "party_b_signature",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Party B name must appear on signature page.",
+          "tags": ["text"],
+          "params": {
+            "text": "乙方：上海数据前沿信息技术有限公司"
+          }
+        },
+        {
+          "id": "legal_rep",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Legal representative field must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "法定代表人/授权代表"
+          }
+        },
+        {
+          "id": "seal_placeholder",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Company seal placeholder must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "（盖章）"
+          }
+        },
+        {
+          "id": "copies_mentioned",
+          "type": "regex_match",
+          "severity": "major",
+          "description": "Number of contract copies (four) must be mentioned.",
+          "tags": ["numeric"],
+          "params": {
+            "pattern": "一式四份"
+          }
+        },
+        {
+          "id": "two_copies_each",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Each party holds two copies.",
+          "tags": ["text"],
+          "params": {
+            "text": "各执两份"
+          }
+        },
+        {
+          "id": "party_a_before_b_sign",
+          "type": "reading_order",
+          "severity": "major",
+          "description": "Party A signature block must appear before Party B.",
+          "tags": ["reading_order"],
+          "params": {
+            "before": "甲方：北京云智联科技有限公司",
+            "after": "乙方：上海数据前沿信息技术有限公司"
+          }
+        },
+        {
+          "id": "no_page7_footer",
+          "type": "regex_absence",
+          "severity": "minor",
+          "description": "Page footer text should not appear as body content.",
+          "tags": ["pollution"],
+          "params": {
+            "pattern": "技术服务合同\\s*·\\s*第7页"
+          }
+        },
+        {
+          "id": "no_tail_repetition",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        }
+      ],
+      "notes": "Tests signature page: both party names, legal representative fields, seal placeholders, contract copies count, and footer pollution."
+    },
+    {
+      "case_id": "contract_service_001_p8",
+      "title": "Appendix with technical specifications and attachment references",
+      "document": {
+        "path": "data/source_pdfs/placeholder/contract_service_001.pdf",
+        "page": 8,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh_en_mixed",
+        "document_type": "contract",
+        "layout": ["appendix", "repeated_footer"],
+        "risk_tags": ["cjk_en_mix", "reading_order", "header_pollution"]
+      },
+      "assertions": [
+        {
+          "id": "attachment_title",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "First attachment title must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "附件一：技术规范文档"
+          }
+        },
+        {
+          "id": "api_spec_mentioned",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "API specification reference must appear in appendix.",
+          "tags": ["cjk_en_mix"],
+          "params": {
+            "text": "API接口规范"
+          }
+        },
+        {
+          "id": "sdk_guide_mentioned",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "SDK integration guide must appear in appendix.",
+          "tags": ["cjk_en_mix"],
+          "params": {
+            "text": "SDK集成指南"
+          }
+        },
+        {
+          "id": "attachment_two",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Second attachment reference must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "附件二"
+          }
+        },
+        {
+          "id": "deployment_manual",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Deployment manual reference must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "系统部署手册"
+          }
+        },
+        {
+          "id": "docker_mentioned",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Docker requirement must appear in deployment specs.",
+          "tags": ["cjk_en_mix"],
+          "params": {
+            "text": "Docker"
+          }
+        },
+        {
+          "id": "kubernetes_mentioned",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Kubernetes requirement must appear in deployment specs.",
+          "tags": ["cjk_en_mix"],
+          "params": {
+            "text": "Kubernetes"
+          }
+        },
+        {
+          "id": "attachment1_before_attachment2",
+          "type": "reading_order",
+          "severity": "major",
+          "description": "Attachment 1 must appear before Attachment 2.",
+          "tags": ["reading_order"],
+          "params": {
+            "before": "附件一：技术规范文档",
+            "after": "附件二"
+          }
+        },
+        {
+          "id": "no_page8_footer",
+          "type": "regex_absence",
+          "severity": "minor",
+          "description": "Page footer text should not appear as body content.",
+          "tags": ["pollution"],
+          "params": {
+            "pattern": "技术服务合同\\s*·\\s*第8页"
+          }
+        },
+        {
+          "id": "no_tail_repetition",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        }
+      ],
+      "notes": "Tests appendix content: API/SDK/Docker/Kubernetes mixed terms, attachment ordering, deployment specifications, and footer pollution."
+    }
+  ]
+}

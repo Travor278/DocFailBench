@@ -1,0 +1,33 @@
+{
+  "release_name": "DocFailBench-v0.1-non-gov-public-stage7-rc",
+  "status": "release_candidate_frozen_from_stage7",
+  "source_stage": "runs/stage7_non_gov_public",
+  "created_from": {
+    "cases": "runs/stage7_non_gov_public/reviewed_non_gov_public_cases_structural_v2.json",
+    "compare": "runs/stage7_non_gov_public/compare_structural_v2_7parser.json",
+    "source_manifest": "runs/stage7_non_gov_public/stage7_source_license_manifest.json",
+    "second_review": "runs/stage7_non_gov_public/structural_v2_human_second_review_accepted.json"
+  },
+  "counts": {
+    "cases": 24,
+    "assertions": 165,
+    "sources": 8,
+    "parsers": 7,
+    "accepted_second_review_edits": 19
+  },
+  "files": {
+    "data/releases/docfailbench_v0_1_non_gov_public_stage7_rc_cases.json": "dfdf01aa60ddf9bb256de62b7cc16f4f6fff63e05f531b3a7dd2aeb467e13752",
+    "data/releases/docfailbench_v0_1_non_gov_public_stage7_rc_leaderboard.json": "c7d9040476f2cfc32a3c10cc4760414417d20e9ef69694758d61e3eedbd9494a",
+    "data/releases/docfailbench_v0_1_non_gov_public_stage7_rc_leaderboard.md": "16dc327c19f77344df01d004fcb442c27c63a06b5e45b8b9847fede9dc033c96",
+    "data/releases/docfailbench_v0_1_non_gov_public_stage7_rc_card.md": "3f35a2cf83fd35301d3536f8dceff8fdb66cf9f27cafdd318982994df120abf8",
+    "data/releases/docfailbench_v0_1_non_gov_public_stage7_rc_source_license_manifest.json": "487653a30accdeb818b335358f6a281e1ad539cac4d4d63503c6d5d77f65b002",
+    "data/releases/docfailbench_v0_1_non_gov_public_stage7_rc_source_license_manifest.md": "74f57fb745fa607e5193919452cc5441d98f1ad1ee2322b033f0bc8acde8d0de",
+    "data/releases/docfailbench_v0_1_non_gov_public_stage7_rc_parser_metadata.json": "66e73a87a94f9218f1e95246f774288421e1ce6a823ae2942be354413d70821e",
+    "data/releases/docfailbench_v0_1_non_gov_public_stage7_rc_element_grounded_profile.json": "ab67133ddfb5bd652eda853b59f3e57fb3b4c91f49c7275787edd5305ed3d8ea"
+  },
+  "notes": [
+    "Stage8 batch2 is not included in this Stage7-only RC; it is included in docfailbench_v0_1_combined_public_rc_* artifacts.",
+    "This release candidate is separate from docfailbench_v0_1_public_real_rc_* artifacts.",
+    "OpenStax Calculus carries CC BY-NC-SA 4.0 terms."
+  ]
+}

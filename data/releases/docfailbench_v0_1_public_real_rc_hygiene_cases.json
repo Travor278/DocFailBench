@@ -1,0 +1,140 @@
+{
+  "version": "0.1-public-real-rc-hygiene",
+  "cases": [
+    {
+      "case_id": "public_real_nist_sp800_53r5_p027",
+      "title": "NIST SP 800-53 Rev. 5 p27",
+      "document": {
+        "path": "runs/stage6_public_real/source_pdfs/nist_sp800_53r5.pdf",
+        "page": 27,
+        "source_url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r5.pdf",
+        "license": "U.S. federal publication; cite NIST source",
+        "attribution": "National Institute of Standards and Technology (NIST)",
+        "sha256": "fc63bcd61715d0181dd8e85998b1e6201ae3515fc6626102101cab1841e11ec6",
+        "page_image": "runs/stage6_public_real/page_images/public_real_nist_sp800_53r5_p027.png"
+      },
+      "profile": {
+        "source_kind": "real_public",
+        "language": "en",
+        "document_type": "government_technical_report",
+        "layout": [
+          "long_report",
+          "tables",
+          "numbered_controls"
+        ],
+        "page_image": "runs/stage6_public_real/page_images/public_real_nist_sp800_53r5_p027.png",
+        "license_review": "metadata_checked_initial; verify document-specific notice before formal release"
+      },
+      "assertions": [
+        {
+          "id": "text_absence_054aafccd898",
+          "type": "text_absence",
+          "severity": "minor",
+          "params": {
+            "text": "This publication is available free of charge"
+          },
+          "description": "Do not include low-value repeated page furniture in the parser content stream.",
+          "tags": [
+            "public_real_v2",
+            "page_furniture",
+            "hygiene",
+            "secondary",
+            "non_scored",
+            "text_absence"
+          ]
+        }
+      ],
+      "notes": "NIST control catalog with numbered sections and dense tabular content."
+    },
+    {
+      "case_id": "public_real_irs_1040sc_2024_p001",
+      "title": "IRS Schedule C 2024 p1",
+      "document": {
+        "path": "runs/stage6_public_real/source_pdfs/irs_f1040_schedule_c_2024.pdf",
+        "page": 1,
+        "source_url": "https://www.irs.gov/pub/irs-prior/f1040sc--2024.pdf",
+        "license": "U.S. federal government form; cite IRS source",
+        "attribution": "Internal Revenue Service (IRS)",
+        "sha256": "f56bfd48f3604fc015b7ea22a70c6c36535a723ba84a2b9a961bc9838d070ce6",
+        "page_image": "runs/stage6_public_real/page_images/public_real_irs_1040sc_2024_p001.png"
+      },
+      "profile": {
+        "source_kind": "real_public",
+        "language": "en",
+        "document_type": "government_form",
+        "layout": [
+          "form",
+          "tables",
+          "business_fields"
+        ],
+        "page_image": "runs/stage6_public_real/page_images/public_real_irs_1040sc_2024_p001.png",
+        "license_review": "metadata_checked_initial; verify document-specific notice before formal release"
+      },
+      "assertions": [
+        {
+          "id": "text_absence_0206deab4a8e",
+          "type": "text_absence",
+          "severity": "minor",
+          "params": {
+            "text": "Cat. No. 11334P"
+          },
+          "description": "Do not include low-value repeated page furniture in the parser content stream.",
+          "tags": [
+            "public_real_v2",
+            "page_furniture",
+            "hygiene",
+            "secondary",
+            "non_scored",
+            "text_absence"
+          ]
+        }
+      ],
+      "notes": "Official tax schedule with business income and expense fields."
+    },
+    {
+      "case_id": "public_real_irs_1040sd_2024_p001",
+      "title": "IRS Schedule D 2024 p1",
+      "document": {
+        "path": "runs/stage6_public_real/source_pdfs/irs_f1040_schedule_d_2024.pdf",
+        "page": 1,
+        "source_url": "https://www.irs.gov/pub/irs-prior/f1040sd--2024.pdf",
+        "license": "U.S. federal government form; cite IRS source",
+        "attribution": "Internal Revenue Service (IRS)",
+        "sha256": "5a006b1a9a17c19af294a3da0971528276598e6a54ac4ca1670656d71476b6f5",
+        "page_image": "runs/stage6_public_real/page_images/public_real_irs_1040sd_2024_p001.png"
+      },
+      "profile": {
+        "source_kind": "real_public",
+        "language": "en",
+        "document_type": "government_form",
+        "layout": [
+          "form",
+          "capital_gains_table",
+          "numeric_fields"
+        ],
+        "page_image": "runs/stage6_public_real/page_images/public_real_irs_1040sd_2024_p001.png",
+        "license_review": "metadata_checked_initial; verify document-specific notice before formal release"
+      },
+      "assertions": [
+        {
+          "id": "text_absence_8bae44e32966",
+          "type": "text_absence",
+          "severity": "minor",
+          "params": {
+            "text": "Cat. No. 11338H"
+          },
+          "description": "Do not include low-value repeated page furniture in the parser content stream.",
+          "tags": [
+            "public_real_v2",
+            "page_furniture",
+            "hygiene",
+            "secondary",
+            "non_scored",
+            "text_absence"
+          ]
+        }
+      ],
+      "notes": "Official tax schedule with capital gains and losses tables."
+    }
+  ]
+}

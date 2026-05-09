@@ -1,0 +1,139 @@
+{
+  "release_name": "DocFailBench-v0.1-public-real-rc",
+  "generated_at": "2026-05-08",
+  "environment": {
+    "os": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "python_version": "3.13.9",
+    "python_executable": "D:\\Anaconda\\python.exe",
+    "gpus": [
+      {
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "driver_version": "595.79",
+        "memory_total": "8151 MiB"
+      }
+    ]
+  },
+  "parsers": {
+    "qwen": {
+      "display_name": "Qwen-VL API",
+      "parser": "qwen_vl_api",
+      "execution": "remote_api",
+      "model": "qwen-vl-ocr-latest",
+      "provider_host": "dashscope.aliyuncs.com",
+      "command_entrypoint": "examples/run_qwen_vl.py",
+      "runtime": {
+        "runs": 21,
+        "elapsed_seconds_total": 198.981,
+        "elapsed_seconds_mean": 9.475,
+        "elapsed_seconds_min": 1.527,
+        "elapsed_seconds_max": 16.561
+      }
+    },
+    "plain": {
+      "display_name": "PyMuPDF4LLM plain",
+      "parser": "pymupdf4llm",
+      "execution": "local_python",
+      "pymupdf4llm_version": "1.27.2.3",
+      "pymupdf_version": "1.27.2.3",
+      "command_entrypoint": "examples/run_pymupdf4llm.py",
+      "runtime": {
+        "runs": 21,
+        "elapsed_seconds_total": 76.181,
+        "elapsed_seconds_mean": 3.628,
+        "elapsed_seconds_min": 2.303,
+        "elapsed_seconds_max": 5.167
+      }
+    },
+    "bbox": {
+      "display_name": "PyMuPDF4LLM bbox",
+      "parser": "pymupdf4llm_bbox",
+      "execution": "local_python",
+      "pymupdf4llm_version": "1.27.2.3",
+      "pymupdf_version": "1.27.2.3",
+      "bbox_coordinate_space": "image pixels at 144 DPI",
+      "command_entrypoint": "examples/run_pymupdf4llm_bbox.py",
+      "runtime": {
+        "runs": 21,
+        "elapsed_seconds_total": 76.274,
+        "elapsed_seconds_mean": 3.632,
+        "elapsed_seconds_min": 2.364,
+        "elapsed_seconds_max": 4.987
+      }
+    },
+    "docling": {
+      "display_name": "Docling",
+      "parser": "docling",
+      "execution": "local_python",
+      "docling_version": "2.92.0",
+      "ocr_enabled": false,
+      "command_entrypoint": "examples/run_docling.py",
+      "runtime": {
+        "runs": 21,
+        "elapsed_seconds_total": 293.237,
+        "elapsed_seconds_mean": 13.964,
+        "elapsed_seconds_min": 10.023,
+        "elapsed_seconds_max": 26.974
+      }
+    },
+    "marker": {
+      "display_name": "Marker",
+      "parser": "marker",
+      "execution": "local_cli_env",
+      "cli": ".parser_envs/marker/Scripts/marker_single.exe",
+      "marker_pdf_version": "1.10.2",
+      "surya_ocr_version": "0.17.1",
+      "torch_version": "2.11.0+cu130",
+      "transformers_version": "4.57.6",
+      "command_entrypoint": "examples/run_marker.py",
+      "runtime": {
+        "runs": 21,
+        "elapsed_seconds_total": 509.359,
+        "elapsed_seconds_mean": 24.255,
+        "elapsed_seconds_min": 10.887,
+        "elapsed_seconds_max": 109.849
+      }
+    },
+    "mineru": {
+      "display_name": "MinerU",
+      "parser": "mineru",
+      "execution": "local_cli_env",
+      "cli": ".parser_envs/mineru_latest/Scripts/mineru.exe",
+      "mineru_version": "3.0.4",
+      "torch_version": "2.11.0+cu130",
+      "transformers_version": "4.57.6",
+      "command_entrypoint": "examples/run_mineru.py",
+      "runtime": {
+        "runs": 21,
+        "elapsed_seconds_total": 681.04,
+        "elapsed_seconds_mean": 32.43,
+        "elapsed_seconds_min": 24.725,
+        "elapsed_seconds_max": 58.478
+      }
+    },
+    "paddleocr": {
+      "display_name": "PaddleOCR",
+      "parser": "paddleocr",
+      "execution": "local_cli_env",
+      "cli": ".parser_envs/paddleocr/Scripts/paddleocr.exe",
+      "paddleocr_version": "3.5.0",
+      "paddlepaddle_gpu_version": "3.3.1",
+      "paddlex_version": "3.5.1",
+      "device": "gpu:0",
+      "lang": "ch",
+      "command_entrypoint": "examples/run_paddleocr.py",
+      "runtime": {
+        "runs": 21,
+        "elapsed_seconds_total": 456.122,
+        "elapsed_seconds_mean": 21.72,
+        "elapsed_seconds_min": 13.36,
+        "elapsed_seconds_max": 62.357
+      }
+    }
+  },
+  "notes": [
+    "Parser versions are recorded from the local environment used for the baseline run.",
+    "Qwen-VL API is a remote model endpoint; qwen-vl-ocr-latest can change over time unless provider-side pinning is available.",
+    "The main score excludes secondary page-furniture hygiene checks."
+  ]
+}

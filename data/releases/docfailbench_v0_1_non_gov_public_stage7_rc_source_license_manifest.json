@@ -1,0 +1,326 @@
+{
+  "name": "Stage7 non-government public source/license manifest",
+  "status": "staging_not_release",
+  "generated_at": "2026-05-09T09:32:05.894744+00:00",
+  "source_count": 8,
+  "rendered_case_count": 24,
+  "assertion_count": 165,
+  "sources": [
+    {
+      "source_id": "openstax_calculus_v1",
+      "title": "OpenStax Calculus Volume 1",
+      "url": "https://assets.openstax.org/oscms-prodcms/media/documents/CalculusVolume1-OP.pdf",
+      "source_page": "https://openstax.org/details/books/calculus-volume-1",
+      "path": "runs/stage7_non_gov_public/source_pdfs/openstax_calculus_volume_1.pdf",
+      "sha256": "202c86537285adf7e5abeb64057c39ee7333ad8c8473b6dd6a9ddf3e72443286",
+      "license": "CC BY-NC-SA 4.0; OpenStax Calculus copyright page verified",
+      "attribution": "OpenStax",
+      "pages": [
+        58,
+        83,
+        151,
+        225,
+        337
+      ],
+      "document_type": "open_textbook",
+      "layout": [
+        "textbook",
+        "formula",
+        "figure",
+        "table"
+      ],
+      "license_evidence": "PDF copyright page: Creative Commons Attribution NonCommercial ShareAlike 4.0 International License.",
+      "selected_stage7_pages": [
+        58,
+        151,
+        225
+      ],
+      "stage7_case_count": 3,
+      "stage7_assertion_count": 5,
+      "pdf_exists": true,
+      "sha256_verified": true,
+      "actual_sha256": "202c86537285adf7e5abeb64057c39ee7333ad8c8473b6dd6a9ddf3e72443286",
+      "license_status": "verified_with_noncommercial_sharealike_terms"
+    },
+    {
+      "source_id": "openstax_chemistry",
+      "title": "OpenStax Chemistry",
+      "url": "https://assets.openstax.org/oscms-prodcms/media/documents/Chemistry-LR.pdf",
+      "source_page": "https://openstax.org/details/books/chemistry",
+      "path": "runs/stage7_non_gov_public/source_pdfs/openstax_chemistry.pdf",
+      "sha256": "aa56e10ea6468b9779d6e4524cf256fd7865c29b4f9ba9e5de15c4e669748f87",
+      "license": "CC BY 4.0; OpenStax Chemistry copyright page verified",
+      "attribution": "OpenStax",
+      "pages": [
+        49,
+        76,
+        109,
+        186,
+        257
+      ],
+      "document_type": "open_textbook",
+      "layout": [
+        "textbook",
+        "chemistry_formula",
+        "table",
+        "figure"
+      ],
+      "license_evidence": "PDF copyright page: Creative Commons Attribution 4.0 International License.",
+      "selected_stage7_pages": [
+        49,
+        109,
+        186,
+        257
+      ],
+      "stage7_case_count": 4,
+      "stage7_assertion_count": 31,
+      "pdf_exists": true,
+      "sha256_verified": true,
+      "actual_sha256": "aa56e10ea6468b9779d6e4524cf256fd7865c29b4f9ba9e5de15c4e669748f87",
+      "license_status": "verified"
+    },
+    {
+      "source_id": "pmc_peerj_cs_1452",
+      "title": "PeerJ Computer Science article e1452 (PMC10403167)",
+      "url": "https://peerj.com/articles/cs-1452.pdf?download=1",
+      "source_page": "https://peerj.com/articles/cs-1452/",
+      "path": "runs/stage7_non_gov_public/source_pdfs/pmc_peerj_cs_1452.pdf",
+      "sha256": "f474b6464b8f8d90e3c1c57dffe6625076c35a433425cb6ff285074d96ae675e",
+      "license": "CC BY 4.0; PeerJ/PMC OA notice verified",
+      "attribution": "PeerJ Computer Science / PMC Open Access",
+      "pages": [
+        1,
+        3,
+        5,
+        7,
+        9
+      ],
+      "document_type": "biomedical_or_computational_article",
+      "layout": [
+        "academic_paper",
+        "figure",
+        "table",
+        "caption",
+        "references"
+      ],
+      "license_evidence": "Publisher/PMC OA notice records Creative Commons CC-BY 4.0.",
+      "selected_stage7_pages": [
+        5,
+        7
+      ],
+      "stage7_case_count": 2,
+      "stage7_assertion_count": 4,
+      "pdf_exists": true,
+      "sha256_verified": true,
+      "actual_sha256": "f474b6464b8f8d90e3c1c57dffe6625076c35a433425cb6ff285074d96ae675e",
+      "license_status": "verified"
+    },
+    {
+      "source_id": "acl_rocling_readability_zh",
+      "title": "Rewriting Chinese Educational Materials to Change Readability Levels",
+      "url": "https://aclanthology.org/2024.rocling-1.1.pdf",
+      "source_page": "https://aclanthology.org/2024.rocling-1.1/",
+      "path": "runs/stage7_non_gov_public/source_pdfs/acl_2024_rocling_1_1_readability_zh.pdf",
+      "sha256": "dfad941296b29348629fc9840e5da00cbe02488f28326bc3c0d55c2847511ce8",
+      "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+      "attribution": "ACL Anthology / ROCLING 2024",
+      "pages": [
+        1,
+        2,
+        4,
+        6,
+        8
+      ],
+      "document_type": "academic_paper",
+      "layout": [
+        "double_column",
+        "mixed_script",
+        "table",
+        "figure"
+      ],
+      "license_evidence": "ACL Anthology post-2016 materials are covered by the ACL CC BY 4.0 policy; paper page retained.",
+      "selected_stage7_pages": [
+        1,
+        2,
+        4,
+        6,
+        8
+      ],
+      "stage7_case_count": 5,
+      "stage7_assertion_count": 25,
+      "pdf_exists": true,
+      "sha256_verified": true,
+      "actual_sha256": "dfad941296b29348629fc9840e5da00cbe02488f28326bc3c0d55c2847511ce8",
+      "license_status": "verified_policy_based"
+    },
+    {
+      "source_id": "acl_struc_bench",
+      "title": "Struc-Bench: Complex Structured Tabular Data",
+      "url": "https://aclanthology.org/2024.naacl-short.2.pdf",
+      "source_page": "https://aclanthology.org/2024.naacl-short.2/",
+      "path": "runs/stage7_non_gov_public/source_pdfs/acl_2024_naacl_short_2_struc_bench.pdf",
+      "sha256": "21b916ea137241a734a168321980d4fc9a61ca6567ce8379e0eed48145eb8463",
+      "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+      "attribution": "ACL Anthology / NAACL 2024",
+      "pages": [
+        1,
+        2,
+        4,
+        6,
+        8
+      ],
+      "document_type": "academic_paper",
+      "layout": [
+        "double_column",
+        "table",
+        "figure",
+        "structured_data"
+      ],
+      "license_evidence": "ACL Anthology post-2016 materials are covered by the ACL CC BY 4.0 policy; paper page retained.",
+      "selected_stage7_pages": [
+        4
+      ],
+      "stage7_case_count": 1,
+      "stage7_assertion_count": 2,
+      "pdf_exists": true,
+      "sha256_verified": true,
+      "actual_sha256": "21b916ea137241a734a168321980d4fc9a61ca6567ce8379e0eed48145eb8463",
+      "license_status": "verified_policy_based"
+    },
+    {
+      "source_id": "acl_ocl_corpus",
+      "title": "The ACL OCL Corpus",
+      "url": "https://aclanthology.org/2023.emnlp-main.640.pdf",
+      "source_page": "https://aclanthology.org/2023.emnlp-main.640/",
+      "path": "runs/stage7_non_gov_public/source_pdfs/acl_2023_emnlp_main_640_ocl_corpus.pdf",
+      "sha256": "cd1508582cce54c9ab65f570d6b08c4956aca16a83782bf373be961ef98d1401",
+      "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+      "attribution": "ACL Anthology / EMNLP 2023",
+      "pages": [
+        1,
+        2,
+        4,
+        6,
+        8
+      ],
+      "document_type": "academic_paper",
+      "layout": [
+        "double_column",
+        "table",
+        "figure",
+        "dataset_description"
+      ],
+      "license_evidence": "ACL Anthology post-2016 materials are covered by the ACL CC BY 4.0 policy; paper page retained.",
+      "selected_stage7_pages": [
+        2,
+        4,
+        6,
+        8
+      ],
+      "stage7_case_count": 4,
+      "stage7_assertion_count": 41,
+      "pdf_exists": true,
+      "sha256_verified": true,
+      "actual_sha256": "cd1508582cce54c9ab65f570d6b08c4956aca16a83782bf373be961ef98d1401",
+      "license_status": "verified_policy_based"
+    },
+    {
+      "source_id": "frontiers_vascular_models",
+      "title": "Quality assurance in 3D-printing vascular anatomical models",
+      "url": "https://www.frontiersin.org/journals/medical-technology/articles/10.3389/fmedt.2023.1097850/pdf",
+      "source_page": "https://www.frontiersin.org/journals/medical-technology/articles/10.3389/fmedt.2023.1097850/full",
+      "path": "runs/stage7_non_gov_public/source_pdfs/frontiers_fmedt_2023_1097850_vascular_models.pdf",
+      "sha256": "c7e80aa20e297eb526d095bcee5e302458bc5a02607ec2d59742b6ccf2cf77bc",
+      "license": "CC BY; Frontiers open-access notice verified",
+      "attribution": "Frontiers in Medical Technology",
+      "pages": [
+        1,
+        3,
+        5,
+        7,
+        9
+      ],
+      "document_type": "biomedical_article",
+      "layout": [
+        "biomedical",
+        "figure",
+        "table",
+        "caption"
+      ],
+      "license_evidence": "Frontiers article/PDF open-access notice records Creative Commons Attribution License.",
+      "selected_stage7_pages": [
+        5
+      ],
+      "stage7_case_count": 1,
+      "stage7_assertion_count": 21,
+      "pdf_exists": true,
+      "sha256_verified": true,
+      "actual_sha256": "c7e80aa20e297eb526d095bcee5e302458bc5a02607ec2d59742b6ccf2cf77bc",
+      "license_status": "verified"
+    },
+    {
+      "source_id": "bmc_3d_print_models_review",
+      "title": "Quality assurance of 3D-printed patient specific anatomical models",
+      "url": "https://threedmedprint.biomedcentral.com/counter/pdf/10.1186/s41205-024-00210-5.pdf",
+      "source_page": "https://threedmedprint.biomedcentral.com/articles/10.1186/s41205-024-00210-5",
+      "path": "runs/stage7_non_gov_public/source_pdfs/bmc_3d_print_models_systematic_review.pdf",
+      "sha256": "63a2b8d7d9fb1011180d752a94b88751c506bb4aa9020562a11cd79d222d977c",
+      "license": "CC BY 4.0; BioMed Central article notice verified",
+      "attribution": "3D Printing in Medicine / BioMed Central",
+      "pages": [
+        1,
+        3,
+        5,
+        7,
+        9
+      ],
+      "document_type": "biomedical_article",
+      "layout": [
+        "biomedical",
+        "systematic_review",
+        "table",
+        "caption"
+      ],
+      "license_evidence": "Article PDF states Creative Commons Attribution 4.0 International License.",
+      "selected_stage7_pages": [
+        3,
+        5,
+        7,
+        9
+      ],
+      "stage7_case_count": 4,
+      "stage7_assertion_count": 36,
+      "pdf_exists": true,
+      "sha256_verified": true,
+      "actual_sha256": "63a2b8d7d9fb1011180d752a94b88751c506bb4aa9020562a11cd79d222d977c",
+      "license_status": "verified"
+    }
+  ],
+  "metadata_first_queue": [
+    {
+      "source_id": "pubtables_1m_metadata_first",
+      "name": "PubTables-1M",
+      "upstream_url": "https://github.com/microsoft/table-transformer",
+      "license": "Check upstream data license before copying PDFs; use metadata-first sampling.",
+      "reason": "Large table dataset; useful for table_grid_cell but should not be bulk-downloaded into this repo."
+    },
+    {
+      "source_id": "doclaynet_metadata_first",
+      "name": "DocLayNet",
+      "upstream_url": "https://github.com/DS4SD/DocLayNet",
+      "license": "CDLA-Permissive-1.0 according to dataset card; verify for selected samples.",
+      "reason": "Large layout dataset; use selected page metadata and checksums before copying sample PDFs."
+    }
+  ],
+  "license_policy": {
+    "verified": "PDF copyright page, publisher page, or stable source policy checked for this staging set.",
+    "verified_with_noncommercial_sharealike_terms": "Redistribution is allowed for noncommercial use with ShareAlike and attribution; keep this explicit in release notes.",
+    "verified_policy_based": "Publisher-wide policy checked; source page retained for per-document audit.",
+    "needs_document_specific_verification": "Do not freeze until the exact document notice is checked."
+  },
+  "release_gate_notes": [
+    "All bundled or cached PDFs must have source URL, source page, attribution, license note, and SHA-256.",
+    "OpenStax Calculus is CC BY-NC-SA 4.0, so any community release must keep noncommercial/ShareAlike terms visible.",
+    "Stage7 visual review is complete; it remains staging until copied into a frozen release artifact under data/releases/."
+  ]
+}

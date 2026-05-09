@@ -1,0 +1,55 @@
+{
+  "predictions": [
+    {
+      "case_id": "zh_paper_double_column_001_p3",
+      "parser": "olmocr",
+      "markdown": "",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_olmocr.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\zh_paper_double_column_001.pdf\" --page \"3\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-bmt5pi2k\\output.md\"",
+        "returncode": 1,
+        "elapsed_seconds": 32.286,
+        "stderr": "ERROR: olmocr produced no output\nError: [Errno 13] Permission denied: 'C:\\\\Users\\\\34886\\\\AppData\\\\Local\\\\Temp\\\\tmp1d4lczyz.pdf'\nError: [Errno 13] Permission denied: 'C:\\\\Users\\\\34886\\\\AppData\\\\Local\\\\Temp\\\\tmp1d4lczyz.pdf'\n\n",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\zh_paper_double_column_001.pdf",
+        "page": 3,
+        "case_id": "zh_paper_double_column_001_p3",
+        "output_source": "none"
+      }
+    },
+    {
+      "case_id": "cn_textbook_formula_002_p12",
+      "parser": "olmocr",
+      "markdown": "",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_olmocr.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\cn_textbook_formula_002.pdf\" --page \"12\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-d2cqdfxb\\output.md\"",
+        "returncode": 1,
+        "elapsed_seconds": 29.998,
+        "stderr": "ERROR: olmocr produced no output\nError: [Errno 13] Permission denied: 'C:\\\\Users\\\\34886\\\\AppData\\\\Local\\\\Temp\\\\tmpq_la4_bg.pdf'\nError: [Errno 13] Permission denied: 'C:\\\\Users\\\\34886\\\\AppData\\\\Local\\\\Temp\\\\tmpq_la4_bg.pdf'\n\n",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\cn_textbook_formula_002.pdf",
+        "page": 12,
+        "case_id": "cn_textbook_formula_002_p12",
+        "output_source": "none"
+      }
+    },
+    {
+      "case_id": "finance_table_mixed_003_p8",
+      "parser": "olmocr",
+      "markdown": "",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_olmocr.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_table_mixed_003.pdf\" --page \"8\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-rjvdc4_n\\output.md\"",
+        "returncode": 1,
+        "elapsed_seconds": 27.272,
+        "stderr": "ERROR: olmocr produced no output\nError: [Errno 13] Permission denied: 'C:\\\\Users\\\\34886\\\\AppData\\\\Local\\\\Temp\\\\tmplvxxa9pm.pdf'\nError: [Errno 13] Permission denied: 'C:\\\\Users\\\\34886\\\\AppData\\\\Local\\\\Temp\\\\tmplvxxa9pm.pdf'\n\n",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_table_mixed_003.pdf",
+        "page": 8,
+        "case_id": "finance_table_mixed_003_p8",
+        "output_source": "none"
+      }
+    }
+  ]
+}

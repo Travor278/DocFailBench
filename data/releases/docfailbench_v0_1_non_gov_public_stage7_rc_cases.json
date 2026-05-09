@@ -1,0 +1,3679 @@
+{
+  "cases": [
+    {
+      "case_id": "non_gov_public_acl_ocl_corpus_p002",
+      "title": "The ACL OCL Corpus p2",
+      "document": {
+        "path": "runs/stage7_non_gov_public/source_pdfs/acl_2023_emnlp_main_640_ocl_corpus.pdf",
+        "page": 2,
+        "source_url": "https://aclanthology.org/2023.emnlp-main.640.pdf",
+        "source_page": "https://aclanthology.org/2023.emnlp-main.640/",
+        "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+        "attribution": "ACL Anthology / EMNLP 2023",
+        "sha256": "cd1508582cce54c9ab65f570d6b08c4956aca16a83782bf373be961ef98d1401",
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_acl_ocl_corpus_p002.png"
+      },
+      "profile": {
+        "source_kind": "real_public_non_government",
+        "language": "en",
+        "document_type": "academic_paper",
+        "layout": [
+          "double_column",
+          "table",
+          "figure",
+          "dataset_description"
+        ],
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_acl_ocl_corpus_p002.png",
+        "license_review": "source_or_pdf_notice_checked_for_stage7_staging"
+      },
+      "assertions": [
+        {
+          "id": "table_cell_exists_657b63c595d5",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "params": {
+            "text": "RefSeer (Huang et al., 2015)"
+          },
+          "description": "Curated: visible ACL OCL comparison-table cell.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "acl_ocl_corpus"
+          ]
+        },
+        {
+          "id": "table_cell_exists_4020c17ac84b",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "params": {
+            "text": "S2ORC (Lo et al., 2020)"
+          },
+          "description": "Curated: visible ACL OCL comparison-table cell.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "acl_ocl_corpus"
+          ]
+        },
+        {
+          "id": "table_cell_exists_a899572f9f8d",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "params": {
+            "text": "unarXive (Saier et al., 2023)"
+          },
+          "description": "Curated: visible ACL OCL comparison-table cell.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "acl_ocl_corpus"
+          ]
+        },
+        {
+          "id": "caption_binding_7278917d7d42",
+          "type": "caption_binding",
+          "severity": "major",
+          "params": {
+            "anchor": "ACL OCL (Ours) 73.3K structured S2AG",
+            "caption": "Table 1: Comparison between ACL OCL and existing scholar corpora.",
+            "max_lines": 8
+          },
+          "description": "Curated: table row anchor near its caption.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "acl_ocl_corpus"
+          ]
+        },
+        {
+          "id": "table_shape_f2199de13927",
+          "type": "table_shape",
+          "severity": "major",
+          "params": {
+            "row_count": 8,
+            "col_count": 8
+          },
+          "description": "ACL OCL Table 1 has a visible 7x8 grid including header and six data rows. Second review accepted edit: ACL OCL Table 1 has header plus seven data rows, so the visible grid is 8x8.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_shape",
+            "human_second_review_accepted",
+            "structural_v2_gold_fixed"
+          ]
+        },
+        {
+          "id": "table_grid_cell_f086561f5bf5",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 0,
+            "col": 0,
+            "expected": "Name"
+          },
+          "description": "ACL OCL Table 1 cell (0,0) is visibly Name.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_685daf2baaed",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 0,
+            "col": 1,
+            "expected": "#Doc."
+          },
+          "description": "ACL OCL Table 1 cell (0,1) is visibly #Doc..",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_082e4781fb77",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 0,
+            "col": 2,
+            "expected": "Text Type"
+          },
+          "description": "ACL OCL Table 1 cell (0,2) is visibly Text Type.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_bf20615a81fb",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 0,
+            "col": 3,
+            "expected": "Linked KG"
+          },
+          "description": "ACL OCL Table 1 cell (0,3) is visibly Linked KG.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_d5f2c6a76404",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 1,
+            "col": 0,
+            "expected": "RefSeer (Huang et al., 2015)"
+          },
+          "description": "ACL OCL Table 1 cell (1,0) is visibly RefSeer (Huang et al., 2015).",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_21062e425494",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 1,
+            "col": 1,
+            "expected": "1.0M"
+          },
+          "description": "ACL OCL Table 1 cell (1,1) is visibly 1.0M.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_97d2c156e49a",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 1,
+            "col": 3,
+            "expected": "CiteSeerX"
+          },
+          "description": "ACL OCL Table 1 cell (1,3) is visibly CiteSeerX.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_1a9ab7f780af",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 2,
+            "col": 0,
+            "expected": "S2ORC (Lo et al., 2020)"
+          },
+          "description": "ACL OCL Table 1 cell (2,0) is visibly S2ORC (Lo et al., 2020).",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_14e6d6e0fca6",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 2,
+            "col": 1,
+            "expected": "8.1M"
+          },
+          "description": "ACL OCL Table 1 cell (2,1) is visibly 8.1M.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_8e5c077c9a71",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 2,
+            "col": 2,
+            "expected": "structured"
+          },
+          "description": "ACL OCL Table 1 cell (2,2) is visibly structured.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_2cb46b9b998e",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 2,
+            "col": 3,
+            "expected": "S2AG"
+          },
+          "description": "ACL OCL Table 1 cell (2,3) is visibly S2AG.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_5f658b2fc9b9",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 7,
+            "col": 0,
+            "expected": "ACL OCL (Ours)"
+          },
+          "description": "ACL OCL Table 1 cell (6,0) is visibly ACL OCL (Ours). Second review accepted edit: ACL OCL final row is row 7 when header is row 0.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell",
+            "human_second_review_accepted",
+            "structural_v2_gold_fixed"
+          ]
+        },
+        {
+          "id": "table_grid_cell_8fc4bcf8e0e3",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 7,
+            "col": 1,
+            "expected": "73.3K"
+          },
+          "description": "ACL OCL Table 1 cell (6,1) is visibly 73.3K. Second review accepted edit: ACL OCL final row is row 7 when header is row 0.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell",
+            "human_second_review_accepted",
+            "structural_v2_gold_fixed"
+          ]
+        },
+        {
+          "id": "table_grid_cell_8a09516fc28c",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 7,
+            "col": 2,
+            "expected": "structured"
+          },
+          "description": "ACL OCL Table 1 cell (6,2) is visibly structured. Second review accepted edit: ACL OCL final row is row 7 when header is row 0.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell",
+            "human_second_review_accepted",
+            "structural_v2_gold_fixed"
+          ]
+        },
+        {
+          "id": "table_grid_cell_5a183ed3549c",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 7,
+            "col": 3,
+            "expected": "S2AG"
+          },
+          "description": "ACL OCL Table 1 cell (6,3) is visibly S2AG. Second review accepted edit: ACL OCL final row is row 7 when header is row 0.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell",
+            "human_second_review_accepted",
+            "structural_v2_gold_fixed"
+          ]
+        },
+        {
+          "id": "table_grid_cell_6c8cf0bf455b",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 7,
+            "col": 6,
+            "expected": "ACL"
+          },
+          "description": "ACL OCL Table 1 cell (6,6) is visibly ACL. Second review accepted edit: ACL OCL final row is row 7 when header is row 0.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell",
+            "human_second_review_accepted",
+            "structural_v2_gold_fixed"
+          ]
+        },
+        {
+          "id": "table_grid_cell_942d97ab8ed2",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 7,
+            "col": 7,
+            "expected": "CL"
+          },
+          "description": "ACL OCL Table 1 cell (6,7) is visibly CL. Second review accepted edit: ACL OCL final row is row 7 when header is row 0.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell",
+            "human_second_review_accepted",
+            "structural_v2_gold_fixed"
+          ]
+        },
+        {
+          "id": "reading_order_70accdc7dcd0",
+          "type": "reading_order",
+          "severity": "major",
+          "params": {
+            "before": "Table 1: Comparison between ACL OCL and existing scholar corpora.",
+            "after": "2 Related Work"
+          },
+          "description": "Table 1 caption appears before the Related Work section heading on the page.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "reading_order"
+          ]
+        }
+      ],
+      "notes": "Dataset paper with tables, figures, and double-column reading order."
+    },
+    {
+      "case_id": "non_gov_public_acl_ocl_corpus_p004",
+      "title": "The ACL OCL Corpus p4",
+      "document": {
+        "path": "runs/stage7_non_gov_public/source_pdfs/acl_2023_emnlp_main_640_ocl_corpus.pdf",
+        "page": 4,
+        "source_url": "https://aclanthology.org/2023.emnlp-main.640.pdf",
+        "source_page": "https://aclanthology.org/2023.emnlp-main.640/",
+        "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+        "attribution": "ACL Anthology / EMNLP 2023",
+        "sha256": "cd1508582cce54c9ab65f570d6b08c4956aca16a83782bf373be961ef98d1401",
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_acl_ocl_corpus_p004.png"
+      },
+      "profile": {
+        "source_kind": "real_public_non_government",
+        "language": "en",
+        "document_type": "academic_paper",
+        "layout": [
+          "double_column",
+          "table",
+          "figure",
+          "dataset_description"
+        ],
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_acl_ocl_corpus_p004.png",
+        "license_review": "source_or_pdf_notice_checked_for_stage7_staging"
+      },
+      "assertions": [
+        {
+          "id": "text_presence_9321be2c74d7",
+          "type": "text_presence",
+          "severity": "major",
+          "params": {
+            "text": "Figure 3: Distribution of the top 27 languages processed"
+          },
+          "description": "Curated: visible figure caption.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "acl_ocl_corpus"
+          ]
+        }
+      ],
+      "notes": "Dataset paper with tables, figures, and double-column reading order."
+    },
+    {
+      "case_id": "non_gov_public_acl_ocl_corpus_p006",
+      "title": "The ACL OCL Corpus p6",
+      "document": {
+        "path": "runs/stage7_non_gov_public/source_pdfs/acl_2023_emnlp_main_640_ocl_corpus.pdf",
+        "page": 6,
+        "source_url": "https://aclanthology.org/2023.emnlp-main.640.pdf",
+        "source_page": "https://aclanthology.org/2023.emnlp-main.640/",
+        "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+        "attribution": "ACL Anthology / EMNLP 2023",
+        "sha256": "cd1508582cce54c9ab65f570d6b08c4956aca16a83782bf373be961ef98d1401",
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_acl_ocl_corpus_p006.png"
+      },
+      "profile": {
+        "source_kind": "real_public_non_government",
+        "language": "en",
+        "document_type": "academic_paper",
+        "layout": [
+          "double_column",
+          "table",
+          "figure",
+          "dataset_description"
+        ],
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_acl_ocl_corpus_p006.png",
+        "license_review": "source_or_pdf_notice_checked_for_stage7_staging"
+      },
+      "assertions": [
+        {
+          "id": "element_grounded_8e84c54ea1e4",
+          "type": "element_grounded",
+          "severity": "major",
+          "params": {
+            "text": "5.1 NLI-based Un- and Semi-supervised Methods"
+          },
+          "description": "Curated: section heading with bbox grounding value.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "acl_ocl_corpus"
+          ]
+        },
+        {
+          "id": "text_presence_648528ad8102",
+          "type": "text_presence",
+          "severity": "major",
+          "params": {
+            "text": "Table 4: Statistics of the topic corpus, STop."
+          },
+          "description": "Curated: visible table caption.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "acl_ocl_corpus"
+          ]
+        },
+        {
+          "id": "table_shape_176d69c7589c",
+          "type": "table_shape",
+          "severity": "major",
+          "params": {
+            "row_count": 7,
+            "col_count": 3
+          },
+          "description": "ACL OCL Table 4 has a visible 7x3 grid including header and total row.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_shape"
+          ]
+        },
+        {
+          "id": "table_grid_cell_2bc99647b7cd",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 0,
+            "col": 0,
+            "expected": "Source"
+          },
+          "description": "ACL OCL Table 4 cell (0,0) is visibly Source.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_b3e8388ff1e0",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 0,
+            "col": 1,
+            "expected": "#Doc."
+          },
+          "description": "ACL OCL Table 4 cell (0,1) is visibly #Doc..",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_97d55e52ab99",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 0,
+            "col": 2,
+            "expected": "# Unique Topic"
+          },
+          "description": "ACL OCL Table 4 cell (0,2) is visibly # Unique Topic.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_49ef80cebefc",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 1,
+            "col": 0,
+            "expected": "ACL 2020"
+          },
+          "description": "ACL OCL Table 4 cell (1,0) is visibly ACL 2020.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_fa66a872639e",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 1,
+            "col": 1,
+            "expected": "705"
+          },
+          "description": "ACL OCL Table 4 cell (1,1) is visibly 705.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_bb243682adf0",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 1,
+            "col": 2,
+            "expected": "21"
+          },
+          "description": "ACL OCL Table 4 cell (1,2) is visibly 21.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_474c83b2c9e3",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 2,
+            "col": 0,
+            "expected": "EMNLP 2020"
+          },
+          "description": "ACL OCL Table 4 cell (2,0) is visibly EMNLP 2020.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_9716a16997ac",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 2,
+            "col": 1,
+            "expected": "681"
+          },
+          "description": "ACL OCL Table 4 cell (2,1) is visibly 681.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_5a86435852f2",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 2,
+            "col": 2,
+            "expected": "19"
+          },
+          "description": "ACL OCL Table 4 cell (2,2) is visibly 19.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_942f5d9e3793",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 6,
+            "col": 0,
+            "expected": "Total"
+          },
+          "description": "ACL OCL Table 4 cell (6,0) is visibly Total.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_890afef16867",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 6,
+            "col": 1,
+            "expected": "2545"
+          },
+          "description": "ACL OCL Table 4 cell (6,1) is visibly 2545.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_cf6af2bfe71b",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 6,
+            "col": 2,
+            "expected": "21"
+          },
+          "description": "ACL OCL Table 4 cell (6,2) is visibly 21.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "reading_order_5988194510b7",
+          "type": "reading_order",
+          "severity": "major",
+          "params": {
+            "before": "5.3 PLM-based Supervised Method",
+            "after": "6 Experiments"
+          },
+          "description": "Section 5.3 precedes section 6 on the same double-column page.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_ocl_corpus",
+            "reading_order"
+          ]
+        }
+      ],
+      "notes": "Dataset paper with tables, figures, and double-column reading order."
+    },
+    {
+      "case_id": "non_gov_public_acl_ocl_corpus_p008",
+      "title": "The ACL OCL Corpus p8",
+      "document": {
+        "path": "runs/stage7_non_gov_public/source_pdfs/acl_2023_emnlp_main_640_ocl_corpus.pdf",
+        "page": 8,
+        "source_url": "https://aclanthology.org/2023.emnlp-main.640.pdf",
+        "source_page": "https://aclanthology.org/2023.emnlp-main.640/",
+        "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+        "attribution": "ACL Anthology / EMNLP 2023",
+        "sha256": "cd1508582cce54c9ab65f570d6b08c4956aca16a83782bf373be961ef98d1401",
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_acl_ocl_corpus_p008.png"
+      },
+      "profile": {
+        "source_kind": "real_public_non_government",
+        "language": "en",
+        "document_type": "academic_paper",
+        "layout": [
+          "double_column",
+          "table",
+          "figure",
+          "dataset_description"
+        ],
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_acl_ocl_corpus_p008.png",
+        "license_review": "source_or_pdf_notice_checked_for_stage7_staging"
+      },
+      "assertions": [
+        {
+          "id": "element_grounded_0dde3cb68a06",
+          "type": "element_grounded",
+          "severity": "major",
+          "params": {
+            "text": "7 Downstream Applications"
+          },
+          "description": "Curated: section heading with bbox grounding value.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "acl_ocl_corpus"
+          ]
+        }
+      ],
+      "notes": "Dataset paper with tables, figures, and double-column reading order."
+    },
+    {
+      "case_id": "non_gov_public_acl_rocling_readability_zh_p001",
+      "title": "Rewriting Chinese Educational Materials to Change Readability Levels p1",
+      "document": {
+        "path": "runs/stage7_non_gov_public/source_pdfs/acl_2024_rocling_1_1_readability_zh.pdf",
+        "page": 1,
+        "source_url": "https://aclanthology.org/2024.rocling-1.1.pdf",
+        "source_page": "https://aclanthology.org/2024.rocling-1.1/",
+        "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+        "attribution": "ACL Anthology / ROCLING 2024",
+        "sha256": "dfad941296b29348629fc9840e5da00cbe02488f28326bc3c0d55c2847511ce8",
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_acl_rocling_readability_zh_p001.png"
+      },
+      "profile": {
+        "source_kind": "real_public_non_government",
+        "language": "zh_en_mixed",
+        "document_type": "academic_paper",
+        "layout": [
+          "double_column",
+          "mixed_script",
+          "table",
+          "figure"
+        ],
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_acl_rocling_readability_zh_p001.png",
+        "license_review": "source_or_pdf_notice_checked_for_stage7_staging"
+      },
+      "assertions": [
+        {
+          "id": "element_grounded_61d672b23863",
+          "type": "element_grounded",
+          "severity": "major",
+          "params": {
+            "text": "關鍵字：中文文本可讀性、英文文本可讀性、 大型語言模型、改寫、零樣本學習"
+          },
+          "description": "Curated: mixed-script keyword block with spatial grounding value.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "acl_rocling_readability_zh"
+          ]
+        }
+      ],
+      "notes": "Chinese-English academic paper for reading-order and mixed-script checks."
+    },
+    {
+      "case_id": "non_gov_public_acl_rocling_readability_zh_p002",
+      "title": "Rewriting Chinese Educational Materials to Change Readability Levels p2",
+      "document": {
+        "path": "runs/stage7_non_gov_public/source_pdfs/acl_2024_rocling_1_1_readability_zh.pdf",
+        "page": 2,
+        "source_url": "https://aclanthology.org/2024.rocling-1.1.pdf",
+        "source_page": "https://aclanthology.org/2024.rocling-1.1/",
+        "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+        "attribution": "ACL Anthology / ROCLING 2024",
+        "sha256": "dfad941296b29348629fc9840e5da00cbe02488f28326bc3c0d55c2847511ce8",
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_acl_rocling_readability_zh_p002.png"
+      },
+      "profile": {
+        "source_kind": "real_public_non_government",
+        "language": "zh_en_mixed",
+        "document_type": "academic_paper",
+        "layout": [
+          "double_column",
+          "mixed_script",
+          "table",
+          "figure"
+        ],
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_acl_rocling_readability_zh_p002.png",
+        "license_review": "source_or_pdf_notice_checked_for_stage7_staging"
+      },
+      "assertions": [
+        {
+          "id": "table_shape_1f8a89cc8f8a",
+          "type": "table_shape",
+          "severity": "major",
+          "params": {
+            "row_count": 15,
+            "col_count": 4
+          },
+          "description": "ROCLING Table 1 has two side-by-side grade/count blocks; Markdown exports often flatten the four logical columns. Second review accepted edit: ROCLING Table 1 has grouped headers, 1-12 grade rows, and an extra English-side 12+ row.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_rocling_readability_zh",
+            "table_shape",
+            "mixed_script",
+            "human_second_review_accepted",
+            "structural_v2_gold_fixed"
+          ]
+        },
+        {
+          "id": "table_grid_cell_e579bb09ec6b",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 0,
+            "col": 0,
+            "expected": "中文文本"
+          },
+          "description": "ROCLING Table 1 mixed-script cell (0,0) is visibly 中文文本.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_rocling_readability_zh",
+            "table_grid_cell",
+            "mixed_script"
+          ]
+        },
+        {
+          "id": "table_grid_cell_e9b47371827f",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 0,
+            "col": 2,
+            "expected": "英文文本"
+          },
+          "description": "ROCLING Table 1 mixed-script cell (0,2) is visibly 英文文本.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_rocling_readability_zh",
+            "table_grid_cell",
+            "mixed_script"
+          ]
+        },
+        {
+          "id": "table_grid_cell_d9a339ff4688",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 1,
+            "col": 0,
+            "expected": "年級"
+          },
+          "description": "ROCLING Table 1 mixed-script cell (1,0) is visibly 年級.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_rocling_readability_zh",
+            "table_grid_cell",
+            "mixed_script"
+          ]
+        },
+        {
+          "id": "table_grid_cell_1e366377c197",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 1,
+            "col": 1,
+            "expected": "文本數"
+          },
+          "description": "ROCLING Table 1 mixed-script cell (1,1) is visibly 文本數.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_rocling_readability_zh",
+            "table_grid_cell",
+            "mixed_script"
+          ]
+        },
+        {
+          "id": "table_grid_cell_441abbe23b40",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 1,
+            "col": 2,
+            "expected": "年級"
+          },
+          "description": "ROCLING Table 1 mixed-script cell (1,2) is visibly 年級.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_rocling_readability_zh",
+            "table_grid_cell",
+            "mixed_script"
+          ]
+        },
+        {
+          "id": "table_grid_cell_1905e7dd3bec",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 1,
+            "col": 3,
+            "expected": "文本數"
+          },
+          "description": "ROCLING Table 1 mixed-script cell (1,3) is visibly 文本數.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_rocling_readability_zh",
+            "table_grid_cell",
+            "mixed_script"
+          ]
+        },
+        {
+          "id": "table_grid_cell_bf901930a2e9",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 2,
+            "col": 0,
+            "expected": "1 年級"
+          },
+          "description": "ROCLING Table 1 mixed-script cell (2,0) is visibly 1 年級.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_rocling_readability_zh",
+            "table_grid_cell",
+            "mixed_script"
+          ]
+        },
+        {
+          "id": "table_grid_cell_5b85fcfd014e",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 2,
+            "col": 1,
+            "expected": "149"
+          },
+          "description": "ROCLING Table 1 mixed-script cell (2,1) is visibly 149.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_rocling_readability_zh",
+            "table_grid_cell",
+            "mixed_script"
+          ]
+        },
+        {
+          "id": "table_grid_cell_f8fa1ac2b83d",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 2,
+            "col": 2,
+            "expected": "1 年級"
+          },
+          "description": "ROCLING Table 1 mixed-script cell (2,2) is visibly 1 年級.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_rocling_readability_zh",
+            "table_grid_cell",
+            "mixed_script"
+          ]
+        },
+        {
+          "id": "table_grid_cell_4566f4bd6334",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 2,
+            "col": 3,
+            "expected": "56"
+          },
+          "description": "ROCLING Table 1 mixed-script cell (2,3) is visibly 56.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_rocling_readability_zh",
+            "table_grid_cell",
+            "mixed_script"
+          ]
+        },
+        {
+          "id": "table_grid_cell_ce8f8a03d088",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 7,
+            "col": 0,
+            "expected": "6 年級"
+          },
+          "description": "ROCLING Table 1 mixed-script cell (7,0) is visibly 6 年級.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_rocling_readability_zh",
+            "table_grid_cell",
+            "mixed_script"
+          ]
+        },
+        {
+          "id": "table_grid_cell_d1a59fe0b9cc",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 7,
+            "col": 1,
+            "expected": "363"
+          },
+          "description": "ROCLING Table 1 mixed-script cell (7,1) is visibly 363.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_rocling_readability_zh",
+            "table_grid_cell",
+            "mixed_script"
+          ]
+        },
+        {
+          "id": "table_grid_cell_911e3de28fad",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 7,
+            "col": 2,
+            "expected": "6 年級"
+          },
+          "description": "ROCLING Table 1 mixed-script cell (7,2) is visibly 6 年級.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_rocling_readability_zh",
+            "table_grid_cell",
+            "mixed_script"
+          ]
+        },
+        {
+          "id": "table_grid_cell_a2914be5407e",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 7,
+            "col": 3,
+            "expected": "42"
+          },
+          "description": "ROCLING Table 1 mixed-script cell (7,3) is visibly 42.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_rocling_readability_zh",
+            "table_grid_cell",
+            "mixed_script"
+          ]
+        },
+        {
+          "id": "table_grid_cell_7df34c7043a4",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 13,
+            "col": 0,
+            "expected": "12 年級"
+          },
+          "description": "ROCLING Table 1 mixed-script cell (13,0) is visibly 12 年級.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_rocling_readability_zh",
+            "table_grid_cell",
+            "mixed_script"
+          ]
+        },
+        {
+          "id": "table_grid_cell_373267ec2819",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 13,
+            "col": 1,
+            "expected": "789"
+          },
+          "description": "ROCLING Table 1 mixed-script cell (13,1) is visibly 789.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_rocling_readability_zh",
+            "table_grid_cell",
+            "mixed_script"
+          ]
+        },
+        {
+          "id": "table_grid_cell_29d63f844a85",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 14,
+            "col": 2,
+            "expected": "12 以上"
+          },
+          "description": "ROCLING Table 1 mixed-script cell (13,2) is visibly 12 以上. Second review accepted edit: The English-side 12+ row is the extra bottom row, not the Chinese 12th-grade row.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_rocling_readability_zh",
+            "table_grid_cell",
+            "mixed_script",
+            "human_second_review_accepted",
+            "structural_v2_gold_fixed"
+          ]
+        },
+        {
+          "id": "table_grid_cell_bee77b77b999",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 14,
+            "col": 3,
+            "expected": "290"
+          },
+          "description": "ROCLING Table 1 mixed-script cell (13,3) is visibly 290. Second review accepted edit: The English-side 12+ count is the extra bottom row, not the Chinese 12th-grade row.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_rocling_readability_zh",
+            "table_grid_cell",
+            "mixed_script",
+            "human_second_review_accepted",
+            "structural_v2_gold_fixed"
+          ]
+        },
+        {
+          "id": "reading_order_ee1380c62060",
+          "type": "reading_order",
+          "severity": "major",
+          "params": {
+            "before": "3 研究方法",
+            "after": "表 1. 中英文實驗文本在各年級的數量分佈"
+          },
+          "description": "The Method section heading appears before Table 1 caption on page 2.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "acl_rocling_readability_zh",
+            "reading_order",
+            "mixed_script"
+          ]
+        }
+      ],
+      "notes": "Chinese-English academic paper for reading-order and mixed-script checks."
+    },
+    {
+      "case_id": "non_gov_public_acl_rocling_readability_zh_p004",
+      "title": "Rewriting Chinese Educational Materials to Change Readability Levels p4",
+      "document": {
+        "path": "runs/stage7_non_gov_public/source_pdfs/acl_2024_rocling_1_1_readability_zh.pdf",
+        "page": 4,
+        "source_url": "https://aclanthology.org/2024.rocling-1.1.pdf",
+        "source_page": "https://aclanthology.org/2024.rocling-1.1/",
+        "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+        "attribution": "ACL Anthology / ROCLING 2024",
+        "sha256": "dfad941296b29348629fc9840e5da00cbe02488f28326bc3c0d55c2847511ce8",
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_acl_rocling_readability_zh_p004.png"
+      },
+      "profile": {
+        "source_kind": "real_public_non_government",
+        "language": "zh_en_mixed",
+        "document_type": "academic_paper",
+        "layout": [
+          "double_column",
+          "mixed_script",
+          "table",
+          "figure"
+        ],
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_acl_rocling_readability_zh_p004.png",
+        "license_review": "source_or_pdf_notice_checked_for_stage7_staging"
+      },
+      "assertions": [
+        {
+          "id": "text_presence_ee3e6f87d206",
+          "type": "text_presence",
+          "severity": "major",
+          "params": {
+            "text": "3.6 實驗設計"
+          },
+          "description": "Curated: visible Chinese section heading.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "acl_rocling_readability_zh"
+          ]
+        }
+      ],
+      "notes": "Chinese-English academic paper for reading-order and mixed-script checks."
+    },
+    {
+      "case_id": "non_gov_public_acl_rocling_readability_zh_p006",
+      "title": "Rewriting Chinese Educational Materials to Change Readability Levels p6",
+      "document": {
+        "path": "runs/stage7_non_gov_public/source_pdfs/acl_2024_rocling_1_1_readability_zh.pdf",
+        "page": 6,
+        "source_url": "https://aclanthology.org/2024.rocling-1.1.pdf",
+        "source_page": "https://aclanthology.org/2024.rocling-1.1/",
+        "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+        "attribution": "ACL Anthology / ROCLING 2024",
+        "sha256": "dfad941296b29348629fc9840e5da00cbe02488f28326bc3c0d55c2847511ce8",
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_acl_rocling_readability_zh_p006.png"
+      },
+      "profile": {
+        "source_kind": "real_public_non_government",
+        "language": "zh_en_mixed",
+        "document_type": "academic_paper",
+        "layout": [
+          "double_column",
+          "mixed_script",
+          "table",
+          "figure"
+        ],
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_acl_rocling_readability_zh_p006.png",
+        "license_review": "source_or_pdf_notice_checked_for_stage7_staging"
+      },
+      "assertions": [
+        {
+          "id": "element_grounded_c97a04f77caa",
+          "type": "element_grounded",
+          "severity": "major",
+          "params": {
+            "text": "與初步實驗的結果相近，顯示語義相似度與 比較基準相比大致保持不變。"
+          },
+          "description": "Curated: mixed-script body block with grounding value.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "acl_rocling_readability_zh"
+          ]
+        },
+        {
+          "id": "text_presence_e91a1baa4993",
+          "type": "text_presence",
+          "severity": "major",
+          "params": {
+            "text": "圖 5. 迭代改寫策略：8b 改簡單 圖 6. 迭代改寫策略：8b 改難"
+          },
+          "description": "Specific source-visible content anchor kept as a smoke assertion.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "acl_rocling_readability_zh"
+          ]
+        }
+      ],
+      "notes": "Chinese-English academic paper for reading-order and mixed-script checks."
+    },
+    {
+      "case_id": "non_gov_public_acl_rocling_readability_zh_p008",
+      "title": "Rewriting Chinese Educational Materials to Change Readability Levels p8",
+      "document": {
+        "path": "runs/stage7_non_gov_public/source_pdfs/acl_2024_rocling_1_1_readability_zh.pdf",
+        "page": 8,
+        "source_url": "https://aclanthology.org/2024.rocling-1.1.pdf",
+        "source_page": "https://aclanthology.org/2024.rocling-1.1/",
+        "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+        "attribution": "ACL Anthology / ROCLING 2024",
+        "sha256": "dfad941296b29348629fc9840e5da00cbe02488f28326bc3c0d55c2847511ce8",
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_acl_rocling_readability_zh_p008.png"
+      },
+      "profile": {
+        "source_kind": "real_public_non_government",
+        "language": "zh_en_mixed",
+        "document_type": "academic_paper",
+        "layout": [
+          "double_column",
+          "mixed_script",
+          "table",
+          "figure"
+        ],
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_acl_rocling_readability_zh_p008.png",
+        "license_review": "source_or_pdf_notice_checked_for_stage7_staging"
+      },
+      "assertions": [
+        {
+          "id": "text_presence_17481fe7d6ba",
+          "type": "text_presence",
+          "severity": "major",
+          "params": {
+            "text": "圖 9. 中文文本改寫所使用的提示語"
+          },
+          "description": "Curated: visible Chinese figure caption.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "acl_rocling_readability_zh"
+          ]
+        }
+      ],
+      "notes": "Chinese-English academic paper for reading-order and mixed-script checks."
+    },
+    {
+      "case_id": "non_gov_public_acl_struc_bench_p004",
+      "title": "Struc-Bench: Complex Structured Tabular Data p4",
+      "document": {
+        "path": "runs/stage7_non_gov_public/source_pdfs/acl_2024_naacl_short_2_struc_bench.pdf",
+        "page": 4,
+        "source_url": "https://aclanthology.org/2024.naacl-short.2.pdf",
+        "source_page": "https://aclanthology.org/2024.naacl-short.2/",
+        "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+        "attribution": "ACL Anthology / NAACL 2024",
+        "sha256": "21b916ea137241a734a168321980d4fc9a61ca6567ce8379e0eed48145eb8463",
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_acl_struc_bench_p004.png"
+      },
+      "profile": {
+        "source_kind": "real_public_non_government",
+        "language": "en",
+        "document_type": "academic_paper",
+        "layout": [
+          "double_column",
+          "table",
+          "figure",
+          "structured_data"
+        ],
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_acl_struc_bench_p004.png",
+        "license_review": "source_or_pdf_notice_checked_for_stage7_staging"
+      },
+      "assertions": [
+        {
+          "id": "element_grounded_ea544c545ac0",
+          "type": "element_grounded",
+          "severity": "major",
+          "params": {
+            "text": "4.1 Basic Settings"
+          },
+          "description": "Curated: section heading with bbox grounding value.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "acl_struc_bench"
+          ]
+        },
+        {
+          "id": "text_presence_30e3ffdcf48d",
+          "type": "text_presence",
+          "severity": "major",
+          "params": {
+            "text": "Table 2: Automated evaluation results on the test set"
+          },
+          "description": "Curated: visible table caption.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "acl_struc_bench"
+          ]
+        }
+      ],
+      "notes": "Paper about complex structured tabular data; good table/caption candidates."
+    },
+    {
+      "case_id": "non_gov_public_bmc_3d_print_models_review_p003",
+      "title": "Quality assurance of 3D-printed patient specific anatomical models p3",
+      "document": {
+        "path": "runs/stage7_non_gov_public/source_pdfs/bmc_3d_print_models_systematic_review.pdf",
+        "page": 3,
+        "source_url": "https://threedmedprint.biomedcentral.com/counter/pdf/10.1186/s41205-024-00210-5.pdf",
+        "source_page": "https://threedmedprint.biomedcentral.com/articles/10.1186/s41205-024-00210-5",
+        "license": "CC BY 4.0; BioMed Central article notice verified",
+        "attribution": "3D Printing in Medicine / BioMed Central",
+        "sha256": "63a2b8d7d9fb1011180d752a94b88751c506bb4aa9020562a11cd79d222d977c",
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_bmc_3d_print_models_review_p003.png"
+      },
+      "profile": {
+        "source_kind": "real_public_non_government",
+        "language": "en",
+        "document_type": "biomedical_article",
+        "layout": [
+          "biomedical",
+          "systematic_review",
+          "table",
+          "caption"
+        ],
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_bmc_3d_print_models_review_p003.png",
+        "license_review": "source_or_pdf_notice_checked_for_stage7_staging"
+      },
+      "assertions": [
+        {
+          "id": "text_presence_f862a9da7348",
+          "type": "text_presence",
+          "severity": "major",
+          "params": {
+            "text": "5923 search results on Scopus and 1105 on PubMed"
+          },
+          "description": "Curated: visible systematic-review flow text, kept as secondary text anchor.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "bmc_3d_print_models_review"
+          ]
+        }
+      ],
+      "notes": "Biomedical review with dense tables and figure-caption pages."
+    },
+    {
+      "case_id": "non_gov_public_bmc_3d_print_models_review_p005",
+      "title": "Quality assurance of 3D-printed patient specific anatomical models p5",
+      "document": {
+        "path": "runs/stage7_non_gov_public/source_pdfs/bmc_3d_print_models_systematic_review.pdf",
+        "page": 5,
+        "source_url": "https://threedmedprint.biomedcentral.com/counter/pdf/10.1186/s41205-024-00210-5.pdf",
+        "source_page": "https://threedmedprint.biomedcentral.com/articles/10.1186/s41205-024-00210-5",
+        "license": "CC BY 4.0; BioMed Central article notice verified",
+        "attribution": "3D Printing in Medicine / BioMed Central",
+        "sha256": "63a2b8d7d9fb1011180d752a94b88751c506bb4aa9020562a11cd79d222d977c",
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_bmc_3d_print_models_review_p005.png"
+      },
+      "profile": {
+        "source_kind": "real_public_non_government",
+        "language": "en",
+        "document_type": "biomedical_article",
+        "layout": [
+          "biomedical",
+          "systematic_review",
+          "table",
+          "caption"
+        ],
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_bmc_3d_print_models_review_p005.png",
+        "license_review": "source_or_pdf_notice_checked_for_stage7_staging"
+      },
+      "assertions": [
+        {
+          "id": "table_cell_exists_31e40ecae556",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "params": {
+            "text": "clinical studies"
+          },
+          "description": "Curated: visible exclusion-criteria cell in BMC Table 1.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "bmc_3d_print_models_review"
+          ]
+        },
+        {
+          "id": "table_cell_exists_e13c3b163f2f",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "params": {
+            "text": "no medical context"
+          },
+          "description": "Curated: visible exclusion-criteria cell in BMC Table 1.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "bmc_3d_print_models_review"
+          ]
+        },
+        {
+          "id": "text_presence_2467fcb04144",
+          "type": "text_presence",
+          "severity": "major",
+          "params": {
+            "text": "Table 1 In- and exclusion criteria for title screening"
+          },
+          "description": "Curated: visible table caption.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "bmc_3d_print_models_review"
+          ]
+        },
+        {
+          "id": "table_shape_b1e42752a58b",
+          "type": "table_shape",
+          "severity": "major",
+          "params": {
+            "row_count": 21,
+            "col_count": 4
+          },
+          "description": "BMC Table 1 has four visible columns and multiple criteria rows; row count is approximate for Markdown exports. Second review accepted edit: BMC Table 1 expands to the header plus a longer exclusion list; 21x4 is the stricter visible grid.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "bmc_3d_print_models_review",
+            "table_shape",
+            "human_second_review_accepted",
+            "structural_v2_gold_fixed"
+          ]
+        },
+        {
+          "id": "table_grid_cell_f78dc65fc3ce",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 0,
+            "col": 0,
+            "expected": "Inclusion Criteria"
+          },
+          "description": "BMC Table 1 cell (0,0) is visibly Inclusion Criteria.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "bmc_3d_print_models_review",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_e982377877b3",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 0,
+            "col": 1,
+            "expected": "Example"
+          },
+          "description": "BMC Table 1 cell (0,1) is visibly Example.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "bmc_3d_print_models_review",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_6980413d8612",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 0,
+            "col": 2,
+            "expected": "Exclusion Criteria"
+          },
+          "description": "BMC Table 1 cell (0,2) is visibly Exclusion Criteria.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "bmc_3d_print_models_review",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_55275467af43",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 0,
+            "col": 3,
+            "expected": "Example"
+          },
+          "description": "BMC Table 1 cell (0,3) is visibly Example.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "bmc_3d_print_models_review",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_80372e0aa286",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 1,
+            "col": 0,
+            "expected": "quality assessment of medical models"
+          },
+          "description": "BMC Table 1 cell (1,0) is visibly quality assessment of medical models.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "bmc_3d_print_models_review",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_46566c15ffbb",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 1,
+            "col": 1,
+            "expected": "[19]"
+          },
+          "description": "BMC Table 1 cell (1,1) is visibly [19].",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "bmc_3d_print_models_review",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_5e434deb14bb",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 1,
+            "col": 2,
+            "expected": "clinical studies"
+          },
+          "description": "BMC Table 1 cell (1,2) is visibly clinical studies.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "bmc_3d_print_models_review",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_db04b53dd7ae",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 1,
+            "col": 3,
+            "expected": "[20]"
+          },
+          "description": "BMC Table 1 cell (1,3) is visibly [20].",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "bmc_3d_print_models_review",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_52eb22711e49",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 2,
+            "col": 0,
+            "expected": "tolerances of additive manufactured objects for clinical use"
+          },
+          "description": "BMC Table 1 cell (2,0) is visibly tolerances of additive manufactured objects for clinical use.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "bmc_3d_print_models_review",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_12b9e5db5281",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 2,
+            "col": 2,
+            "expected": "no medical context"
+          },
+          "description": "BMC Table 1 cell (2,2) is visibly no medical context.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "bmc_3d_print_models_review",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_a79be4c14fc9",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 3,
+            "col": 0,
+            "expected": "additive manufactured models in medicine"
+          },
+          "description": "BMC Table 1 cell (3,0) is visibly additive manufactured models in medicine.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "bmc_3d_print_models_review",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_df877491ee10",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 3,
+            "col": 2,
+            "expected": "evaluation of material properties"
+          },
+          "description": "BMC Table 1 cell (3,2) is visibly evaluation of material properties.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "bmc_3d_print_models_review",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "reading_order_7a0237968c7a",
+          "type": "reading_order",
+          "severity": "major",
+          "params": {
+            "before": "Table 1 In- and exclusion criteria for title screening",
+            "after": "Evaluation of the segmentation error (SegE)"
+          },
+          "description": "Table 1 appears before the error-category prose sections.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "bmc_3d_print_models_review",
+            "reading_order"
+          ]
+        }
+      ],
+      "notes": "Biomedical review with dense tables and figure-caption pages."
+    },
+    {
+      "case_id": "non_gov_public_bmc_3d_print_models_review_p007",
+      "title": "Quality assurance of 3D-printed patient specific anatomical models p7",
+      "document": {
+        "path": "runs/stage7_non_gov_public/source_pdfs/bmc_3d_print_models_systematic_review.pdf",
+        "page": 7,
+        "source_url": "https://threedmedprint.biomedcentral.com/counter/pdf/10.1186/s41205-024-00210-5.pdf",
+        "source_page": "https://threedmedprint.biomedcentral.com/articles/10.1186/s41205-024-00210-5",
+        "license": "CC BY 4.0; BioMed Central article notice verified",
+        "attribution": "3D Printing in Medicine / BioMed Central",
+        "sha256": "63a2b8d7d9fb1011180d752a94b88751c506bb4aa9020562a11cd79d222d977c",
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_bmc_3d_print_models_review_p007.png"
+      },
+      "profile": {
+        "source_kind": "real_public_non_government",
+        "language": "en",
+        "document_type": "biomedical_article",
+        "layout": [
+          "biomedical",
+          "systematic_review",
+          "table",
+          "caption"
+        ],
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_bmc_3d_print_models_review_p007.png",
+        "license_review": "source_or_pdf_notice_checked_for_stage7_staging"
+      },
+      "assertions": [
+        {
+          "id": "text_presence_15de80681a50",
+          "type": "text_presence",
+          "severity": "major",
+          "params": {
+            "text": "Fig. 4 (See legend on previous page.)"
+          },
+          "description": "Curated: visible figure continuation caption.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "bmc_3d_print_models_review"
+          ]
+        }
+      ],
+      "notes": "Biomedical review with dense tables and figure-caption pages."
+    },
+    {
+      "case_id": "non_gov_public_bmc_3d_print_models_review_p009",
+      "title": "Quality assurance of 3D-printed patient specific anatomical models p9",
+      "document": {
+        "path": "runs/stage7_non_gov_public/source_pdfs/bmc_3d_print_models_systematic_review.pdf",
+        "page": 9,
+        "source_url": "https://threedmedprint.biomedcentral.com/counter/pdf/10.1186/s41205-024-00210-5.pdf",
+        "source_page": "https://threedmedprint.biomedcentral.com/articles/10.1186/s41205-024-00210-5",
+        "license": "CC BY 4.0; BioMed Central article notice verified",
+        "attribution": "3D Printing in Medicine / BioMed Central",
+        "sha256": "63a2b8d7d9fb1011180d752a94b88751c506bb4aa9020562a11cd79d222d977c",
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_bmc_3d_print_models_review_p009.png"
+      },
+      "profile": {
+        "source_kind": "real_public_non_government",
+        "language": "en",
+        "document_type": "biomedical_article",
+        "layout": [
+          "biomedical",
+          "systematic_review",
+          "table",
+          "caption"
+        ],
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_bmc_3d_print_models_review_p009.png",
+        "license_review": "source_or_pdf_notice_checked_for_stage7_staging"
+      },
+      "assertions": [
+        {
+          "id": "table_cell_exists_56696e2127aa",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "params": {
+            "text": "Digital light processing (DLP)"
+          },
+          "description": "Curated: visible printing-technology cell in BMC Table 3.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "bmc_3d_print_models_review"
+          ]
+        },
+        {
+          "id": "table_cell_exists_5aa13c458b34",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "params": {
+            "text": "Selective laser sintering (SLS)"
+          },
+          "description": "Curated: visible printing-technology cell in BMC Table 3.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "bmc_3d_print_models_review"
+          ]
+        },
+        {
+          "id": "formula_contains_0b18ab6cb0bf",
+          "type": "formula_contains",
+          "severity": "major",
+          "params": {
+            "latex": "AMMD = \\max_{i=1}^{n}(|x_i|)"
+          },
+          "description": "Curated: visible AMMD equation as extracted by the source parser. Second review accepted edit: AMMD formula is visible, but the original params compressed max range and x subscript.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "bmc_3d_print_models_review",
+            "human_second_review_accepted",
+            "structural_v2_gold_fixed"
+          ]
+        },
+        {
+          "id": "table_shape_461282d6c8fb",
+          "type": "table_shape",
+          "severity": "major",
+          "params": {
+            "row_count": 11,
+            "col_count": 3
+          },
+          "description": "BMC Table 3 has three visible columns and about ten technology rows.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "bmc_3d_print_models_review",
+            "table_shape"
+          ]
+        },
+        {
+          "id": "table_grid_cell_5bfad06ae99e",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 0,
+            "col": 0,
+            "expected": "Basic technology"
+          },
+          "description": "BMC Table 3 cell (0,0) is visibly Basic technology.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "bmc_3d_print_models_review",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_8185457722ad",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 0,
+            "col": 1,
+            "expected": "Printing technology as described in publication or by manufacturer"
+          },
+          "description": "BMC Table 3 cell (0,1) is visibly Printing technology as described in publication or by manufacturer.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "bmc_3d_print_models_review",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_e3c9e4528ec6",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 0,
+            "col": 2,
+            "expected": "Description"
+          },
+          "description": "BMC Table 3 cell (0,2) is visibly Description.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "bmc_3d_print_models_review",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_f86178b0bf0b",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 1,
+            "col": 0,
+            "expected": "curing of liquid photopolymers"
+          },
+          "description": "BMC Table 3 cell (1,0) is visibly curing of liquid photopolymers.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "bmc_3d_print_models_review",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_2559584f0f13",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 1,
+            "col": 1,
+            "expected": "Multi jet printing (MJP) / Polyjet printing(PJP)"
+          },
+          "description": "BMC Table 3 cell (1,1) is visibly Multi jet printing (MJP) / Polyjet printing(PJP).",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "bmc_3d_print_models_review",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_61ad3f809334",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 2,
+            "col": 1,
+            "expected": "Digital light processing (DLP)"
+          },
+          "description": "BMC Table 3 cell (2,1) is visibly Digital light processing (DLP).",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "bmc_3d_print_models_review",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_5b2aa3475ddd",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 3,
+            "col": 1,
+            "expected": "Stereolithography (SLA)/Scan, Spin and Selectively Photocuring"
+          },
+          "description": "BMC Table 3 cell (3,1) is visibly Stereolithography (SLA)/Scan, Spin and Selectively Photocuring.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "bmc_3d_print_models_review",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_eb3ff6ce09ad",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 7,
+            "col": 0,
+            "expected": "extrusion of tough masses through nozzle"
+          },
+          "description": "BMC Table 3 cell (7,0) is visibly extrusion of tough masses through nozzle.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "bmc_3d_print_models_review",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_74f7ce5d2516",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 7,
+            "col": 1,
+            "expected": "Fused deposition modeling (FDM) / fused filament fabrication (FFF)"
+          },
+          "description": "BMC Table 3 cell (7,1) is visibly Fused deposition modeling (FDM) / fused filament fabrication (FFF).",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "bmc_3d_print_models_review",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_ac141cf10380",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 8,
+            "col": 0,
+            "expected": "melting/sintering/ binding of powder"
+          },
+          "description": "BMC Table 3 cell (8,0) is visibly melting/sintering/ binding of powder.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "bmc_3d_print_models_review",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_5c23b338874f",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 8,
+            "col": 1,
+            "expected": "Selective laser sintering (SLS)"
+          },
+          "description": "BMC Table 3 cell (8,1) is visibly Selective laser sintering (SLS).",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "bmc_3d_print_models_review",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_577487fcae43",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 10,
+            "col": 1,
+            "expected": "Color jet printing (CJP)"
+          },
+          "description": "BMC Table 3 cell (10,1) is visibly Color jet printing (CJP).",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "bmc_3d_print_models_review",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "reading_order_5be3a625d3ab",
+          "type": "reading_order",
+          "severity": "major",
+          "params": {
+            "before": "Quantitative analysis",
+            "after": "Results"
+          },
+          "description": "The Quantitative analysis heading precedes Results on page 9.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "bmc_3d_print_models_review",
+            "reading_order"
+          ]
+        }
+      ],
+      "notes": "Biomedical review with dense tables and figure-caption pages."
+    },
+    {
+      "case_id": "non_gov_public_frontiers_vascular_models_p005",
+      "title": "Quality assurance in 3D-printing vascular anatomical models p5",
+      "document": {
+        "path": "runs/stage7_non_gov_public/source_pdfs/frontiers_fmedt_2023_1097850_vascular_models.pdf",
+        "page": 5,
+        "source_url": "https://www.frontiersin.org/journals/medical-technology/articles/10.3389/fmedt.2023.1097850/pdf",
+        "source_page": "https://www.frontiersin.org/journals/medical-technology/articles/10.3389/fmedt.2023.1097850/full",
+        "license": "CC BY; Frontiers open-access notice verified",
+        "attribution": "Frontiers in Medical Technology",
+        "sha256": "c7e80aa20e297eb526d095bcee5e302458bc5a02607ec2d59742b6ccf2cf77bc",
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_frontiers_vascular_models_p005.png"
+      },
+      "profile": {
+        "source_kind": "real_public_non_government",
+        "language": "en",
+        "document_type": "biomedical_article",
+        "layout": [
+          "biomedical",
+          "figure",
+          "table",
+          "caption"
+        ],
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_frontiers_vascular_models_p005.png",
+        "license_review": "source_or_pdf_notice_checked_for_stage7_staging"
+      },
+      "assertions": [
+        {
+          "id": "table_cell_exists_74ef59c7703f",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "params": {
+            "text": "Ultimaker S3"
+          },
+          "description": "Curated: visible printer-model cell in the Frontiers modalities table.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "frontiers_vascular_models"
+          ]
+        },
+        {
+          "id": "formula_contains_027432f6c946",
+          "type": "formula_contains",
+          "severity": "major",
+          "params": {
+            "latex": "r = 0.9998"
+          },
+          "description": "Curated: visible correlation statistic.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "frontiers_vascular_models"
+          ]
+        },
+        {
+          "id": "text_presence_37c21b56a404",
+          "type": "text_presence",
+          "severity": "major",
+          "params": {
+            "text": "TABLE 1 3d printing modalities and parameters."
+          },
+          "description": "Curated: visible table caption.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "frontiers_vascular_models"
+          ]
+        },
+        {
+          "id": "table_shape_92e88e22ecef",
+          "type": "table_shape",
+          "severity": "major",
+          "params": {
+            "row_count": 5,
+            "col_count": 6
+          },
+          "description": "Frontiers Table 1 has a visible 5x6 grid including header and four printer rows.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "frontiers_vascular_models",
+            "table_shape"
+          ]
+        },
+        {
+          "id": "table_grid_cell_083b2eb9cc51",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 0,
+            "col": 0,
+            "expected": "Printer Model"
+          },
+          "description": "Frontiers Table 1 cell (0,0) is visibly Printer Model.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "frontiers_vascular_models",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_51a982dbc90c",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 0,
+            "col": 1,
+            "expected": "Type"
+          },
+          "description": "Frontiers Table 1 cell (0,1) is visibly Type.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "frontiers_vascular_models",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_997839c65dfa",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 0,
+            "col": 2,
+            "expected": "Material"
+          },
+          "description": "Frontiers Table 1 cell (0,2) is visibly Material.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "frontiers_vascular_models",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_dcdab1b8c72e",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 0,
+            "col": 4,
+            "expected": "Layer thickness"
+          },
+          "description": "Frontiers Table 1 cell (0,4) is visibly Layer thickness.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "frontiers_vascular_models",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_af8058dba6f9",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 1,
+            "col": 0,
+            "expected": "Ultimaker S3"
+          },
+          "description": "Frontiers Table 1 cell (1,0) is visibly Ultimaker S3.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "frontiers_vascular_models",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_3810b0681a24",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 1,
+            "col": 1,
+            "expected": "FDM"
+          },
+          "description": "Frontiers Table 1 cell (1,1) is visibly FDM.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "frontiers_vascular_models",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_6739365cce43",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 1,
+            "col": 4,
+            "expected": "0.10 mm"
+          },
+          "description": "Frontiers Table 1 cell (1,4) is visibly 0.10 mm.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "frontiers_vascular_models",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_cbefd0e9d5e0",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 2,
+            "col": 0,
+            "expected": "Formlabs Form 3"
+          },
+          "description": "Frontiers Table 1 cell (2,0) is visibly Formlabs Form 3.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "frontiers_vascular_models",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_772799574b2e",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 2,
+            "col": 1,
+            "expected": "SLA"
+          },
+          "description": "Frontiers Table 1 cell (2,1) is visibly SLA.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "frontiers_vascular_models",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_904b8e09d3e2",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 2,
+            "col": 4,
+            "expected": "0.05 mm"
+          },
+          "description": "Frontiers Table 1 cell (2,4) is visibly 0.05 mm.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "frontiers_vascular_models",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_c26acde6339e",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 3,
+            "col": 0,
+            "expected": "3D Systems sPro 60"
+          },
+          "description": "Frontiers Table 1 cell (3,0) is visibly 3D Systems sPro 60.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "frontiers_vascular_models",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_5a433ec254a4",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 3,
+            "col": 1,
+            "expected": "SLS"
+          },
+          "description": "Frontiers Table 1 cell (3,1) is visibly SLS.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "frontiers_vascular_models",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_5d33a1fa5f85",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 3,
+            "col": 4,
+            "expected": "0.10 mm"
+          },
+          "description": "Frontiers Table 1 cell (3,4) is visibly 0.10 mm.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "frontiers_vascular_models",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_e8304349d355",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 4,
+            "col": 0,
+            "expected": "Stratasys J750 Digital Anatomy"
+          },
+          "description": "Frontiers Table 1 cell (4,0) is visibly Stratasys J750 Digital Anatomy.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "frontiers_vascular_models",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_5cf6423f5e0e",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 4,
+            "col": 1,
+            "expected": "PolyJet"
+          },
+          "description": "Frontiers Table 1 cell (4,1) is visibly PolyJet.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "frontiers_vascular_models",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_b68e64af2a50",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 4,
+            "col": 4,
+            "expected": "0.014 mm"
+          },
+          "description": "Frontiers Table 1 cell (4,4) is visibly 0.014 mm.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "frontiers_vascular_models",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "reading_order_1ee3bc29d8eb",
+          "type": "reading_order",
+          "severity": "major",
+          "params": {
+            "before": "Assessment of dimensional accuracy",
+            "after": "TABLE 1 3d printing modalities and parameters."
+          },
+          "description": "The dimensional-accuracy section begins before the table caption on page 5.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "frontiers_vascular_models",
+            "reading_order"
+          ]
+        }
+      ],
+      "notes": "Biomedical OA article with tables, captions, and technical figure content."
+    },
+    {
+      "case_id": "non_gov_public_openstax_calculus_v1_p058",
+      "title": "OpenStax Calculus Volume 1 p58",
+      "document": {
+        "path": "runs/stage7_non_gov_public/source_pdfs/openstax_calculus_volume_1.pdf",
+        "page": 58,
+        "source_url": "https://assets.openstax.org/oscms-prodcms/media/documents/CalculusVolume1-OP.pdf",
+        "source_page": "https://openstax.org/details/books/calculus-volume-1",
+        "license": "CC BY-NC-SA 4.0; OpenStax Calculus copyright page verified",
+        "attribution": "OpenStax",
+        "sha256": "202c86537285adf7e5abeb64057c39ee7333ad8c8473b6dd6a9ddf3e72443286",
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_openstax_calculus_v1_p058.png"
+      },
+      "profile": {
+        "source_kind": "real_public_non_government",
+        "language": "en",
+        "document_type": "open_textbook",
+        "layout": [
+          "textbook",
+          "formula",
+          "figure",
+          "table"
+        ],
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_openstax_calculus_v1_p058.png",
+        "license_review": "source_or_pdf_notice_checked_for_stage7_staging"
+      },
+      "assertions": [
+        {
+          "id": "text_presence_2389af8f3193",
+          "type": "text_presence",
+          "severity": "major",
+          "params": {
+            "text": "Example 1.18"
+          },
+          "description": "Curated: visible textbook example label.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "openstax_calculus_v1"
+          ]
+        }
+      ],
+      "notes": "Formula-heavy textbook pages for formula and reading-order candidates."
+    },
+    {
+      "case_id": "non_gov_public_openstax_calculus_v1_p151",
+      "title": "OpenStax Calculus Volume 1 p151",
+      "document": {
+        "path": "runs/stage7_non_gov_public/source_pdfs/openstax_calculus_volume_1.pdf",
+        "page": 151,
+        "source_url": "https://assets.openstax.org/oscms-prodcms/media/documents/CalculusVolume1-OP.pdf",
+        "source_page": "https://openstax.org/details/books/calculus-volume-1",
+        "license": "CC BY-NC-SA 4.0; OpenStax Calculus copyright page verified",
+        "attribution": "OpenStax",
+        "sha256": "202c86537285adf7e5abeb64057c39ee7333ad8c8473b6dd6a9ddf3e72443286",
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_openstax_calculus_v1_p151.png"
+      },
+      "profile": {
+        "source_kind": "real_public_non_government",
+        "language": "en",
+        "document_type": "open_textbook",
+        "layout": [
+          "textbook",
+          "formula",
+          "figure",
+          "table"
+        ],
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_openstax_calculus_v1_p151.png",
+        "license_review": "source_or_pdf_notice_checked_for_stage7_staging"
+      },
+      "assertions": [
+        {
+          "id": "caption_binding_6ce7d831a0f5",
+          "type": "caption_binding",
+          "severity": "major",
+          "params": {
+            "anchor": "sin(1/x) oscillates ever more wildly between −1 and 1 as x approaches 0.",
+            "caption": "Figure 2.17 The graph of f(x) = sin(1/x) oscillates rapidly",
+            "max_lines": 8
+          },
+          "description": "Curated: figure caption bound to the nearby sinusoid discussion.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "openstax_calculus_v1"
+          ]
+        },
+        {
+          "id": "text_presence_a8a5230ceaa3",
+          "type": "text_presence",
+          "severity": "major",
+          "params": {
+            "text": "Figure 2.17 The graph of f(x) = sin(1/x) oscillates rapidly"
+          },
+          "description": "Curated: figure caption text is source-visible.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "openstax_calculus_v1"
+          ]
+        }
+      ],
+      "notes": "Formula-heavy textbook pages for formula and reading-order candidates."
+    },
+    {
+      "case_id": "non_gov_public_openstax_calculus_v1_p225",
+      "title": "OpenStax Calculus Volume 1 p225",
+      "document": {
+        "path": "runs/stage7_non_gov_public/source_pdfs/openstax_calculus_volume_1.pdf",
+        "page": 225,
+        "source_url": "https://assets.openstax.org/oscms-prodcms/media/documents/CalculusVolume1-OP.pdf",
+        "source_page": "https://openstax.org/details/books/calculus-volume-1",
+        "license": "CC BY-NC-SA 4.0; OpenStax Calculus copyright page verified",
+        "attribution": "OpenStax",
+        "sha256": "202c86537285adf7e5abeb64057c39ee7333ad8c8473b6dd6a9ddf3e72443286",
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_openstax_calculus_v1_p225.png"
+      },
+      "profile": {
+        "source_kind": "real_public_non_government",
+        "language": "en",
+        "document_type": "open_textbook",
+        "layout": [
+          "textbook",
+          "formula",
+          "figure",
+          "table"
+        ],
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_openstax_calculus_v1_p225.png",
+        "license_review": "source_or_pdf_notice_checked_for_stage7_staging"
+      },
+      "assertions": [
+        {
+          "id": "text_presence_85444a433d04",
+          "type": "text_presence",
+          "severity": "major",
+          "params": {
+            "text": "Figure 3.5 For values of x close to 1, the graph of f(x) = √x and its tangent line appear to coincide."
+          },
+          "description": "Curated: figure caption text is source-visible. Second review accepted edit: OpenStax Calculus Figure 3.5 caption uses sqrt(x), not x.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "openstax_calculus_v1",
+            "human_second_review_accepted",
+            "structural_v2_gold_fixed"
+          ]
+        },
+        {
+          "id": "formula_contains_cf8bf0f325c0",
+          "type": "formula_contains",
+          "severity": "major",
+          "params": {
+            "latex": "f(a + h) −f(a)"
+          },
+          "description": "Curated: tangent-line slope formula fragment from the blue definition box.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "openstax_calculus_v1"
+          ]
+        }
+      ],
+      "notes": "Formula-heavy textbook pages for formula and reading-order candidates."
+    },
+    {
+      "case_id": "non_gov_public_openstax_chemistry_p049",
+      "title": "OpenStax Chemistry p49",
+      "document": {
+        "path": "runs/stage7_non_gov_public/source_pdfs/openstax_chemistry.pdf",
+        "page": 49,
+        "source_url": "https://assets.openstax.org/oscms-prodcms/media/documents/Chemistry-LR.pdf",
+        "source_page": "https://openstax.org/details/books/chemistry",
+        "license": "CC BY 4.0; OpenStax Chemistry copyright page verified",
+        "attribution": "OpenStax",
+        "sha256": "aa56e10ea6468b9779d6e4524cf256fd7865c29b4f9ba9e5de15c4e669748f87",
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_openstax_chemistry_p049.png"
+      },
+      "profile": {
+        "source_kind": "real_public_non_government",
+        "language": "en",
+        "document_type": "open_textbook",
+        "layout": [
+          "textbook",
+          "chemistry_formula",
+          "table",
+          "figure"
+        ],
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_openstax_chemistry_p049.png",
+        "license_review": "source_or_pdf_notice_checked_for_stage7_staging"
+      },
+      "assertions": [
+        {
+          "id": "text_presence_bde52bae7e42",
+          "type": "text_presence",
+          "severity": "major",
+          "params": {
+            "text": "(a) 31.57 rounds “up” to 32"
+          },
+          "description": "Curated: visible significant-figures solution row.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "openstax_chemistry"
+          ]
+        }
+      ],
+      "notes": "Chemistry formulas, diagrams, examples, and occasional tables."
+    },
+    {
+      "case_id": "non_gov_public_openstax_chemistry_p109",
+      "title": "OpenStax Chemistry p109",
+      "document": {
+        "path": "runs/stage7_non_gov_public/source_pdfs/openstax_chemistry.pdf",
+        "page": 109,
+        "source_url": "https://assets.openstax.org/oscms-prodcms/media/documents/Chemistry-LR.pdf",
+        "source_page": "https://openstax.org/details/books/chemistry",
+        "license": "CC BY 4.0; OpenStax Chemistry copyright page verified",
+        "attribution": "OpenStax",
+        "sha256": "aa56e10ea6468b9779d6e4524cf256fd7865c29b4f9ba9e5de15c4e669748f87",
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_openstax_chemistry_p109.png"
+      },
+      "profile": {
+        "source_kind": "real_public_non_government",
+        "language": "en",
+        "document_type": "open_textbook",
+        "layout": [
+          "textbook",
+          "chemistry_formula",
+          "table",
+          "figure"
+        ],
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_openstax_chemistry_p109.png",
+        "license_review": "source_or_pdf_notice_checked_for_stage7_staging"
+      },
+      "assertions": [
+        {
+          "id": "element_grounded_473acdd038a5",
+          "type": "element_grounded",
+          "severity": "major",
+          "params": {
+            "text": "Figure 2.29 Some elements exhibit a regular pattern of ionic charge when they form ions."
+          },
+          "description": "Curated: figure caption anchor for bbox-aware parsers.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "openstax_chemistry"
+          ]
+        },
+        {
+          "id": "text_presence_9419a8aa11d3",
+          "type": "text_presence",
+          "severity": "major",
+          "params": {
+            "text": "Figure 2.29 Some elements exhibit a regular pattern of ionic charge when they form ions."
+          },
+          "description": "Curated: visible chemistry figure caption.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "openstax_chemistry"
+          ]
+        }
+      ],
+      "notes": "Chemistry formulas, diagrams, examples, and occasional tables."
+    },
+    {
+      "case_id": "non_gov_public_openstax_chemistry_p186",
+      "title": "OpenStax Chemistry p186",
+      "document": {
+        "path": "runs/stage7_non_gov_public/source_pdfs/openstax_chemistry.pdf",
+        "page": 186,
+        "source_url": "https://assets.openstax.org/oscms-prodcms/media/documents/Chemistry-LR.pdf",
+        "source_page": "https://openstax.org/details/books/chemistry",
+        "license": "CC BY 4.0; OpenStax Chemistry copyright page verified",
+        "attribution": "OpenStax",
+        "sha256": "aa56e10ea6468b9779d6e4524cf256fd7865c29b4f9ba9e5de15c4e669748f87",
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_openstax_chemistry_p186.png"
+      },
+      "profile": {
+        "source_kind": "real_public_non_government",
+        "language": "en",
+        "document_type": "open_textbook",
+        "layout": [
+          "textbook",
+          "chemistry_formula",
+          "table",
+          "figure"
+        ],
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_openstax_chemistry_p186.png",
+        "license_review": "source_or_pdf_notice_checked_for_stage7_staging"
+      },
+      "assertions": [
+        {
+          "id": "table_cell_exists_93016b6dff04",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "params": {
+            "text": "2 = 2, yes"
+          },
+          "description": "Curated: visible balancing-table cell; current plain parsers may fail if they do not emit Markdown tables.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "openstax_chemistry"
+          ]
+        },
+        {
+          "id": "table_cell_exists_d40cdf14f8f8",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "params": {
+            "text": "2 × 1 = 2"
+          },
+          "description": "Curated: visible balancing-table reactants cell; current plain parsers may fail if they do not emit Markdown tables.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "openstax_chemistry"
+          ]
+        },
+        {
+          "id": "table_shape_abc47a9db157",
+          "type": "table_shape",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row_count": 3,
+            "col_count": 4
+          },
+          "description": "OpenStax balancing table 0 is a visible 3x4 grid.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "openstax_chemistry",
+            "table_shape"
+          ]
+        },
+        {
+          "id": "table_shape_c53c41fa2ce5",
+          "type": "table_shape",
+          "severity": "major",
+          "params": {
+            "table_index": 1,
+            "row_count": 3,
+            "col_count": 4
+          },
+          "description": "OpenStax balancing table 1 is a visible 3x4 grid.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "openstax_chemistry",
+            "table_shape"
+          ]
+        },
+        {
+          "id": "table_shape_ddb2cd770c3d",
+          "type": "table_shape",
+          "severity": "major",
+          "params": {
+            "table_index": 2,
+            "row_count": 3,
+            "col_count": 4
+          },
+          "description": "OpenStax balancing table 2 is a visible 3x4 grid.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "openstax_chemistry",
+            "table_shape"
+          ]
+        },
+        {
+          "id": "table_grid_cell_ce92c2139731",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 0,
+            "col": 0,
+            "expected": "Element"
+          },
+          "description": "OpenStax chemistry table 0 cell (0,0) is visibly Element.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "openstax_chemistry",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_f26ab3593c0d",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 0,
+            "col": 3,
+            "expected": "Balanced?"
+          },
+          "description": "OpenStax chemistry table 0 cell (0,3) is visibly Balanced?.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "openstax_chemistry",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_8c6ffb785615",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 1,
+            "col": 0,
+            "expected": "H"
+          },
+          "description": "OpenStax chemistry table 0 cell (1,0) is visibly H.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "openstax_chemistry",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_f7176899722b",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 1,
+            "col": 3,
+            "expected": "2 = 2, yes"
+          },
+          "description": "OpenStax chemistry table 0 cell (1,3) is visibly 2 = 2, yes.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "openstax_chemistry",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_6f4b03b34cc9",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 2,
+            "col": 0,
+            "expected": "O"
+          },
+          "description": "OpenStax chemistry table 0 cell (2,0) is visibly O.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "openstax_chemistry",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_295675631170",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 0,
+            "row": 2,
+            "col": 3,
+            "expected": "1 ≠ 2, no"
+          },
+          "description": "OpenStax chemistry table 0 cell (2,3) is visibly 1 ≠ 2, no.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "openstax_chemistry",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_c7c4ee4cefb8",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 1,
+            "row": 0,
+            "col": 0,
+            "expected": "Element"
+          },
+          "description": "OpenStax chemistry table 1 cell (0,0) is visibly Element.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "openstax_chemistry",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_e0b63641037a",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 1,
+            "row": 0,
+            "col": 3,
+            "expected": "Balanced?"
+          },
+          "description": "OpenStax chemistry table 1 cell (0,3) is visibly Balanced?.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "openstax_chemistry",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_413c09820bd2",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 1,
+            "row": 1,
+            "col": 1,
+            "expected": "2 × 2 = 4"
+          },
+          "description": "OpenStax chemistry table 1 cell (1,1) is visibly 2 × 2 = 4.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "openstax_chemistry",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_66236e88de50",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 1,
+            "row": 1,
+            "col": 3,
+            "expected": "4 ≠ 2, no"
+          },
+          "description": "OpenStax chemistry table 1 cell (1,3) is visibly 4 ≠ 2, no.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "openstax_chemistry",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_857682d532f7",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 1,
+            "row": 2,
+            "col": 1,
+            "expected": "2 × 1 = 2"
+          },
+          "description": "OpenStax chemistry table 1 cell (2,1) is visibly 2 × 1 = 2.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "openstax_chemistry",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_10c915584415",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 1,
+            "row": 2,
+            "col": 3,
+            "expected": "2 = 2, yes"
+          },
+          "description": "OpenStax chemistry table 1 cell (2,3) is visibly 2 = 2, yes.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "openstax_chemistry",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_e3957f2a572c",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 2,
+            "row": 0,
+            "col": 0,
+            "expected": "Element"
+          },
+          "description": "OpenStax chemistry table 2 cell (0,0) is visibly Element.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "openstax_chemistry",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_7cf7880b3e67",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 2,
+            "row": 0,
+            "col": 3,
+            "expected": "Balanced?"
+          },
+          "description": "OpenStax chemistry table 2 cell (0,3) is visibly Balanced?.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "openstax_chemistry",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_cac907874e07",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 2,
+            "row": 1,
+            "col": 2,
+            "expected": "2 × 2 = 4"
+          },
+          "description": "OpenStax chemistry table 2 cell (1,2) is visibly 2 × 2 = 4.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "openstax_chemistry",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_97db19a14bde",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 2,
+            "row": 1,
+            "col": 3,
+            "expected": "4 = 4, yes"
+          },
+          "description": "OpenStax chemistry table 2 cell (1,3) is visibly 4 = 4, yes.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "openstax_chemistry",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_fede18359976",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 2,
+            "row": 2,
+            "col": 1,
+            "expected": "2 × 1 = 2"
+          },
+          "description": "OpenStax chemistry table 2 cell (2,1) is visibly 2 × 1 = 2.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "openstax_chemistry",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "table_grid_cell_bdfd208d631e",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "params": {
+            "table_index": 2,
+            "row": 2,
+            "col": 3,
+            "expected": "2 = 2, yes"
+          },
+          "description": "OpenStax chemistry table 2 cell (2,3) is visibly 2 = 2, yes.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "openstax_chemistry",
+            "table_grid_cell"
+          ]
+        },
+        {
+          "id": "reading_order_95f2d0b206a4",
+          "type": "reading_order",
+          "severity": "major",
+          "params": {
+            "before": "H2O → H2 + O2",
+            "after": "Example 4.1"
+          },
+          "description": "The balancing walkthrough appears before Example 4.1.",
+          "tags": [
+            "non_gov_public_stage7",
+            "structural_v2",
+            "codex_hand_authored",
+            "openstax_chemistry",
+            "reading_order"
+          ]
+        }
+      ],
+      "notes": "Chemistry formulas, diagrams, examples, and occasional tables."
+    },
+    {
+      "case_id": "non_gov_public_openstax_chemistry_p257",
+      "title": "OpenStax Chemistry p257",
+      "document": {
+        "path": "runs/stage7_non_gov_public/source_pdfs/openstax_chemistry.pdf",
+        "page": 257,
+        "source_url": "https://assets.openstax.org/oscms-prodcms/media/documents/Chemistry-LR.pdf",
+        "source_page": "https://openstax.org/details/books/chemistry",
+        "license": "CC BY 4.0; OpenStax Chemistry copyright page verified",
+        "attribution": "OpenStax",
+        "sha256": "aa56e10ea6468b9779d6e4524cf256fd7865c29b4f9ba9e5de15c4e669748f87",
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_openstax_chemistry_p257.png"
+      },
+      "profile": {
+        "source_kind": "real_public_non_government",
+        "language": "en",
+        "document_type": "open_textbook",
+        "layout": [
+          "textbook",
+          "chemistry_formula",
+          "table",
+          "figure"
+        ],
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_openstax_chemistry_p257.png",
+        "license_review": "source_or_pdf_notice_checked_for_stage7_staging"
+      },
+      "assertions": [
+        {
+          "id": "formula_contains_d1577b525729",
+          "type": "formula_contains",
+          "severity": "major",
+          "params": {
+            "latex": "q_{rxn} = -q_{soln} = -(c × m × ΔT)_{soln}"
+          },
+          "description": "Curated: visible thermochemistry equation chain. Second review accepted edit: Thermochemistry equation is visible and should preserve rxn/soln subscripts.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "openstax_chemistry",
+            "human_second_review_accepted",
+            "structural_v2_gold_fixed"
+          ]
+        },
+        {
+          "id": "formula_contains_8c24a5191d77",
+          "type": "formula_contains",
+          "severity": "major",
+          "params": {
+            "latex": "+1.0 × 10^3 J = +1.0 kJ"
+          },
+          "description": "Curated: visible unit-conversion result. Second review accepted edit: Unit conversion result should preserve the 10^3 exponent.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "openstax_chemistry",
+            "human_second_review_accepted",
+            "structural_v2_gold_fixed"
+          ]
+        },
+        {
+          "id": "reading_order_732fcb0d4f10",
+          "type": "reading_order",
+          "severity": "major",
+          "params": {
+            "before": "q_{rxn} = -q_{soln} = -(c × m × ΔT)_{soln}",
+            "after": "Check Your Learning"
+          },
+          "description": "Curated: equation block precedes the Check Your Learning section. Second review accepted edit: Reading-order anchor should match the edited thermochemistry equation.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "openstax_chemistry",
+            "human_second_review_accepted",
+            "structural_v2_gold_fixed"
+          ]
+        },
+        {
+          "id": "element_grounded_78e462136534",
+          "type": "element_grounded",
+          "severity": "major",
+          "params": {
+            "text": "+1.0 × 10^3 J = +1.0 kJ"
+          },
+          "description": "Representative spatial anchor kept for bbox-aware parser coverage. Second review accepted edit: Grounding anchor should preserve the 10^3 exponent.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "openstax_chemistry",
+            "human_second_review_accepted",
+            "structural_v2_gold_fixed"
+          ]
+        }
+      ],
+      "notes": "Chemistry formulas, diagrams, examples, and occasional tables."
+    },
+    {
+      "case_id": "non_gov_public_pmc_peerj_cs_1452_p005",
+      "title": "PeerJ Computer Science article e1452 (PMC10403167) p5",
+      "document": {
+        "path": "runs/stage7_non_gov_public/source_pdfs/pmc_peerj_cs_1452.pdf",
+        "page": 5,
+        "source_url": "https://peerj.com/articles/cs-1452.pdf?download=1",
+        "source_page": "https://peerj.com/articles/cs-1452/",
+        "license": "CC BY 4.0; PeerJ/PMC OA notice verified",
+        "attribution": "PeerJ Computer Science / PMC Open Access",
+        "sha256": "f474b6464b8f8d90e3c1c57dffe6625076c35a433425cb6ff285074d96ae675e",
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_pmc_peerj_cs_1452_p005.png"
+      },
+      "profile": {
+        "source_kind": "real_public_non_government",
+        "language": "en",
+        "document_type": "biomedical_or_computational_article",
+        "layout": [
+          "academic_paper",
+          "figure",
+          "table",
+          "caption",
+          "references"
+        ],
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_pmc_peerj_cs_1452_p005.png",
+        "license_review": "source_or_pdf_notice_checked_for_stage7_staging"
+      },
+      "assertions": [
+        {
+          "id": "formula_contains_042508e41a99",
+          "type": "formula_contains",
+          "severity": "major",
+          "params": {
+            "latex": "PSNR = 10 × log_{10}"
+          },
+          "description": "Curated: visible PSNR equation prefix; the visual fraction is intentionally not over-specified for the current matcher. Second review accepted edit: PSNR formula is visible; log base 10 should be explicit.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "pmc_peerj_cs_1452",
+            "human_second_review_accepted",
+            "structural_v2_gold_fixed"
+          ]
+        },
+        {
+          "id": "element_grounded_1ea55798d7bd",
+          "type": "element_grounded",
+          "severity": "major",
+          "params": {
+            "text": "Figure 2 Unsharp filter mask."
+          },
+          "description": "Curated: figure caption anchor for bbox-aware parsers.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "pmc_peerj_cs_1452"
+          ]
+        },
+        {
+          "id": "text_presence_6b7847444501",
+          "type": "text_presence",
+          "severity": "major",
+          "params": {
+            "text": "Figure 2 Unsharp filter mask."
+          },
+          "description": "Specific source-visible content anchor kept as a smoke assertion.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "pmc_peerj_cs_1452"
+          ]
+        }
+      ],
+      "notes": "PMC OA article reachable via publisher PDF; useful for table/caption/reading-order candidates."
+    },
+    {
+      "case_id": "non_gov_public_pmc_peerj_cs_1452_p007",
+      "title": "PeerJ Computer Science article e1452 (PMC10403167) p7",
+      "document": {
+        "path": "runs/stage7_non_gov_public/source_pdfs/pmc_peerj_cs_1452.pdf",
+        "page": 7,
+        "source_url": "https://peerj.com/articles/cs-1452.pdf?download=1",
+        "source_page": "https://peerj.com/articles/cs-1452/",
+        "license": "CC BY 4.0; PeerJ/PMC OA notice verified",
+        "attribution": "PeerJ Computer Science / PMC Open Access",
+        "sha256": "f474b6464b8f8d90e3c1c57dffe6625076c35a433425cb6ff285074d96ae675e",
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_pmc_peerj_cs_1452_p007.png"
+      },
+      "profile": {
+        "source_kind": "real_public_non_government",
+        "language": "en",
+        "document_type": "biomedical_or_computational_article",
+        "layout": [
+          "academic_paper",
+          "figure",
+          "table",
+          "caption",
+          "references"
+        ],
+        "page_image": "runs/stage7_non_gov_public/page_images/non_gov_public_pmc_peerj_cs_1452_p007.png",
+        "license_review": "source_or_pdf_notice_checked_for_stage7_staging"
+      },
+      "assertions": [
+        {
+          "id": "formula_contains_7fa815d7bdf4",
+          "type": "formula_contains",
+          "severity": "major",
+          "params": {
+            "latex": "K_{LPF} = (B3)^T (B3)"
+          },
+          "description": "Curated: visible low-pass-filter kernel equation. Second review accepted edit: KLPF formula is visible; subscript and transpose should be explicit.",
+          "tags": [
+            "non_gov_public_stage7",
+            "codex_strict_review",
+            "pmc_peerj_cs_1452",
+            "human_second_review_accepted",
+            "structural_v2_gold_fixed"
+          ]
+        }
+      ],
+      "notes": "PMC OA article reachable via publisher PDF; useful for table/caption/reading-order candidates."
+    }
+  ],
+  "version": "0.1-non-gov-public-stage7-rc",
+  "release_name": "DocFailBench-v0.1-non-gov-public-stage7-rc",
+  "status": "release_candidate_frozen_from_stage7",
+  "description": "Non-government public PDF structural-v2 release candidate; reviewed Stage7 subset only, also included as a profile in the combined public RC."
+}

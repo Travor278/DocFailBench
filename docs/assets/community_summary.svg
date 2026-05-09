@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="430" viewBox="0 0 1040 430" role="img" aria-labelledby="title desc">
+<title id="title">DocFailBench community benchmark summary</title>
+<desc id="desc">Combined public release candidate summary and parser leaderboard.</desc>
+<rect width="1040" height="430" rx="22" fill="#fbfcfe"/>
+<rect x="26" y="24" width="988" height="108" rx="18" fill="#111827"/>
+<text x="56" y="67" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="760" fill="#ffffff">DocFailBench</text>
+<text x="56" y="100" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" fill="#cbd5e1">Failure-oriented PDF-to-Markdown parser benchmark with executable assertions</text>
+<text x="56" y="158" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#475569">COMBINED PUBLIC RC</text>
+<rect x="56" y="176" width="166" height="74" rx="12" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="74" y="207" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="760" fill="#111827">116</text>
+<text x="74" y="231" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="#475569">cases</text>
+<rect x="244" y="176" width="166" height="74" rx="12" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="262" y="207" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="760" fill="#111827">877</text>
+<text x="262" y="231" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="#475569">assertions</text>
+<rect x="432" y="176" width="166" height="74" rx="12" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="450" y="207" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="760" fill="#111827">3</text>
+<text x="450" y="231" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="#475569">profiles</text>
+<rect x="620" y="176" width="166" height="74" rx="12" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="638" y="207" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="760" fill="#111827">7</text>
+<text x="638" y="231" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="#475569">parsers</text>
+<rect x="808" y="176" width="166" height="74" rx="12" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="826" y="207" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="760" fill="#111827">0.708</text>
+<text x="826" y="231" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="#475569">top score</text>
+<text x="56" y="280" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#475569">TOP PARSERS</text>
+<text x="56" y="323" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="650" fill="#111827">Marker</text>
+<rect x="260" y="304" width="340" height="24" rx="8" fill="#e5e7eb"/>
+<rect x="260" y="304" width="241" height="24" rx="8" fill="#2563eb"/>
+<text x="620" y="322" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#111827">0.7081</text>
+<text x="56" y="357" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="650" fill="#111827">PyMuPDF4LLM bbox</text>
+<rect x="260" y="338" width="340" height="24" rx="8" fill="#e5e7eb"/>
+<rect x="260" y="338" width="237" height="24" rx="8" fill="#2563eb"/>
+<text x="620" y="356" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#111827">0.6978</text>
+<text x="56" y="391" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="650" fill="#111827">docling</text>
+<rect x="260" y="372" width="340" height="24" rx="8" fill="#e5e7eb"/>
+<rect x="260" y="372" width="232" height="24" rx="8" fill="#2563eb"/>
+<text x="620" y="390" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#111827">0.6830</text>
+<rect x="720" y="286" width="242" height="104" rx="14" fill="#eff6ff" stroke="#bfdbfe"/>
+<text x="744" y="318" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="760" fill="#1e3a8a">Release focus</text>
+<text x="744" y="346" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="#334155">public PDFs, reviewed checks,</text>
+<text x="744" y="367" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="#334155">and reproducible parser runs</text>
+</svg>

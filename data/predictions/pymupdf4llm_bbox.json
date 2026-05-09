@@ -1,0 +1,5471 @@
+{
+  "predictions": [
+    {
+      "case_id": "arxiv_mulco_p4",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "**==> picture [454 x 135] intentionally omitted <==**\n\n**----- Start of picture text -----**<br>\nBeijing Municipality Haidian District People s Government Location<br>北京市<br>Beijing Municipality<br>北 京 市 海 淀 区 人 民 政 府 海淀区<br>Haidian District<br>B-min Loc N N Loc N N N N N N 北京市海淀区<br>3 0 0 3 0 0 0 0 0 0 Haidian District,<br>Beijing Municipality<br>Org N N Org N N N N N N<br>B-max Organization<br>10 0 0 7 0 0 0 0 0 0 海淀区人民政府<br>E-min N N Loc N N Loc N N N Org Haidian District People s Government<br>0 0 3 0 0 3 0 0 0 7 北京市海淀区人民政府<br>Haidian District People s<br>E-max N N Loc N N Loc N N N Org Government of Beijing<br>0 0 3 0 0 6 0 0 0 10 Municipality<br>**----- End of picture text -----**<br>\n\n\nFigure 1: An example of recognizing nested named entities in “Haidian District People’s Government of Beijing Municipality”. \n\nother entity. Moreover, ChiNesE is specially designed for CNNER, most of the sentences in the validation set and the test set have nested named entities, which can best test the model performance on CNNER. \n\n## **Methodology** \n\nIn this section, we introduce our proposed approach Mulco, a novel solution to CNNER problem. It can recognize named entities by adapting multiple scopes for accurate entity iden- \n\n## **Recognition through a Scope** \n\nThe NNER task aims to recognize all entities from a given sentence. Inspired by modern Computer Vision methods (Jiang et al. 2022), we use scopes to locate the named entities in a sentence under a sequence labeling scheme, which recognizes named entities by finding their anchor and predicting its length. We define `P` - `x` as the scope which uses the _x_ `[th]` token of the named entity to locate it. For example, if we use `P` - `1` to locate “Beijing Tiananmen” in “I am going to Beijing Tiananmen”, we first find the position of the word “Beijing” (first token of “Beijing Tiananmen”), which is the 5 `[th]` token of the sentence. Next, by knowing the length of the “Beijing Tiananmen” is 2, we can locate the last token “Tiananmen”, which is 6 `[th]` token of the sentence. The entity “Beijing Tiananmen” can then be extracted from the sentence. \n\nWe employ the sequence labeling method to enable the above recognition method. Specifically, for a given sentence _T_ = _{ti}_ 1 _≤i≤N_ , where _ti_ represent the _i_ `[th]` character of the sentence, and _N_ is the total number of characters. In Chinese, a character acts as a token, just like a word in English. We use two sequences of labels to locate entities. The first sequence of labels are the anchor labels _C_ `[P]`[-] `[x]` = _{c_ `[P]` _i_[-] `[x]` _[}]_[1] _[≤][i][≤][N]_[, where] _[ c]_ `[P]` _i_[-] `[x]` is the anchor label of character _ti_ for the scope `P` - `x` . We have \n\n**==> picture [163 x 25] intentionally omitted <==**\n\nwhere _c_ `[P]` _i_[-] `[x]` = `cate` if _ti_ is the _x_ `[th]` token of an named entity, and `cate` is the category of the entity with the anchor _ti_ . `NA` means “not an anchor”. \n\nBy predicting the anchor labels, we can locate a certain character of an entity and know its category. However, to fully recognize the named entity, we also need a sequence of the length labels _L_ `[P]`[-] `[x]` = _{li_ `[P]`[-] `[x]` _[}]_[1] _[≤][i][≤][N]_[to][obtain][the][lengths] of the entities, where _li_ `[P]`[-] `[x]` is the length label of _ti_ . We define \n\n**==> picture [146 x 25] intentionally omitted <==**\n\nwhere _z_ is the length of the entity which has _ti_ as its anchor for the scope `P` - `x` . \n\nIt is obvious that in flat NER, where no nested named entity is considered, we can recognize all named entities by locating anchors and their lengths with a scope `P` - `x` . However, when recognizing named entities from NNER, using single scope will no longer work. For example, if we also define “Beijing” as a named entity of location while having “Beijing Tiananmen”, when we use `P` - `1` as the scope, “Beijing” will then be the anchor of both “Beijing” and “Beijing Tiananmen”, and that will cause critical problems on the sequence labeling. \n\n## **Recognition through Multiple Scopes** \n\nAn intuitive way to recognize nested named entities is to employ multiple scopes to handle the nested structures between named entities. Thus, in Mulco, we use four different scopes to solve CNNER problem. \n\nFigure 1 gives an example of how the four scopes work. For convenience, we use `B` - `min` , `B` - `max` , `E` - `min` and `E` - `max` to denote the four scopes used in Mulco. `B` - `min` , `B` - `max` use the first token of an entity as the anchor and predict the named entities of the shortest and the longest length, while `E` - `min` and `E` - `max` use the last token of an entity as the anchor and recognize the named entities with the shortest and the longest lengths. The example gives a heavily nested structure of name entities. None of the four scopes can find all named entities only by itself. For example, `B` - `min` is unable to recognize “Haidian District People’s Government”, “Haidian District, Beijing Municipality” or “Haidian District People’s Government of Beijing Municipality”. On the other hand, `B` - `max` failed to recognize “Beijing Municipality”, “Haidian District” and “Haidian District, Beijing Municipality”. However, if we combine the two scopes, we can \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "北 京 市 海 淀 区 人 民 政 府",
+          "page": 4,
+          "bbox": [
+            266.54888916015625,
+            137.0748748779297,
+            907.2175903320312,
+            174.18240356445312
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Haidian District Beijing Municipality People s Government Location",
+          "page": 4,
+          "bbox": [
+            285.20513916015625,
+            111.18753814697266,
+            1023.7616577148438,
+            129.0237579345703
+          ]
+        },
+        {
+          "type": "text",
+          "text": "北京市 Beijing Municipality",
+          "page": 4,
+          "bbox": [
+            944.981201171875,
+            129.3272705078125,
+            1042.6983642578125,
+            158.3433380126953
+          ]
+        },
+        {
+          "type": "text",
+          "text": "海淀区 Haidian District",
+          "page": 4,
+          "bbox": [
+            955.9494018554688,
+            163.4108428955078,
+            1032.2236328125,
+            192.42691040039062
+          ]
+        },
+        {
+          "type": "text",
+          "text": "北京市海淀区 Haidian District, Beijing Municipality",
+          "page": 4,
+          "bbox": [
+            944.981201171875,
+            197.69223022460938,
+            1042.6983642578125,
+            241.47650146484375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Organization 海淀区人民政府 Haidian District People s",
+          "page": 4,
+          "bbox": [
+            933.3978271484375,
+            249.6514434814453,
+            1057.7828369140625,
+            296.77899169921875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Government",
+          "page": 4,
+          "bbox": [
+            962.6328735351562,
+            299.20074462890625,
+            1025.2076416015625,
+            311.6040954589844
+          ]
+        },
+        {
+          "type": "text",
+          "text": "北京市海淀区人民政府 Haidian District People s",
+          "page": 4,
+          "bbox": [
+            932.7008056640625,
+            316.8565979003906,
+            1057.7828369140625,
+            345.82861328125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Government of Beijing",
+          "page": 4,
+          "bbox": [
+            937.8671875,
+            348.2503356933594,
+            1051.258544921875,
+            360.6536865234375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Municipality",
+          "page": 4,
+          "bbox": [
+            963.2478637695312,
+            363.1523132324219,
+            1025.6258544921875,
+            375.50439453125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Loc N N Loc N N N N N N",
+          "page": 4,
+          "bbox": [
+            273.0068359375,
+            192.15782165527344,
+            892.5205688476562,
+            206.09878540039062
+          ]
+        },
+        {
+          "type": "text",
+          "text": "3 0 0 3 0 0 0 0 0 0 B-min",
+          "page": 4,
+          "bbox": [
+            174.08758544921875,
+            199.69207763671875,
+            891.4880981445312,
+            227.36898803710938
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Org N N Org N N N N N N 10 0 0 7 0 0 0 0 0 0 B-max",
+          "page": 4,
+          "bbox": [
+            172.34495544433594,
+            242.42469787597656,
+            892.48681640625,
+            276.0597839355469
+          ]
+        },
+        {
+          "type": "text",
+          "text": "N N Loc N N Loc N N N Org 0 0 3 0 0 3 0 0 0 7 E-min",
+          "page": 4,
+          "bbox": [
+            174.8051300048828,
+            291.1155090332031,
+            899.1902465820312,
+            325.6091003417969
+          ]
+        },
+        {
+          "type": "text",
+          "text": "N N Loc N N Loc N N N Org 0 0 3 0 0 6 0 0 0 10 E-max",
+          "page": 4,
+          "bbox": [
+            172.80624389648438,
+            341.561767578125,
+            898.948974609375,
+            374.6074523925781
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Figure 1: An example of recognizing nested named entities in “Haidian District People’s Government of Beijing Municipality”.",
+          "page": 4,
+          "bbox": [
+            108.0,
+            400.376708984375,
+            1115.9957275390625,
+            418.1898193359375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "other entity. Moreover, ChiNesE is specially designed for CNNER, most of the sentences in the validation set and the test set have nested named entities, which can best test the model performance on CNNER.",
+          "page": 4,
+          "bbox": [
+            108.0,
+            466.7266845703125,
+            585.00927734375,
+            550.293701171875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Methodology In this section, we introduce our proposed approach Mulco, a novel solution to CNNER problem. It can recognize named entities by adapting multiple scopes for accurate entity iden- tification from nested structures.",
+          "page": 4,
+          "bbox": [
+            107.99998474121094,
+            575.0776977539062,
+            585.0092163085938,
+            689.2615966796875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Recognition through a Scope The NNER task aims to recognize all entities from a given sentence. Inspired by modern Computer Vision methods (Jiang et al. 2022), we use scopes to locate the named en- tities in a sentence under a sequence labeling scheme, which recognizes named entities by finding their anchor and pre- dicting its length. We define P - x as the scope which uses the x th token of the named entity to locate it. For example, if we use P - 1 to locate “Beijing Tiananmen” in “I am go- ing to Beijing Tiananmen”, we first find the position of the word “Beijing” (first token of “Beijing Tiananmen”), which is the 5 th token of the sentence. Next, by knowing the length of the “Beijing Tiananmen” is 2 , we can locate the last to- ken “Tiananmen”, which is 6 th token of the sentence. The entity “Beijing Tiananmen” can then be extracted from the sentence. We employ the sequence labeling method to enable the above recognition method. Specifically, for a given sen- tence T = { t i } 1 ≤ i ≤ N , where t i represent the i th char- acter of the sentence, and N is the total number of char- acters. In Chinese, a character acts as a token, just like a word in English. We use two sequences of labels to locate entities. The first sequence of labels are the anchor labels C P - x = { c P - x i } 1 ≤ i ≤ N , where c P - x i is the anchor label of char- acter t i for the scope P - x . We have",
+          "page": 4,
+          "bbox": [
+            107.99996185302734,
+            711.5051879882812,
+            585.0100708007812,
+            1265.5872802734375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "c P - x i = � NA , t i is not an anchor cate , otherwise ,",
+          "page": 4,
+          "bbox": [
+            184.5659942626953,
+            1279.598388671875,
+            508.4392395019531,
+            1326.3427734375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "where c P - x i = cate if t i is the x th token of an named entity, and cate is the category of the entity with the anchor t i . NA means “not an anchor”.",
+          "page": 4,
+          "bbox": [
+            108.00003051757812,
+            1339.424072265625,
+            585.0015258789062,
+            1408.30322265625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "By predicting the anchor labels, we can locate a certain character of an entity and know its category. However, to fully recognize the named entity, we also need a sequence of the length labels L P - x = { l P - x i } 1 ≤ i ≤ N to obtain the lengths of the entities, where l P - x i is the length label of t i . We define",
+          "page": 4,
+          "bbox": [
+            638.9998779296875,
+            466.72607421875,
+            1116.010009765625,
+            575.799072265625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "l P - x i = � 0 , t i is not an anchor z, otherwise ,",
+          "page": 4,
+          "bbox": [
+            732.3997802734375,
+            592.3322143554688,
+            1022.60498046875,
+            639.0765991210938
+          ]
+        },
+        {
+          "type": "text",
+          "text": "where z is the length of the entity which has t i as its anchor for the scope P - x . It is obvious that in flat NER, where no nested named en- tity is considered, we can recognize all named entities by locating anchors and their lengths with a scope P - x . How- ever, when recognizing named entities from NNER, using single scope will no longer work. For example, if we also define “Beijing” as a named entity of location while having “Beijing Tiananmen”, when we use P - 1 as the scope, “Bei- jing” will then be the anchor of both “Beijing” and “Beijing Tiananmen”, and that will cause critical problems on the se- quence labeling.",
+          "page": 4,
+          "bbox": [
+            638.99951171875,
+            659.1531372070312,
+            1116.009765625,
+            918.8348388671875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Recognition through Multiple Scopes An intuitive way to recognize nested named entities is to em- ploy multiple scopes to handle the nested structures between named entities. Thus, in Mulco, we use four different scopes to solve CNNER problem. Figure 1 gives an example of how the four scopes work. For convenience, we use B - min , B - max , E - min and E - max to denote the four scopes used in Mulco. B - min , B - max use the first token of an entity as the anchor and predict the named entities of the shortest and the longest length, while E - min and E - max use the last token of an entity as the anchor and recognize the named entities with the shortest and the longest lengths. The example gives a heavily nested struc- ture of name entities. None of the four scopes can find all named entities only by itself. For example, B - min is un- able to recognize “Haidian District People’s Government”, “Haidian District, Beijing Municipality” or “Haidian Dis- trict People’s Government of Beijing Municipality”. On the other hand, B - max failed to recognize “Beijing Municipal- ity”, “Haidian District” and “Haidian District, Beijing Mu- nicipality”. However, if we combine the two scopes, we can",
+          "page": 4,
+          "bbox": [
+            638.999267578125,
+            942.79443359375,
+            1116.0089111328125,
+            1408.3028564453125
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\real\\mulco_chinese_nner.pdf",
+        "page": 4,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\real\\mulco_chinese_nner.pdf\" --page \"4\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-4i8cvm8f\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 3.34,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\real\\mulco_chinese_nner.pdf",
+        "case_id": "arxiv_mulco_p4",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "arxiv_mulco_p7",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "|Approach|ACE 2005|ChiNesE|\n|---|---|---|\n||P<br>R<br>F1|P<br>R<br>F1|\n|Innermost<br>Sequence Labeling<br>Outermost<br>Sequence Labeling<br>Wang et al. (2018)<br>Transition-based<br>Wang et al. (2020)<br>Layer-based<br>Yu, Bohnet, and Poesio (2020)<br>Span-based|89.27<br>65.74<br>75.72<br>**89.38**<br>61.54<br>72.83<br>77.62<br>81.60<br>79.56<br>83.22<br>76.29<br>84.72<br>81.57<br>86.63<br>84.02|93.79<br>54.42<br>68.88<br>**94.21**<br>43.94<br>59.93<br>86.56<br>76.34<br>81.13<br>90.79<br>77.71<br>84.02<br>92.14<br>77.69<br>84.30|\n|Mulco<br>Sequence Labeling|83.89<br>**88.17**<br>**85.98**|90.57<br>**80.47**<br>**85.23**|\n\n\n\nTable 3: The experimental results on ChiNesE and ACE 2005. \n\n||ACE 2005|ChiNesE|\n|---|---|---|\n||P<br>R<br>F1|P<br>R<br>F1|\n|Mulco|83.89<br>**88.17**<br>85.98|90.57<br>**80.47**<br>**85.23**|\n|`B`-`min`<br>`B`-`max`<br>`E`-`min`<br>`E`-`max`|**86.87**<br>69.41<br>77.16<br>84.66<br>67.60<br>75.17<br>86.19<br>87.73<br>**86.95**<br>86.20<br>87.59<br>86.89|92.11<br>57.44<br>70.75<br>91.12<br>56.85<br>70.02<br>93.14<br>72.13<br>81.30<br>**93.19**<br>72.05<br>81.27|\n|-LSTM|82.20<br>87.15<br>84.60|89.71<br>80.71<br>84.98|\n\n\n\nTable 4: The results of the ablation studies. \n\nlabeling method can not recognize, which results in a higher recall rate and overall performance. \n\nTake `B` - `max` in Figure 1 as an example, it can properly recognize “Haidian District People’s Government of Beijing Municipality” and “Haidian District People’s Government” with a single scope: `B` - `max` recognizes an entity only by the anchor label and the length label of its first token. The two entities have two different start characters, thus can be distinguished by `B` - `max` . In contrast, the Outermost method can only recognize “Haidian District People’s Government of Beijing Municipality”, since the traditional sequence labeling method considers all characters in an entity when recognizing thus only allowing one character to have one label even it is an element of more than one entities. \n\n**Diversity of nested named entities.** We also have some interesting funding on the experiment results of `E` - `min` and `E` - `max` . As shown in Table 4, `E` - `min` and `E` - `max` have higher performance than `B` - `min` and `B` - `max` on both datasets, they even achieve higher performance than the default Mulco scope setting on ACE 2005 with only single scope. This is because, in Chinese, nested named entities are more likely to share the same start characters with other named entities. Among 1801 nested named entities in the test set of ACE 2005, 1479 of them are in such a situation, while there are only 4 named entities that have the same end characters as other entities. We can see that the ratio (1479:4) is extremely unbalanced. This is why a single scope using the end character as the anchor can achieve even higher performance than the combination of four scopes. However, ChiNesE has a more balanced ratio, which is 7371:3218. Our dataset is collected from online passages of multiple domains, thus being more diverse and closer to the real-word CNNER applica- \n\ntion. Although `E` - `min` and `E` - `max` still outperforms `B` - `min` and `B` - `max` on ChiNesE, the portion of named entities they can cover is much smaller than it on ACE 2005. By combining the four scopes, Mulco reaches a much higher performance than the performance of any single scope on ChiNesE. \n\n**Necessity of contextual information.** In Table 4, “- LSTM” reports the performance of Mulco without Bi-LSTM encoder on ACE 2005 and ChiNesE. The F1 drops 1.38 on ACE 2005 and 0.25 on ChiNesE. The drop on ChiNesE is much lower than it on ACE 2005. This is because BERT, as a transformer-based pre-trained language model, also can grab contextual information for an input character. With a large enough dataset, BERT can better understand how to pay attention to the contextual information for the CNNER task. Thus, Mulco can have enough contextual information for prediction even without LSTM on ChiNesE. However, on ACE 2005, the data size can not sufficiently support BERT to learn how to extract the contextual information, where a Bi-LSTM model is in need to enhance such an ability. Moreover, the recognition of scope depends on the embedding of a single character, thus including the contextual information into the embeddings becomes critical to the performance of our model. If we use a pre-trained word vector instead of BERT embedding as input, a contextualization model such as LSTM will then become necessary. \n\n## **Conclusion** \n\nIn this paper, to facilitate research on Chinese Nested Named Entity Recognition (CNNER), we construct ChiNesE, a CNNER dataset containing 20,000 high-quality samples with 117,284 named entities falling into 10 categories, where 43.8 percent of them are nested. ChiNesE are sampled from online passages of multiple domains, which have more diverse nested named entities and are closer to the real-world CNNER application today. To fill the gaps in sequence labeling and CNNER, we propose a scope-based labeling method, where each scope extracts named entities by predicting the anchor and the length of an entity. It can avoid the limitation of the traditional sequence labeling scheme. We then propose Mulco, a novel method that utilizes four different scopes to effectively recognize nested named entities. Experimental results show that Mulco has achieved the best performance on ChiNesE and ACE 2005. \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "Approach ACE 2005 ChiNesE",
+          "page": 7,
+          "bbox": [
+            505.90399169921875,
+            116.95960235595703,
+            943.2230224609375,
+            148.9314727783203
+          ]
+        },
+        {
+          "type": "text",
+          "text": "P R F1 P R F1",
+          "page": 7,
+          "bbox": [
+            648.8319702148438,
+            146.48951721191406,
+            984.5877685546875,
+            162.5214385986328
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Innermost Sequence Labeling 89.27 65.74 75.72 93.79 54.42 68.88 Outermost Sequence Labeling 89.38 61.54 72.83 94.21 43.94 59.93 Wang et al. (2018) Transition-based 77.62 81.60 79.56 86.56 76.34 81.13 Wang et al. (2020) Layer-based 83.22 76.29 84.72 90.79 77.71 84.02 Yu, Bohnet, and Poesio (2020) Span-based 81.57 86.63 84.02 92.14 77.69 84.30",
+          "page": 7,
+          "bbox": [
+            228.71200561523438,
+            176.41957092285156,
+            995.285888671875,
+            272.15350341796875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Mulco Sequence Labeling 83.89 88.17 85.98 90.57 80.47 85.23",
+          "page": 7,
+          "bbox": [
+            228.71200561523438,
+            285.8343811035156,
+            995.2821044921875,
+            302.08148193359375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Table 3: The experimental results on ChiNesE and ACE 2005.",
+          "page": 7,
+          "bbox": [
+            364.30999755859375,
+            330.970703125,
+            859.6902465820312,
+            348.7838134765625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "ACE 2005 ChiNesE",
+          "page": 7,
+          "bbox": [
+            251.21800231933594,
+            399.8656005859375,
+            514.1129150390625,
+            415.89752197265625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "P R F1 P R F1",
+          "page": 7,
+          "bbox": [
+            219.7220001220703,
+            429.3955078125,
+            555.4779052734375,
+            445.42742919921875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Mulco 83.89 88.17 85.98 90.57 80.47 85.23",
+          "page": 7,
+          "bbox": [
+            126.8239974975586,
+            459.1103820800781,
+            566.1700439453125,
+            475.35748291015625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "B - min 86.87 69.41 77.16 92.11 57.44 70.75 B - max 84.66 67.60 75.17 91.12 56.85 70.02 E - min 86.19 87.73 86.95 93.14 72.13 81.30 E - max 86.20 87.59 86.89 93.19 72.05 81.27",
+          "page": 7,
+          "bbox": [
+            126.82398223876953,
+            489.0383605957031,
+            566.1832275390625,
+            565.1691284179688
+          ]
+        },
+        {
+          "type": "text",
+          "text": "-LSTM 82.20 87.15 84.60 89.71 80.71 84.98",
+          "page": 7,
+          "bbox": [
+            126.8239974975586,
+            578.9595336914062,
+            566.177734375,
+            594.991455078125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Table 4: The results of the ablation studies.",
+          "page": 7,
+          "bbox": [
+            175.1840057373047,
+            623.8787231445312,
+            517.8178100585938,
+            641.6918334960938
+          ]
+        },
+        {
+          "type": "text",
+          "text": "labeling method can not recognize, which results in a higher recall rate and overall performance. Take B - max in Figure 1 as an example, it can properly recognize “Haidian District People’s Government of Bei- jing Municipality” and “Haidian District People’s Govern- ment” with a single scope: B - max recognizes an entity only by the anchor label and the length label of its first token. The two entities have two different start characters, thus can be distinguished by B - max . In contrast, the Outermost method can only recognize “Haidian District People’s Government of Beijing Municipality”, since the traditional sequence la- beling method considers all characters in an entity when rec- ognizing thus only allowing one character to have one label even it is an element of more than one entities. Diversity of nested named entities. We also have some interesting funding on the experiment results of E - min and E - max . As shown in Table 4, E - min and E - max have higher performance than B - min and B - max on both datasets, they even achieve higher performance than the default Mulco scope setting on ACE 2005 with only single scope. This is because, in Chinese, nested named entities are more likely to share the same start characters with other named entities. Among 1801 nested named entities in the test set of ACE 2005, 1479 of them are in such a situation, while there are only 4 named entities that have the same end characters as other entities. We can see that the ratio (1479:4) is extremely unbalanced. This is why a single scope using the end charac- ter as the anchor can achieve even higher performance than the combination of four scopes. However, ChiNesE has a more balanced ratio, which is 7371:3218. Our dataset is col- lected from online passages of multiple domains, thus being more diverse and closer to the real-word CNNER applica-",
+          "page": 7,
+          "bbox": [
+            107.99984741210938,
+            700.6347045898438,
+            585.0094604492188,
+            1408.303466796875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "tion. Although E - min and E - max still outperforms B - min and B - max on ChiNesE, the portion of named entities they can cover is much smaller than it on ACE 2005. By combining the four scopes, Mulco reaches a much higher performance than the performance of any single scope on ChiNesE.",
+          "page": 7,
+          "bbox": [
+            638.9996337890625,
+            397.3204345703125,
+            1116.0091552734375,
+            502.805419921875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Necessity of contextual information. In Table 4, “- LSTM” reports the performance of Mulco without Bi-LSTM encoder on ACE 2005 and ChiNesE. The F1 drops 1.38 on ACE 2005 and 0.25 on ChiNesE. The drop on ChiNesE is much lower than it on ACE 2005. This is because BERT, as a transformer-based pre-trained language model, also can grab contextual information for an input character. With a large enough dataset, BERT can better understand how to pay at- tention to the contextual information for the CNNER task. Thus, Mulco can have enough contextual information for prediction even without LSTM on ChiNesE. However, on ACE 2005, the data size can not sufficiently support BERT to learn how to extract the contextual information, where a Bi-LSTM model is in need to enhance such an ability. More- over, the recognition of scope depends on the embedding of a single character, thus including the contextual information into the embeddings becomes critical to the performance of our model. If we use a pre-trained word vector instead of BERT embedding as input, a contextualization model such as LSTM will then become necessary.",
+          "page": 7,
+          "bbox": [
+            638.9996948242188,
+            515.587158203125,
+            1116.00927734375,
+            950.078857421875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Conclusion",
+          "page": 7,
+          "bbox": [
+            820.36767578125,
+            1004.0848388671875,
+            934.635498046875,
+            1025.580322265625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "In this paper, to facilitate research on Chinese Nested Named Entity Recognition (CNNER), we construct ChiNesE, a CN- NER dataset containing 20,000 high-quality samples with 117,284 named entities falling into 10 categories, where 43.8 percent of them are nested. ChiNesE are sampled from online passages of multiple domains, which have more di- verse nested named entities and are closer to the real-world CNNER application today. To fill the gaps in sequence la- beling and CNNER, we propose a scope-based labeling method, where each scope extracts named entities by pre- dicting the anchor and the length of an entity. It can avoid the limitation of the traditional sequence labeling scheme. We then propose Mulco, a novel method that utilizes four different scopes to effectively recognize nested named enti- ties. Experimental results show that Mulco has achieved the best performance on ChiNesE and ACE 2005.",
+          "page": 7,
+          "bbox": [
+            638.9996948242188,
+            1061.7216796875,
+            1116.00927734375,
+            1408.3028564453125
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\real\\mulco_chinese_nner.pdf",
+        "page": 7,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\real\\mulco_chinese_nner.pdf\" --page \"7\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-2tkc6qw7\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 3.479,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\real\\mulco_chinese_nner.pdf",
+        "case_id": "arxiv_mulco_p7",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "arxiv_cluener_p2",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "- (2) Several strong state-of-the-art baselines and their performance for better researches on this task. \n\n- (3) A two-stage human performance to compare with modern models. \n\n- (4) A public leader-board[2] to automatic test models for this task. \n\nIn the following parts, we give a detailed introduction to the construction of the CLUENER2020, the results of baseline methods and human performance on this dataset. \n\n## **2 Dataset Construction and Task Description** \n\n|Dataset|Train<br>Dev<br>Test|Avg length<br>Max length|Classes|\n|---|---|---|---|\n|CLUENER2020|10,748<br>1,343<br>1,345|37.4<br>50|10|\n\n\n\nTable 1: Attribute of CLUENER2020. _Avg length_ ( _Max length_ ) means the average (max) sentence length of the CLUENER2020. \n\n|**sentence:**|`-˝˝Ep码í®1PU»⇢`ChinaJoy`é`2010`t`7`月`29`Â(⌦w˝EZ»-√开U⇥`|\n|---|---|\n|**sentence (en):**|_ChinaJoy, the China international digital interactive entertainment exhibition, opened at the Shanghai_|\n||_international expo center on July 29, 2010._|\n|**label:**|address:`⌦w˝EZ»-√`; organization:`-˝˝Ep码í®1PU»⇢`ChinaJoy|\n|**label(en):**|_address: the Shanghai international expo center; organization: ChinaJoy, China international digital interac-_|\n||_tive entertainment exhibition._|\n|**sentence:**|`Ø~⇢↵ÑÔ◆/Œ:，`ÔÂ↵0l币⌦Ñ-.ˆL，aÅ@Ÿ*˝∂Ñ—ç˚f⇥`|\n|**sentence (en):**|_Looking around the city of port Louis, you can see the central bank on a coin, a symbol of the country’s_<br>_fnancial system._|\n|**label:**|government:`-.ˆL`; scene:`Ô◆/Œ:`|\n|**label(en):**|_government: the central bank; scene: the city of port Louis._|\n|**sentence:**|`∞世™h星p⇣⇣Ñ`“`bÂ˙∆;`”`，vÍ编Í¸ÍÑ⌦⌘ó≥⇤↵、⌦ü+↵⇥`|\n|**sentence (en):**|_In the new century, Zhou Xingchi gradually became more and more careful in his work. He wrote, directed_|\n||_and acted in Shaolin Soccer and Kung Fu._|\n|**label:**|movie:`⌦⌘ó≥⇤↵`,`⌦ü+↵`; name:`h星p`|\n|**label(en):**|_movie: Shaolin Soccer, Kung Fu; name: Zhou Xingchi._|\n\n\n\nTable 2: Examples of CLUENER2020. As you can see from the last row of this table, there are two entities belong to same category in a given example. \n\nCLUENER2020 was created from THUCNews[5], which contains around 740,000 news articles retrieved from Sina News RSS. It has 14 news categories from diverse areas , including finance, stock, education, fashion, sports, games, entertainment, and many others. \n\nWe use the distant-supervised method [6] with the help of vocabulary to pre-labeling our dataset, then we check and alter some labels manually. We pre-defined some categories of the entity based on sample data. We randomly sample some articles from THUCNews. Each article is a piece of news that belongs to the news category, which has many sentences. We label each sentence one by one through the whole article and ignore those sentences with no entity or too difficult for people to annotate. After labeling, we get distribution for each category and filter those categories with too few data. \n\nTo ensure that our dataset is challenging for modern models, we apply data filter technical to the labeled dataset. We call it a cross-validation and filter method. We first split the labeled dataset into a k-folder. For each folder, we train a small size of the modern model(albert_tiny_zh), which represents low model capability compare to other full-model. We predict other folders using a model trained from the current folder; we apply the same process for each folder; eventually, for each folder, we have k-1 predictions. We remove those samples from the folder that all k-1 predictions are all right, which we think are easy samples for our model. We set k equals to 4. We finally get 13,436 labeled dataset with 10 entity categories. The statistical information for CLUENER2020 can be found in Table 1. As is shown in Figure 1, the entity categories distribution is similar for both the training and validation sets. For your better understanding of our dataset, we also list some examples in Table 2. \n\n> 2 `https://www.CLUEbenchmarks.com/ner.html` \n\n2 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "(1) A new fine-grained NER dataset for Chinese which is more challenging and with more categories.",
+          "page": 2,
+          "bbox": [
+            139.42481994628906,
+            213.0716094970703,
+            927.715087890625,
+            236.4253387451172
+          ]
+        },
+        {
+          "type": "text",
+          "text": "(2) Several strong state-of-the-art baselines and their performance for better researches on this task.",
+          "page": 2,
+          "bbox": [
+            139.42481994628906,
+            244.9519805908203,
+            909.34228515625,
+            268.30572509765625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "(3) A two-stage human performance to compare with modern models.",
+          "page": 2,
+          "bbox": [
+            139.42481994628906,
+            276.83416748046875,
+            681.7740478515625,
+            300.18792724609375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "(4) A public leader-board 2 to automatic test models for this task.",
+          "page": 2,
+          "bbox": [
+            139.42481994628906,
+            301.68206787109375,
+            644.1563110351562,
+            332.06817626953125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "In the following parts, we give a detailed introduction to the construction of the CLUENER2020, the results of baseline methods and human performance on this dataset.",
+          "page": 2,
+          "bbox": [
+            140.06484985351562,
+            340.59686279296875,
+            1050.491455078125,
+            385.17230224609375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "2 Dataset Construction and Task Description",
+          "page": 2,
+          "bbox": [
+            140.06484985351562,
+            411.14361572265625,
+            603.0650024414062,
+            441.4009704589844
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Dataset Train Dev Test Avg length Max length Classes",
+          "page": 2,
+          "bbox": [
+            272.6653747558594,
+            473.64471435546875,
+            913.04150390625,
+            496.99847412109375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "CLUENER2020 10,748 1,343 1,345 37.4 50 10",
+          "page": 2,
+          "bbox": [
+            272.6653747558594,
+            504.59515380859375,
+            913.0410766601562,
+            527.9489135742188
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Table 1: Attribute of CLUENER2020. Avg length ( Max length ) means the average (max) sentence length of the CLUENER2020.",
+          "page": 2,
+          "bbox": [
+            139.46372985839844,
+            534.8025512695312,
+            1050.4876708984375,
+            579.3799438476562
+          ]
+        },
+        {
+          "type": "text",
+          "text": "sentence: - ˝˝ E p 码 í ® 1 P U » ⇢ ChinaJoy é 2010 t 7 月 29 Â ( ⌦ w ˝ E Z » - √开 U ⇥ sentence (en): ChinaJoy, the China international digital interactive entertainment exhibition, opened at the Shanghai international expo center on July 29, 2010. label: address: ⌦ w ˝ E Z » - √ ; organization: - ˝˝ E p 码 í ® 1 P U » ⇢ ChinaJoy label(en): address: the Shanghai international expo center; organization: ChinaJoy, China international digital interac- tive entertainment exhibition.",
+          "page": 2,
+          "bbox": [
+            156.0536346435547,
+            621.9650268554688,
+            1040.06103515625,
+            741.5758666992188
+          ]
+        },
+        {
+          "type": "text",
+          "text": "sentence: Ø ~ ⇢ ↵ Ñ Ô ◆ / Œ : ， ` Ô Â ↵ 0 l 币 ⌦ Ñ - . ˆ L ， a Å @ Ÿ * ˝ ∂ Ñ — ç ˚ fl ⇥ sentence (en): Looking around the city of port Louis, you can see the central bank on a coin, a symbol of the country’s financial system. label: government: - . ˆ L ; scene: Ô ◆ / Œ : label(en): government: the central bank; scene: the city of port Louis.",
+          "page": 2,
+          "bbox": [
+            156.0536346435547,
+            750.5368041992188,
+            1037.154052734375,
+            852.0591430664062
+          ]
+        },
+        {
+          "type": "text",
+          "text": "sentence: ∞ 世 ™ h 星 p ⇣ ⇣ Ñ “ b Â ˙ ∆ ; ” ， v Í 编 Í ¸ Í  Ñ ⌦ ⌘ ó ≥ ⇤ ↵、⌦ ü + ↵⇥ sentence (en): In the new century, Zhou Xingchi gradually became more and more careful in his work. He wrote, directed and acted in Shaolin Soccer and Kung Fu. label: movie: ⌦ ⌘ ó ≥ ⇤ ↵ , ⌦ ü + ↵ ; name: h 星 p label(en): movie: Shaolin Soccer, Kung Fu; name: Zhou Xingchi.",
+          "page": 2,
+          "bbox": [
+            156.0536346435547,
+            859.8067626953125,
+            1037.15966796875,
+            961.21240234375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Table 2: Examples of CLUENER2020. As you can see from the last row of this table, there are two entities belong to same category in a given example.",
+          "page": 2,
+          "bbox": [
+            139.46372985839844,
+            976.7012329101562,
+            1050.4896240234375,
+            1021.2767944335938
+          ]
+        },
+        {
+          "type": "text",
+          "text": "CLUENER2020 was created from THUCNews[ 5 ], which contains around 740,000 news articles retrieved from Sina News RSS. It has 14 news categories from diverse areas , including finance, stock, education, fashion, sports, games, entertainment, and many others.",
+          "page": 2,
+          "bbox": [
+            140.06484985351562,
+            1038.563232421875,
+            1052.903076171875,
+            1104.3604736328125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "We use the distant-supervised method [ 6 ] with the help of vocabulary to pre-labeling our dataset, then we check and alter some labels manually. We pre-defined some categories of the entity based on sample data. We randomly sample some articles from THUCNews. Each article is a piece of news that belongs to the news category, which has many sentences. We label each sentence one by one through the whole article and ignore those sentences with no entity or too difficult for people to annotate. After labeling, we get distribution for each category and filter those categories with too few data.",
+          "page": 2,
+          "bbox": [
+            139.1544189453125,
+            1112.8890380859375,
+            1051.1668701171875,
+            1242.3515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "To ensure that our dataset is challenging for modern models, we apply data filter technical to the labeled dataset. We call it a cross-validation and filter method. We first split the labeled dataset into a k-folder. For each folder, we train a small size of the modern model(albert_tiny_zh), which represents low model capability compare to other full-model. We predict other folders using a model trained from the current folder; we apply the same process for each folder; eventually, for each folder, we have k-1 predictions. We remove those samples from the folder that all k-1 predictions are all right, which we think are easy samples for our model. We set k equals to 4. We finally get 13,436 labeled dataset with 10 entity categories. The statistical information for CLUENER2020 can be found in Table 1. As is shown in Figure 1, the entity categories distribution is similar for both the training and validation sets. For your better understanding of our dataset, we also list some examples in Table 2.",
+          "page": 2,
+          "bbox": [
+            139.1544189453125,
+            1250.880126953125,
+            1053.884521484375,
+            1444.0079345703125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "2 https://www.CLUEbenchmarks.com/ner.html",
+          "page": 2,
+          "bbox": [
+            164.67929077148438,
+            1454.0269775390625,
+            528.519287109375,
+            1478.4434814453125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "2",
+          "page": 2,
+          "bbox": [
+            590.4297485351562,
+            1512.416259765625,
+            600.1201171875,
+            1535.7698974609375
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\real\\cluener2020.pdf",
+        "page": 2,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\real\\cluener2020.pdf\" --page \"2\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-bsk5xqbp\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 3.007,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\real\\cluener2020.pdf",
+        "case_id": "arxiv_cluener_p2",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "arxiv_cluener_p4",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "|Dataset|Examples|EntityCategories|Size|\n|---|---|---|---|\n|**MSRANER**|`nÙ`/o`î`/o`老À`/o`K`/o`Ä`/o`，`/o`ÅûÀ`/nr`ÿ`/o`P`/o<br>`@`/o`—ˇ`/o`e`/o`d`/o`¡`/o`«`/o`â`/ns`6`/o`⇥`/o<br>(en) It is said that (/o) Liang Shiqiu (/nr) sat on (/o) the<br>pole (/o) to taste(/o) Yufeng(/ns) tea(/o) invited by(/o)<br>old friends(/o).|person name,<br>location, and<br>organization|50k|\n|**PeopleDairyNER**|19980131-03-001-001/m`Kó顿`/nr`⇢`/w`fJ`/v`⌦…`<br>`K`/ns`(æ∆`/nr`⇢`/w`不`/d`希望`/v`⇠â`/n<br>(en) 19980131-03-001-001 (/m) Clinton (/nr) warns (/v)<br>Iraq’s (/ns) Saddam Hussein (/nr) : (/w) we do not (/d)<br>want(/v)war(/n).|person name,<br>location and<br>organization|23k|\n|**BOSONNER**|`d !`{{location:`- ˝`}}`* U ，`{{person_name:`œ`<br> _·_`Ú)nØ`}}`⌃与y`80`⇢ÅÿÑÑ6≤一w合`<br>`\\，¸1一ñ‰老Ñ`{{location:`威Î`}}`⌘L`......<br>(en) In this solo exhibition in {{location:China}}, {{per-<br>son_name:Susan _·_ Phillips}} will sing an old {{loca-<br>tion:welsh}}folk songwith her 80-year-old father.|person name,<br>location,<br>organization, time,<br>product name,<br>company name|2k|\n|**WeiboNER**|`⌘`/O`¬`/O`与`/O`Ü`/O`W`/B-GPE.NAM`˝`/I-GPE.NAM<br>`Ò`/B-GPE.NAM`3`/I-GPE.NAM`˚`/O`,`/O`—`/O`w`/O<br>`Ñ`/O`ï`/O`h`/O`®`/O`™`/O`最`/O`b`/O`A`/O`'`/O`L`/O<br>`⇢`/O ......<br>(en) I participated in the poll of the 10 industries with<br>the slowest salary increases launched by South (/B-<br>GPE.NAM)Shenzhen(/I-GPE.NAM)......|person name,<br>location,<br>organization,<br>geo-political|2k|\n|**Resume NER**|`é`/B-LOC`˝`/E-LOC`Ñ`/o`N`/B-PER`±`/I-PER`Î`/E-<br>PER`，⌘`/o`f`/o`÷`/o`谈`/o`⌘`/o`Œ`/o`生`/o ......<br>(en) Wallace(/B-PER), American(/B-LOC), I(/o) talk(/o)<br>cheerfully(/o) with him(/o) ......|country, educational<br>institution, location,<br>personal name,<br>organization,<br>profession, ethnicity<br>background and job<br>title|2k|\n|**CLUENER2020**|sentence: `⇥O˙‘¯s负#∫()h:，⌦⌫¨⇥`<br>`lqfA?°⌃û’↵Úœ∑ó⇥‘8‘⇢°Æü`<br>`⇡⇢«⇥`<br>sentence (en): The charge of municipal commission of<br>housing and urban-rural development said, yesterday,<br>that the measures on the administration of public rental<br>housing in Beijing have been approved by the standing<br>committee of the municipal committee of the communist<br>party of China.<br>label: government: `⇥O˙‘`,`⇥8‘⇢`; book:`⌦⌫¨`<br>`⇥lqfA?°⌃û’↵`; position:`负#∫`<br>label(en) : government: the municipal commission of<br>housing and urban-rural development, the standing com-<br>mittee of the municipal; book: Measures for the admin-<br>istration of public rental housing in Beijing; position:<br>charge|address, book,<br>company, game,<br>government, movie,<br>name, organization,<br>position and scene|13K|\n\n\n\nTable 3: Comparison with other Chinese NER datasets. \n\n**BERT-NER:** BERT [1] is a Transformer based model that uses pre-training to learn from the raw corpus, and fine-tuning on downstream tasks including NER task. \n\n**RoBERTa-NER:** RoBERTa [3] is an improved version of BERT, which is trained better, longer, and with more data. It removes the next sentence prediction task during the pre-training stage, compared with BERT. \n\n4 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "Dataset Examples Entity Categories Size",
+          "page": 4,
+          "bbox": [
+            152.5228271484375,
+            215.9059600830078,
+            1038.0294189453125,
+            239.2596893310547
+          ]
+        },
+        {
+          "type": "text",
+          "text": "MSRANER n Ù /o î /o 老 À /o K /o Ä /o ， /o Å û À /nr ÿ /o P /o @ /o — ˇ /o e /o d /o ¡ /o « /o â  /ns 6 /o ⇥ /o",
+          "page": 4,
+          "bbox": [
+            152.5228271484375,
+            239.6022491455078,
+            744.9521484375,
+            284.17779541015625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "person name, location, and organization",
+          "page": 4,
+          "bbox": [
+            768.208984375,
+            239.6022491455078,
+            871.5468139648438,
+            305.39947509765625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "50k",
+          "page": 4,
+          "bbox": [
+            1006.8056030273438,
+            250.2141876220703,
+            1035.876708984375,
+            273.56793212890625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "(en) It is said that (/o) Liang Shiqiu (/nr) sat on (/o) the pole (/o) to taste(/o) Yufeng(/ns) tea(/o) invited by(/o) old friends(/o).",
+          "page": 4,
+          "bbox": [
+            317.935546875,
+            282.04571533203125,
+            746.243408203125,
+            347.84307861328125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "PeopleDairyNER 19980131-03-001-001/m K ó 顿 /nr ⇢ /w f J /v ⌦ …",
+          "page": 4,
+          "bbox": [
+            152.5228271484375,
+            348.13690185546875,
+            744.9535522460938,
+            383.26544189453125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "K /ns ( æ ∆ /nr ⇢ /w 不 /d 希 望 /v ⇠ â /n",
+          "page": 4,
+          "bbox": [
+            318.5755310058594,
+            369.35870361328125,
+            645.3739013671875,
+            392.71246337890625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "person name, location and organization",
+          "page": 4,
+          "bbox": [
+            768.208984375,
+            348.13690185546875,
+            871.5468139648438,
+            413.93426513671875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "23k",
+          "page": 4,
+          "bbox": [
+            1006.8056030273438,
+            358.74884033203125,
+            1035.876708984375,
+            382.10260009765625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "(en) 19980131-03-001-001 (/m) Clinton (/nr) warns (/v) Iraq’s (/ns) Saddam Hussein (/nr) : (/w) we do not (/d) want (/v) war (/n).",
+          "page": 4,
+          "bbox": [
+            317.8771667480469,
+            390.58233642578125,
+            746.2529296875,
+            456.37969970703125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "BOSONNER d ! {{location: - ˝ }} * U ， {{person_name: œ · Ú ) n Ø }} ⌃ 与 y 80 ⇢ Å ÿ Ñ Ñ 6 ≤一 w 合 \\ ， ¸ 1 一 ñ ‰ 老 Ñ {{location: 威  Î }} ⌘ L ......",
+          "page": 4,
+          "bbox": [
+            152.5228271484375,
+            456.61907958984375,
+            744.9535522460938,
+            522.4164428710938
+          ]
+        },
+        {
+          "type": "text",
+          "text": "person name, location, organization, time, product name, company name",
+          "page": 4,
+          "bbox": [
+            768.208984375,
+            456.61907958984375,
+            913.6416625976562,
+            564.8599243164062
+          ]
+        },
+        {
+          "type": "text",
+          "text": "2k",
+          "page": 4,
+          "bbox": [
+            1011.6513671875,
+            467.22894287109375,
+            1031.0321044921875,
+            490.58270263671875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "(en) In this solo exhibition in {{location:China}}, {{per- son_name:Susan · Phillips}} will sing an old {{loca- tion:welsh}} folk song with her 80-year-old father.",
+          "page": 4,
+          "bbox": [
+            317.935546875,
+            520.2843627929688,
+            748.166748046875,
+            586.0817260742188
+          ]
+        },
+        {
+          "type": "text",
+          "text": "WeiboNER ⌘ /O ¬ /O 与 /O Ü /O W /B-GPE.NAM ˝ /I-GPE.NAM Ò /B-GPE.NAM 3 /I-GPE.NAM ˚ /O , /O — /O w /O Ñ /O ï /O h /O ® /O ™ /O 最 /O b /O A /O ' /O L /O ⇢ /O ......",
+          "page": 4,
+          "bbox": [
+            152.5228271484375,
+            586.1732177734375,
+            744.9530639648438,
+            673.1922607421875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "person name, location, organization, geo-political",
+          "page": 4,
+          "bbox": [
+            768.208984375,
+            586.1732177734375,
+            871.5468139648438,
+            673.1922607421875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "2k",
+          "page": 4,
+          "bbox": [
+            1011.6513671875,
+            596.7830810546875,
+            1031.0321044921875,
+            620.1368408203125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "(en) I participated in the poll of the 10 industries with the slowest salary increases launched by South (/B- GPE.NAM) Shenzhen (/I-GPE.NAM) ......",
+          "page": 4,
+          "bbox": [
+            317.935546875,
+            671.060302734375,
+            748.16064453125,
+            736.8576049804688
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Resume NER",
+          "page": 4,
+          "bbox": [
+            152.5228271484375,
+            778.803955078125,
+            263.94244384765625,
+            804.0182495117188
+          ]
+        },
+        {
+          "type": "text",
+          "text": "é /B-LOC ˝ /E-LOC Ñ /o N /B-PER ± /I-PER Î /E- PER ， ⌘ /o fl /o ÷ /o 谈 /o ⌘ /o Œ /o 生 /o ......",
+          "page": 4,
+          "bbox": [
+            318.5755310058594,
+            737.0580444335938,
+            748.1694946289062,
+            781.6336059570312
+          ]
+        },
+        {
+          "type": "text",
+          "text": "country, educational institution, location, personal name, organization, profession, ethnicity background and job title",
+          "page": 4,
+          "bbox": [
+            768.208984375,
+            737.0580444335938,
+            923.8575439453125,
+            887.744384765625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "2k (en) Wallace(/B-PER), American(/B-LOC), I(/o) talk(/o) cheerfully(/o) with him(/o) ......",
+          "page": 4,
+          "bbox": [
+            317.935546875,
+            779.5016479492188,
+            1031.0321044921875,
+            824.0771484375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "CLUENER2020",
+          "page": 4,
+          "bbox": [
+            152.5228271484375,
+            919.1956176757812,
+            286.03643798828125,
+            944.409912109375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "sentence: ⇥ O ˙ ‘ ¯ s 负# ∫ ( ) h : ， ⌦ ⌫ ¨ ⇥ lq fl A ? ° ⌃ û ’ ↵ Ú œ ∑ ó ⇥ ‘ 8 ‘ ⇢ ° Æ ü ⇡ ⇢ « ⇥",
+          "page": 4,
+          "bbox": [
+            318.5755310058594,
+            888.0596313476562,
+            744.9535522460938,
+            950.7560424804688
+          ]
+        },
+        {
+          "type": "text",
+          "text": "address, book, company, game, government, movie, name, organization, position and scene",
+          "page": 4,
+          "bbox": [
+            768.208984375,
+            888.0596313476562,
+            922.9055786132812,
+            996.3004760742188
+          ]
+        },
+        {
+          "type": "text",
+          "text": "13K",
+          "page": 4,
+          "bbox": [
+            1004.6558837890625,
+            919.893310546875,
+            1038.0296630859375,
+            943.2470703125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "sentence (en): The charge of municipal commission of housing and urban-rural development said, yesterday, that the measures on the administration of public rental housing in Beijing have been approved by the standing committee of the municipal committee of the communist party of China. label: government: ⇥ O ˙ ‘ , ⇥8 ‘ ⇢ ; book: ⌦ ⌫ ¨ ⇥ lq fl A ? ° ⌃ û ’ ↵ ; position: 负# ∫ label(en) : government: the municipal commission of housing and urban-rural development, the standing com- mittee of the municipal; book: Measures for the admin- istration of public rental housing in Beijing; position: charge",
+          "page": 4,
+          "bbox": [
+            318.5755310058594,
+            951.7249145507812,
+            748.1739501953125,
+            1231.414794921875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Table 3: Comparison with other Chinese NER datasets.",
+          "page": 4,
+          "bbox": [
+            380.6845703125,
+            1246.740478515625,
+            809.8699340820312,
+            1270.0941162109375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "BERT-NER: BERT [ 1 ] is a Transformer based model that uses pre-training to learn from the raw corpus, and fine-tuning on downstream tasks including NER task.",
+          "page": 4,
+          "bbox": [
+            140.06484985351562,
+            1379.250244140625,
+            1050.4913330078125,
+            1424.5234375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "RoBERTa-NER: RoBERTa [ 3 ] is an improved version of BERT, which is trained better, longer, and with more data. It removes the next sentence prediction task during the pre-training stage, compared with BERT.",
+          "page": 4,
+          "bbox": [
+            140.06484985351562,
+            1432.354248046875,
+            1050.4798583984375,
+            1477.62744140625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "4",
+          "page": 4,
+          "bbox": [
+            590.0912475585938,
+            1512.416259765625,
+            599.7816162109375,
+            1535.7698974609375
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\real\\cluener2020.pdf",
+        "page": 4,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\real\\cluener2020.pdf\" --page \"4\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-fqi7ogwk\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.799,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\real\\cluener2020.pdf",
+        "case_id": "arxiv_cluener_p4",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "contract_service_001_p1",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## 技术服务合同 \n\n合同编号：HT-2026-00158 \n\n甲方（委托方）：北京云智联科技有限公司 乙方（服务方）：上海数据前沿信息技术有限公司 \n\n签订日期：2026年3月15日 \n\n技术服务合同 · 第1页 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "技术服务合同",
+          "page": 1,
+          "bbox": [
+            156.0,
+            328.3109130859375,
+            348.0,
+            360.3109130859375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "合同编号：HT-2026-00158",
+          "page": 1,
+          "bbox": [
+            156.0,
+            439.45703125,
+            397.5,
+            460.45703125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "甲方（委托方）：北京云智联科技有限公司",
+          "page": 1,
+          "bbox": [
+            156.0,
+            514.8115234375,
+            555.0,
+            535.8115234375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "乙方（服务方）：上海数据前沿信息技术有限公司",
+          "page": 1,
+          "bbox": [
+            156.0,
+            561.8192138671875,
+            618.0,
+            582.8192138671875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "签订日期：2026年3月15日",
+          "page": 1,
+          "bbox": [
+            156.0,
+            637.1736450195312,
+            397.5,
+            658.1736450195312
+          ]
+        },
+        {
+          "type": "text",
+          "text": "技术服务合同 · 第1页",
+          "page": 1,
+          "bbox": [
+            156.0,
+            779.8563232421875,
+            324.0,
+            795.8563232421875
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "page": 1,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf\" --page \"1\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-7vt3nrvi\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.322,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "case_id": "contract_service_001_p1",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "contract_service_001_p2",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## 第一条 定义与术语 \n\n本合同中使用的术语定义如下：SLA（Service Level Agreement）指服务等级协议，API（Application Programming Interface）指应用程序编程接口，SDK（Software Development Kit）指软件开发工具包。上述术语在合同各条款中的含义均以本条定义为准。 \n\n## 第二条 服务内容与范围 \n\n乙方为甲方提供以下技术服务：（1）技术咨询服务；（2）系统开发与集成服务；（3）API接 口对接与联调服务；（4）SDK集成与技术支持服务。乙方应按照SLA约定的服务标准提供服务， 系统可用性不低于99.9%（按月度统计），平均响应时间不超过200毫秒。 \n\n技术服务合同 · 第2页 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "第一条 定义与术语",
+          "page": 2,
+          "bbox": [
+            156.0,
+            157.3885498046875,
+            377.0,
+            183.3885498046875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "本合同中使用的术语定义如下：SLA（Service Level Agreement）指服务等级协议，API（Application Programming Interface）指应用程序编程接口，SDK（Software Development Kit）指软件开发工具包。上述术语在合同各条款中的含义均以本条定义为准。",
+          "page": 2,
+          "bbox": [
+            156.0,
+            221.6932373046875,
+            880.5,
+            332.6932373046875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "第二条 服务内容与范围",
+          "page": 2,
+          "bbox": [
+            156.0,
+            400.4122314453125,
+            429.0,
+            426.4122314453125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "乙方为甲方提供以下技术服务：（1）技术咨询服务；（2）系统开发与集成服务；（3）API接 口对接与联调服务；（4）SDK集成与技术支持服务。乙方应按照SLA约定的服务标准提供服务， 系统可用性不低于99.9%（按月度统计），平均响应时间不超过200毫秒。",
+          "page": 2,
+          "bbox": [
+            156.0,
+            464.7169189453125,
+            1027.5,
+            545.7169189453125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "技术服务合同 · 第2页",
+          "page": 2,
+          "bbox": [
+            156.0,
+            667.3995361328125,
+            324.0,
+            683.3995361328125
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "page": 2,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf\" --page \"2\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-imx54y6x\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.09,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "case_id": "contract_service_001_p2",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "contract_service_001_p3",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## 第三条 服务费用与支付方式 \n\n本合同总服务费用为人民币壹佰贰拾万元整（人民币1,200,000.00），采用分期付款方式。各 阶段付款金额及条件详见下表。 \n\n|项目阶段|金额（元）|付款时间|付款条件|\n|---|---|---|---|\n|项目预付款|360,000.00|合同签订后5个工作日|甲方确认合同生效|\n|需求分析完成|240,000.00|需求确认后10个工作<br>日|甲方书面确认需求文<br>档|\n|系统开发完成|360,000.00|开发验收后10个工作<br>日|甲方签署验收报告|\n|系统上线运行|180,000.00|上线后30个工作日|系统稳定运行30天|\n|质保期满|60,000.00|质保期满后10个工作<br>日|无重大故障|\n\n\n\n技术服务合同 · 第3页 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "第三条 服务费用与支付方式",
+          "page": 3,
+          "bbox": [
+            156.0,
+            157.3885498046875,
+            481.0,
+            183.3885498046875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "本合同总服务费用为人民币壹佰贰拾万元整（人民币1,200,000.00），采用分期付款方式。各 阶段付款金额及条件详见下表。",
+          "page": 3,
+          "bbox": [
+            156.0,
+            221.6932373046875,
+            1017.0,
+            272.6932373046875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "项目阶段 金额（元） 付款时间 付款条件",
+          "page": 3,
+          "bbox": [
+            216.0944061279297,
+            310.3704833984375,
+            855.6849975585938,
+            331.3704833984375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "项目预付款 360,000.00 合同签订后5个工作日 甲方确认合同生效",
+          "page": 3,
+          "bbox": [
+            216.0944061279297,
+            352.3704833984375,
+            939.6849975585938,
+            373.3704833984375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "需求分析完成 240,000.00",
+          "page": 3,
+          "bbox": [
+            216.0944061279297,
+            424.3704833984375,
+            491.17315673828125,
+            445.3704833984375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "需求确认后10个工作 日",
+          "page": 3,
+          "bbox": [
+            544.9132080078125,
+            394.3704833984375,
+            733.9132080078125,
+            445.3704833984375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "甲方书面确认需求文 档",
+          "page": 3,
+          "bbox": [
+            771.6849975585938,
+            394.3704833984375,
+            960.6849975585938,
+            445.3704833984375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "系统开发完成 360,000.00",
+          "page": 3,
+          "bbox": [
+            216.0944061279297,
+            496.3704833984375,
+            491.17315673828125,
+            517.3704833984375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "开发验收后10个工作 日 甲方签署验收报告",
+          "page": 3,
+          "bbox": [
+            544.9132080078125,
+            466.3704833984375,
+            939.6849975585938,
+            517.3704833984375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "系统上线运行 180,000.00 上线后30个工作日 系统稳定运行30天",
+          "page": 3,
+          "bbox": [
+            216.0944061279297,
+            538.3704833984375,
+            939.6849975585938,
+            559.3704833984375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "质保期满 60,000.00",
+          "page": 3,
+          "bbox": [
+            216.0944061279297,
+            610.3704833984375,
+            480.67315673828125,
+            631.3704833984375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "质保期满后10个工作 日 无重大故障",
+          "page": 3,
+          "bbox": [
+            544.9132080078125,
+            580.3704833984375,
+            876.6849975585938,
+            631.3704833984375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "技术服务合同 · 第3页",
+          "page": 3,
+          "bbox": [
+            156.0,
+            759.0531616210938,
+            324.0,
+            775.0531616210938
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "page": 3,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf\" --page \"3\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-ij343rps\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.376,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "case_id": "contract_service_001_p3",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "contract_service_001_p4",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## 第四条 交付物与验收标准 \n\n## 4.1 交付物清单 \n\n交付物清单：（1）数据分析平台系统；（2）API网关系统；（3）数据迁移工具；（4）运维监 控面板。 \n\n## 4.2 验收标准 \n\n验收标准：甲方应在收到交付物后15个工作日内完成验收。验收不通过的，乙方应在10个工作 日内完成整改并重新提交验收。 \n\n技术服务合同 · 第4页 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "第四条 交付物与验收标准",
+          "page": 4,
+          "bbox": [
+            156.0,
+            157.3885498046875,
+            455.0,
+            183.3885498046875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "4.1 交付物清单",
+          "page": 4,
+          "bbox": [
+            156.0,
+            221.6932373046875,
+            303.0,
+            242.6932373046875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "交付物清单：（1）数据分析平台系统；（2）API网关系统；（3）数据迁移工具；（4）运维监 控面板。",
+          "page": 4,
+          "bbox": [
+            156.0,
+            263.0318603515625,
+            1027.5,
+            314.0318603515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "4.2 验收标准",
+          "page": 4,
+          "bbox": [
+            156.0,
+            345.7091064453125,
+            282.0,
+            366.7091064453125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "验收标准：甲方应在收到交付物后15个工作日内完成验收。验收不通过的，乙方应在10个工作 日内完成整改并重新提交验收。",
+          "page": 4,
+          "bbox": [
+            156.0,
+            387.047607421875,
+            1017.0,
+            438.047607421875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "技术服务合同 · 第4页",
+          "page": 4,
+          "bbox": [
+            156.0,
+            559.7303466796875,
+            324.0,
+            575.7303466796875
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "page": 4,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf\" --page \"4\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-9pef8jkn\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.343,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "case_id": "contract_service_001_p4",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "contract_service_001_p5",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## 第五条 保密条款 \n\n乙方应对甲方提供的所有商业秘密和技术资料严格保密，保密期限为合同终止后三年内有效。 未经甲方书面同意，乙方不得向任何第三方披露、转让或允许他人使用上述保密信息。甲方的 保密信息包括但不限于：用户数据、业务流程、技术文档、源代码及相关的知识产权。 \n\n技术服务合同 · 第5页 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "第五条 保密条款",
+          "page": 5,
+          "bbox": [
+            156.0,
+            157.3885498046875,
+            351.0,
+            183.3885498046875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "乙方应对甲方提供的所有商业秘密和技术资料严格保密，保密期限为合同终止后三年内有效。 未经甲方书面同意，乙方不得向任何第三方披露、转让或允许他人使用上述保密信息。甲方的 保密信息包括但不限于：用户数据、业务流程、技术文档、源代码及相关的知识产权。",
+          "page": 5,
+          "bbox": [
+            156.0,
+            221.6932373046875,
+            1017.0,
+            302.6932373046875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "技术服务合同 · 第5页",
+          "page": 5,
+          "bbox": [
+            156.0,
+            424.3759765625,
+            324.0,
+            440.3759765625
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "page": 5,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf\" --page \"5\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-5cckyeyq\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.279,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "case_id": "contract_service_001_p5",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "contract_service_001_p6",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## 第六条 违约责任与终止条款 \n\n任何一方违反本合同约定的，应承担违约责任，违约金为合同总额的20%。甲方逾期付款的，应 按未付金额每日0.05%的标准支付滞纳金。因不可抗力导致合同无法履行的，双方均不承担违约 责任。 \n\n## 第七条 合同终止 \n\n任何一方可提前30天书面通知对方终止本合同。合同终止后，乙方应在15个工作日内完成工作 交接，并将已完成的交付物移交给甲方。 \n\n技术服务合同 · 第6页 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "第六条 违约责任与终止条款",
+          "page": 6,
+          "bbox": [
+            156.0,
+            157.3885498046875,
+            481.0,
+            183.3885498046875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "任何一方违反本合同约定的，应承担违约责任，违约金为合同总额的20%。甲方逾期付款的，应 按未付金额每日0.05%的标准支付滞纳金。因不可抗力导致合同无法履行的，双方均不承担违约 责任。",
+          "page": 6,
+          "bbox": [
+            156.0,
+            221.6932373046875,
+            1027.5,
+            302.6932373046875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "第七条 合同终止",
+          "page": 6,
+          "bbox": [
+            156.0,
+            370.4122314453125,
+            351.0,
+            396.4122314453125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "任何一方可提前30天书面通知对方终止本合同。合同终止后，乙方应在15个工作日内完成工作 交接，并将已完成的交付物移交给甲方。",
+          "page": 6,
+          "bbox": [
+            156.0,
+            434.7169189453125,
+            1017.0,
+            485.7169189453125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "技术服务合同 · 第6页",
+          "page": 6,
+          "bbox": [
+            156.0,
+            607.3995361328125,
+            324.0,
+            623.3995361328125
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "page": 6,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf\" --page \"6\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-7xzwmmt9\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.191,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "case_id": "contract_service_001_p6",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "contract_service_001_p7",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "甲方：北京云智联科技有限公司 \n\n法定代表人/授权代表：________________ \n\n签字日期：________________ （盖章） \n\n乙方：上海数据前沿信息技术有限公司 \n\n法定代表人/授权代表：________________ 签字日期：________________ （盖章） \n\n本合同一式四份，甲乙双方各执两份，具有同等法律效力。 \n\n技术服务合同 · 第7页 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "甲方：北京云智联科技有限公司",
+          "page": 7,
+          "bbox": [
+            156.0,
+            241.724853515625,
+            450.0,
+            262.724853515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "法定代表人/授权代表：________________",
+          "page": 7,
+          "bbox": [
+            156.0,
+            288.732666015625,
+            544.5,
+            309.732666015625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "签字日期：________________ （盖章）",
+          "page": 7,
+          "bbox": [
+            156.0,
+            335.740478515625,
+            523.5,
+            356.740478515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "乙方：上海数据前沿信息技术有限公司",
+          "page": 7,
+          "bbox": [
+            156.0,
+            450.7799072265625,
+            513.0,
+            471.7799072265625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "法定代表人/授权代表：________________",
+          "page": 7,
+          "bbox": [
+            156.0,
+            497.787841796875,
+            544.5,
+            518.787841796875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "签字日期：________________ （盖章）",
+          "page": 7,
+          "bbox": [
+            156.0,
+            544.795654296875,
+            523.5,
+            565.795654296875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "本合同一式四份，甲乙双方各执两份，具有同等法律效力。",
+          "page": 7,
+          "bbox": [
+            156.0,
+            620.1500244140625,
+            702.0,
+            641.1500244140625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "技术服务合同 · 第7页",
+          "page": 7,
+          "bbox": [
+            156.0,
+            734.4861450195312,
+            324.0,
+            750.4861450195312
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "page": 7,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf\" --page \"7\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-azpk778q\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.023,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "case_id": "contract_service_001_p7",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "contract_service_001_p8",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## 附件一：技术规范文档 \n\n本文档包含项目相关的API接口规范、SDK集成指南及系统架构设计说明。详细技术参数请参阅 附件二《系统部署手册》。 \n\n## 附件二：系统部署手册 \n\n本手册包含系统部署的详细步骤、环境配置要求及运维管理规范。部署环境要求：Linux CentOS 7+ 或 Ubuntu 20.04+，Docker 20.10+，Kubernetes 1.24+。 \n\n技术服务合同 · 第8页 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "附件一：技术规范文档",
+          "page": 8,
+          "bbox": [
+            156.0,
+            157.3885498046875,
+            416.0,
+            183.3885498046875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "本文档包含项目相关的API接口规范、SDK集成指南及系统架构设计说明。详细技术参数请参阅 附件二《系统部署手册》。",
+          "page": 8,
+          "bbox": [
+            156.0,
+            221.6932373046875,
+            1017.0,
+            272.6932373046875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "附件二：系统部署手册",
+          "page": 8,
+          "bbox": [
+            156.0,
+            315.7091064453125,
+            366.0,
+            336.7091064453125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "本手册包含系统部署的详细步骤、环境配置要求及运维管理规范。部署环境要求：Linux CentOS 7+ 或 Ubuntu 20.04+，Docker 20.10+，Kubernetes 1.24+。",
+          "page": 8,
+          "bbox": [
+            156.0,
+            357.047607421875,
+            964.5,
+            408.047607421875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "技术服务合同 · 第8页",
+          "page": 8,
+          "bbox": [
+            156.0,
+            529.7303466796875,
+            324.0,
+            545.7303466796875
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "page": 8,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf\" --page \"8\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-5v7txx14\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.035,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\contract_service_001.pdf",
+        "case_id": "contract_service_001_p8",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "exam_physics_final_p2",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "北京师范大学附属中学 \n\n## 一、选择题（每题3分，共30分） \n\n1. 一个物体从静止开始做匀加速直线运动，加速度为2 m/s�，则经过5 s后物体的速度为： \n\n- A. 5 m/s B. 10 m/s C. 15 m/s D. 20 m/s \n\n## 2. 关于牛顿第二定律，下列说法正确的是： \n\n- A. 物体所受合力越大，加速度越大 B. 物体的质量越大，加速度越大 C. 物体的加速度与速度成正比 D. 物体的加速度与位移成正比 \n\n3. 一辆汽车以20 m/s的速度行驶，刹车后做匀减速直线运动，加速度大小为4 m/s�，则汽车刹车后6 s内的位移为： \n\n- A. 40 m B. 48 m C. 50 m D. 60 m \n\n4. 在光滑水平面上，质量为2 kg的物体受到水平方向的力F = 10 N，物体的加速度为： \n\n- A. 2 m/s� B. 5 m/s� C. 10 m/s� D. 20 m/s� \n\n第2页 共4页 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "北京师范大学附属中学",
+          "page": 2,
+          "bbox": [
+            156.0,
+            127.6357421875,
+            316.0,
+            143.6357421875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "一、选择题（每题3分，共30分）",
+          "page": 2,
+          "bbox": [
+            156.0,
+            192.050048828125,
+            533.0,
+            218.050048828125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "1. 一个物体从静止开始做匀加速直线运动，加速度为2 m/s�，则经过5 s后物体的速度为：",
+          "page": 2,
+          "bbox": [
+            156.0,
+            261.8834228515625,
+            966.0,
+            281.8834228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "A. 5 m/s B. 10 m/s C. 15 m/s D. 20 m/s",
+          "page": 2,
+          "bbox": [
+            156.0,
+            301.2220458984375,
+            536.0,
+            321.2220458984375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "2. 关于牛顿第二定律，下列说法正确的是：",
+          "page": 2,
+          "bbox": [
+            156.0,
+            363.2376708984375,
+            546.0,
+            383.2376708984375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "A. 物体所受合力越大，加速度越大 B. 物体的质量越大，加速度越大 C. 物体的加速度与速度成正比 D. 物体的加速度与位移成正比",
+          "page": 2,
+          "bbox": [
+            156.0,
+            402.5762939453125,
+            796.0,
+            450.5762939453125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "3. 一辆汽车以20 m/s的速度行驶，刹车后做匀减速直线运动，加速度大小为4 m/s�，则汽车刹车后6 s内的位移为：",
+          "page": 2,
+          "bbox": [
+            156.0,
+            492.592041015625,
+            836.0,
+            540.592041015625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "A. 40 m B. 48 m C. 50 m D. 60 m",
+          "page": 2,
+          "bbox": [
+            156.0,
+            559.9306640625,
+            466.0,
+            579.9306640625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "4. 在光滑水平面上，质量为2 kg的物体受到水平方向的力F = 10 N，物体的加速度为：",
+          "page": 2,
+          "bbox": [
+            156.0,
+            621.9464111328125,
+            926.0,
+            641.9464111328125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "A. 2 m/s� B. 5 m/s� C. 10 m/s� D. 20 m/s�",
+          "page": 2,
+          "bbox": [
+            156.0,
+            661.2850341796875,
+            606.0,
+            681.2850341796875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "第2页 共4页",
+          "page": 2,
+          "bbox": [
+            156.0,
+            722.7381591796875,
+            244.0,
+            738.7381591796875
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\exam_physics_final.pdf",
+        "page": 2,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\exam_physics_final.pdf\" --page \"2\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-xzsfa4tt\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.276,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\exam_physics_final.pdf",
+        "case_id": "exam_physics_final_p2",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "exam_physics_final_p3",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "北京师范大学附属中学 \n\n## 二、计算题（共40分） \n\n1.（10分）一质量为 m = 5 kg 的物体放在粗糙水平面上，受到水平拉力 F = 20 N 的作用，物体与水平面之间的动摩擦因数为 μ = 0.2。已知重力加速度 g = 10 m/s�，求物体的加速度 a。 提示：f = μN，F - f = ma \n\n2.（10分）一辆汽车从静止开始做匀加速直线运动，经过 t = 10 s 后速度达到 v = 30 m/s。求： （1）汽车的加速度 a； （2）汽车在前10 s 内的位移 s。 公式：v = at，s = �at� \n\n3.（10分）一个电阻 R = 10 Ω 的导体，两端加上电压 U = 20 V，求通过导体的电流 I 和通电 t \n\n= 60 s 内产生的热量 Q。 \n\n公式：I = U/R，Q = I�Rt \n\n第3页 共4页 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "北京师范大学附属中学",
+          "page": 3,
+          "bbox": [
+            156.0,
+            127.6357421875,
+            316.0,
+            143.6357421875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "二、计算题（共40分）",
+          "page": 3,
+          "bbox": [
+            156.0,
+            192.050048828125,
+            416.0,
+            218.050048828125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "1.（10分）一质量为 m = 5 kg 的物体放在粗糙水平面上，受到水平拉力 F = 20 N 的作用，物体与水平面之间的动摩擦因数为 μ = 0.2。已知重力加速度 g = 10 m/s�，求物体的加速度 a。 提示：f = μN，F - f = ma",
+          "page": 3,
+          "bbox": [
+            156.0,
+            261.8834228515625,
+            886.0,
+            361.3209228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "2.（10分）一辆汽车从静止开始做匀加速直线运动，经过 t = 10 s 后速度达到 v = 30 m/s。求： （1）汽车的加速度 a； （2）汽车在前10 s 内的位移 s。 公式：v = at，s = �at�",
+          "page": 3,
+          "bbox": [
+            156.0,
+            413.2376708984375,
+            1026.0,
+            484.6751708984375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "3.（10分）一个电阻 R = 10 Ω 的导体，两端加上电压 U = 20 V，求通过导体的电流 I 和通电 t = 60 s 内产生的热量 Q。 公式：I = U/R，Q = I�Rt",
+          "page": 3,
+          "bbox": [
+            156.0,
+            536.592041015625,
+            1026.0,
+            608.029541015625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "第3页 共4页",
+          "page": 3,
+          "bbox": [
+            156.0,
+            648.0453491210938,
+            244.0,
+            664.0453491210938
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\exam_physics_final.pdf",
+        "page": 3,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\exam_physics_final.pdf\" --page \"3\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-352hn7km\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.189,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\exam_physics_final.pdf",
+        "case_id": "exam_physics_final_p3",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "exam_physics_final_p4",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "北京师范大学附属中学 \n\n## 三、评分标准 \n\n|题号|题型|分值|得分|\n|---|---|---|---|\n|一1~10|选择题|30||\n|二1|计算题|10||\n|二2|计算题|10||\n|二3|计算题|10||\n|实验题|实验题|10||\n|合计||100||\n\n\n\n## 阅卷人签名：__________ 复核人签名：__________ \n\n第4页 共4页 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "北京师范大学附属中学",
+          "page": 4,
+          "bbox": [
+            156.0,
+            127.6357421875,
+            316.0,
+            143.6357421875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "三、评分标准",
+          "page": 4,
+          "bbox": [
+            156.0,
+            192.050048828125,
+            312.0,
+            218.050048828125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "题号 题型 分值 得分",
+          "page": 4,
+          "bbox": [
+            267.1181945800781,
+            267.8834228515625,
+            817.3543701171875,
+            287.8834228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "一1~10 选择题 30",
+          "page": 4,
+          "bbox": [
+            267.1181945800781,
+            307.8834228515625,
+            627.275634765625,
+            327.8834228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "二1 计算题 10",
+          "page": 4,
+          "bbox": [
+            267.1181945800781,
+            347.8834228515625,
+            627.275634765625,
+            367.8834228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "二2 计算题 10",
+          "page": 4,
+          "bbox": [
+            267.1181945800781,
+            387.8834228515625,
+            627.275634765625,
+            407.8834228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "二3 计算题 10",
+          "page": 4,
+          "bbox": [
+            267.1181945800781,
+            427.8834228515625,
+            627.275634765625,
+            447.8834228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "实验题 实验题 10",
+          "page": 4,
+          "bbox": [
+            267.1181945800781,
+            467.8834228515625,
+            627.275634765625,
+            487.8834228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "合计 100",
+          "page": 4,
+          "bbox": [
+            267.1181945800781,
+            507.8834228515625,
+            637.275634765625,
+            527.8834228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "阅卷人签名：__________ 复核人签名：__________",
+          "page": 4,
+          "bbox": [
+            156.0,
+            598.5762939453125,
+            606.0,
+            618.5762939453125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "第4页 共4页",
+          "page": 4,
+          "bbox": [
+            156.0,
+            660.029541015625,
+            244.0,
+            676.029541015625
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\exam_physics_final.pdf",
+        "page": 4,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\exam_physics_final.pdf\" --page \"4\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-1qeu9r6i\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.319,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\exam_physics_final.pdf",
+        "case_id": "exam_physics_final_p4",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "exam_physics_final_p1",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "北京师范大学附属中学 2025—2026学年度第一学期期末考试 高一年级物理试卷 \n\n考试时间：90分钟 满分：100分 \n\n注意事项：1. 本试卷共4页，满分100分。2. 请用黑色签字笔在答题卡上作答，在试卷上作答无效。3. 考试结束后，请将试卷和答题卡一并交回。 \n\n第1页 共4页 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "北京师范大学附属中学 2025—2026学年度第一学期期末考试 高一年级物理试卷",
+          "page": 1,
+          "bbox": [
+            156.0,
+            128.1982421875,
+            476.0,
+            217.8857421875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "考试时间：90分钟 满分：100分",
+          "page": 1,
+          "bbox": [
+            156.0,
+            256.925048828125,
+            408.0,
+            274.925048828125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "注意事项：1. 本试卷共4页，满分100分。2. 请用黑色签字笔在答题卡上作答，在试卷上作答无效。3. 考试结束后，请将试卷和答题卡一并交回。",
+          "page": 1,
+          "bbox": [
+            156.0,
+            315.2220458984375,
+            656.0,
+            391.2220458984375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "第1页 共4页",
+          "page": 1,
+          "bbox": [
+            156.0,
+            432.6751708984375,
+            244.0,
+            448.6751708984375
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\exam_physics_final.pdf",
+        "page": 1,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\exam_physics_final.pdf\" --page \"1\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-qfey61vr\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.101,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\exam_physics_final.pdf",
+        "case_id": "exam_physics_final_p1",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "finance_annual2024_p4",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## 主要财务数据和财务指标 \n\n|项目|2024年度|2023年度|本年比上年增减(%)|\n|---|---|---|---|\n|营业收入（万元）|1,285,432.67|1,042,118.35|23.35|\n|归属于上市公司股东的净利润（万元）|186,521.43|152,087.96|22.64|\n|归属于上市公司股东的扣除非经常性损益的净利<br>润（万元）|178,305.21|145,632.18|22.43|\n|经营活动产生的现金流量净额（万元）|215,678.90|178,432.56|20.88|\n|基本每股收益（元/股）|2.35|1.92|22.40|\n|加权平均净资产收益率(%)|18.76|16.43|增加2.33个百分点|\n|总资产（万元）|3,542,187.65|2,987,423.10|18.57|\n|归属于上市公司股东的净资产（万元）|1,085,432.78|912,345.67|18.97|\n\n\n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "主要财务数据和财务指标",
+          "page": 4,
+          "bbox": [
+            156.0,
+            129.3232421875,
+            464.0,
+            157.3232421875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "项目 2024年度 2023年度 本年比上年增减(%)",
+          "page": 4,
+          "bbox": [
+            153.73228454589844,
+            208.31298828125,
+            998.3936767578125,
+            224.31298828125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "营业收入（万元） 1,285,432.67 1,042,118.35 23.35",
+          "page": 4,
+          "bbox": [
+            153.73228454589844,
+            244.31298828125,
+            902.3936767578125,
+            260.31298828125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "归属于上市公司股东的净利润（万元） 186,521.43 152,087.96 22.64",
+          "page": 4,
+          "bbox": [
+            153.73228454589844,
+            280.31298828125,
+            902.3936767578125,
+            296.31298828125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "归属于上市公司股东的扣除非经常性损益的净利 润（万元） 178,305.21 145,632.18 22.43",
+          "page": 4,
+          "bbox": [
+            153.73228454589844,
+            316.31298828125,
+            902.3936767578125,
+            356.31298828125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "经营活动产生的现金流量净额（万元） 215,678.90 178,432.56 20.88",
+          "page": 4,
+          "bbox": [
+            153.73228454589844,
+            376.31298828125,
+            902.3936767578125,
+            392.31298828125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "基本每股收益（元/股） 2.35 1.92 22.40",
+          "page": 4,
+          "bbox": [
+            153.73228454589844,
+            412.31298828125,
+            902.3936767578125,
+            428.31298828125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "加权平均净资产收益率(%) 18.76 16.43 增加2.33个百分点",
+          "page": 4,
+          "bbox": [
+            153.73228454589844,
+            448.31298828125,
+            990.3936767578125,
+            464.31298828125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "总资产（万元） 3,542,187.65 2,987,423.10 18.57",
+          "page": 4,
+          "bbox": [
+            153.73228454589844,
+            484.31298828125,
+            902.3936767578125,
+            500.31298828125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "归属于上市公司股东的净资产（万元） 1,085,432.78 912,345.67 18.97",
+          "page": 4,
+          "bbox": [
+            153.73228454589844,
+            520.31298828125,
+            902.3936767578125,
+            536.31298828125
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_annual_report_2024.pdf",
+        "page": 4,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_annual_report_2024.pdf\" --page \"4\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-ctz2tppo\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.353,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_annual_report_2024.pdf",
+        "case_id": "finance_annual2024_p4",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "finance_annual2024_p6",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## 合并资产负债表 \n\n编制单位：华信科技股份有限公司 单位：万元 币种：人民币 \n\n|资产|附注|2024年12月31日|2023年12月31日|\n|---|---|---|---|\n|流动资产：||||\n|货币资金|六、1|856,234.56|723,456.78|\n|交易性金融资产|六、2|45,000.00|38,500.00|\n|应收票据|六、3|12,345.67|10,234.56|\n|应收账款|六、4|234,567.89|198,765.43|\n|预付款项|六、5|23,456.78|19,876.54|\n|存货|六、6|345,678.90|287,654.32|\n|合同资产|六、7|56,789.01|45,678.90|\n|其他流动资产|六、8|34,567.89|28,765.43|\n|流动资产合计||1,608,640.70|1,352,931.96|\n|非流动资产：||||\n|长期股权投资|六、9|123,456.78|98,765.43|\n|固定资产|六、10|1,234,567.89|1,023,456.78|\n|在建工程|六、11|234,567.89|187,654.32|\n|无形资产|六、12|187,654.32|156,789.01|\n|商誉|六、13|89,012.34|89,012.34|\n|递延所得税资产|六、14|34,567.89|28,765.43|\n|其他非流动资产|六、15|29,719.84|50,047.83|\n|非流动资产合计||1,933,546.95|1,634,491.14|\n|资产总计||3,542,187.65|2,987,423.10|\n|流动负债：||||\n|短期借款|六、16|156,789.01|123,456.78|\n|应付票据|六、17|45,678.90|34,567.89|\n|应付账款|六、18|234,567.89|198,765.43|\n|合同负债|六、19|67,890.12|56,789.01|\n|应付职工薪酬|六、20|23,456.78|19,876.54|\n|应交税费|六、21|34,567.89|28,765.43|\n|其他应付款|六、22|45,678.90|38,765.43|\n|一年内到期的非流动负债|六、23|89,012.34|67,890.12|\n|流动负债合计||697,641.83|568,876.63|\n|非流动负债：||||\n|长期借款|六、24|456,789.01|345,678.90|\n|应付债券|六、25|200,000.00|200,000.00|\n|递延所得税负债|六、26|23,456.78|19,876.54|\n|预计负债|六、27|12,345.67|10,234.56|\n\n\n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "合并资产负债表",
+          "page": 6,
+          "bbox": [
+            156.0,
+            129.3232421875,
+            352.0,
+            157.3232421875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "编制单位：华信科技股份有限公司 单位：万元 币种：人民币",
+          "page": 6,
+          "bbox": [
+            156.0,
+            202.31298828125,
+            588.0,
+            218.31298828125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "资产 附注 2024年12月31日 2023年12月31日",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            241.6514892578125,
+            946.04736328125,
+            257.6514892578125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "流动资产：",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            283.3209228515625,
+            262.0787353515625,
+            299.3209228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "货币资金 六、1 856,234.56 723,456.78",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            319.3209228515625,
+            914.04736328125,
+            335.3209228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "交易性金融资产 六、2 45,000.00 38,500.00",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            355.3209228515625,
+            906.04736328125,
+            371.3209228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "应收票据 六、3 12,345.67 10,234.56",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            391.3209228515625,
+            906.04736328125,
+            407.3209228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "应收账款 六、4 234,567.89 198,765.43",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            427.3209228515625,
+            914.04736328125,
+            443.3209228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "预付款项 六、5 23,456.78 19,876.54",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            463.3209228515625,
+            906.04736328125,
+            479.3209228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "存货 六、6 345,678.90 287,654.32",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            499.3209228515625,
+            914.04736328125,
+            515.3209228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "合同资产 六、7 56,789.01 45,678.90",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            535.3209228515625,
+            906.04736328125,
+            551.3209228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "其他流动资产 六、8 34,567.89 28,765.43",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            571.3209228515625,
+            906.04736328125,
+            587.3209228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "流动资产合计 1,608,640.70 1,352,931.96",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            607.3209228515625,
+            930.04736328125,
+            623.3209228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "非流动资产：",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            643.3209228515625,
+            278.0787353515625,
+            659.3209228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "长期股权投资 六、9 123,456.78 98,765.43",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            679.3209228515625,
+            906.04736328125,
+            695.3209228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "固定资产 六、10 1,234,567.89 1,023,456.78",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            715.3209228515625,
+            930.04736328125,
+            731.3209228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "在建工程 六、11 234,567.89 187,654.32",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            751.3209228515625,
+            914.04736328125,
+            767.3209228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "无形资产 六、12 187,654.32 156,789.01",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            787.3209228515625,
+            914.04736328125,
+            803.3209228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "商誉 六、13 89,012.34 89,012.34",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            823.3209228515625,
+            906.04736328125,
+            839.3209228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "递延所得税资产 六、14 34,567.89 28,765.43",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            859.3209228515625,
+            906.04736328125,
+            875.3209228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "其他非流动资产 六、15 29,719.84 50,047.83",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            895.3209228515625,
+            906.04736328125,
+            911.3209228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "非流动资产合计 1,933,546.95 1,634,491.14",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            931.3209228515625,
+            930.04736328125,
+            947.3209228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "资产总计 3,542,187.65 2,987,423.10",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            967.3209228515625,
+            930.04736328125,
+            983.3209228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "流动负债：",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            1020.3287353515625,
+            262.0787353515625,
+            1036.3287353515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "短期借款 六、16 156,789.01 123,456.78",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            1056.3287353515625,
+            914.04736328125,
+            1072.3287353515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "应付票据 六、17 45,678.90 34,567.89",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            1092.3287353515625,
+            906.04736328125,
+            1108.3287353515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "应付账款 六、18 234,567.89 198,765.43",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            1128.3287353515625,
+            914.04736328125,
+            1144.3287353515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "合同负债 六、19 67,890.12 56,789.01",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            1164.3287353515625,
+            906.04736328125,
+            1180.3287353515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "应付职工薪酬 六、20 23,456.78 19,876.54",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            1200.3287353515625,
+            906.04736328125,
+            1216.3287353515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "应交税费 六、21 34,567.89 28,765.43",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            1236.3287353515625,
+            906.04736328125,
+            1252.3287353515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "其他应付款 六、22 45,678.90 38,765.43",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            1272.3287353515625,
+            906.04736328125,
+            1288.3287353515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "一年内到期的非流动负债 六、23 89,012.34 67,890.12",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            1308.3287353515625,
+            906.04736328125,
+            1324.3287353515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "流动负债合计 697,641.83 568,876.63",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            1344.3287353515625,
+            914.04736328125,
+            1360.3287353515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "非流动负债：",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            1380.3287353515625,
+            278.0787353515625,
+            1396.3287353515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "长期借款 六、24 456,789.01 345,678.90",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            1416.3287353515625,
+            914.04736328125,
+            1432.3287353515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "应付债券 六、25 200,000.00 200,000.00",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            1452.3287353515625,
+            914.04736328125,
+            1468.3287353515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "递延所得税负债 六、26 23,456.78 19,876.54",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            1488.3287353515625,
+            906.04736328125,
+            1504.3287353515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "预计负债 六、27 12,345.67 10,234.56",
+          "page": 6,
+          "bbox": [
+            182.0787353515625,
+            1524.3287353515625,
+            906.04736328125,
+            1540.3287353515625
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_annual_report_2024.pdf",
+        "page": 6,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_annual_report_2024.pdf\" --page \"6\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-o6m_7rqu\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.458,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_annual_report_2024.pdf",
+        "case_id": "finance_annual2024_p6",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "finance_annual2024_p8",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## 合并资产负债表（续） \n\n|所有者权益：||||\n|---|---|---|---|\n|股本|六、28|80,000.00|80,000.00|\n|资本公积|六、29|456,789.01|412,345.67|\n|其他综合收益|六、30|12,345.67|8,765.43|\n|盈余公积|六、31|89,012.34|72,345.67|\n|未分配利润|六、32|447,285.76|338,888.90|\n|归属于母公司所有者权益合计||1,085,432.78|912,345.67|\n|少数股东权益||66,521.58|-69,589.20|\n|所有者权益合计||1,151,954.36|842,756.47|\n|负债和所有者权益总计||3,542,187.65|2,987,423.10|\n\n\n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "合并资产负债表（续）",
+          "page": 8,
+          "bbox": [
+            156.0,
+            129.3232421875,
+            436.0,
+            157.3232421875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "所有者权益：",
+          "page": 8,
+          "bbox": [
+            182.0787353515625,
+            208.31298828125,
+            278.0787353515625,
+            224.31298828125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "股本 六、28 80,000.00 80,000.00",
+          "page": 8,
+          "bbox": [
+            182.0787353515625,
+            244.31298828125,
+            906.04736328125,
+            260.31298828125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "资本公积 六、29 456,789.01 412,345.67",
+          "page": 8,
+          "bbox": [
+            182.0787353515625,
+            280.31298828125,
+            914.04736328125,
+            296.31298828125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "其他综合收益 六、30 12,345.67 8,765.43",
+          "page": 8,
+          "bbox": [
+            182.0787353515625,
+            316.31298828125,
+            898.04736328125,
+            332.31298828125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "盈余公积 六、31 89,012.34 72,345.67",
+          "page": 8,
+          "bbox": [
+            182.0787353515625,
+            352.31298828125,
+            906.04736328125,
+            368.31298828125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "未分配利润 六、32 447,285.76 338,888.90",
+          "page": 8,
+          "bbox": [
+            182.0787353515625,
+            388.31298828125,
+            914.04736328125,
+            404.31298828125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "归属于母公司所有者权益合计 1,085,432.78 912,345.67",
+          "page": 8,
+          "bbox": [
+            182.0787353515625,
+            424.31298828125,
+            914.04736328125,
+            440.31298828125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "少数股东权益 66,521.58 -69,589.20",
+          "page": 8,
+          "bbox": [
+            182.0787353515625,
+            460.31298828125,
+            914.04736328125,
+            476.31298828125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "所有者权益合计 1,151,954.36 842,756.47",
+          "page": 8,
+          "bbox": [
+            182.0787353515625,
+            496.31298828125,
+            914.04736328125,
+            512.31298828125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "负债和所有者权益总计 3,542,187.65 2,987,423.10",
+          "page": 8,
+          "bbox": [
+            182.0787353515625,
+            532.31298828125,
+            930.04736328125,
+            548.31298828125
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_annual_report_2024.pdf",
+        "page": 8,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_annual_report_2024.pdf\" --page \"8\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-rtwp3_5c\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.395,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_annual_report_2024.pdf",
+        "case_id": "finance_annual2024_p8",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "finance_annual2024_p9",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## 合并利润表 \n\n编制单位：华信科技股份有限公司 单位：万元 币种：人民币 \n\n|项目|附注|2024年度|2023年度|\n|---|---|---|---|\n|一、营业收入|六、33|1,285,432.67|1,042,118.35|\n|减：营业成本|六、34|856,234.56|698,765.43|\n|税金及附加|六、35|12,345.67|10,234.56|\n|销售费用|六、36|89,012.34|72,345.67|\n|管理费用|六、37|56,789.01|45,678.90|\n|研发费用|六、38|67,890.12|56,789.01|\n|财务费用|六、39|23,456.78|19,876.54|\n|加：投资收益|六、40|34,567.89|28,765.43|\n|二、营业利润||214,272.08|167,193.60|\n|加：营业外收入|六、41|5,678.90|4,567.89|\n|减：营业外支出|六、42|2,345.67|1,876.54|\n|三、利润总额||217,605.31|169,884.95|\n|减：所得税费用|六、43|31,083.88|17,796.99|\n|四、净利润||186,521.43|152,087.96|\n|（一）持续经营净利润||186,521.43|152,087.96|\n|（二）终止经营净利润||-|-|\n|五、其他综合收益的税后净额||3,580.24|2,123.45|\n|六、综合收益总额||190,101.67|154,211.41|\n|归属于母公司所有者的综合收益总额||184,567.89|148,765.43|\n|归属于少数股东的综合收益总额||5,533.78|5,445.98|\n\n\n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "合并利润表",
+          "page": 9,
+          "bbox": [
+            156.0,
+            129.3232421875,
+            296.0,
+            157.3232421875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "编制单位：华信科技股份有限公司 单位：万元 币种：人民币",
+          "page": 9,
+          "bbox": [
+            156.0,
+            202.31298828125,
+            588.0,
+            218.31298828125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "项目 附注 2024年度 2023年度",
+          "page": 9,
+          "bbox": [
+            182.0787353515625,
+            241.65155029296875,
+            898.04736328125,
+            257.65155029296875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "一、营业收入 六、33 1,285,432.67 1,042,118.35",
+          "page": 9,
+          "bbox": [
+            182.0787353515625,
+            277.65155029296875,
+            930.04736328125,
+            293.65155029296875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "减：营业成本 六、34 856,234.56 698,765.43",
+          "page": 9,
+          "bbox": [
+            182.0787353515625,
+            313.65155029296875,
+            914.04736328125,
+            329.65155029296875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "税金及附加 六、35 12,345.67 10,234.56",
+          "page": 9,
+          "bbox": [
+            182.0787353515625,
+            349.65155029296875,
+            906.04736328125,
+            365.65155029296875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "销售费用 六、36 89,012.34 72,345.67",
+          "page": 9,
+          "bbox": [
+            182.0787353515625,
+            385.65155029296875,
+            906.04736328125,
+            401.65155029296875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "管理费用 六、37 56,789.01 45,678.90",
+          "page": 9,
+          "bbox": [
+            182.0787353515625,
+            421.65155029296875,
+            906.04736328125,
+            437.65155029296875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "研发费用 六、38 67,890.12 56,789.01",
+          "page": 9,
+          "bbox": [
+            182.0787353515625,
+            457.65155029296875,
+            906.04736328125,
+            473.65155029296875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "财务费用 六、39 23,456.78 19,876.54",
+          "page": 9,
+          "bbox": [
+            182.0787353515625,
+            493.65155029296875,
+            906.04736328125,
+            509.65155029296875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "加：投资收益 六、40 34,567.89 28,765.43",
+          "page": 9,
+          "bbox": [
+            182.0787353515625,
+            529.6515502929688,
+            906.04736328125,
+            545.6515502929688
+          ]
+        },
+        {
+          "type": "text",
+          "text": "二、营业利润 214,272.08 167,193.60",
+          "page": 9,
+          "bbox": [
+            182.0787353515625,
+            565.6515502929688,
+            914.04736328125,
+            581.6515502929688
+          ]
+        },
+        {
+          "type": "text",
+          "text": "加：营业外收入 六、41 5,678.90 4,567.89",
+          "page": 9,
+          "bbox": [
+            182.0787353515625,
+            601.6515502929688,
+            898.04736328125,
+            617.6515502929688
+          ]
+        },
+        {
+          "type": "text",
+          "text": "减：营业外支出 六、42 2,345.67 1,876.54",
+          "page": 9,
+          "bbox": [
+            182.0787353515625,
+            637.6515502929688,
+            898.04736328125,
+            653.6515502929688
+          ]
+        },
+        {
+          "type": "text",
+          "text": "三、利润总额 217,605.31 169,884.95",
+          "page": 9,
+          "bbox": [
+            182.0787353515625,
+            673.6515502929688,
+            914.04736328125,
+            689.6515502929688
+          ]
+        },
+        {
+          "type": "text",
+          "text": "减：所得税费用 六、43 31,083.88 17,796.99",
+          "page": 9,
+          "bbox": [
+            182.0787353515625,
+            709.6515502929688,
+            906.04736328125,
+            725.6515502929688
+          ]
+        },
+        {
+          "type": "text",
+          "text": "四、净利润 186,521.43 152,087.96",
+          "page": 9,
+          "bbox": [
+            182.0787353515625,
+            745.6515502929688,
+            914.04736328125,
+            761.6515502929688
+          ]
+        },
+        {
+          "type": "text",
+          "text": "（一）持续经营净利润 186,521.43 152,087.96",
+          "page": 9,
+          "bbox": [
+            182.0787353515625,
+            781.6515502929688,
+            914.04736328125,
+            797.6515502929688
+          ]
+        },
+        {
+          "type": "text",
+          "text": "（二）终止经营净利润 - -",
+          "page": 9,
+          "bbox": [
+            182.0787353515625,
+            817.6515502929688,
+            842.04736328125,
+            833.6515502929688
+          ]
+        },
+        {
+          "type": "text",
+          "text": "五、其他综合收益的税后净额 3,580.24 2,123.45",
+          "page": 9,
+          "bbox": [
+            182.0787353515625,
+            853.6515502929688,
+            898.04736328125,
+            869.6515502929688
+          ]
+        },
+        {
+          "type": "text",
+          "text": "六、综合收益总额 190,101.67 154,211.41",
+          "page": 9,
+          "bbox": [
+            182.0787353515625,
+            889.6515502929688,
+            914.04736328125,
+            905.6515502929688
+          ]
+        },
+        {
+          "type": "text",
+          "text": "归属于母公司所有者的综合收益总额 184,567.89 148,765.43",
+          "page": 9,
+          "bbox": [
+            182.0787353515625,
+            925.6515502929688,
+            914.04736328125,
+            941.6515502929688
+          ]
+        },
+        {
+          "type": "text",
+          "text": "归属于少数股东的综合收益总额 5,533.78 5,445.98",
+          "page": 9,
+          "bbox": [
+            182.0787353515625,
+            961.6515502929688,
+            898.04736328125,
+            977.6515502929688
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_annual_report_2024.pdf",
+        "page": 9,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_annual_report_2024.pdf\" --page \"9\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-qm971go1\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.436,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_annual_report_2024.pdf",
+        "case_id": "finance_annual2024_p9",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "invoice_vat_001_p1",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## 增值税电子普通发票 \n\n发票代码：011002500311 发票号码：08726145 开票日期：2026年04月18日 \n\n## 购买方 \n\n购方名称：杭州星辰智能科技有限公司 纳税人识别号：91330100MA2KEXAMPLE 地址电话：杭州市西湖区文三路 478 号 0571-88886666 开户行及账号：中国工商银行杭州西湖支行 1202020009876543210 \n\n## 销售方 \n\n销方名称：北京云计算服务有限公司 纳税人识别号：91110108MA01EXAMPLE \n\n## 货物或应税劳务、服务名称 \n\n|项目名称|规格型号|单位|数量|单价|金额|\n|---|---|---|---|---|---|\n|API服务费|企业版|月|12|15,000.00|180,000.00|\n|SDK技术支持|VIP套餐|年|2|50,000.00|100,000.00|\n|云服务器租赁|16核64G|月|12|8,500.00|102,000.00|\n|数据库服务|高可用版|月|12|3,200.00|38,400.00|\n|SSL证书服务|OV型|年|3|2,000.00|6,000.00|\n|CDN加速服务|500GB套餐|月|12|1,800.00|21,600.00|\n\n\n\n增值税电子普通发票 · 第1页 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "增值税电子普通发票",
+          "page": 1,
+          "bbox": [
+            156.0,
+            186.5787353515625,
+            444.0,
+            218.5787353515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "发票代码：011002500311 发票号码：08726145 开票日期：2026年04月18日",
+          "page": 1,
+          "bbox": [
+            156.0,
+            263.5684814453125,
+            396.0,
+            339.5684814453125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "购买方",
+          "page": 1,
+          "bbox": [
+            156.0,
+            406.427978515625,
+            234.0,
+            432.427978515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "购方名称：杭州星辰智能科技有限公司 纳税人识别号：91330100MA2KEXAMPLE 地址电话：杭州市西湖区文三路 478 号 0571-88886666 开户行及账号：中国工商银行杭州西湖支行 1202020009876543210",
+          "page": 1,
+          "bbox": [
+            156.0,
+            464.9228515625,
+            736.0,
+            568.9228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "销售方",
+          "page": 1,
+          "bbox": [
+            156.0,
+            624.443603515625,
+            234.0,
+            650.443603515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "销方名称：北京云计算服务有限公司 纳税人识别号：91110108MA01EXAMPLE",
+          "page": 1,
+          "bbox": [
+            156.0,
+            682.9384155273438,
+            486.0,
+            730.9384155273438
+          ]
+        },
+        {
+          "type": "text",
+          "text": "货物或应税劳务、服务名称",
+          "page": 1,
+          "bbox": [
+            156.0,
+            797.7979736328125,
+            468.0,
+            823.7979736328125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "项目名称 规格型号 单位 数量 单价 金额",
+          "page": 1,
+          "bbox": [
+            238.7716064453125,
+            862.0115966796875,
+            951.7794189453125,
+            880.0115966796875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "API服务费 企业版 月 12 15,000.00 180,000.00",
+          "page": 1,
+          "bbox": [
+            238.7716064453125,
+            894.13037109375,
+            951.7794189453125,
+            918.8623657226562
+          ]
+        },
+        {
+          "type": "text",
+          "text": "SDK技术支持 VIP套餐 年 2 50,000.00 100,000.00",
+          "page": 1,
+          "bbox": [
+            238.7716064453125,
+            930.13037109375,
+            951.7794189453125,
+            954.8623657226562
+          ]
+        },
+        {
+          "type": "text",
+          "text": "云服务器租赁 16核64G 月 12 8,500.00 102,000.00",
+          "page": 1,
+          "bbox": [
+            238.7716064453125,
+            966.13037109375,
+            951.7794189453125,
+            990.8623657226562
+          ]
+        },
+        {
+          "type": "text",
+          "text": "数据库服务 高可用版 月 12 3,200.00 38,400.00",
+          "page": 1,
+          "bbox": [
+            238.7716064453125,
+            1002.13037109375,
+            951.7794189453125,
+            1026.8623046875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "SSL证书服务 OV型 年 3 2,000.00 6,000.00",
+          "page": 1,
+          "bbox": [
+            238.7716064453125,
+            1038.13037109375,
+            951.7794189453125,
+            1062.8623046875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "CDN加速服务 500GB套餐 月 12 1,800.00 21,600.00",
+          "page": 1,
+          "bbox": [
+            238.7716064453125,
+            1074.13037109375,
+            951.7794189453125,
+            1098.8623046875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "增值税电子普通发票 · 第1页",
+          "page": 1,
+          "bbox": [
+            156.0,
+            1130.407470703125,
+            372.0,
+            1146.407470703125
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf",
+        "page": 1,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf\" --page \"1\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-btxkj_f5\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.413,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf",
+        "case_id": "invoice_vat_001_p1",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "invoice_vat_001_p2",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## 增值税电子普通发票 \n\n发票号码：08726145 \n\n## 合计金额与税额 \n\n合计金额：448,000.00 元 合计金额（大写）：肆拾肆万捌仟元整 税率：6% 税额：26,880.00 元 价税合计（小写）：人民币474,880.00 价税合计（大写）：肆拾柒万肆仟捌佰捌拾元整 \n\n增值税电子普通发票 · 第2页 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "增值税电子普通发票",
+          "page": 2,
+          "bbox": [
+            156.0,
+            129.8857421875,
+            444.0,
+            161.8857421875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "发票号码：08726145",
+          "page": 2,
+          "bbox": [
+            156.0,
+            206.87548828125,
+            336.0,
+            226.87548828125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "合计金额与税额",
+          "page": 2,
+          "bbox": [
+            156.0,
+            293.7349853515625,
+            338.0,
+            319.7349853515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "合计金额：448,000.00 元 合计金额（大写）：肆拾肆万捌仟元整",
+          "page": 2,
+          "bbox": [
+            156.0,
+            357.8990478515625,
+            496.0,
+            405.8990478515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "税率：6% 税额：26,880.00 元",
+          "page": 2,
+          "bbox": [
+            156.0,
+            436.5762939453125,
+            336.0,
+            484.5762939453125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "价税合计（小写）：人民币474,880.00 价税合计（大写）：肆拾柒万肆仟捌佰捌拾元整",
+          "page": 2,
+          "bbox": [
+            156.0,
+            515.25341796875,
+            576.0,
+            563.25341796875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "增值税电子普通发票 · 第2页",
+          "page": 2,
+          "bbox": [
+            156.0,
+            684.0767211914062,
+            372.0,
+            700.0767211914062
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf",
+        "page": 2,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf\" --page \"2\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-hlx0hudn\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.072,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf",
+        "case_id": "invoice_vat_001_p2",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "invoice_vat_001_p3",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## 增值税电子普通发票 \n\n## 备注 \n\n备注：本发票对应合同编号HT-2026-00158，服务期间2026年4月至2027年3月。如有疑问请联系财务 部：finance@cloudcompute.example.com。 \n\n## 校验码 \n\n校验码：A7F3B9C2D1E5 \n\n[二维码] \n\n增值税电子普通发票 · 第3页 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "增值税电子普通发票",
+          "page": 3,
+          "bbox": [
+            156.0,
+            129.8857421875,
+            444.0,
+            161.8857421875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "备注",
+          "page": 3,
+          "bbox": [
+            156.0,
+            231.71923828125,
+            208.0,
+            257.71923828125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "备注：本发票对应合同编号HT-2026-00158，服务期间2026年4月至2027年3月。如有疑问请联系财务 部：finance@cloudcompute.example.com。",
+          "page": 3,
+          "bbox": [
+            156.0,
+            295.8834228515625,
+            1026.0,
+            343.8834228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "校验码",
+          "page": 3,
+          "bbox": [
+            156.0,
+            422.0814208984375,
+            234.0,
+            448.0814208984375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "校验码：A7F3B9C2D1E5",
+          "page": 3,
+          "bbox": [
+            156.0,
+            480.5762939453125,
+            356.0,
+            500.5762939453125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "[二维码]",
+          "page": 3,
+          "bbox": [
+            156.0,
+            542.592041015625,
+            236.0,
+            562.592041015625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "增值税电子普通发票 · 第3页",
+          "page": 3,
+          "bbox": [
+            156.0,
+            683.4153442382812,
+            372.0,
+            699.4153442382812
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf",
+        "page": 3,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf\" --page \"3\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-3w4j9qz_\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.281,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf",
+        "case_id": "invoice_vat_001_p3",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "invoice_vat_001_p4",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## 增值税电子普通发票 \n\n## 开票信息确认 \n\n收款人：王芳 \n\n复核：李明 开票人：张伟 \n\n[发票专用章] \n\n销方（章）：________________ 购方（章）：________________ \n\n增值税电子普通发票 · 第4页 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "增值税电子普通发票",
+          "page": 4,
+          "bbox": [
+            156.0,
+            129.8857421875,
+            444.0,
+            161.8857421875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "开票信息确认",
+          "page": 4,
+          "bbox": [
+            156.0,
+            231.71923828125,
+            312.0,
+            257.71923828125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "收款人：王芳",
+          "page": 4,
+          "bbox": [
+            156.0,
+            295.8834228515625,
+            276.0,
+            315.8834228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "复核：李明",
+          "page": 4,
+          "bbox": [
+            156.0,
+            340.8912353515625,
+            256.0,
+            360.8912353515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "开票人：张伟",
+          "page": 4,
+          "bbox": [
+            156.0,
+            385.8990478515625,
+            276.0,
+            405.8990478515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "[发票专用章]",
+          "page": 4,
+          "bbox": [
+            156.0,
+            447.914794921875,
+            276.0,
+            467.914794921875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "销方（章）：________________ 购方（章）：________________",
+          "page": 4,
+          "bbox": [
+            156.0,
+            532.6077880859375,
+            726.0,
+            552.6077880859375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "增值税电子普通发票 · 第4页",
+          "page": 4,
+          "bbox": [
+            156.0,
+            673.43115234375,
+            372.0,
+            689.43115234375
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf",
+        "page": 4,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf\" --page \"4\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-dq86vay1\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.205,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf",
+        "case_id": "invoice_vat_001_p4",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "invoice_vat_001_p5",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## 增值税电子普通发票 \n\n## 发票联 \n\n此联为购方记账凭证。请妥善保管，作为财务报销及入账依据。 \n\n销方名称：北京云计算服务有限公司 发票代码：011002500311 发票号码：08726145 \n\n温馨提示：本发票已通过国家税务总局全国增值税发票查验平台验证。 \n\n增值税电子普通发票 · 第5页 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "增值税电子普通发票",
+          "page": 5,
+          "bbox": [
+            156.0,
+            129.8857421875,
+            444.0,
+            161.8857421875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "发票联",
+          "page": 5,
+          "bbox": [
+            156.0,
+            231.71923828125,
+            234.0,
+            257.71923828125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "此联为购方记账凭证。请妥善保管，作为财务报销及入账依据。",
+          "page": 5,
+          "bbox": [
+            156.0,
+            295.8834228515625,
+            716.0,
+            315.8834228515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "销方名称：北京云计算服务有限公司 发票代码：011002500311 发票号码：08726145",
+          "page": 5,
+          "bbox": [
+            156.0,
+            357.8990478515625,
+            476.0,
+            433.8990478515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "温馨提示：本发票已通过国家税务总局全国增值税发票查验平台验证。",
+          "page": 5,
+          "bbox": [
+            156.0,
+            475.914794921875,
+            776.0,
+            495.914794921875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "增值税电子普通发票 · 第5页",
+          "page": 5,
+          "bbox": [
+            156.0,
+            616.7381591796875,
+            372.0,
+            632.7381591796875
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf",
+        "page": 5,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf\" --page \"5\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-6o3crsj8\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.11,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\invoice_vat_001.pdf",
+        "case_id": "invoice_vat_001_p5",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "zh_paper_double_column_001_p3",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "中国人工智能学会通讯 2026 年第 3 期 \n\n## 基于视觉语言模型的文档理解 \n\n近年来，视觉语言模型在文档理解领域取得了显著进展。本文提出了一种新的多模态文档 分析框架，结合了视觉编码器和语言解码器的优势。 \n\n|模型|语言|得分|\n|---|---|---|\n|Qwen2.5-VL|中英|88.2|\n|MinerU|中英|81.4|\n|Docling|中英|76.5|\n\n\n\n图 2 图 2 实验流程 \n\n核心目标为 $\\sum_{i=1}^{n} x_i$ 的稳定识别与验证。 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "中国人工智能学会通讯 2026 年第 3 期",
+          "page": 3,
+          "bbox": [
+            156.0,
+            159.09375,
+            541.0,
+            181.09375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "基于视觉语言模型的文档理解",
+          "page": 3,
+          "bbox": [
+            156.0,
+            215.1771240234375,
+            572.0,
+            247.1771240234375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "近年来，视觉语言模型在文档理解领域取得了显著进展。本文提出了一种新的多模态文档 分析框架，结合了视觉编码器和语言解码器的优势。",
+          "page": 3,
+          "bbox": [
+            156.0,
+            292.4481201171875,
+            1014.0,
+            346.4481201171875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "模型 语言 得分",
+          "page": 3,
+          "bbox": [
+            309.6377868652344,
+            379.4559326171875,
+            807.18115234375,
+            401.4559326171875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Qwen2.5-VL 中英 88.2",
+          "page": 3,
+          "bbox": [
+            309.6377868652344,
+            423.4559326171875,
+            807.18115234375,
+            445.4559326171875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "MinerU 中英 81.4",
+          "page": 3,
+          "bbox": [
+            309.6377868652344,
+            467.4559326171875,
+            807.18115234375,
+            489.4559326171875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Docling 中英 76.5",
+          "page": 3,
+          "bbox": [
+            309.6377868652344,
+            511.4559326171875,
+            807.18115234375,
+            533.4559326171875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "图 2 图 2 实验流程",
+          "page": 3,
+          "bbox": [
+            156.0,
+            572.133056640625,
+            299.0,
+            626.133056640625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "核心目标为 $\\sum_{i=1}^{n} x_i$ 的稳定识别与验证。",
+          "page": 3,
+          "bbox": [
+            156.0,
+            653.14111328125,
+            706.0,
+            675.14111328125
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\zh_paper_double_column_001.pdf",
+        "page": 3,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\zh_paper_double_column_001.pdf\" --page \"3\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-594zrs81\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.233,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\zh_paper_double_column_001.pdf",
+        "case_id": "zh_paper_double_column_001_p3",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "cn_textbook_formula_002_p12",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "第四章 动能与动能定理 \n\n动能定理表明合外力做功等于物体动能的变化量。当一个质量为 m 的物体在力的作用下获得速度 v 时，其动能表达式为： \n\n$E_k=\\frac{1}{2}mv^2$ \n\n其中 m 为物体质量，v 为物体速度。这一公式在经典力学中有广泛应用。 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "第四章 动能与动能定理",
+          "page": 12,
+          "bbox": [
+            156.0,
+            159.09375,
+            387.0,
+            181.09375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "动能定理表明合外力做功等于物体动能的变化量。当一个质量为 m 的物体在力的作用下获得速度 v 时，其动能表达式为：",
+          "page": 12,
+          "bbox": [
+            156.0,
+            213.7708740234375,
+            794.0,
+            267.7708740234375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "$E_k=\\frac{1}{2}mv^2$",
+          "page": 12,
+          "bbox": [
+            156.0,
+            289.1094970703125,
+            387.0,
+            311.1094970703125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "其中 m 为物体质量，v 为物体速度。这一公式在经典力学中有广泛应用。",
+          "page": 12,
+          "bbox": [
+            156.0,
+            332.4481201171875,
+            871.0,
+            354.4481201171875
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\cn_textbook_formula_002.pdf",
+        "page": 12,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\cn_textbook_formula_002.pdf\" --page \"12\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-1welirx6\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.31,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\cn_textbook_formula_002.pdf",
+        "case_id": "cn_textbook_formula_002_p12",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "finance_table_mixed_003_p8",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## 合并利润表 \n\n|项目|2025|2024|YoY|\n|---|---|---|---|\n|营业收入|1,234.56|1,010.30|22.2%|\n|净利润|98.70|80.10|23.2%|\n|R&D;|45.00|39.00|15.4%|\n\n\n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "合并利润表",
+          "page": 8,
+          "bbox": [
+            156.0,
+            158.8125,
+            256.0,
+            178.8125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "项目 2025 2024 YoY",
+          "page": 8,
+          "bbox": [
+            281.2914123535156,
+            215.4896240234375,
+            821.527587890625,
+            235.4896240234375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "营业收入 1,234.56 1,010.30 22.2%",
+          "page": 8,
+          "bbox": [
+            281.2914123535156,
+            255.4896240234375,
+            841.527587890625,
+            275.4896240234375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "净利润 98.70 80.10 23.2%",
+          "page": 8,
+          "bbox": [
+            281.2914123535156,
+            295.4896240234375,
+            841.527587890625,
+            315.4896240234375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "R&D; 45.00 39.00 15.4%",
+          "page": 8,
+          "bbox": [
+            281.2914123535156,
+            335.4896240234375,
+            841.527587890625,
+            355.4896240234375
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_table_mixed_003.pdf",
+        "page": 8,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_table_mixed_003.pdf\" --page \"8\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-l1jlj4cn\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.061,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_table_mixed_003.pdf",
+        "case_id": "finance_table_mixed_003_p8",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "zh_paper_double_column_001_p3",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "中国人工智能学会通讯 2026 年第 3 期 \n\n## 基于视觉语言模型的文档理解 \n\n近年来，视觉语言模型在文档理解领域取得了显著进展。本文提出了一种新的多模态文档 分析框架，结合了视觉编码器和语言解码器的优势。 \n\n|模型|语言|得分|\n|---|---|---|\n|Qwen2.5-VL|中英|88.2|\n|MinerU|中英|81.4|\n|Docling|中英|76.5|\n\n\n\n图 2 图 2 实验流程 \n\n核心目标为 $\\sum_{i=1}^{n} x_i$ 的稳定识别与验证。 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "中国人工智能学会通讯 2026 年第 3 期",
+          "page": 3,
+          "bbox": [
+            156.0,
+            159.09375,
+            541.0,
+            181.09375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "基于视觉语言模型的文档理解",
+          "page": 3,
+          "bbox": [
+            156.0,
+            215.1771240234375,
+            572.0,
+            247.1771240234375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "近年来，视觉语言模型在文档理解领域取得了显著进展。本文提出了一种新的多模态文档 分析框架，结合了视觉编码器和语言解码器的优势。",
+          "page": 3,
+          "bbox": [
+            156.0,
+            292.4481201171875,
+            1014.0,
+            346.4481201171875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "模型 语言 得分",
+          "page": 3,
+          "bbox": [
+            309.6377868652344,
+            379.4559326171875,
+            807.18115234375,
+            401.4559326171875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Qwen2.5-VL 中英 88.2",
+          "page": 3,
+          "bbox": [
+            309.6377868652344,
+            423.4559326171875,
+            807.18115234375,
+            445.4559326171875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "MinerU 中英 81.4",
+          "page": 3,
+          "bbox": [
+            309.6377868652344,
+            467.4559326171875,
+            807.18115234375,
+            489.4559326171875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Docling 中英 76.5",
+          "page": 3,
+          "bbox": [
+            309.6377868652344,
+            511.4559326171875,
+            807.18115234375,
+            533.4559326171875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "图 2 图 2 实验流程",
+          "page": 3,
+          "bbox": [
+            156.0,
+            572.133056640625,
+            299.0,
+            626.133056640625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "核心目标为 $\\sum_{i=1}^{n} x_i$ 的稳定识别与验证。",
+          "page": 3,
+          "bbox": [
+            156.0,
+            653.14111328125,
+            706.0,
+            675.14111328125
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\zh_paper_double_column_001.pdf",
+        "page": 3,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\zh_paper_double_column_001.pdf\" --page \"3\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-mjp7kdt1\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.21,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\zh_paper_double_column_001.pdf",
+        "case_id": "zh_paper_double_column_001_p3",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "cn_textbook_formula_002_p12",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "第四章 动能与动能定理 \n\n动能定理表明合外力做功等于物体动能的变化量。当一个质量为 m 的物体在力的作用下获得速度 v 时，其动能表达式为： \n\n$E_k=\\frac{1}{2}mv^2$ \n\n其中 m 为物体质量，v 为物体速度。这一公式在经典力学中有广泛应用。 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "第四章 动能与动能定理",
+          "page": 12,
+          "bbox": [
+            156.0,
+            159.09375,
+            387.0,
+            181.09375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "动能定理表明合外力做功等于物体动能的变化量。当一个质量为 m 的物体在力的作用下获得速度 v 时，其动能表达式为：",
+          "page": 12,
+          "bbox": [
+            156.0,
+            213.7708740234375,
+            794.0,
+            267.7708740234375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "$E_k=\\frac{1}{2}mv^2$",
+          "page": 12,
+          "bbox": [
+            156.0,
+            289.1094970703125,
+            387.0,
+            311.1094970703125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "其中 m 为物体质量，v 为物体速度。这一公式在经典力学中有广泛应用。",
+          "page": 12,
+          "bbox": [
+            156.0,
+            332.4481201171875,
+            871.0,
+            354.4481201171875
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\cn_textbook_formula_002.pdf",
+        "page": 12,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\cn_textbook_formula_002.pdf\" --page \"12\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-5balkclm\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.104,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\cn_textbook_formula_002.pdf",
+        "case_id": "cn_textbook_formula_002_p12",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "finance_table_mixed_003_p8",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## 合并利润表 \n\n|项目|2025|2024|YoY|\n|---|---|---|---|\n|营业收入|1,234.56|1,010.30|22.2%|\n|净利润|98.70|80.10|23.2%|\n|R&D;|45.00|39.00|15.4%|\n\n\n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "合并利润表",
+          "page": 8,
+          "bbox": [
+            156.0,
+            158.8125,
+            256.0,
+            178.8125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "项目 2025 2024 YoY",
+          "page": 8,
+          "bbox": [
+            281.2914123535156,
+            215.4896240234375,
+            821.527587890625,
+            235.4896240234375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "营业收入 1,234.56 1,010.30 22.2%",
+          "page": 8,
+          "bbox": [
+            281.2914123535156,
+            255.4896240234375,
+            841.527587890625,
+            275.4896240234375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "净利润 98.70 80.10 23.2%",
+          "page": 8,
+          "bbox": [
+            281.2914123535156,
+            295.4896240234375,
+            841.527587890625,
+            315.4896240234375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "R&D; 45.00 39.00 15.4%",
+          "page": 8,
+          "bbox": [
+            281.2914123535156,
+            335.4896240234375,
+            841.527587890625,
+            355.4896240234375
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_table_mixed_003.pdf",
+        "page": 8,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_table_mixed_003.pdf\" --page \"8\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-aihe2mce\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.181,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_table_mixed_003.pdf",
+        "case_id": "finance_table_mixed_003_p8",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "slides_ai_course_001_p1",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## 人工智能导论 \n\n## 深度学习基础与应用 \n\n北京大学计算机科学与技术学院 \n\n主讲人：张明教授 \n\n2026年春季学期 \n\n北京大学 · 人工智能导论 · 第1页 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "人工智能导论",
+          "page": 1,
+          "bbox": [
+            125.38581848144531,
+            216.6126708984375,
+            389.38580322265625,
+            260.6126708984375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "深度学习基础与应用",
+          "page": 1,
+          "bbox": [
+            125.38581848144531,
+            333.60235595703125,
+            413.38580322265625,
+            365.60235595703125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "北京大学计算机科学与技术学院",
+          "page": 1,
+          "bbox": [
+            125.38581848144531,
+            456.22747802734375,
+            433.38580322265625,
+            478.22747802734375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "主讲人：张明教授",
+          "page": 1,
+          "bbox": [
+            125.38581848144531,
+            505.2354736328125,
+            301.38580322265625,
+            527.2354736328125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "2026年春季学期",
+          "page": 1,
+          "bbox": [
+            125.38581848144531,
+            554.2432861328125,
+            279.38580322265625,
+            576.2432861328125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "北京大学 · 人工智能导论 · 第1页",
+          "page": 1,
+          "bbox": [
+            125.38581848144531,
+            670.43896484375,
+            389.38580322265625,
+            686.43896484375
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf",
+        "page": 1,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf\" --page \"1\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-dxojfo0o\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.117,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf",
+        "case_id": "slides_ai_course_001_p1",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "slides_ai_course_001_p2",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## 课程大纲 \n\n- 第一章 机器学习基础：监督学习、无监督学习与强化学习 \n\n- 第二章 神经网络：前馈网络、反向传播与梯度下降 \n\n- 第三章 卷积神经网络：LeNet、ResNet 与 Vision Transformer \n\n- 第四章 循环神经网络：LSTM、GRU 与序列建模 \n\n- 第五章 Transformer 架构：Self-Attention 与 Multi-Head Attention \n\n- 第六章 大语言模型：BERT、GPT-4 与 Qwen2.5-VL \n\n- 第七章 多模态学习：CLIP、BLIP-2 与视觉语言对齐 \n\n北京大学 · 人工智能导论 · 第2页 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "课程大纲",
+          "page": 2,
+          "bbox": [
+            125.38581848144531,
+            101.539306640625,
+            253.3858184814453,
+            133.539306640625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "� 第一章 机器学习基础：监督学习、无监督学习与强化学习",
+          "page": 2,
+          "bbox": [
+            193.41732788085938,
+            190.14892578125,
+            787.4172973632812,
+            212.14892578125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "� 第二章 神经网络：前馈网络、反向传播与梯度下降",
+          "page": 2,
+          "bbox": [
+            193.41732788085938,
+            233.48748779296875,
+            721.4172973632812,
+            255.48748779296875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "� 第三章 卷积神经网络：LeNet、ResNet 与 Vision Transformer",
+          "page": 2,
+          "bbox": [
+            193.41732788085938,
+            276.82611083984375,
+            842.4172973632812,
+            298.82611083984375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "� 第四章 循环神经网络：LSTM、GRU 与序列建模",
+          "page": 2,
+          "bbox": [
+            193.41732788085938,
+            320.16448974609375,
+            677.4172973632812,
+            342.16448974609375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "� 第五章 Transformer 架构：Self-Attention 与 Multi-Head Attention",
+          "page": 2,
+          "bbox": [
+            193.41732788085938,
+            363.50311279296875,
+            919.4172973632812,
+            385.50311279296875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "� 第六章 大语言模型：BERT、GPT-4 与 Qwen2.5-VL",
+          "page": 2,
+          "bbox": [
+            193.41732788085938,
+            406.8416748046875,
+            710.4172973632812,
+            428.8416748046875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "� 第七章 多模态学习：CLIP、BLIP-2 与视觉语言对齐",
+          "page": 2,
+          "bbox": [
+            193.41732788085938,
+            450.1802978515625,
+            732.4172973632812,
+            472.1802978515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "北京大学 · 人工智能导论 · 第2页",
+          "page": 2,
+          "bbox": [
+            125.38581848144531,
+            549.3681640625,
+            389.38580322265625,
+            565.3681640625
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf",
+        "page": 2,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf\" --page \"2\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-ff7gncun\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.257,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf",
+        "case_id": "slides_ai_course_001_p2",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "slides_ai_course_001_p3",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## 主流模型对比 \n\n|模型|参数量|主要特点|适用场景|\n|---|---|---|---|\n|BERT|340M|双向编码器|文本分类、NER|\n|GPT-4|~1.8T|自回归生成|对话、代码生成|\n|Qwen2.5-VL|7B-72B|视觉语言对齐|文档理解、OCR|\n|ResNet-152|60M|残差连接|图像分类|\n\n\n\n北京大学 · 人工智能导论 · 第3页 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "主流模型对比",
+          "page": 3,
+          "bbox": [
+            125.38581848144531,
+            101.539306640625,
+            317.38580322265625,
+            133.539306640625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "模型 参数量 主要特点 适用场景",
+          "page": 3,
+          "bbox": [
+            414.51959228515625,
+            196.14892578125,
+            1126.1416015625,
+            218.14892578125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "BERT 340M 双向编码器 文本分类、NER",
+          "page": 3,
+          "bbox": [
+            414.51959228515625,
+            240.14892578125,
+            1181.1416015625,
+            262.14892578125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "GPT-4 ~1.8T 自回归生成 对话、代码生成",
+          "page": 3,
+          "bbox": [
+            414.51959228515625,
+            284.14892578125,
+            1192.1416015625,
+            306.14892578125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Qwen2.5-VL 7B-72B 视觉语言对齐 文档理解、OCR",
+          "page": 3,
+          "bbox": [
+            414.51959228515625,
+            328.14892578125,
+            1181.1416015625,
+            350.14892578125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "ResNet-152 60M 残差连接 图像分类",
+          "page": 3,
+          "bbox": [
+            414.51959228515625,
+            372.14892578125,
+            1126.1416015625,
+            394.14892578125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "北京大学 · 人工智能导论 · 第3页",
+          "page": 3,
+          "bbox": [
+            125.38581848144531,
+            522.69091796875,
+            389.38580322265625,
+            538.69091796875
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf",
+        "page": 3,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf\" --page \"3\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-4qs7kxhq\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.192,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf",
+        "case_id": "slides_ai_course_001_p3",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "slides_ai_course_001_p4",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## Transformer 架构详解 \n\n## 编码器 Encoder \n\n编码器（Encoder）由 N 个相同的层堆叠而成。每层包含两个子层：Multi-Head Self-Attention 机制和位置前馈网络（Position-wise Feed-Forward Network）。每个子层之后都有残差连接（Residual Connection）和层归一化（Layer Normalization）。 \n\n## 解码器 Decoder \n\n解码器（Decoder）同样由 N 个相同层组成。除了编码器中的两个子层外，解码器还额外增加了第三个子层：Masked Multi-Head Attention，用于对编码器输出执行注意力计算。自回归生成时使用因果掩码（Causal Mask）防止信息泄露。 \n\n北京大学 · 人工智能导论 · 第4页 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "Transformer 架构详解",
+          "page": 4,
+          "bbox": [
+            125.38581848144531,
+            101.539306640625,
+            445.38580322265625,
+            133.539306640625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "编码器 Encoder",
+          "page": 4,
+          "bbox": [
+            125.38581848144531,
+            214.71142578125,
+            307.38580322265625,
+            240.71142578125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "编码器（Encoder）由 N 个相同的层堆叠而成。每层包含两个子层：Multi-Head Self-Attention 机制和位置前馈网络（Position-wise Feed-Forward Network）。每个子层之后都有残差连接（Residual Connection）和层归一化（Layer Normalization）。",
+          "page": 4,
+          "bbox": [
+            125.38581848144531,
+            279.15667724609375,
+            1434.3858642578125,
+            333.15667724609375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "解码器 Decoder",
+          "page": 4,
+          "bbox": [
+            125.38581848144531,
+            401.7349853515625,
+            307.38580322265625,
+            427.7349853515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "解码器（Decoder）同样由 N 个相同层组成。除了编码器中的两个子层外，解码器还额外增加了第三个子层：Masked Multi-Head Attention，用于对编码器输出执行注意力计算。自回归生成时使用因果掩码（Causal Mask）防止信息泄露。",
+          "page": 4,
+          "bbox": [
+            125.38581848144531,
+            466.1802978515625,
+            1368.3858642578125,
+            520.1802978515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "北京大学 · 人工智能导论 · 第4页",
+          "page": 4,
+          "bbox": [
+            125.38581848144531,
+            586.029541015625,
+            389.38580322265625,
+            602.029541015625
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf",
+        "page": 4,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf\" --page \"4\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-xyxg3lai\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.287,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf",
+        "case_id": "slides_ai_course_001_p4",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "slides_ai_course_001_p5",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## 注意力机制 \n\n缩放点积注意力（Scaled Dot-Product Attention）是 Transformer 的核心组件。给定查询矩阵 Q、键矩阵 K 和值矩阵 V，注意力输出定义为： \n\n$Attention(Q,K,V) = softmax\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V$ \n\n## [示意图：Q、K、V 矩阵运算流程图] \n\n图 3-1 Scaled Dot-Product Attention 计算流程 \n\n其中 d_k 为键向量的维度。缩放因子 1/√d_k 用于防止点积值过大导致 softmax 梯度消失。 \n\n北京大学 · 人工智能导论 · 第5页 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "注意力机制",
+          "page": 5,
+          "bbox": [
+            125.38581848144531,
+            101.539306640625,
+            285.38580322265625,
+            133.539306640625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "缩放点积注意力（Scaled Dot-Product Attention）是 Transformer 的核心组件。给定查询矩阵 Q、键矩阵 K 和值矩阵 V，注意力输出定义为：",
+          "page": 5,
+          "bbox": [
+            125.38581848144531,
+            190.14892578125,
+            1533.3858642578125,
+            212.14892578125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "$Attention(Q,K,V) = softmax\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V$",
+          "page": 5,
+          "bbox": [
+            125.38581848144531,
+            244.82611083984375,
+            840.3858032226562,
+            266.82611083984375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "[示意图：Q、K、V 矩阵运算流程图]",
+          "page": 5,
+          "bbox": [
+            125.38581848144531,
+            310.8416748046875,
+            477.38580322265625,
+            332.8416748046875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "图 3-1 Scaled Dot-Product Attention 计算流程",
+          "page": 5,
+          "bbox": [
+            125.38581848144531,
+            354.1802978515625,
+            609.3858032226562,
+            376.1802978515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "其中 d_k 为键向量的维度。缩放因子 1/√d_k 用于防止点积值过大导致 softmax 梯度消失。",
+          "page": 5,
+          "bbox": [
+            125.38581848144531,
+            408.85748291015625,
+            1038.3857421875,
+            430.85748291015625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "北京大学 · 人工智能导论 · 第5页",
+          "page": 5,
+          "bbox": [
+            125.38581848144531,
+            474.029541015625,
+            389.38580322265625,
+            490.029541015625
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf",
+        "page": 5,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf\" --page \"5\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-zhv895ng\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.272,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf",
+        "case_id": "slides_ai_course_001_p5",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "slides_ai_course_001_p6",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## 训练技巧与实践 \n\n- 学习率调度：Warmup + Cosine Annealing，初始 lr = 3e-4 \n\n- 权重初始化：Xavier / He 初始化，避免梯度消失或爆炸 \n\n- 正则化：Dropout (p=0.1)、Label Smoothing (ε=0.1) \n\n- 混合精度训练：FP16 + Loss Scaling，加速 2-3x \n\n- 梯度累积：等效增大 batch_size，适用于显存受限场景 \n\n- 数据增强：RandomCrop、ColorJitter、MixUp、CutMix \n\n- 分布式训练：DataParallel / DDP / FSDP，多卡并行 \n\n北京大学 · 人工智能导论 · 第6页 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "训练技巧与实践",
+          "page": 6,
+          "bbox": [
+            125.38581848144531,
+            101.539306640625,
+            349.38580322265625,
+            133.539306640625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "� 学习率调度：Warmup + Cosine Annealing，初始 lr = 3e-4",
+          "page": 6,
+          "bbox": [
+            193.41732788085938,
+            190.14892578125,
+            809.4172973632812,
+            212.14892578125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "� 权重初始化：Xavier / He 初始化，避免梯度消失或爆炸",
+          "page": 6,
+          "bbox": [
+            193.41732788085938,
+            233.48748779296875,
+            776.4172973632812,
+            255.48748779296875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "� 正则化：Dropout (p=0.1)、Label Smoothing (ε=0.1)",
+          "page": 6,
+          "bbox": [
+            193.41732788085938,
+            276.82611083984375,
+            765.4172973632812,
+            298.82611083984375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "� 混合精度训练：FP16 + Loss Scaling，加速 2-3x",
+          "page": 6,
+          "bbox": [
+            193.41732788085938,
+            320.16448974609375,
+            710.4172973632812,
+            342.16448974609375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "� 梯度累积：等效增大 batch_size，适用于显存受限场景",
+          "page": 6,
+          "bbox": [
+            193.41732788085938,
+            363.50311279296875,
+            765.4172973632812,
+            385.50311279296875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "� 数据增强：RandomCrop、ColorJitter、MixUp、CutMix",
+          "page": 6,
+          "bbox": [
+            193.41732788085938,
+            406.8416748046875,
+            754.4172973632812,
+            428.8416748046875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "� 分布式训练：DataParallel / DDP / FSDP，多卡并行",
+          "page": 6,
+          "bbox": [
+            193.41732788085938,
+            450.1802978515625,
+            743.4172973632812,
+            472.1802978515625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "北京大学 · 人工智能导论 · 第6页",
+          "page": 6,
+          "bbox": [
+            125.38581848144531,
+            538.029541015625,
+            389.38580322265625,
+            554.029541015625
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf",
+        "page": 6,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf\" --page \"6\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-hqr0xzer\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.279,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf",
+        "case_id": "slides_ai_course_001_p6",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "html_table_grid_004_p8",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## 合并利润表 \n\n|项目|2025|2024|YoY|\n|---|---|---|---|\n|营业收入|1,234.56|1,010.30|22.2%|\n|净利润|98.70|80.10|23.2%|\n|R&D;|45.00|39.00|15.4%|\n\n\n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "合并利润表",
+          "page": 8,
+          "bbox": [
+            156.0,
+            158.8125,
+            256.0,
+            178.8125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "项目 2025 2024 YoY",
+          "page": 8,
+          "bbox": [
+            281.2914123535156,
+            215.4896240234375,
+            821.527587890625,
+            235.4896240234375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "营业收入 1,234.56 1,010.30 22.2%",
+          "page": 8,
+          "bbox": [
+            281.2914123535156,
+            255.4896240234375,
+            841.527587890625,
+            275.4896240234375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "净利润 98.70 80.10 23.2%",
+          "page": 8,
+          "bbox": [
+            281.2914123535156,
+            295.4896240234375,
+            841.527587890625,
+            315.4896240234375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "R&D; 45.00 39.00 15.4%",
+          "page": 8,
+          "bbox": [
+            281.2914123535156,
+            335.4896240234375,
+            841.527587890625,
+            355.4896240234375
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_table_mixed_003.pdf",
+        "page": 8,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_table_mixed_003.pdf\" --page \"8\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-fgkfz8sy\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.329,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_table_mixed_003.pdf",
+        "case_id": "html_table_grid_004_p8",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "formula_visual_005_p12",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "第四章 动能与动能定理 \n\n动能定理表明合外力做功等于物体动能的变化量。当一个质量为 m 的物体在力的作用下获得速度 v 时，其动能表达式为： \n\n$E_k=\\frac{1}{2}mv^2$ \n\n其中 m 为物体质量，v 为物体速度。这一公式在经典力学中有广泛应用。 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "第四章 动能与动能定理",
+          "page": 12,
+          "bbox": [
+            156.0,
+            159.09375,
+            387.0,
+            181.09375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "动能定理表明合外力做功等于物体动能的变化量。当一个质量为 m 的物体在力的作用下获得速度 v 时，其动能表达式为：",
+          "page": 12,
+          "bbox": [
+            156.0,
+            213.7708740234375,
+            794.0,
+            267.7708740234375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "$E_k=\\frac{1}{2}mv^2$",
+          "page": 12,
+          "bbox": [
+            156.0,
+            289.1094970703125,
+            387.0,
+            311.1094970703125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "其中 m 为物体质量，v 为物体速度。这一公式在经典力学中有广泛应用。",
+          "page": 12,
+          "bbox": [
+            156.0,
+            332.4481201171875,
+            871.0,
+            354.4481201171875
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\cn_textbook_formula_002.pdf",
+        "page": 12,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\cn_textbook_formula_002.pdf\" --page \"12\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-28_4x5uw\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 2.132,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\cn_textbook_formula_002.pdf",
+        "case_id": "formula_visual_005_p12",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "textbook_physics_v2_p05",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## 第三章 牛顿运动定律 \n\n牛顿第二定律指出，物体的加速度与作用在它上面的合外力成正比，与物体的质量成反比 。这一定律是经典力学的基石之一，在工程学、天文学和日常生活中有着广泛的应用。当 多个力同时作用于一个物体时，需要先求出合力，再计算加速度。 \n\n其数学表达式为： \n\n$F = ma$ \n\n式中 F 表示合外力（单位：牛顿），m 表示物体质量（单位：千克），a 表示加速度（单位：米每二次方秒）。若 F = 0，则 a = \n\n0，物体保持匀速直线运动状态，这便是牛顿第一定律。 \n\n例题：一个质量为 10 kg 的物体受到水平方向 20 N 的力，求其加速度。根据 F = ma，可得 a = F/m = 20/10 = 2 m/s�。 \n\n|||||||||||||||||||||||||||||||||||| \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "第三章 牛顿运动定律",
+          "page": 5,
+          "bbox": [
+            156.0,
+            160.21875,
+            441.0,
+            190.21875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "牛顿第二定律指出，物体的加速度与作用在它上面的合外力成正比，与物体的质量成反比 。这一定律是经典力学的基石之一，在工程学、天文学和日常生活中有着广泛的应用。当 多个力同时作用于一个物体时，需要先求出合力，再计算加速度。",
+          "page": 5,
+          "bbox": [
+            156.0,
+            237.7708740234375,
+            1014.0,
+            323.7708740234375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "其数学表达式为：",
+          "page": 5,
+          "bbox": [
+            156.0,
+            350.7789306640625,
+            332.0,
+            372.7789306640625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "$F = ma$",
+          "page": 5,
+          "bbox": [
+            156.0,
+            394.1173095703125,
+            244.0,
+            416.1173095703125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "式中 F 表示合外力（单位：牛顿），m 表示物体质量（单位：千克），a 表示加速度（单位：米每二次方秒）。若 F = 0，则 a = 0，物体保持匀速直线运动状态，这便是牛顿第一定律。",
+          "page": 5,
+          "bbox": [
+            156.0,
+            443.125244140625,
+            860.0,
+            529.125244140625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "例题：一个质量为 10 kg 的物体受到水平方向 20 N 的力，求其加速度。根据 F = ma，可得 a = F/m = 20/10 = 2 m/s�。",
+          "page": 5,
+          "bbox": [
+            156.0,
+            556.133056640625,
+            959.0,
+            610.133056640625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "||||||||||||||||||||||||||||||||||||",
+          "page": 5,
+          "bbox": [
+            156.0,
+            625.239990234375,
+            480.0,
+            643.239990234375
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\textbook_physics_v2.pdf",
+        "page": 5,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\textbook_physics_v2.pdf\" --page \"5\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-q72_nrg4\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 1.991,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\textbook_physics_v2.pdf",
+        "case_id": "textbook_physics_v2_p05",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "textbook_physics_v2_p10",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## 第五章 动量与冲量 \n\n动量守恒定律是物理学中最重要的守恒定律之一。在一个没有外力作用的系统中，碰撞前 后的总动量保持不变。设物体的质量为 m，速度为 v，则动量定义为 p = mv。完全弹性碰撞中，动能和动量同时守恒；非弹性碰撞中，仅动量守恒。 \n\n动量的定义式为： \n\n$p = mv$ \n\n## 下表列出三种典型碰撞的前后速度数据： \n\n|碰撞类型|初速度(m/s)|末速度(m/s)|\n|---|---|---|\n|完全弹性|5.0|5.0|\n|完全非弹性|5.0|2.5|\n|部分弹性|5.0|3.8|\n\n\n\n在完全弹性碰撞中，系统动能守恒；在完全非弹性碰撞中，两物体粘连后以相同速度运动 ，动能损失最大。 \n\n|||||||||||||||||||||||||||||||||||| \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "第五章 动量与冲量",
+          "page": 10,
+          "bbox": [
+            156.0,
+            160.21875,
+            411.0,
+            190.21875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "动量守恒定律是物理学中最重要的守恒定律之一。在一个没有外力作用的系统中，碰撞前 后的总动量保持不变。设物体的质量为 m，速度为 v，则动量定义为 p = mv。完全弹性碰撞中，动能和动量同时守恒；非弹性碰撞中，仅动量守恒。",
+          "page": 10,
+          "bbox": [
+            156.0,
+            237.7708740234375,
+            1014.0,
+            323.7708740234375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "动量的定义式为：",
+          "page": 10,
+          "bbox": [
+            156.0,
+            350.7789306640625,
+            332.0,
+            372.7789306640625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "$p = mv$",
+          "page": 10,
+          "bbox": [
+            156.0,
+            394.1173095703125,
+            244.0,
+            416.1173095703125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "下表列出三种典型碰撞的前后速度数据：",
+          "page": 10,
+          "bbox": [
+            156.0,
+            443.125244140625,
+            552.0,
+            465.125244140625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "碰撞类型 初速度(m/s) 末速度(m/s)",
+          "page": 10,
+          "bbox": [
+            267.1181945800781,
+            492.4638671875,
+            841.66162109375,
+            514.4638671875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "完全弹性 5.0 5.0",
+          "page": 10,
+          "bbox": [
+            267.1181945800781,
+            536.4638671875,
+            753.66162109375,
+            558.4638671875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "完全非弹性 5.0 2.5",
+          "page": 10,
+          "bbox": [
+            267.1181945800781,
+            580.4638671875,
+            753.66162109375,
+            602.4638671875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "部分弹性 5.0 3.8",
+          "page": 10,
+          "bbox": [
+            267.1181945800781,
+            624.4638671875,
+            753.66162109375,
+            646.4638671875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "在完全弹性碰撞中，系统动能守恒；在完全非弹性碰撞中，两物体粘连后以相同速度运动 ，动能损失最大。",
+          "page": 10,
+          "bbox": [
+            156.0,
+            679.4716796875,
+            1014.0,
+            733.4716796875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "||||||||||||||||||||||||||||||||||||",
+          "page": 10,
+          "bbox": [
+            156.0,
+            748.57861328125,
+            480.0,
+            766.57861328125
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\textbook_physics_v2.pdf",
+        "page": 10,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\textbook_physics_v2.pdf\" --page \"10\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-boxfe03j\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 1.44,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\textbook_physics_v2.pdf",
+        "case_id": "textbook_physics_v2_p10",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "textbook_physics_v2_p15",
+      "parser": "pymupdf4llm_bbox",
+      "markdown": "## 第七章 机械能守恒 \n\n在只有保守力做功的情况下，系统的机械能守恒。即动能与势能之和保持不变。这一原理 在分析单摆运动、斜面滑块和弹簧振子等问题时非常有用。机械能守恒的条件是：系统不 受非保守力（如摩擦力）做功。 \n\n机械能守恒的表达式为： \n\n$E_k + E_p = E$ \n\n其中 E_k 为动能（E_k = �mv�），E_p 为势能（重力势能 E_p = mgh），E 为系统的总机械能。 \n\n[示意图：单摆从最高点到最低点的能量转换] \n\n图 3-1 单摆运动能量变化示意图 \n\n参见 Halliday, Fundamentals of Physics, 第 10 版, 第 7 章 \n\n",
+      "elements": [
+        {
+          "type": "text",
+          "text": "第七章 机械能守恒",
+          "page": 15,
+          "bbox": [
+            156.0,
+            160.21875,
+            411.0,
+            190.21875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "在只有保守力做功的情况下，系统的机械能守恒。即动能与势能之和保持不变。这一原理 在分析单摆运动、斜面滑块和弹簧振子等问题时非常有用。机械能守恒的条件是：系统不 受非保守力（如摩擦力）做功。",
+          "page": 15,
+          "bbox": [
+            156.0,
+            237.7708740234375,
+            1014.0,
+            323.7708740234375
+          ]
+        },
+        {
+          "type": "text",
+          "text": "机械能守恒的表达式为：",
+          "page": 15,
+          "bbox": [
+            156.0,
+            350.7789306640625,
+            398.0,
+            372.7789306640625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "$E_k + E_p = E$",
+          "page": 15,
+          "bbox": [
+            156.0,
+            394.1173095703125,
+            321.0,
+            416.1173095703125
+          ]
+        },
+        {
+          "type": "text",
+          "text": "其中 E_k 为动能（E_k = �mv�），E_p 为势能（重力势能 E_p = mgh），E 为系统的总机械能。",
+          "page": 15,
+          "bbox": [
+            156.0,
+            443.125244140625,
+            904.0,
+            497.125244140625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "[示意图：单摆从最高点到最低点的能量转换]",
+          "page": 15,
+          "bbox": [
+            156.0,
+            524.133056640625,
+            596.0,
+            546.133056640625
+          ]
+        },
+        {
+          "type": "text",
+          "text": "图 3-1 单摆运动能量变化示意图",
+          "page": 15,
+          "bbox": [
+            156.0,
+            567.4716796875,
+            475.0,
+            589.4716796875
+          ]
+        },
+        {
+          "type": "text",
+          "text": "参见 Halliday, Fundamentals of Physics, 第 10 版, 第 7 章",
+          "page": 15,
+          "bbox": [
+            156.0,
+            621.58642578125,
+            669.0,
+            639.58642578125
+          ]
+        }
+      ],
+      "metadata": {
+        "parser": "pymupdf4llm_bbox",
+        "source": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\textbook_physics_v2.pdf",
+        "page": 15,
+        "bbox_coordinate_space": "image pixels at 144 DPI",
+        "bbox_scale": 2.0,
+        "command": "python examples/run_pymupdf4llm_bbox.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\textbook_physics_v2.pdf\" --page \"15\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-wf7xm9s1\\output.json\"",
+        "returncode": 0,
+        "elapsed_seconds": 1.864,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\textbook_physics_v2.pdf",
+        "case_id": "textbook_physics_v2_p15",
+        "output_source": "file"
+      }
+    }
+  ]
+}

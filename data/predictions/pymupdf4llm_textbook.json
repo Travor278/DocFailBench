@@ -1,0 +1,55 @@
+{
+  "predictions": [
+    {
+      "case_id": "textbook_physics_v2_p05",
+      "parser": "pymupdf4llm",
+      "markdown": "## 第三章 牛顿运动定律 \n\n牛顿第二定律指出，物体的加速度与作用在它上面的合外力成正比，与物体的质量成反比 。这一定律是经典力学的基石之一，在工程学、天文学和日常生活中有着广泛的应用。当 多个力同时作用于一个物体时，需要先求出合力，再计算加速度。 \n\n其数学表达式为： \n\n$F = ma$ \n\n式中 F 表示合外力（单位：牛顿），m 表示物体质量（单位：千克），a 表示加速度（单位：米每二次方秒）。若 F = 0，则 a = \n\n0，物体保持匀速直线运动状态，这便是牛顿第一定律。 \n\n例题：一个质量为 10 kg 的物体受到水平方向 20 N 的力，求其加速度。根据 F = ma，可得 a = F/m = 20/10 = 2 m/s�。 \n\n|||||||||||||||||||||||||||||||||||| \n\n",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_pymupdf4llm.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\textbook_physics_v2.pdf\" --page \"5\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-_cjgq9m3\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 1.462,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\textbook_physics_v2.pdf",
+        "page": 5,
+        "case_id": "textbook_physics_v2_p05",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "textbook_physics_v2_p10",
+      "parser": "pymupdf4llm",
+      "markdown": "## 第五章 动量与冲量 \n\n动量守恒定律是物理学中最重要的守恒定律之一。在一个没有外力作用的系统中，碰撞前 后的总动量保持不变。设物体的质量为 m，速度为 v，则动量定义为 p = mv。完全弹性碰撞中，动能和动量同时守恒；非弹性碰撞中，仅动量守恒。 \n\n动量的定义式为： \n\n$p = mv$ \n\n## 下表列出三种典型碰撞的前后速度数据： \n\n|碰撞类型|初速度(m/s)|末速度(m/s)|\n|---|---|---|\n|完全弹性|5.0|5.0|\n|完全非弹性|5.0|2.5|\n|部分弹性|5.0|3.8|\n\n\n\n在完全弹性碰撞中，系统动能守恒；在完全非弹性碰撞中，两物体粘连后以相同速度运动 ，动能损失最大。 \n\n|||||||||||||||||||||||||||||||||||| \n\n",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_pymupdf4llm.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\textbook_physics_v2.pdf\" --page \"10\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-4my4vsl8\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 1.515,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\textbook_physics_v2.pdf",
+        "page": 10,
+        "case_id": "textbook_physics_v2_p10",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "textbook_physics_v2_p15",
+      "parser": "pymupdf4llm",
+      "markdown": "## 第七章 机械能守恒 \n\n在只有保守力做功的情况下，系统的机械能守恒。即动能与势能之和保持不变。这一原理 在分析单摆运动、斜面滑块和弹簧振子等问题时非常有用。机械能守恒的条件是：系统不 受非保守力（如摩擦力）做功。 \n\n机械能守恒的表达式为： \n\n$E_k + E_p = E$ \n\n其中 E_k 为动能（E_k = �mv�），E_p 为势能（重力势能 E_p = mgh），E 为系统的总机械能。 \n\n[示意图：单摆从最高点到最低点的能量转换] \n\n图 3-1 单摆运动能量变化示意图 \n\n参见 Halliday, Fundamentals of Physics, 第 10 版, 第 7 章 \n\n",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_pymupdf4llm.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\textbook_physics_v2.pdf\" --page \"15\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-4nz4o7j7\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 1.367,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\textbook_physics_v2.pdf",
+        "page": 15,
+        "case_id": "textbook_physics_v2_p15",
+        "output_source": "file"
+      }
+    }
+  ]
+}

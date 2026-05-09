@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="250" viewBox="0 0 980 250" role="img" aria-labelledby="title desc">
+<title id="title">DocFailBench workflow</title>
+<desc id="desc">PDF pages are parsed, checked by executable assertions, and compared across parsers.</desc>
+<rect width="980" height="250" rx="20" fill="#fbfcfe"/>
+<text x="40" y="48" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="700" fill="#111827">Failure-first document parser evaluation</text>
+<text x="40" y="76" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#475569">Small executable checks turn silent PDF parsing mistakes into auditable regression tests.</text>
+<rect x="40" y="118" width="150" height="78" rx="12" fill="#ffffff" stroke="#cbd5e1"/>
+<circle cx="66" cy="146" r="13" fill="#1d4ed8"/>
+<text x="62" y="151" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#ffffff">1</text>
+<text x="88" y="148" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#111827">Source PDFs</text>
+<text x="58" y="176" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" fill="#475569">public / synthetic / private</text>
+<line x1="198" y1="157" x2="224" y2="157" stroke="#94a3b8" stroke-width="2"/>
+<path d="M 224 157 l -7 -5 v 10 z" fill="#94a3b8"/>
+<rect x="230" y="118" width="150" height="78" rx="12" fill="#ffffff" stroke="#cbd5e1"/>
+<circle cx="256" cy="146" r="13" fill="#0f766e"/>
+<text x="252" y="151" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#ffffff">2</text>
+<text x="278" y="148" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#111827">Parser Outputs</text>
+<text x="248" y="176" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" fill="#475569">Markdown + optional bbox</text>
+<line x1="388" y1="157" x2="414" y2="157" stroke="#94a3b8" stroke-width="2"/>
+<path d="M 414 157 l -7 -5 v 10 z" fill="#94a3b8"/>
+<rect x="420" y="118" width="150" height="78" rx="12" fill="#ffffff" stroke="#cbd5e1"/>
+<circle cx="446" cy="146" r="13" fill="#7c3aed"/>
+<text x="442" y="151" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#ffffff">3</text>
+<text x="468" y="148" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#111827">Assertions</text>
+<text x="438" y="176" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" fill="#475569">tables, formulas, order</text>
+<line x1="578" y1="157" x2="604" y2="157" stroke="#94a3b8" stroke-width="2"/>
+<path d="M 604 157 l -7 -5 v 10 z" fill="#94a3b8"/>
+<rect x="610" y="118" width="150" height="78" rx="12" fill="#ffffff" stroke="#cbd5e1"/>
+<circle cx="636" cy="146" r="13" fill="#c2410c"/>
+<text x="632" y="151" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#ffffff">4</text>
+<text x="658" y="148" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#111827">Evaluate</text>
+<text x="628" y="176" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" fill="#475569">pass/fail evidence</text>
+<line x1="768" y1="157" x2="794" y2="157" stroke="#94a3b8" stroke-width="2"/>
+<path d="M 794 157 l -7 -5 v 10 z" fill="#94a3b8"/>
+<rect x="800" y="118" width="150" height="78" rx="12" fill="#ffffff" stroke="#cbd5e1"/>
+<circle cx="826" cy="146" r="13" fill="#334155"/>
+<text x="822" y="151" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#ffffff">5</text>
+<text x="848" y="148" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#111827">Compare</text>
+<text x="818" y="176" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" fill="#475569">parser failure profile</text>
+</svg>

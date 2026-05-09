@@ -1,0 +1,55 @@
+{
+  "predictions": [
+    {
+      "case_id": "zh_paper_double_column_001_p3",
+      "parser": "docling",
+      "markdown": "## 中国人工智能学会通讯 2026 年第 3 期\n\n## 基于视觉语言模型的文档理解\n\n近年来，视觉语言模型在文档理解领域取得了显著进展。本文提出了一种新的多模态文档 分析框架，结合了视觉编码器和语言解码器的优势。\n\n| 模型       | 语言   |   得分 |\n|------------|--------|--------|\n| Qwen2.5-VL | 中英   |   88.2 |\n| MinerU     | 中英   |   81.4 |\n| Docling    | 中英   |   76.5 |\n\n图 2\n\n图 2 实验流程\n\n核心目标为 $\\sum\\_{i=1}^{n} x\\_i$ 的稳定识别与验证。",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_docling.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\zh_paper_double_column_001.pdf\" --page \"3\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-e37alu7n\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 13.754,
+        "stderr": "\nLoading weights:   0%|          | 0/770 [00:00<?, ?it/s]\nLoading weights: 100%|██████████| 770/770 [00:00<00:00, 8402.25it/s]\n",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\zh_paper_double_column_001.pdf",
+        "page": 3,
+        "case_id": "zh_paper_double_column_001_p3",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "cn_textbook_formula_002_p12",
+      "parser": "docling",
+      "markdown": "第四章 动能与动能定理\n\n动能定理表明合外力做功等于物体动能的变化量。当一个质量为 m 的物体在力的作用下获得速度 v 时，其动能表达式为：\n\n$E\\_k=\\frac{1}{2}mv^2$\n\n其中 m 为物体质量，v 为物体速度。这一公式在经典力学中有广泛应用。",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_docling.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\cn_textbook_formula_002.pdf\" --page \"12\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-rq77juj9\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 8.057,
+        "stderr": "\nLoading weights:   0%|          | 0/770 [00:00<?, ?it/s]\nLoading weights: 100%|██████████| 770/770 [00:00<00:00, 15431.88it/s]\n",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\cn_textbook_formula_002.pdf",
+        "page": 12,
+        "case_id": "cn_textbook_formula_002_p12",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "finance_table_mixed_003_p8",
+      "parser": "docling",
+      "markdown": "合并利润表\n\n| 项目     | 2025     | 2024     | YoY   |\n|----------|----------|----------|-------|\n| 营业收入 | 1,234.56 | 1,010.30 | 22.2% |\n| 净利润   | 98.70    | 80.10    | 23.2% |\n| R&D;     | 45.00    | 39.00    | 15.4% |",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_docling.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_table_mixed_003.pdf\" --page \"8\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-v9v4sfny\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 8.57,
+        "stderr": "\nLoading weights:   0%|          | 0/770 [00:00<?, ?it/s]\nLoading weights: 100%|██████████| 770/770 [00:00<00:00, 16076.37it/s]\n",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_table_mixed_003.pdf",
+        "page": 8,
+        "case_id": "finance_table_mixed_003_p8",
+        "output_source": "file"
+      }
+    }
+  ]
+}

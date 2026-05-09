@@ -1,0 +1,587 @@
+{
+  "version": "0.1",
+  "cases": [
+    {
+      "case_id": "exam_physics_final_p2",
+      "title": "Multiple-choice section with header pollution and horizontal option layout",
+      "document": {
+        "path": "data/source_pdfs/placeholder/exam_physics_final.pdf",
+        "page": 2,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh_en_mixed",
+        "document_type": "exam",
+        "layout": ["horizontal_options", "dense_questions", "repeated_header"],
+        "risk_tags": ["header_pollution", "option_layout", "reading_order", "cjk_en_mix"]
+      },
+      "assertions": [
+        {
+          "id": "repeated_school_header_removed",
+          "type": "text_absence",
+          "severity": "major",
+          "description": "Repeated school name should not appear as body text on inner exam pages.",
+          "tags": ["pollution", "header"],
+          "params": {
+            "text": "北京师范大学附属中学"
+          }
+        },
+        {
+          "id": "mc_section_title",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Multiple-choice section header must survive extraction.",
+          "tags": ["text"],
+          "params": {
+            "text": "选择题"
+          }
+        },
+        {
+          "id": "mc_scoring_mentioned",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Scoring info in section header must be preserved.",
+          "tags": ["text"],
+          "params": {
+            "text": "每题3分"
+          }
+        },
+        {
+          "id": "q1_acceleration_text",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Question 1 text about uniformly accelerated motion must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "匀加速直线运动"
+          }
+        },
+        {
+          "id": "q1_unit_mixed",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Mixed Chinese-English unit (m/s²) must be preserved.",
+          "tags": ["cjk_en_mix", "unit"],
+          "params": {
+            "text": "m/s²"
+          }
+        },
+        {
+          "id": "q1_options_horizontal",
+          "type": "regex_match",
+          "severity": "blocker",
+          "description": "Question 1 horizontal options with A/B/C/D labels must appear on one line.",
+          "tags": ["option_layout"],
+          "params": {
+            "pattern": "A\\.\\s*5\\s*m/s.*B\\.\\s*10\\s*m/s.*C\\.\\s*15\\s*m/s.*D\\.\\s*20\\s*m/s"
+          }
+        },
+        {
+          "id": "q2_newton_law",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Question 2 about Newton's second law must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "牛顿第二定律"
+          }
+        },
+          {
+          "id": "q2_options_vertical",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Question 2 vertical option D must be present.",
+          "tags": ["option_layout"],
+          "params": {
+            "text": "加速度与位移成正比"
+          }
+        },
+        {
+          "id": "q3_deceleration",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Question 3 about braking deceleration must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "匀减速直线运动"
+          }
+        },
+        {
+          "id": "q3_braking_value",
+          "type": "regex_match",
+          "severity": "major",
+          "description": "Question 3 must contain the braking speed value 20 m/s.",
+          "tags": ["numeric"],
+          "params": {
+            "pattern": "20\\s*m/s"
+          }
+        },
+        {
+          "id": "q4_force_calc",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Question 4 about force and mass must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "F = 10 N"
+          }
+        },
+        {
+          "id": "q1_before_q3",
+          "type": "reading_order",
+          "severity": "major",
+          "description": "Question 1 must appear before question 3 in output.",
+          "tags": ["reading_order"],
+          "params": {
+            "before": "匀加速直线运动",
+            "after": "匀减速直线运动"
+          }
+        },
+        {
+          "id": "q3_before_q4",
+          "type": "reading_order",
+          "severity": "major",
+          "description": "Question 3 must appear before question 4 in output.",
+          "tags": ["reading_order"],
+          "params": {
+            "before": "加速度大小为4 m/s²",
+            "after": "质量为2 kg"
+          }
+        },
+        {
+          "id": "no_page2_footer",
+          "type": "regex_absence",
+          "severity": "minor",
+          "description": "Page footer text should not appear as body content.",
+          "tags": ["pollution"],
+          "params": {
+            "pattern": "第2页\\s*共4页"
+          }
+        },
+        {
+          "id": "no_tail_repetition",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        }
+      ],
+      "notes": "Tests multiple-choice section with horizontal A/B/C/D option layout, repeated school header, and mixed zh-en units. Header pollution (school name) should be detectable as body text that parsers should strip."
+    },
+    {
+      "case_id": "exam_physics_final_p3",
+      "title": "Calculation problems with formulas and mixed Chinese-English terminology",
+      "document": {
+        "path": "data/source_pdfs/placeholder/exam_physics_final.pdf",
+        "page": 3,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh_en_mixed",
+        "document_type": "exam",
+        "layout": ["formula_dense", "repeated_header"],
+        "risk_tags": ["formula", "cjk_en_mix", "reading_order", "header_pollution"]
+      },
+      "assertions": [
+        {
+          "id": "repeated_school_header_removed",
+          "type": "text_absence",
+          "severity": "major",
+          "description": "Repeated school name should not appear as body text on inner exam pages.",
+          "tags": ["pollution", "header"],
+          "params": {
+            "text": "北京师范大学附属中学"
+          }
+        },
+        {
+          "id": "calc_section_title",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Calculation section header must be present.",
+          "tags": ["text"],
+          "params": {
+            "text": "计算题"
+          }
+        },
+        {
+          "id": "calc1_friction_term",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Problem 1 must mention kinetic friction coefficient.",
+          "tags": ["text"],
+          "params": {
+            "text": "动摩擦因数"
+          }
+        },
+        {
+          "id": "calc1_formula_hint",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Problem 1 hint with friction formula must appear.",
+          "tags": ["formula"],
+          "params": {
+            "text": "f = μN"
+          }
+        },
+        {
+          "id": "calc1_force_balance",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Newton's second law application must be present in problem 1 hint.",
+          "tags": ["formula"],
+          "params": {
+            "text": "F - f = ma"
+          }
+        },
+        {
+          "id": "calc2_velocity_formula",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Problem 2 velocity formula must appear.",
+          "tags": ["formula"],
+          "params": {
+            "text": "v = at"
+          }
+        },
+        {
+          "id": "calc2_displacement_formula",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Problem 2 displacement formula must appear.",
+          "tags": ["formula"],
+          "params": {
+            "text": "s = ½at²"
+          }
+        },
+        {
+          "id": "calc2_motion_reading_order",
+          "type": "reading_order",
+          "severity": "major",
+          "description": "Problem 2 part (1) acceleration must appear before part (2) displacement.",
+          "tags": ["reading_order"],
+          "params": {
+            "before": "加速度 a",
+            "after": "位移 s"
+          }
+        },
+        {
+          "id": "calc3_resistance",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Problem 3 about electrical resistance must be present.",
+          "tags": ["text"],
+          "params": {
+            "text": "电阻"
+          }
+        },
+        {
+          "id": "calc3_ohm_law",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Ohm's law formula must appear in problem 3.",
+          "tags": ["formula"],
+          "params": {
+            "text": "I = U/R"
+          }
+        },
+        {
+          "id": "calc3_heat_formula",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Joule heating formula must appear in problem 3.",
+          "tags": ["formula"],
+          "params": {
+            "text": "Q = I²Rt"
+          }
+        },
+        {
+          "id": "calc2_before_calc3",
+          "type": "reading_order",
+          "severity": "major",
+          "description": "Problem 2 must appear before problem 3.",
+          "tags": ["reading_order"],
+          "params": {
+            "before": "汽车从静止",
+            "after": "电阻 R = 10"
+          }
+        },
+        {
+          "id": "no_page3_footer",
+          "type": "regex_absence",
+          "severity": "minor",
+          "description": "Page footer text should not appear as body content.",
+          "tags": ["pollution"],
+          "params": {
+            "pattern": "第3页\\s*共4页"
+          }
+        },
+        {
+          "id": "no_standalone_page3",
+          "type": "no_page_number",
+          "severity": "minor",
+          "description": "Standalone page number 3 must not pollute body text.",
+          "tags": ["pollution", "page_number"],
+          "params": {
+            "page": 3
+          }
+        },
+        {
+          "id": "no_tail_repetition",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        },
+        {
+          "id": "friction_term_cjk_spacing",
+          "type": "cjk_spacing",
+          "severity": "major",
+          "description": "Physics term '动摩擦因数' must not have CJK character spacing.",
+          "tags": ["cjk", "quality"],
+          "params": {
+            "text": "动摩擦因数"
+          }
+        }
+      ],
+      "notes": "Tests calculation section with physics formulas (f=μN, v=at, I=U/R, Q=I²Rt), mixed zh-en terminology, and reading order between sub-problems."
+    },
+    {
+      "case_id": "exam_physics_final_p4",
+      "title": "Scoring table with structure and page footer pollution",
+      "document": {
+        "path": "data/source_pdfs/placeholder/exam_physics_final.pdf",
+        "page": 4,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh",
+        "document_type": "exam",
+        "layout": ["scoring_table", "repeated_header"],
+        "risk_tags": ["table", "header_pollution", "numeric_fidelity"]
+      },
+      "assertions": [
+        {
+          "id": "repeated_school_header_removed",
+          "type": "text_absence",
+          "severity": "major",
+          "description": "Repeated school name should not appear as body text on inner exam pages.",
+          "tags": ["pollution", "header"],
+          "params": {
+            "text": "北京师范大学附属中学"
+          }
+        },
+        {
+          "id": "score_section_title",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Scoring section title must be present.",
+          "tags": ["text"],
+          "params": {
+            "text": "评分标准"
+          }
+        },
+        {
+          "id": "score_table_mc_cell",
+          "type": "table_cell_exists",
+          "severity": "blocker",
+          "description": "Multiple-choice row label must appear in scoring table.",
+          "tags": ["table"],
+          "params": {
+            "text": "选择题"
+          }
+        },
+        {
+          "id": "score_table_calc_cell",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "description": "Calculation problem row label must appear in scoring table.",
+          "tags": ["table"],
+          "params": {
+            "text": "计算题"
+          }
+        },
+        {
+          "id": "score_table_total_cell",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "description": "Total row label must appear in scoring table.",
+          "tags": ["table"],
+          "params": {
+            "text": "合计"
+          }
+        },
+        {
+          "id": "score_table_max_100",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "description": "Maximum score 100 must appear in scoring table.",
+          "tags": ["table", "numeric"],
+          "params": {
+            "text": "100"
+          }
+        },
+        {
+          "id": "score_table_shape",
+          "type": "table_shape",
+          "severity": "major",
+          "description": "Scoring table should have 7 rows and 4 columns.",
+          "tags": ["table"],
+          "params": {
+            "row_count": 7,
+            "col_count": 4
+          }
+        },
+        {
+          "id": "signature_line",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Scorer signature line must be present.",
+          "tags": ["text"],
+          "params": {
+            "text": "阅卷人签名"
+          }
+        },
+        {
+          "id": "no_page4_footer",
+          "type": "regex_absence",
+          "severity": "minor",
+          "description": "Page footer text should not appear as body content.",
+          "tags": ["pollution"],
+          "params": {
+            "pattern": "第4页\\s*共4页"
+          }
+        },
+        {
+          "id": "no_tail_repetition",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        }
+      ],
+      "notes": "Tests scoring table structure (7 rows x 4 columns), cell content, and page footer pollution detection."
+    },
+    {
+      "case_id": "exam_physics_final_p1",
+      "title": "Cover page with exam metadata and notice text",
+      "document": {
+        "path": "data/source_pdfs/placeholder/exam_physics_final.pdf",
+        "page": 1,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh",
+        "document_type": "exam",
+        "layout": ["exam_header", "notice_text"],
+        "risk_tags": ["header_pollution", "reading_order", "cjk_en_mix"]
+      },
+      "assertions": [
+        {
+          "id": "school_name",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "School name on cover page must be extracted.",
+          "tags": ["text"],
+          "params": {
+            "text": "北京师范大学附属中学"
+          }
+        },
+        {
+          "id": "exam_period",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Exam period identifier must be extracted.",
+          "tags": ["text"],
+          "params": {
+            "text": "2025—2026学年度第一学期"
+          }
+        },
+        {
+          "id": "subject_physics",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Subject line must indicate physics.",
+          "tags": ["text"],
+          "params": {
+            "text": "物理试卷"
+          }
+        },
+        {
+          "id": "duration_minutes",
+          "type": "regex_match",
+          "severity": "major",
+          "description": "Exam duration must be present with minutes.",
+          "tags": ["numeric"],
+          "params": {
+            "pattern": "90分钟"
+          }
+        },
+        {
+          "id": "total_score_100",
+          "type": "regex_match",
+          "severity": "major",
+          "description": "Total score must be 100.",
+          "tags": ["numeric"],
+          "params": {
+            "pattern": "满分：100分"
+          }
+        },
+        {
+          "id": "notice_black_ink",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Notice about using black ink pen must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "黑色签字笔"
+          }
+        },
+        {
+          "id": "notice_return_materials",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Notice about returning exam materials must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "将试卷和答题卡一并交回"
+          }
+        },
+        {
+          "id": "school_before_subject",
+          "type": "reading_order",
+          "severity": "major",
+          "description": "School name must appear before subject line.",
+          "tags": ["reading_order"],
+          "params": {
+            "before": "北京师范大学附属中学",
+            "after": "物理试卷"
+          }
+        },
+        {
+          "id": "no_tail_repetition",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        }
+      ],
+      "notes": "Tests exam cover page metadata extraction: school name, exam period, subject, duration, scoring, and notice text."
+    }
+  ]
+}

@@ -1,0 +1,693 @@
+{
+  "release_name": "DocFailBench-v0.1-public-real-rc",
+  "review_date": "2026-05-08",
+  "reviewer": "Codex strict visual spot-check",
+  "sample_count": 57,
+  "decision_counts": {
+    "approved": 54,
+    "approved_with_edit": 2,
+    "removed": 1
+  },
+  "policy": {
+    "main_score": "Content and structure assertions only.",
+    "secondary_hygiene": "Low-value page-furniture text_absence checks are retained separately and excluded from the main leaderboard."
+  },
+  "records": [
+    {
+      "case_id": "public_real_nist_sp800_53r5_p027",
+      "assertion_id": "table_shape_4a52f945214a",
+      "type": "table_shape",
+      "params": {
+        "row_count": 32,
+        "col_count": 4
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Visual page review confirms a regular 32-row by 4-column revision table."
+    },
+    {
+      "case_id": "public_real_nist_sp800_53r5_p027",
+      "assertion_id": "table_grid_cell_7f5aeace671f",
+      "type": "table_grid_cell",
+      "params": {
+        "table_index": 0,
+        "row": 0,
+        "col": 0,
+        "expected": "DATE"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Header cell DATE is visible in row 0, column 0."
+    },
+    {
+      "case_id": "public_real_nist_sp800_53r5_p027",
+      "assertion_id": "table_grid_cell_a0c29a88a352",
+      "type": "table_grid_cell",
+      "params": {
+        "table_index": 0,
+        "row": 0,
+        "col": 1,
+        "expected": "TYPE"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Header cell TYPE is visible in row 0, column 1."
+    },
+    {
+      "case_id": "public_real_nist_sp800_53r5_p027",
+      "assertion_id": "table_grid_cell_23c1839386a1",
+      "type": "table_grid_cell",
+      "params": {
+        "table_index": 0,
+        "row": 0,
+        "col": 2,
+        "expected": "REVISION"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Header cell REVISION is visible in row 0, column 2."
+    },
+    {
+      "case_id": "public_real_nist_sp800_53r5_p027",
+      "assertion_id": "table_grid_cell_d6299f23d151",
+      "type": "table_grid_cell",
+      "params": {
+        "table_index": 0,
+        "row": 0,
+        "col": 3,
+        "expected": "PAGE"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Header cell PAGE is visible in row 0, column 3."
+    },
+    {
+      "case_id": "public_real_nist_sp800_53r5_p027",
+      "assertion_id": "table_grid_cell_b852eba9523d",
+      "type": "table_grid_cell",
+      "params": {
+        "table_index": 0,
+        "row": 1,
+        "col": 0,
+        "expected": "12-10-2020"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "First data-row date 12-10-2020 is visually present."
+    },
+    {
+      "case_id": "public_real_nist_sp800_53r5_p027",
+      "assertion_id": "table_grid_cell_4446cb697879",
+      "type": "table_grid_cell",
+      "params": {
+        "table_index": 0,
+        "row": 1,
+        "col": 1,
+        "expected": "Editorial"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "First data-row type Editorial is visually present."
+    },
+    {
+      "case_id": "public_real_nist_sp800_53r5_p027",
+      "assertion_id": "table_grid_cell_c24191dc3f8a",
+      "type": "table_grid_cell",
+      "params": {
+        "table_index": 0,
+        "row": 1,
+        "col": 3,
+        "expected": "427"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "First data-row page value 427 is visually present."
+    },
+    {
+      "case_id": "public_real_nist_sp800_53r5_p027",
+      "assertion_id": "table_grid_cell_386963b063d6",
+      "type": "table_grid_cell",
+      "params": {
+        "table_index": 0,
+        "row": 11,
+        "col": 2,
+        "expected": "Table C-5: Delete duplicate row CM-8(5)."
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Row 11 revision text for Table C-5 duplicate deletion is visible."
+    },
+    {
+      "case_id": "public_real_nist_sp800_53r5_p027",
+      "assertion_id": "table_grid_cell_2e8557cd970c",
+      "type": "table_grid_cell",
+      "params": {
+        "table_index": 0,
+        "row": 11,
+        "col": 3,
+        "expected": "438"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Row 11 page value 438 is visible."
+    },
+    {
+      "case_id": "public_real_nist_sp800_53r5_p027",
+      "assertion_id": "table_grid_cell_6750102d1311",
+      "type": "table_grid_cell",
+      "params": {
+        "table_index": 0,
+        "row": 30,
+        "col": 2,
+        "expected": "Table C-19"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Near-tail revision entry Table C-19 is visible."
+    },
+    {
+      "case_id": "public_real_nist_sp800_53r5_p027",
+      "assertion_id": "table_grid_cell_82be1ff5d528",
+      "type": "table_grid_cell",
+      "params": {
+        "table_index": 0,
+        "row": 30,
+        "col": 3,
+        "expected": "463"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Near-tail page value 463 is visible."
+    },
+    {
+      "case_id": "public_real_nist_sp800_53r5_p027",
+      "assertion_id": "table_grid_cell_44fb09c941d3",
+      "type": "table_grid_cell",
+      "params": {
+        "table_index": 0,
+        "row": 31,
+        "col": 2,
+        "expected": "SI-19(7)"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Tail revision entry SI-19(7) is visible."
+    },
+    {
+      "case_id": "public_real_nist_sp800_53r5_p027",
+      "assertion_id": "table_grid_cell_0b607d521dd8",
+      "type": "table_grid_cell",
+      "params": {
+        "table_index": 0,
+        "row": 31,
+        "col": 3,
+        "expected": "464"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Tail page value 464 is visible."
+    },
+    {
+      "case_id": "public_real_nist_sp800_53r5_p027",
+      "assertion_id": "table_cell_exists_d7d3816de474",
+      "type": "table_cell_exists",
+      "params": {
+        "text": "Appendix B Acronyms: Add"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Revision cell beginning Appendix B Acronyms: Add is visible."
+    },
+    {
+      "case_id": "public_real_nist_sp800_53r5_p027",
+      "assertion_id": "table_cell_exists_4ed8d55f644b",
+      "type": "table_cell_exists",
+      "params": {
+        "text": "UPS Uninterruptible Power Supply"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "UPS Uninterruptible Power Supply is visible within the first revision row."
+    },
+    {
+      "case_id": "public_real_nist_sp800_53r5_p027",
+      "assertion_id": "table_cell_exists_8c917d4fa3d9",
+      "type": "table_cell_exists",
+      "params": {
+        "text": "Table C-5: Delete duplicate row CM-8(5)."
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Table C-5 duplicate-row deletion text is visible."
+    },
+    {
+      "case_id": "public_real_nist_sp800_53r5_p027",
+      "assertion_id": "table_cell_exists_ac5fdbb233cd",
+      "type": "table_cell_exists",
+      "params": {
+        "text": "Table C-18 (SC-19)"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Table C-18 (SC-19) row is visible."
+    },
+    {
+      "case_id": "public_real_nist_sp800_53r5_p027",
+      "assertion_id": "table_cell_exists_e3118535aa36",
+      "type": "table_cell_exists",
+      "params": {
+        "text": "Table C-19 (SI-19(7))"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Table C-19 (SI-19(7)) row is visible."
+    },
+    {
+      "case_id": "public_real_nist_sp800_53r5_p027",
+      "assertion_id": "reading_order_7fb05dfe98ce",
+      "type": "reading_order",
+      "params": {
+        "before": "Appendix B Acronyms",
+        "after": "Table C-19"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Appendix B Acronyms appears above the Table C-19 rows."
+    },
+    {
+      "case_id": "public_real_nist_ai_rmf_p017",
+      "assertion_id": "caption_binding_08b0fd565d5b",
+      "type": "caption_binding",
+      "params": {
+        "anchor": "Valid & Reliable",
+        "caption": "Fig. 4. Characteristics of trustworthy AI systems",
+        "max_lines": 8
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Trustworthiness diagram and Figure 4 caption are adjacent."
+    },
+    {
+      "case_id": "public_real_nist_ai_rmf_p017",
+      "assertion_id": "reading_order_0728a2413a0c",
+      "type": "reading_order",
+      "params": {
+        "before": "3. AI Risks and Trustworthiness",
+        "after": "Fig. 4. Characteristics of trustworthy AI systems"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Section heading precedes the figure caption."
+    },
+    {
+      "case_id": "public_real_nist_ai_rmf_p017",
+      "assertion_id": "reading_order_59722044cf62",
+      "type": "reading_order",
+      "params": {
+        "before": "Fig. 4. Characteristics of trustworthy AI systems",
+        "after": "Trustworthiness characteristics"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Figure caption precedes the Trustworthiness characteristics paragraph."
+    },
+    {
+      "case_id": "public_real_nist_ai_rmf_p017",
+      "assertion_id": "reading_order_958b96e778e9",
+      "type": "reading_order",
+      "params": {
+        "before": "valid and reliable",
+        "after": "privacy-enhanced"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "The characteristic list places valid and reliable before privacy-enhanced."
+    },
+    {
+      "case_id": "public_real_irs_1040_2024_p001",
+      "assertion_id": "table_cell_exists_847a240ce65d",
+      "type": "table_cell_exists",
+      "params": {
+        "text": "Presidential Election Campaign"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Presidential Election Campaign box is visible in the upper-right form block."
+    },
+    {
+      "case_id": "public_real_irs_1040_2024_p001",
+      "assertion_id": "table_cell_exists_a3cd4eefe792",
+      "type": "table_cell_exists",
+      "params": {
+        "text": "Filing Status"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Filing Status label is visible on the left side of the form."
+    },
+    {
+      "case_id": "public_real_irs_1040_2024_p001",
+      "assertion_id": "table_cell_exists_dffadf7dc9f2",
+      "type": "table_cell_exists",
+      "params": {
+        "text": "Digital Assets"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Digital Assets section label is visible below Filing Status."
+    },
+    {
+      "case_id": "public_real_irs_1040_2024_p001",
+      "assertion_id": "table_cell_exists_6b597cd48f00",
+      "type": "table_cell_exists",
+      "params": {
+        "text": "Standard Deduction"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Standard Deduction label is visible below Digital Assets."
+    },
+    {
+      "case_id": "public_real_irs_1040_2024_p001",
+      "assertion_id": "table_cell_exists_f83738d8b990",
+      "type": "table_cell_exists",
+      "params": {
+        "text": "Total amount from Form(s) W-2"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "W-2 total amount row is visible in the Income section."
+    },
+    {
+      "case_id": "public_real_irs_1040_2024_p001",
+      "assertion_id": "reading_order_8e674fe7f026",
+      "type": null,
+      "params": null,
+      "decision": "approved_with_edit",
+      "scoring_profile": "removed",
+      "note": "Original Dependents-to-Income anchor was ambiguous because Income appears in side text; edited to Dependents before W-2 row."
+    },
+    {
+      "case_id": "public_real_irs_1040sa_2024_p001",
+      "assertion_id": "table_cell_exists_62392c31d800",
+      "type": "table_cell_exists",
+      "params": {
+        "text": "Medical and dental expenses"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Medical and dental expenses row is visible."
+    },
+    {
+      "case_id": "public_real_irs_1040sa_2024_p001",
+      "assertion_id": "table_cell_exists_3c08328e4754",
+      "type": "table_cell_exists",
+      "params": {
+        "text": "State and local income taxes"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "State and local income taxes row is visible."
+    },
+    {
+      "case_id": "public_real_irs_1040sa_2024_p001",
+      "assertion_id": "table_cell_exists_77833f29bc31",
+      "type": "table_cell_exists",
+      "params": {
+        "text": "Home mortgage interest and points"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Home mortgage interest and points row is visible."
+    },
+    {
+      "case_id": "public_real_irs_1040sa_2024_p001",
+      "assertion_id": "table_cell_exists_994d77595721",
+      "type": "table_cell_exists",
+      "params": {
+        "text": "Gifts by cash or check"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Gifts by cash or check row is visible."
+    },
+    {
+      "case_id": "public_real_irs_1040sa_2024_p001",
+      "assertion_id": "reading_order_c83ac0b9231c",
+      "type": "reading_order",
+      "params": {
+        "before": "Interest You Paid",
+        "after": "Gifts to Charity"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Interest You Paid section precedes Gifts to Charity."
+    },
+    {
+      "case_id": "public_real_irs_1040sc_2024_p001",
+      "assertion_id": "table_cell_exists_794d85e431f3",
+      "type": "table_cell_exists",
+      "params": {
+        "text": "Profit or Loss From Business"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Schedule C title Profit or Loss From Business is visible."
+    },
+    {
+      "case_id": "public_real_irs_1040sc_2024_p001",
+      "assertion_id": "table_cell_exists_6232f0848451",
+      "type": "table_cell_exists",
+      "params": {
+        "text": "Gross receipts or sales"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Gross receipts or sales row is visible."
+    },
+    {
+      "case_id": "public_real_irs_1040sc_2024_p001",
+      "assertion_id": "table_cell_exists_b86903e37050",
+      "type": "table_cell_exists",
+      "params": {
+        "text": "Taxes and licenses"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Taxes and licenses expense row is visible."
+    },
+    {
+      "case_id": "public_real_irs_1040sc_2024_p001",
+      "assertion_id": "table_cell_exists_714320a018ce",
+      "type": "table_cell_exists",
+      "params": {
+        "text": "Net profit or (loss)"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Net profit or loss row is visible."
+    },
+    {
+      "case_id": "public_real_irs_1040sc_2024_p001",
+      "assertion_id": "reading_order_bb0e3ab4fb61",
+      "type": "reading_order",
+      "params": {
+        "before": "Other expenses (from line 48)",
+        "after": "Total expenses"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Other expenses from line 48 precedes Total expenses."
+    },
+    {
+      "case_id": "public_real_irs_1040sc_2024_p002",
+      "assertion_id": "table_cell_exists_1f9e0c1c5837",
+      "type": "table_cell_exists",
+      "params": {
+        "text": "Cost of Goods Sold"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Cost of Goods Sold section is visible."
+    },
+    {
+      "case_id": "public_real_irs_1040sc_2024_p002",
+      "assertion_id": "table_cell_exists_f3b3edfbaea9",
+      "type": "table_cell_exists",
+      "params": {
+        "text": "Information on Your Vehicle"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Information on Your Vehicle section is visible."
+    },
+    {
+      "case_id": "public_real_irs_1040sc_2024_p002",
+      "assertion_id": "table_cell_exists_c28b9b28769c",
+      "type": "table_cell_exists",
+      "params": {
+        "text": "Other Expenses"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Other Expenses section is visible."
+    },
+    {
+      "case_id": "public_real_irs_1040sc_2024_p002",
+      "assertion_id": "reading_order_dc6ac7201f91",
+      "type": "reading_order",
+      "params": {
+        "before": "When did you place your vehicle in service",
+        "after": "Do you have evidence to support your deduction"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Vehicle service-date question precedes evidence-support question."
+    },
+    {
+      "case_id": "public_real_irs_1040sd_2024_p001",
+      "assertion_id": "table_cell_exists_0ff9020cdcbe",
+      "type": "table_cell_exists",
+      "params": {
+        "text": "Short-Term Capital Gains and Losses"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Short-Term Capital Gains and Losses header is visible."
+    },
+    {
+      "case_id": "public_real_irs_1040sd_2024_p001",
+      "assertion_id": "table_cell_exists_94f89be175ee",
+      "type": "table_cell_exists",
+      "params": {
+        "text": "Gain or (loss)"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Gain or (loss) column header is visible."
+    },
+    {
+      "case_id": "public_real_irs_1040sd_2024_p001",
+      "assertion_id": "table_cell_exists_9416183769cd",
+      "type": "table_cell_exists",
+      "params": {
+        "text": "Net short-term capital gain or (loss)"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Net short-term capital gain or loss row is visible."
+    },
+    {
+      "case_id": "public_real_irs_1040sd_2024_p001",
+      "assertion_id": "reading_order_473cbab141be",
+      "type": "reading_order",
+      "params": {
+        "before": "Net short-term capital gain or (loss)",
+        "after": "Long-Term Capital Gains and Losses"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Short-term net row precedes Long-Term Capital Gains and Losses."
+    },
+    {
+      "case_id": "public_real_irs_1040sd_2024_p002",
+      "assertion_id": "table_cell_exists_39e8665ad998",
+      "type": "table_cell_exists",
+      "params": {
+        "text": "Part III Summary"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Part III Summary heading is visible."
+    },
+    {
+      "case_id": "public_real_irs_1040sd_2024_p002",
+      "assertion_id": "table_cell_exists_584f04c789a5",
+      "type": "table_cell_exists",
+      "params": {
+        "text": "Capital Gain Tax Worksheet"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Capital Gain Tax Worksheet line is visible."
+    },
+    {
+      "case_id": "public_real_irs_1040sd_2024_p002",
+      "assertion_id": "reading_order_c4ae3284620e",
+      "type": null,
+      "params": null,
+      "decision": "approved_with_edit",
+      "scoring_profile": "removed",
+      "note": "Original order was reversed; edited to Qualified Dividends before Schedule D Tax Worksheet."
+    },
+    {
+      "case_id": "public_real_govinfo_cfr_title1_p014",
+      "assertion_id": "reading_order_c3696e8c330f",
+      "type": "reading_order",
+      "params": {
+        "before": "PART 1",
+        "after": "Administrative Committee means"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "PART 1 appears before Administrative Committee definition."
+    },
+    {
+      "case_id": "public_real_govinfo_cfr_title1_p014",
+      "assertion_id": "reading_order_463faedcf7af",
+      "type": "reading_order",
+      "params": {
+        "before": "Agency means",
+        "after": "Document includes"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Agency means appears before Document includes in the left column."
+    },
+    {
+      "case_id": "public_real_govinfo_cfr_title1_p014",
+      "assertion_id": "reading_order_6d673d9bc7b0",
+      "type": "reading_order",
+      "params": {
+        "before": "Document includes",
+        "after": "Document having general applicability"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "Document includes appears before Document having general applicability."
+    },
+    {
+      "case_id": "public_real_govinfo_cfr_title1_p014",
+      "assertion_id": "reading_order_676d0d90e7d9",
+      "type": null,
+      "params": null,
+      "decision": "removed",
+      "scoring_profile": "removed",
+      "note": "Removed from main RC because the cross-column anchor was too broad and failed sanity checks."
+    },
+    {
+      "case_id": "public_real_govinfo_cfr_title1_p035",
+      "assertion_id": "reading_order_5fd51a00c55e",
+      "type": "reading_order",
+      "params": {
+        "before": "21.19 Composition of part headings",
+        "after": "21.35 OMB control numbers"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "21.19 appears before 21.35 in the contents-like list."
+    },
+    {
+      "case_id": "public_real_govinfo_cfr_title1_p035",
+      "assertion_id": "reading_order_dca7e39a47bb",
+      "type": "reading_order",
+      "params": {
+        "before": "PART 21",
+        "after": "otherwise noted"
+      },
+      "decision": "approved",
+      "scoring_profile": "main",
+      "note": "PART 21 appears before otherwise noted."
+    }
+  ]
+}

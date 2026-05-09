@@ -1,0 +1,22 @@
+{
+  "predictions": [
+    {
+      "case_id": "html_table_grid_004_p8",
+      "parser": "stage3_synthetic_parser",
+      "markdown": "<table><tr><th>项目</th><th>2025</th><th>2024</th></tr><tr><td>营业收入</td><td>1,234.56</td><td>1,010.30</td></tr><tr><td>净利润</td><td>98.70</td><td>80.10</td></tr></table>",
+      "elements": [],
+      "metadata": {
+        "note": "Synthetic HTML table prediction for grid cell testing."
+      }
+    },
+    {
+      "case_id": "formula_visual_005_p12",
+      "parser": "stage3_synthetic_parser",
+      "markdown": "动能公式为 $E_k=\\frac{1}{2}mv^3$，其中 m 为质量。",
+      "elements": [],
+      "metadata": {
+        "note": "Synthetic prediction with a wrong exponent for visual formula testing."
+      }
+    }
+  ]
+}

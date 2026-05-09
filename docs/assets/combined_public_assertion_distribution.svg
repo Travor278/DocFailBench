@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="550" viewBox="0 0 920 550" role="img" aria-labelledby="title desc">
+<title id="title">DocFailBench combined public RC assertion distribution</title>
+<desc id="desc">Assertion counts by type in the combined public release candidate.</desc>
+<rect width="920" height="100%" rx="18" fill="#fbfcfe"/>
+<text x="42" y="46" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="740" fill="#111827">What The Benchmark Checks</text>
+<text x="42" y="72" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#475569">Assertion mix across the 877-check combined public RC</text>
+<text x="42" y="123" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">text_presence</text>
+<rect x="280" y="106" width="430" height="23" rx="7" fill="#e5e7eb"/>
+<rect x="280" y="106" width="430" height="23" rx="7" fill="#1d4ed8"/>
+<text x="730" y="123" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="650" fill="#111827">234</text>
+<text x="42" y="159" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">table_cell_exists</text>
+<rect x="280" y="142" width="430" height="23" rx="7" fill="#e5e7eb"/>
+<rect x="280" y="142" width="303" height="23" rx="7" fill="#0f766e"/>
+<text x="730" y="159" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="650" fill="#111827">165</text>
+<text x="42" y="195" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">table_grid_cell</text>
+<rect x="280" y="178" width="430" height="23" rx="7" fill="#e5e7eb"/>
+<rect x="280" y="178" width="274" height="23" rx="7" fill="#7c3aed"/>
+<text x="730" y="195" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="650" fill="#111827">149</text>
+<text x="42" y="231" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">reading_order</text>
+<rect x="280" y="214" width="430" height="23" rx="7" fill="#e5e7eb"/>
+<rect x="280" y="214" width="200" height="23" rx="7" fill="#c2410c"/>
+<text x="730" y="231" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="650" fill="#111827">109</text>
+<text x="42" y="267" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">regex_absence</text>
+<rect x="280" y="250" width="430" height="23" rx="7" fill="#e5e7eb"/>
+<rect x="280" y="250" width="81" height="23" rx="7" fill="#be123c"/>
+<text x="730" y="267" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="650" fill="#111827">44</text>
+<text x="42" y="303" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">formula_contains</text>
+<rect x="280" y="286" width="430" height="23" rx="7" fill="#e5e7eb"/>
+<rect x="280" y="286" width="68" height="23" rx="7" fill="#0369a1"/>
+<text x="730" y="303" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="650" fill="#111827">37</text>
+<text x="42" y="339" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">no_repeated_ngram_tail</text>
+<rect x="280" y="322" width="430" height="23" rx="7" fill="#e5e7eb"/>
+<rect x="280" y="322" width="62" height="23" rx="7" fill="#4d7c0f"/>
+<text x="730" y="339" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="650" fill="#111827">34</text>
+<text x="42" y="375" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">regex_match</text>
+<rect x="280" y="358" width="430" height="23" rx="7" fill="#e5e7eb"/>
+<rect x="280" y="358" width="55" height="23" rx="7" fill="#9333ea"/>
+<text x="730" y="375" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="650" fill="#111827">30</text>
+<text x="42" y="411" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">element_grounded</text>
+<rect x="280" y="394" width="430" height="23" rx="7" fill="#e5e7eb"/>
+<rect x="280" y="394" width="44" height="23" rx="7" fill="#b45309"/>
+<text x="730" y="411" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="650" fill="#111827">24</text>
+<text x="42" y="447" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">table_shape</text>
+<rect x="280" y="430" width="430" height="23" rx="7" fill="#e5e7eb"/>
+<rect x="280" y="430" width="37" height="23" rx="7" fill="#334155"/>
+<text x="730" y="447" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="650" fill="#111827">20</text>
+<text x="42" y="483" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">caption_binding</text>
+<rect x="280" y="466" width="430" height="23" rx="7" fill="#e5e7eb"/>
+<rect x="280" y="466" width="28" height="23" rx="7" fill="#0e7490"/>
+<text x="730" y="483" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="650" fill="#111827">15</text>
+<text x="42" y="519" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">text_absence</text>
+<rect x="280" y="502" width="430" height="23" rx="7" fill="#e5e7eb"/>
+<rect x="280" y="502" width="11" height="23" rx="7" fill="#a21caf"/>
+<text x="730" y="519" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="650" fill="#111827">6</text>
+</svg>

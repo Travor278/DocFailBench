@@ -1,0 +1,67 @@
+{
+  "predictions": [
+    {
+      "case_id": "zh_paper_double_column_001_p3",
+      "parser": "qwen_vl_api",
+      "markdown": "# 基于视觉语言模型的文档理解\n\n近年来，视觉语言模型在文档理解领域取得了显著进展。本文提出了一种新的多模态文档分析框架，结合了视觉编码器和语言解码器的优势。\n\n| 模型 | 语言 | 得分 |\n| --- | --- | --- |\n| Qwen2.5-VL | 中英 | 88.2 |\n| MinerU | 中英 | 81.4 |\n| Docling | 中英 | 76.5 |\n\n图 2\n\n图 2 实验流程\n\n核心目标为 $\\sum_{i=1}^{n} x_i$ 的稳定识别与验证。\n",
+      "elements": [],
+      "metadata": {
+        "parser": "qwen_vl_api",
+        "model": "qwen-vl-ocr-latest",
+        "base_url_host": "dashscope.aliyuncs.com",
+        "page": 3,
+        "elapsed_seconds": 2.895,
+        "status": "ok",
+        "command": "python examples/run_qwen_vl.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\zh_paper_double_column_001.pdf\" --page \"3\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-05wu0e_f\\output.json\"",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\zh_paper_double_column_001.pdf",
+        "case_id": "zh_paper_double_column_001_p3",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "cn_textbook_formula_002_p12",
+      "parser": "qwen_vl_api",
+      "markdown": "$\\text { 第四章 动能与动能定理 }$\n\n动能定理表明合外力做功等于物体动能的变化量。当一个质量为 $m$的物体在力的作用下获得速度 $\\nu$ 时, 其动能表达式为:\n\n$\\$ E_{k}=\\frac{1}{2} m \\nu^{2} \\$$\n\n其中 $m$ 为物体质量, $\\nu$ 为物体速度。这一公式在经典力学中有广泛应用。\n",
+      "elements": [],
+      "metadata": {
+        "parser": "qwen_vl_api",
+        "model": "qwen-vl-ocr-latest",
+        "base_url_host": "dashscope.aliyuncs.com",
+        "page": 12,
+        "elapsed_seconds": 2.76,
+        "status": "ok",
+        "command": "python examples/run_qwen_vl.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\cn_textbook_formula_002.pdf\" --page \"12\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-sb8hjd25\\output.json\"",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\cn_textbook_formula_002.pdf",
+        "case_id": "cn_textbook_formula_002_p12",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "finance_table_mixed_003_p8",
+      "parser": "qwen_vl_api",
+      "markdown": "| 项目 | 2025 | 2024 | YoY |\n| --- | --- | --- | --- |\n| 营业收入 | 1,234.56 | 1,010.30 | 22.2% |\n| 净利润 | 98.70 | 80.10 | 23.2% |\n| R&D; | 45.00 | 39.00 | 15.4% |\n",
+      "elements": [],
+      "metadata": {
+        "parser": "qwen_vl_api",
+        "model": "qwen-vl-ocr-latest",
+        "base_url_host": "dashscope.aliyuncs.com",
+        "page": 8,
+        "elapsed_seconds": 3.889,
+        "status": "ok",
+        "command": "python examples/run_qwen_vl.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_table_mixed_003.pdf\" --page \"8\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-9ok8h6io\\output.json\"",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\finance_table_mixed_003.pdf",
+        "case_id": "finance_table_mixed_003_p8",
+        "output_source": "file"
+      }
+    }
+  ]
+}

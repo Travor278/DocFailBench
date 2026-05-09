@@ -1,0 +1,543 @@
+{
+  "version": "0.1",
+  "cases": [
+    {
+      "case_id": "invoice_vat_001_p1",
+      "title": "VAT invoice header with buyer/seller fields and line-item table",
+      "document": {
+        "path": "data/source_pdfs/placeholder/invoice_vat_001.pdf",
+        "page": 1,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh_en_mixed",
+        "document_type": "invoice",
+        "layout": ["line_item_table", "repeated_footer"],
+        "risk_tags": ["entity_field_loss", "table", "cjk_en_mix", "numeric_fidelity", "header_pollution"]
+      },
+      "assertions": [
+        {
+          "id": "invoice_title",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Invoice title '增值税电子普通发票' must survive extraction.",
+          "tags": ["text"],
+          "params": { "text": "增值税电子普通发票" }
+        },
+        {
+          "id": "invoice_code",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Invoice code must be extracted intact.",
+          "tags": ["text", "numeric"],
+          "params": { "text": "发票代码：011002500311" }
+        },
+        {
+          "id": "invoice_number",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Invoice number must be extracted intact.",
+          "tags": ["text", "numeric"],
+          "params": { "text": "发票号码：08726145" }
+        },
+        {
+          "id": "invoice_date",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Invoice issue date must be preserved.",
+          "tags": ["date"],
+          "params": { "text": "开票日期：2026年04月18日" }
+        },
+        {
+          "id": "buyer_name",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Buyer company name must appear.",
+          "tags": ["text"],
+          "params": { "text": "杭州星辰智能科技有限公司" }
+        },
+        {
+          "id": "buyer_taxid",
+          "type": "regex_match",
+          "severity": "blocker",
+          "description": "Buyer taxpayer ID must be preserved.",
+          "tags": ["numeric"],
+          "params": { "pattern": "91330100MA2K[A-Z]+" }
+        },
+        {
+          "id": "seller_name",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Seller company name must appear.",
+          "tags": ["text"],
+          "params": { "text": "北京云计算服务有限公司" }
+        },
+        {
+          "id": "seller_taxid",
+          "type": "regex_match",
+          "severity": "blocker",
+          "description": "Seller taxpayer ID must be preserved.",
+          "tags": ["numeric"],
+          "params": { "pattern": "91110108MA01[A-Z]+" }
+        },
+        {
+          "id": "buyer_label",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Buyer section label must appear.",
+          "tags": ["text"],
+          "params": { "text": "购买方" }
+        },
+        {
+          "id": "seller_label",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Seller section label must appear.",
+          "tags": ["text"],
+          "params": { "text": "销售方" }
+        },
+        {
+          "id": "item_api_service",
+          "type": "table_cell_exists",
+          "severity": "blocker",
+          "description": "API service fee item must appear in line-item table.",
+          "tags": ["table", "cjk_en_mix"],
+          "params": { "text": "API服务费" }
+        },
+        {
+          "id": "item_sdk_support",
+          "type": "table_cell_exists",
+          "severity": "blocker",
+          "description": "SDK technical support item must appear in line-item table.",
+          "tags": ["table", "cjk_en_mix"],
+          "params": { "text": "SDK技术支持" }
+        },
+        {
+          "id": "item_cloud_server",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "description": "Cloud server rental item must appear in line-item table.",
+          "tags": ["table"],
+          "params": { "text": "云服务器租赁" }
+        },
+        {
+          "id": "item_database",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "description": "Database service item must appear in line-item table.",
+          "tags": ["table"],
+          "params": { "text": "数据库服务" }
+        },
+        {
+          "id": "table_header_name",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "description": "Table header '项目名称' must appear.",
+          "tags": ["table"],
+          "params": { "text": "项目名称" }
+        },
+        {
+          "id": "invoice_table_shape",
+          "type": "table_shape",
+          "severity": "major",
+          "description": "Invoice line-item table should have 7 rows and 6 columns.",
+          "tags": ["table"],
+          "params": { "row_count": 7, "col_count": 6 }
+        },
+        {
+          "id": "buyer_before_seller",
+          "type": "reading_order",
+          "severity": "major",
+          "description": "Buyer section must appear before seller section.",
+          "tags": ["reading_order"],
+          "params": { "before": "购买方", "after": "销售方" }
+        },
+        {
+          "id": "header_before_table",
+          "type": "reading_order",
+          "severity": "major",
+          "description": "Invoice header must appear before line-item table.",
+          "tags": ["reading_order"],
+          "params": { "before": "增值税电子普通发票", "after": "项目名称" }
+        },
+        {
+          "id": "no_page1_footer",
+          "type": "regex_absence",
+          "severity": "minor",
+          "description": "Page footer text should not pollute body content.",
+          "tags": ["pollution"],
+          "params": { "pattern": "增值税电子普通发票\\s*·\\s*第1页" }
+        },
+        {
+          "id": "no_standalone_page1",
+          "type": "no_page_number",
+          "severity": "minor",
+          "description": "Standalone page number 1 must not pollute body text.",
+          "tags": ["pollution", "page_number"],
+          "params": { "page": 1 }
+        },
+        {
+          "id": "no_tail_repetition",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": { "n": 4, "max_repeats": 4 }
+        }
+      ],
+      "notes": "Tests invoice header metadata, buyer/seller entity fields, Chinese-English mixed line-item names (API/SDK), table shape, reading order, and footer pollution."
+    },
+    {
+      "case_id": "invoice_vat_001_p2",
+      "title": "Invoice totals, tax rate, and tax amount with numeric and Chinese uppercase",
+      "document": {
+        "path": "data/source_pdfs/placeholder/invoice_vat_001.pdf",
+        "page": 2,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh",
+        "document_type": "invoice",
+        "layout": ["numeric_totals", "repeated_footer"],
+        "risk_tags": ["amount_corruption", "numeric_fidelity", "cjk_uppercase_amount", "header_pollution"]
+      },
+      "assertions": [
+        {
+          "id": "subtotal_numeric",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Numeric subtotal amount must be preserved.",
+          "tags": ["numeric", "amount"],
+          "params": { "text": "448,000.00" }
+        },
+        {
+          "id": "subtotal_chinese",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Chinese uppercase subtotal must be preserved.",
+          "tags": ["text", "amount"],
+          "params": { "text": "肆拾肆万捌仟元整" }
+        },
+        {
+          "id": "tax_rate",
+          "type": "regex_match",
+          "severity": "blocker",
+          "description": "Tax rate 6% must be preserved.",
+          "tags": ["numeric"],
+          "params": { "pattern": "6%" }
+        },
+        {
+          "id": "tax_amount",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Tax amount must be preserved.",
+          "tags": ["numeric", "amount"],
+          "params": { "text": "26,880.00" }
+        },
+        {
+          "id": "total_numeric",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Total price-plus-tax numeric value must appear.",
+          "tags": ["numeric", "amount"],
+          "params": { "text": "人民币474,880.00" }
+        },
+        {
+          "id": "total_chinese",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Total price-plus-tax in Chinese uppercase must appear.",
+          "tags": ["text", "amount"],
+          "params": { "text": "肆拾柒万肆仟捌佰捌拾元整" }
+        },
+        {
+          "id": "amount_before_tax",
+          "type": "reading_order",
+          "severity": "major",
+          "description": "Subtotal must appear before tax amount.",
+          "tags": ["reading_order"],
+          "params": { "before": "合计金额", "after": "税额" }
+        },
+        {
+          "id": "subtotal_before_total",
+          "type": "reading_order",
+          "severity": "major",
+          "description": "Subtotal must appear before grand total.",
+          "tags": ["reading_order"],
+          "params": { "before": "合计金额", "after": "价税合计" }
+        },
+        {
+          "id": "no_page2_footer",
+          "type": "regex_absence",
+          "severity": "minor",
+          "description": "Page footer text should not pollute body content.",
+          "tags": ["pollution"],
+          "params": { "pattern": "增值税电子普通发票\\s*·\\s*第2页" }
+        },
+        {
+          "id": "no_tail_repetition",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": { "n": 4, "max_repeats": 4 }
+        }
+      ],
+      "notes": "Tests invoice financial totals: numeric and Chinese uppercase amounts, tax rate/amount, reading order of subtotal before tax before total, and footer pollution."
+    },
+    {
+      "case_id": "invoice_vat_001_p3",
+      "title": "Invoice remarks with contract reference, QR code placeholder, and verification code",
+      "document": {
+        "path": "data/source_pdfs/placeholder/invoice_vat_001.pdf",
+        "page": 3,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh_en_mixed",
+        "document_type": "invoice",
+        "layout": ["remarks", "qr_placeholder", "repeated_footer"],
+        "risk_tags": ["cjk_en_mix", "contact_info", "header_pollution"]
+      },
+      "assertions": [
+        {
+          "id": "remarks_section",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Remarks section label must appear.",
+          "tags": ["text"],
+          "params": { "text": "备注" }
+        },
+        {
+          "id": "contract_reference",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Contract number reference in remarks must appear.",
+          "tags": ["text"],
+          "params": { "text": "HT-2026-00158" }
+        },
+        {
+          "id": "service_period",
+          "type": "regex_match",
+          "severity": "major",
+          "description": "Service period date range must be preserved.",
+          "tags": ["date"],
+          "params": { "pattern": "2026年4月" }
+        },
+        {
+          "id": "contact_email",
+          "type": "regex_match",
+          "severity": "major",
+          "description": "Contact email address must be preserved.",
+          "tags": ["cjk_en_mix"],
+          "params": { "pattern": "finance@cloudcompute\\.example\\.com" }
+        },
+        {
+          "id": "qr_placeholder",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "QR code placeholder text must appear.",
+          "tags": ["text"],
+          "params": { "text": "[二维码]" }
+        },
+        {
+          "id": "verification_code",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Verification code label must appear.",
+          "tags": ["text"],
+          "params": { "text": "校验码" }
+        },
+        {
+          "id": "verification_value",
+          "type": "regex_match",
+          "severity": "major",
+          "description": "Verification code value must be preserved.",
+          "tags": ["numeric"],
+          "params": { "pattern": "A7F3B9C2D1E5" }
+        },
+        {
+          "id": "no_page3_footer",
+          "type": "regex_absence",
+          "severity": "minor",
+          "description": "Page footer text should not pollute body content.",
+          "tags": ["pollution"],
+          "params": { "pattern": "增值税电子普通发票\\s*·\\s*第3页" }
+        },
+        {
+          "id": "no_tail_repetition",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": { "n": 4, "max_repeats": 4 }
+        }
+      ],
+      "notes": "Tests invoice remarks with contract cross-reference, email address in mixed zh-en context, QR code placeholder, verification code, and footer pollution."
+    },
+    {
+      "case_id": "invoice_vat_001_p4",
+      "title": "Invoice signature page with payee, reviewer, issuer, and stamp placeholder",
+      "document": {
+        "path": "data/source_pdfs/placeholder/invoice_vat_001.pdf",
+        "page": 4,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh",
+        "document_type": "invoice",
+        "layout": ["signature_page", "repeated_footer"],
+        "risk_tags": ["personnel_name_loss", "stamp_loss", "header_pollution"]
+      },
+      "assertions": [
+        {
+          "id": "payee_name",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Payee name must appear.",
+          "tags": ["text"],
+          "params": { "text": "收款人：王芳" }
+        },
+        {
+          "id": "reviewer_name",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Reviewer name must appear.",
+          "tags": ["text"],
+          "params": { "text": "复核：李明" }
+        },
+        {
+          "id": "issuer_name",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Issuer name must appear.",
+          "tags": ["text"],
+          "params": { "text": "开票人：张伟" }
+        },
+        {
+          "id": "stamp_placeholder",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Invoice stamp placeholder must appear.",
+          "tags": ["text"],
+          "params": { "text": "[发票专用章]" }
+        },
+        {
+          "id": "payee_before_issuer",
+          "type": "reading_order",
+          "severity": "major",
+          "description": "Payee must appear before issuer in personnel list.",
+          "tags": ["reading_order"],
+          "params": { "before": "收款人", "after": "开票人" }
+        },
+        {
+          "id": "no_page4_footer",
+          "type": "regex_absence",
+          "severity": "minor",
+          "description": "Page footer text should not pollute body content.",
+          "tags": ["pollution"],
+          "params": { "pattern": "增值税电子普通发票\\s*·\\s*第4页" }
+        },
+        {
+          "id": "no_tail_repetition",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": { "n": 4, "max_repeats": 4 }
+        }
+      ],
+      "notes": "Tests invoice personnel names (payee/reviewer/issuer), stamp placeholder, personnel reading order, and footer pollution."
+    },
+    {
+      "case_id": "invoice_vat_001_p5",
+      "title": "Invoice copy page with archive notice and verification reference",
+      "document": {
+        "path": "data/source_pdfs/placeholder/invoice_vat_001.pdf",
+        "page": 5,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh",
+        "document_type": "invoice",
+        "layout": ["archive_page", "repeated_footer"],
+        "risk_tags": ["reading_order", "numeric_fidelity", "header_pollution"]
+      },
+      "assertions": [
+        {
+          "id": "invoice_copy_label",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Invoice copy label '发票联' must appear.",
+          "tags": ["text"],
+          "params": { "text": "发票联" }
+        },
+        {
+          "id": "bookkeeping_purpose",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "Bookkeeping purpose statement must appear.",
+          "tags": ["text"],
+          "params": { "text": "购方记账凭证" }
+        },
+        {
+          "id": "seller_name_repeat",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Seller name must appear on copy page.",
+          "tags": ["text"],
+          "params": { "text": "北京云计算服务有限公司" }
+        },
+        {
+          "id": "invoice_code_repeat",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Invoice code must appear on copy page.",
+          "tags": ["text", "numeric"],
+          "params": { "text": "011002500311" }
+        },
+        {
+          "id": "invoice_number_repeat",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Invoice number must appear on copy page.",
+          "tags": ["text", "numeric"],
+          "params": { "text": "08726145" }
+        },
+        {
+          "id": "tax_bureau_verify",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Tax bureau verification notice must appear.",
+          "tags": ["text"],
+          "params": { "text": "国家税务总局全国增值税发票查验平台" }
+        },
+        {
+          "id": "copy_label_before_seller",
+          "type": "reading_order",
+          "severity": "major",
+          "description": "Copy label must appear before seller name.",
+          "tags": ["reading_order"],
+          "params": { "before": "发票联", "after": "销方名称" }
+        },
+        {
+          "id": "no_page5_footer",
+          "type": "regex_absence",
+          "severity": "minor",
+          "description": "Page footer text should not pollute body content.",
+          "tags": ["pollution"],
+          "params": { "pattern": "增值税电子普通发票\\s*·\\s*第5页" }
+        },
+        {
+          "id": "no_tail_repetition",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "Output must not end with repeated n-gram artifacts.",
+          "tags": ["quality"],
+          "params": { "n": 4, "max_repeats": 4 }
+        }
+      ],
+      "notes": "Tests invoice copy page: archive label, bookkeeping purpose, repeated invoice identifiers, tax bureau verification notice, reading order, and footer pollution."
+    }
+  ]
+}

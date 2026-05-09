@@ -1,0 +1,106 @@
+{
+  "predictions": [
+    {
+      "case_id": "slides_ai_course_001_p1",
+      "parser": "pymupdf4llm",
+      "markdown": "## 人工智能导论 \n\n## 深度学习基础与应用 \n\n北京大学计算机科学与技术学院 \n\n主讲人：张明教授 \n\n2026年春季学期 \n\n北京大学 · 人工智能导论 · 第1页 \n\n",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_pymupdf4llm.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf\" --page \"1\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-4jdkow9o\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 1.385,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf",
+        "page": 1,
+        "case_id": "slides_ai_course_001_p1",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "slides_ai_course_001_p2",
+      "parser": "pymupdf4llm",
+      "markdown": "## 课程大纲 \n\n- 第一章 机器学习基础：监督学习、无监督学习与强化学习 \n\n- 第二章 神经网络：前馈网络、反向传播与梯度下降 \n\n- 第三章 卷积神经网络：LeNet、ResNet 与 Vision Transformer \n\n- 第四章 循环神经网络：LSTM、GRU 与序列建模 \n\n- 第五章 Transformer 架构：Self-Attention 与 Multi-Head Attention \n\n- 第六章 大语言模型：BERT、GPT-4 与 Qwen2.5-VL \n\n- 第七章 多模态学习：CLIP、BLIP-2 与视觉语言对齐 \n\n北京大学 · 人工智能导论 · 第2页 \n\n",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_pymupdf4llm.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf\" --page \"2\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-m2v9bdvo\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 1.403,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf",
+        "page": 2,
+        "case_id": "slides_ai_course_001_p2",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "slides_ai_course_001_p3",
+      "parser": "pymupdf4llm",
+      "markdown": "## 主流模型对比 \n\n|模型|参数量|主要特点|适用场景|\n|---|---|---|---|\n|BERT|340M|双向编码器|文本分类、NER|\n|GPT-4|~1.8T|自回归生成|对话、代码生成|\n|Qwen2.5-VL|7B-72B|视觉语言对齐|文档理解、OCR|\n|ResNet-152|60M|残差连接|图像分类|\n\n\n\n北京大学 · 人工智能导论 · 第3页 \n\n",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_pymupdf4llm.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf\" --page \"3\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-5kn41z35\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 1.442,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf",
+        "page": 3,
+        "case_id": "slides_ai_course_001_p3",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "slides_ai_course_001_p4",
+      "parser": "pymupdf4llm",
+      "markdown": "## Transformer 架构详解 \n\n## 编码器 Encoder \n\n编码器（Encoder）由 N 个相同的层堆叠而成。每层包含两个子层：Multi-Head Self-Attention 机制和位置前馈网络（Position-wise Feed-Forward Network）。每个子层之后都有残差连接（Residual Connection）和层归一化（Layer Normalization）。 \n\n## 解码器 Decoder \n\n解码器（Decoder）同样由 N 个相同层组成。除了编码器中的两个子层外，解码器还额外增加了第三个子层：Masked Multi-Head Attention，用于对编码器输出执行注意力计算。自回归生成时使用因果掩码（Causal Mask）防止信息泄露。 \n\n北京大学 · 人工智能导论 · 第4页 \n\n",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_pymupdf4llm.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf\" --page \"4\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-kj8rxtj0\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 1.454,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf",
+        "page": 4,
+        "case_id": "slides_ai_course_001_p4",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "slides_ai_course_001_p5",
+      "parser": "pymupdf4llm",
+      "markdown": "## 注意力机制 \n\n缩放点积注意力（Scaled Dot-Product Attention）是 Transformer 的核心组件。给定查询矩阵 Q、键矩阵 K 和值矩阵 V，注意力输出定义为： \n\n$Attention(Q,K,V) = softmax\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V$ \n\n## [示意图：Q、K、V 矩阵运算流程图] \n\n图 3-1 Scaled Dot-Product Attention 计算流程 \n\n其中 d_k 为键向量的维度。缩放因子 1/√d_k 用于防止点积值过大导致 softmax 梯度消失。 \n\n北京大学 · 人工智能导论 · 第5页 \n\n",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_pymupdf4llm.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf\" --page \"5\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-f6s8wwb7\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 1.349,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf",
+        "page": 5,
+        "case_id": "slides_ai_course_001_p5",
+        "output_source": "file"
+      }
+    },
+    {
+      "case_id": "slides_ai_course_001_p6",
+      "parser": "pymupdf4llm",
+      "markdown": "## 训练技巧与实践 \n\n- 学习率调度：Warmup + Cosine Annealing，初始 lr = 3e-4 \n\n- 权重初始化：Xavier / He 初始化，避免梯度消失或爆炸 \n\n- 正则化：Dropout (p=0.1)、Label Smoothing (ε=0.1) \n\n- 混合精度训练：FP16 + Loss Scaling，加速 2-3x \n\n- 梯度累积：等效增大 batch_size，适用于显存受限场景 \n\n- 数据增强：RandomCrop、ColorJitter、MixUp、CutMix \n\n- 分布式训练：DataParallel / DDP / FSDP，多卡并行 \n\n北京大学 · 人工智能导论 · 第6页 \n\n",
+      "elements": [],
+      "metadata": {
+        "command": "python examples/run_pymupdf4llm.py --input \"D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf\" --page \"6\" --output \"C:\\Users\\34886\\AppData\\Local\\Temp\\docfailbench-fxlla6jg\\output.md\"",
+        "returncode": 0,
+        "elapsed_seconds": 1.373,
+        "stderr": "",
+        "stdout": "",
+        "document_path": "D:\\Code\\Project\\DocFailBench\\data\\source_pdfs\\placeholder\\slides_ai_course_001.pdf",
+        "page": 6,
+        "case_id": "slides_ai_course_001_p6",
+        "output_source": "file"
+      }
+    }
+  ]
+}

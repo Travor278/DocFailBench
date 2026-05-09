@@ -1,0 +1,75 @@
+{
+  "name": "Stage7 bbox-aware element_grounded profile",
+  "status": "staging_diagnostic_profile",
+  "generated_at": "2026-05-09T09:32:05.921889+00:00",
+  "policy": {
+    "main_score": "Stage7 structural-v2 keeps all 165 visually spot-checked assertions, including a small number of representative bbox-aware element_grounded checks.",
+    "secondary_profiles": "Broad page-furniture/header/footer absence checks remain secondary hygiene. Future gold-region overlap checks for element_grounded should be reported as a stricter bbox-aware profile."
+  },
+  "assertion_count": 8,
+  "parsers": [
+    {
+      "label": "bbox",
+      "parser": "pymupdf_text_bbox_non_gov_public",
+      "eval_file": "runs/stage7_non_gov_public/eval_structural_v2_bbox.json",
+      "passed": 7,
+      "failed": 1,
+      "assertion_count": 8,
+      "score": 0.875
+    },
+    {
+      "label": "docling",
+      "parser": "docling",
+      "eval_file": "runs/stage7_non_gov_public/eval_structural_v2_docling.json",
+      "passed": 0,
+      "failed": 8,
+      "assertion_count": 8,
+      "score": 0.0
+    },
+    {
+      "label": "marker",
+      "parser": "marker",
+      "eval_file": "runs/stage7_non_gov_public/eval_structural_v2_marker.json",
+      "passed": 0,
+      "failed": 8,
+      "assertion_count": 8,
+      "score": 0.0
+    },
+    {
+      "label": "mineru",
+      "parser": "mineru",
+      "eval_file": "runs/stage7_non_gov_public/eval_structural_v2_mineru.json",
+      "passed": 0,
+      "failed": 8,
+      "assertion_count": 8,
+      "score": 0.0
+    },
+    {
+      "label": "paddleocr",
+      "parser": "paddleocr",
+      "eval_file": "runs/stage7_non_gov_public/eval_structural_v2_paddleocr.json",
+      "passed": 0,
+      "failed": 8,
+      "assertion_count": 8,
+      "score": 0.0
+    },
+    {
+      "label": "plain",
+      "parser": "pymupdf_text_non_gov_public",
+      "eval_file": "runs/stage7_non_gov_public/eval_structural_v2_plain.json",
+      "passed": 0,
+      "failed": 8,
+      "assertion_count": 8,
+      "score": 0.0
+    },
+    {
+      "label": "qwen_vl_api",
+      "parser": "qwen_vl_api",
+      "eval_file": "runs/stage7_non_gov_public/eval_structural_v2_qwen_vl_api.json",
+      "passed": 0,
+      "failed": 8,
+      "assertion_count": 8,
+      "score": 0.0
+    }
+  ]
+}

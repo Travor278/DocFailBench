@@ -1,0 +1,378 @@
+{
+  "version": "0.1",
+  "cases": [
+    {
+      "case_id": "arxiv_mulco_p4",
+      "title": "Mulco nested NER example with Chinese entity annotation",
+      "document": {
+        "path": "data/source_pdfs/real/mulco_chinese_nner.pdf",
+        "page": 4,
+        "license": "arxiv-non-exclusive",
+        "source_url": "https://arxiv.org/abs/2211.10854"
+      },
+      "profile": {
+        "language": "zh_en_mixed",
+        "document_type": "academic_paper",
+        "layout": ["double_column", "figure_with_table"],
+        "risk_tags": ["reading_order", "table", "figure"]
+      },
+      "assertions": [
+        {
+          "id": "nested_entity_text",
+          "type": "text_presence",
+          "severity": "blocker",
+          "description": "The Chinese entity example text must survive extraction.",
+          "tags": ["text", "zh"],
+          "params": {
+            "text": "北京市海淀区人民政府"
+          }
+        },
+        {
+          "id": "entity_type_location",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Entity type label 'Location' should appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "Location"
+          }
+        },
+        {
+          "id": "entity_type_org",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Entity type label 'Organization' should appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "Organization"
+          }
+        },
+        {
+          "id": "figure_caption_present",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Figure 1 caption text must appear.",
+          "tags": ["figure"],
+          "params": {
+            "text": "Figure 1"
+          }
+        },
+        {
+          "id": "figure1_caption_binding",
+          "type": "caption_binding",
+          "severity": "major",
+          "description": "Figure 1 caption must be near its anchor.",
+          "tags": ["figure", "caption"],
+          "params": {
+            "anchor": "Figure 1",
+            "caption": "An example of nested NER",
+            "max_lines": 3
+          }
+        },
+        {
+          "id": "scope_method_text",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Method description about scopes must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "Methodology"
+          }
+        },
+        {
+          "id": "no_references_on_content_page",
+          "type": "text_absence",
+          "severity": "minor",
+          "description": "References section should not appear on a content page.",
+          "tags": ["pollution"],
+          "params": {
+            "text": "References"
+          }
+        },
+        {
+          "id": "nested_ngram_quality",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "No degenerate repeated n-grams in output.",
+          "tags": ["quality"],
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        }
+      ],
+      "notes": "Real arXiv paper page with Chinese nested NER example. Tests reading order across entity annotations and table structures."
+    },
+    {
+      "case_id": "arxiv_mulco_p7",
+      "title": "Mulco results table with F1 scores and ablation study",
+      "document": {
+        "path": "data/source_pdfs/real/mulco_chinese_nner.pdf",
+        "page": 7,
+        "license": "arxiv-non-exclusive",
+        "source_url": "https://arxiv.org/abs/2211.10854"
+      },
+      "profile": {
+        "language": "zh_en_mixed",
+        "document_type": "academic_paper",
+        "layout": ["double_column", "formula_dense"],
+        "risk_tags": ["table", "reading_order", "formula"]
+      },
+      "assertions": [
+        {
+          "id": "mulco_row_exists",
+          "type": "table_cell_exists",
+          "severity": "blocker",
+          "description": "Mulco method row must appear in results table.",
+          "tags": ["table"],
+          "params": {
+            "text": "Mulco"
+          }
+        },
+        {
+          "id": "f1_score_exists",
+          "type": "regex_match",
+          "severity": "blocker",
+          "description": "F1 score pattern must match (e.g., 85.98).",
+          "tags": ["numeric"],
+          "params": {
+            "pattern": "85\\.98"
+          }
+        },
+        {
+          "id": "ace2005_exists",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "description": "ACE 2005 dataset name must appear in table header.",
+          "tags": ["table"],
+          "params": {
+            "text": "ACE 2005"
+          }
+        },
+        {
+          "id": "chinese_dataset_exists",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "description": "ChiNesE dataset name must appear in table header.",
+          "tags": ["table"],
+          "params": {
+            "text": "ChiNesE"
+          }
+        },
+        {
+          "id": "ablation_section_present",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Ablation study section must be present.",
+          "tags": ["text"],
+          "params": {
+            "text": "ablation"
+          }
+        },
+        {
+          "id": "precision_recall_order",
+          "type": "reading_order",
+          "severity": "major",
+          "description": "Precision column must appear before Recall column in results.",
+          "tags": ["reading_order", "table"],
+          "params": {
+            "before": "P",
+            "after": "R"
+          }
+        },
+        {
+          "id": "table_3_label",
+          "type": "text_presence",
+          "severity": "minor",
+          "description": "Table 3 label must appear.",
+          "tags": ["table"],
+          "params": {
+            "text": "Table 3"
+          }
+        }
+      ],
+      "notes": "Real arXiv results page. Tests table extraction fidelity and numeric regex matching for F1 scores."
+    },
+    {
+      "case_id": "arxiv_cluener_p2",
+      "title": "CLUENER2020 dataset construction with Chinese NER examples",
+      "document": {
+        "path": "data/source_pdfs/real/cluener2020.pdf",
+        "page": 2,
+        "license": "arxiv-non-exclusive",
+        "source_url": "https://arxiv.org/abs/2001.04351"
+      },
+      "profile": {
+        "language": "zh_en_mixed",
+        "document_type": "academic_paper",
+        "layout": ["single_column", "markdown_table"],
+        "risk_tags": ["table", "reading_order"]
+      },
+      "assertions": [
+        {
+          "id": "dataset_stats_table",
+          "type": "table_cell_exists",
+          "severity": "blocker",
+          "description": "Train split count must appear in dataset stats table.",
+          "tags": ["table"],
+          "params": {
+            "text": "10,748"
+          }
+        },
+        {
+          "id": "entity_categories_count",
+          "type": "regex_match",
+          "severity": "major",
+          "description": "Number of entity categories must appear.",
+          "tags": ["table"],
+          "params": {
+            "pattern": "Classes\\s+10"
+          }
+        },
+        {
+          "id": "chinese_example_present",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Chinese NER example sentence must appear.",
+          "tags": ["text", "zh"],
+          "params": {
+            "text": "ChinaJoy"
+          }
+        },
+        {
+          "id": "avg_length_present",
+          "type": "text_presence",
+          "severity": "minor",
+          "description": "Average length statistic must appear.",
+          "tags": ["table"],
+          "params": {
+            "text": "37.4"
+          }
+        },
+        {
+          "id": "section_heading_present",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Dataset construction section heading must appear.",
+          "tags": ["text"],
+          "params": {
+            "text": "Dataset Construction"
+          }
+        },
+        {
+          "id": "no_page_number_pollution",
+          "type": "regex_absence",
+          "severity": "minor",
+          "description": "Standalone page number should not appear in body text.",
+          "tags": ["pollution"],
+          "params": {
+            "pattern": "^\\s*2\\s*$"
+          }
+        },
+        {
+          "id": "ngram_quality",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "No degenerate repeated n-grams.",
+          "tags": ["quality"],
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        }
+      ],
+      "notes": "Real arXiv paper with Chinese-English mixed dataset description. Tests table extraction and bilingual text presence."
+    },
+    {
+      "case_id": "arxiv_cluener_p4",
+      "title": "CLUENER2020 dataset comparison table with Chinese NER corpora",
+      "document": {
+        "path": "data/source_pdfs/real/cluener2020.pdf",
+        "page": 4,
+        "license": "arxiv-non-exclusive",
+        "source_url": "https://arxiv.org/abs/2001.04351"
+      },
+      "profile": {
+        "language": "zh_en_mixed",
+        "document_type": "academic_paper",
+        "layout": ["single_column", "markdown_table"],
+        "risk_tags": ["table", "reading_order"]
+      },
+      "assertions": [
+        {
+          "id": "msra_dataset_exists",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "description": "MSRA NER dataset name must appear.",
+          "tags": ["table"],
+          "params": {
+            "text": "MSRANER"
+          }
+        },
+        {
+          "id": "weibo_dataset_exists",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "description": "Weibo NER dataset name must appear.",
+          "tags": ["table"],
+          "params": {
+            "text": "WeiboNER"
+          }
+        },
+        {
+          "id": "entity_categories_column",
+          "type": "text_presence",
+          "severity": "major",
+          "description": "Entity categories header must appear.",
+          "tags": ["table"],
+          "params": {
+            "text": "Entity Categories"
+          }
+        },
+        {
+          "id": "person_name_category",
+          "type": "table_cell_exists",
+          "severity": "major",
+          "description": "Person name entity category must appear.",
+          "tags": ["table"],
+          "params": {
+            "text": "person name"
+          }
+        },
+        {
+          "id": "table_has_multiple_rows",
+          "type": "table_shape",
+          "severity": "major",
+          "description": "Dataset comparison table should have at least 5 rows.",
+          "tags": ["table"],
+          "params": {
+            "row_count": 5,
+            "col_count": 3
+          }
+        },
+        {
+          "id": "resume_ner_exists",
+          "type": "table_cell_exists",
+          "severity": "minor",
+          "description": "Resume NER dataset should appear in comparison.",
+          "tags": ["table"],
+          "params": {
+            "text": "Resume NER"
+          }
+        },
+        {
+          "id": "no_repeated_tail",
+          "type": "no_repeated_ngram_tail",
+          "severity": "major",
+          "description": "No degenerate repeated n-grams in output.",
+          "tags": ["quality"],
+          "params": {
+            "n": 4,
+            "max_repeats": 4
+          }
+        }
+      ],
+      "notes": "Real arXiv page with multi-dataset comparison table. Tests table structure preservation across complex merged cells."
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "version": "0.1",
+  "cases": [
+    {
+      "case_id": "html_table_grid_004_p8",
+      "title": "HTML table with merged cells from parser output",
+      "document": {
+        "path": "data/source_pdfs/placeholder/finance_table_mixed_003.pdf",
+        "page": 8,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh_en_mixed",
+        "document_type": "financial_report",
+        "layout": ["html_table", "merged_cells"],
+        "risk_tags": ["table", "grid_cell"]
+      },
+      "assertions": [
+        {
+          "id": "revenue_grid_cell",
+          "type": "table_grid_cell",
+          "severity": "blocker",
+          "description": "Revenue value at row 1, col 1 in HTML table.",
+          "tags": ["table", "grid"],
+          "params": {
+            "row": 1,
+            "col": 1,
+            "expected": "1,234.56"
+          }
+        },
+        {
+          "id": "header_grid_cell",
+          "type": "table_grid_cell",
+          "severity": "major",
+          "description": "Column header at row 0, col 0.",
+          "tags": ["table", "grid"],
+          "params": {
+            "row": 0,
+            "col": 0,
+            "expected": "项目"
+          }
+        }
+      ],
+      "notes": "Tests grid-position cell access in HTML tables with rowspan/colspan."
+    },
+    {
+      "case_id": "formula_visual_005_p12",
+      "title": "Kinetic energy formula with visual equivalence check",
+      "document": {
+        "path": "data/source_pdfs/placeholder/cn_textbook_formula_002.pdf",
+        "page": 12,
+        "license": "placeholder"
+      },
+      "profile": {
+        "language": "zh",
+        "document_type": "textbook",
+        "layout": ["formula_dense"],
+        "risk_tags": ["formula", "visual_equivalence"]
+      },
+      "assertions": [
+        {
+          "id": "kinetic_energy_visual",
+          "type": "formula_visual",
+          "severity": "blocker",
+          "description": "E_k = 1/2 mv^2 should match visually even with minor formatting differences.",
+          "tags": ["formula", "visual"],
+          "params": {
+            "latex": "E_k=\\frac{1}{2}mv^2",
+            "threshold": 0.80
+          }
+        },
+        {
+          "id": "kinetic_energy_corrupted_fail",
+          "type": "formula_visual",
+          "severity": "major",
+          "description": "A structurally different formula should fail visual check.",
+          "tags": ["formula", "visual"],
+          "params": {
+            "latex": "E_k=\\frac{1}{2}mv^2",
+            "threshold": 0.95
+          }
+        }
+      ],
+      "notes": "Tests visual proxy for formula equivalence and deliberate mismatch."
+    }
+  ]
+}

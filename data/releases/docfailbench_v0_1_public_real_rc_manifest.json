@@ -1,0 +1,15 @@
+{
+  "release_name": "DocFailBench-v0.1-public-real-rc",
+  "files": {
+    "data\\releases\\docfailbench_v0_1_public_real_rc_cases.json": "07ebc1046b6e98612f12f2745813b6c19c96ac071100e5aeb71d3e42165f6cbb",
+    "data\\releases\\docfailbench_v0_1_public_real_rc_leaderboard.json": "3ef22a2fa76a03dc22ef36b450fc3945a781a273117f38c93330344ff4e55fd2",
+    "data\\releases\\docfailbench_v0_1_public_real_rc_leaderboard.md": "3c5effa55b7635cfe2ee601176b729445d4202e6d4436fb41605010a0b51722f",
+    "data\\releases\\docfailbench_v0_1_public_real_rc_public_only_leaderboard.json": "fb0c3cdfb11d0095e549f6d04b1bd22296842505585029b84c6f068b5622f0d9",
+    "data\\releases\\docfailbench_v0_1_public_real_rc_public_only_leaderboard.md": "999737999529dc392270b7ad664831b891c117d4efe59023c629788a06178cef",
+    "data\\releases\\docfailbench_v0_1_public_real_rc_hygiene_cases.json": "b6f5e9422aa530f777daf760abcbcfdbe6bd6486c5eca5c6dfffc8c18b24ac89",
+    "data\\releases\\docfailbench_v0_1_public_real_rc_metadata.json": "a8cc4cea21ddc5006faa3481986768917c9b295463c88a3bdfc080ae4b59a85c",
+    "data\\releases\\docfailbench_v0_1_public_real_rc_spotcheck.json": "0ea206324ce4e8f597efac5594fda05f4a540218a482607d0ea4beadb575a127",
+    "data\\releases\\docfailbench_v0_1_public_real_rc_spotcheck.md": "35f7613160c61ade437f0595620b86a33c99e188daadcaa2faad3500d9ddb37d",
+    "data\\releases\\docfailbench_v0_1_public_real_rc_card.md": "781e6d9ddfd6290387a28456348092279c92fbfeeace8bb2503c0265b5d21408"
+  }
+}

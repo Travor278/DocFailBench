@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="420" viewBox="0 0 920 420" role="img" aria-labelledby="title desc">
+<title id="title">DocFailBench v0.1 parser leaderboard</title>
+<desc id="desc">Seven cached parser baselines evaluated on 506 executable assertions.</desc>
+<rect width="920" height="100%" rx="18" fill="#fbfcfe"/>
+<rect x="24" y="22" width="872" height="82" rx="14" fill="#111827"/>
+<text x="50" y="57" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="700" fill="#ffffff">DocFailBench v0.1 Diagnostic Leaderboard</text>
+<text x="50" y="84" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#d1d5db">506 assertion checks across tables, formulas, reading order, pollution, and grounding</text>
+<text x="50" y="157" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="650" fill="#111827">PyMuPDF4LLM bbox</text>
+<rect x="270" y="138" width="360" height="24" rx="7" fill="#e5e7eb"/>
+<rect x="270" y="138" width="310" height="24" rx="7" fill="#2563eb"/>
+<text x="650" y="156" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">0.8617</text>
+<text x="745" y="156" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#475569">436 pass / 70 fail</text>
+<text x="50" y="199" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="650" fill="#111827">Marker</text>
+<rect x="270" y="180" width="360" height="24" rx="7" fill="#e5e7eb"/>
+<rect x="270" y="180" width="309" height="24" rx="7" fill="#0f766e"/>
+<text x="650" y="198" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">0.8597</text>
+<text x="745" y="198" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#475569">435 pass / 71 fail</text>
+<text x="50" y="241" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="650" fill="#111827">PyMuPDF4LLM plain</text>
+<rect x="270" y="222" width="360" height="24" rx="7" fill="#e5e7eb"/>
+<rect x="270" y="222" width="304" height="24" rx="7" fill="#64748b"/>
+<text x="650" y="240" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">0.8439</text>
+<text x="745" y="240" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#475569">427 pass / 79 fail</text>
+<text x="50" y="283" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="650" fill="#111827">Docling</text>
+<rect x="270" y="264" width="360" height="24" rx="7" fill="#e5e7eb"/>
+<rect x="270" y="264" width="276" height="24" rx="7" fill="#64748b"/>
+<text x="650" y="282" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">0.7668</text>
+<text x="745" y="282" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#475569">388 pass / 118 fail</text>
+<text x="50" y="325" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="650" fill="#111827">Qwen-VL API</text>
+<rect x="270" y="306" width="360" height="24" rx="7" fill="#e5e7eb"/>
+<rect x="270" y="306" width="250" height="24" rx="7" fill="#64748b"/>
+<text x="650" y="324" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">0.6957</text>
+<text x="745" y="324" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#475569">352 pass / 154 fail</text>
+<text x="50" y="367" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="650" fill="#111827">MinerU</text>
+<rect x="270" y="348" width="360" height="24" rx="7" fill="#e5e7eb"/>
+<rect x="270" y="348" width="228" height="24" rx="7" fill="#64748b"/>
+<text x="650" y="366" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">0.6344</text>
+<text x="745" y="366" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#475569">321 pass / 185 fail</text>
+<text x="50" y="409" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="650" fill="#111827">PaddleOCR</text>
+<rect x="270" y="390" width="360" height="24" rx="7" fill="#e5e7eb"/>
+<rect x="270" y="390" width="194" height="24" rx="7" fill="#64748b"/>
+<text x="650" y="408" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#111827">0.5395</text>
+<text x="745" y="408" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#475569">273 pass / 233 fail</text>
+</svg>

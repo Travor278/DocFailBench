@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docfailbench.org/schema/case.schema.json",
+  "title": "DocFailBench Case File",
+  "type": "object",
+  "required": ["cases"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "default": "0.1"
+    },
+    "cases": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/case"
+      }
+    }
+  },
+  "$defs": {
+    "case": {
+      "type": "object",
+      "required": ["case_id", "document", "assertions"],
+      "properties": {
+        "case_id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_.:-]+$"
+        },
+        "title": {
+          "type": "string"
+        },
+        "document": {
+          "type": "object",
+          "required": ["path"],
+          "properties": {
+            "path": { "type": "string" },
+            "page": { "type": "integer", "minimum": 0 },
+            "page_image": { "type": "string" },
+            "license": { "type": "string" },
+            "source_url": { "type": "string" }
+          },
+          "additionalProperties": true
+        },
+        "profile": {
+          "type": "object",
+          "properties": {
+            "language": {
+              "enum": ["zh", "en", "zh_en_mixed", "multilingual"]
+            },
+            "document_type": {
+              "type": "string"
+            },
+            "layout": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "risk_tags": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          },
+          "additionalProperties": true
+        },
+        "assertions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/assertion"
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "assertion": {
+      "type": "object",
+      "required": ["id", "type", "params"],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "text_presence",
+            "text_absence",
+            "regex_match",
+            "regex_absence",
+            "reading_order",
+            "table_cell_exists",
+            "table_shape",
+            "table_grid_cell",
+            "formula_contains",
+            "formula_visual",
+            "element_grounded",
+            "no_repeated_ngram_tail",
+            "cjk_spacing",
+            "caption_binding",
+            "no_page_number"
+          ]
+        },
+        "severity": {
+          "enum": ["blocker", "major", "minor"],
+          "default": "major"
+        },
+        "description": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "params": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

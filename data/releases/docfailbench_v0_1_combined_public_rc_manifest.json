@@ -1,0 +1,271 @@
+{
+  "release_name": "DocFailBench-v0.1-combined-public-rc",
+  "status": "release_candidate_frozen_combined_public",
+  "generated_at": "2026-05-09T09:32:17.245804+00:00",
+  "environment": {
+    "python": "D:\\Dev\\conda-envs\\py313\\python.exe",
+    "python_version": "3.13.12",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "counts": {
+    "cases": 116,
+    "assertions": 877,
+    "profiles": {
+      "public_real_rc": {
+        "cases": 74,
+        "assertions": 674
+      },
+      "non_gov_stage7_structural": {
+        "cases": 24,
+        "assertions": 165
+      },
+      "non_gov_stage8_reviewed": {
+        "cases": 18,
+        "assertions": 38
+      }
+    },
+    "parsers": 7
+  },
+  "inputs": [
+    {
+      "profile": "public_real_rc",
+      "path": "data/releases/docfailbench_v0_1_public_real_rc_cases.json",
+      "sha256": "07ebc1046b6e98612f12f2745813b6c19c96ac071100e5aeb71d3e42165f6cbb",
+      "description": "Main public-real RC: diagnostic v0.1 plus strict-reviewed public-real pages."
+    },
+    {
+      "profile": "non_gov_stage7_structural",
+      "path": "data/releases/docfailbench_v0_1_non_gov_public_stage7_rc_cases.json",
+      "sha256": "dfdf01aa60ddf9bb256de62b7cc16f4f6fff63e05f531b3a7dd2aeb467e13752",
+      "description": "Frozen Stage7 non-government structural-v2 auxiliary track."
+    },
+    {
+      "profile": "non_gov_stage8_reviewed",
+      "path": "runs/stage8_non_gov_public_batch2/reviewed_non_gov_public_batch2_cases.json",
+      "sha256": "1da573eef5e0accf71a0da208fa70d995d0d09828c8f377402315551fd6be8cc",
+      "description": "Stage8 second-review accepted non-government staging checks."
+    }
+  ],
+  "prediction_sources": {
+    "qwen": {
+      "prediction_count": 116,
+      "out": "data/releases/docfailbench_v0_1_combined_public_rc_predictions_qwen.json",
+      "sha256": "ee4e40657c48b5a70ecde9940e7ef9c98f64171417897899d914b2f8cf28069d",
+      "sources": [
+        {
+          "profile": "public_real_rc",
+          "path": "runs/stage6_public_real/predictions_v0_1_public_real_v2_qwen.json",
+          "predictions_added": 74,
+          "sha256": "cfb5ab3bea8c6aea0fb0f5285ba0a04c9e8ed9c48f3d594259143dd222e69c17"
+        },
+        {
+          "profile": "non_gov_stage7_structural",
+          "path": "runs/stage7_non_gov_public/raw/structural_v2/predictions_non_gov_public_structural_v2_qwen_vl_api.json",
+          "predictions_added": 24,
+          "sha256": "6e0bb91b378bc864cd7d0a9d0c2bef6a10dee1af196c849b192e6e9c553d1f6e"
+        },
+        {
+          "profile": "non_gov_stage8_reviewed",
+          "path": "runs/stage8_non_gov_public_batch2/raw/predictions_non_gov_public_batch2_qwen_vl_api.json",
+          "predictions_added": 18,
+          "sha256": "8c09c4d57bcf5f1c219e5fa2716ae5868276eb170bc5e02cd0dfcf340b6875eb"
+        }
+      ]
+    },
+    "plain": {
+      "prediction_count": 116,
+      "out": "data/releases/docfailbench_v0_1_combined_public_rc_predictions_plain.json",
+      "sha256": "5d7d5796ae04b0a2a93003dfcb26f68c7387d700f840881bb9fa6b3babd12394",
+      "sources": [
+        {
+          "profile": "public_real_rc",
+          "path": "runs/stage6_public_real/predictions_v0_1_public_real_v2_plain.json",
+          "predictions_added": 74,
+          "sha256": "e27cd4e34724312a88d8fa93c93ca053f12d6aa12b84595d8d3fbdfb92d7fd0c"
+        },
+        {
+          "profile": "non_gov_stage7_structural",
+          "path": "runs/stage7_non_gov_public/raw/structural_v2/predictions_non_gov_public_structural_v2_plain.json",
+          "predictions_added": 24,
+          "sha256": "431a76b28e89375a194a731ff4e6c456099b94b09d088b59dd247cb99dea464f"
+        },
+        {
+          "profile": "non_gov_stage8_reviewed",
+          "path": "runs/stage8_non_gov_public_batch2/raw/predictions_non_gov_public_batch2_plain.json",
+          "predictions_added": 18,
+          "sha256": "0753b2527da90767d120c4ef349a213613bfb831123ea2f566de5b20e75a3eef"
+        }
+      ]
+    },
+    "paddleocr": {
+      "prediction_count": 116,
+      "out": "data/releases/docfailbench_v0_1_combined_public_rc_predictions_paddleocr.json",
+      "sha256": "bf9ed909fe0e50c7e1a68544d4309270957d0f8a5af11d5b00f71c167c00dfb2",
+      "sources": [
+        {
+          "profile": "public_real_rc",
+          "path": "runs/stage6_public_real/predictions_v0_1_public_real_v2_paddleocr.json",
+          "predictions_added": 74,
+          "sha256": "cdac9640ff42fdc0aadffd726b7091ac7e9c0d7a5299a07d6beffbae868909a5"
+        },
+        {
+          "profile": "non_gov_stage7_structural",
+          "path": "runs/stage7_non_gov_public/raw/structural_v2/predictions_non_gov_public_structural_v2_paddleocr.json",
+          "predictions_added": 24,
+          "sha256": "30465930d4adbe4c999c2cc4a8014c839b93020fcab461f0074d29e0b4868ed7"
+        },
+        {
+          "profile": "non_gov_stage8_reviewed",
+          "path": "runs/stage8_non_gov_public_batch2/raw/predictions_non_gov_public_batch2_paddleocr.json",
+          "predictions_added": 18,
+          "sha256": "2f42b7c06e7fc0269a12eb5282add2dc192a6ba7b30c70b0cdedf5bbb6270d46"
+        }
+      ]
+    },
+    "mineru": {
+      "prediction_count": 116,
+      "out": "data/releases/docfailbench_v0_1_combined_public_rc_predictions_mineru.json",
+      "sha256": "3c73326ff72152842f952499f908ede2dcc79cb0e3957d62237f7840e9f6910c",
+      "sources": [
+        {
+          "profile": "public_real_rc",
+          "path": "runs/stage6_public_real/predictions_v0_1_public_real_v2_mineru.json",
+          "predictions_added": 74,
+          "sha256": "1e0098c7a1d307b5d530aba463642ba9446fd660324dcb77707b395d5e13fe79"
+        },
+        {
+          "profile": "non_gov_stage7_structural",
+          "path": "runs/stage7_non_gov_public/raw/structural_v2/predictions_non_gov_public_structural_v2_mineru.json",
+          "predictions_added": 24,
+          "sha256": "bc69cd83edaf656c472af65a037c746c9983b0282d65bdecfea6e1c17863e8ba"
+        },
+        {
+          "profile": "non_gov_stage8_reviewed",
+          "path": "runs/stage8_non_gov_public_batch2/raw/predictions_non_gov_public_batch2_mineru.json",
+          "predictions_added": 18,
+          "sha256": "325d8959d794e6610767cd9eef946d743abb4a6c247362fc1deb454935ba4f20"
+        }
+      ]
+    },
+    "marker": {
+      "prediction_count": 116,
+      "out": "data/releases/docfailbench_v0_1_combined_public_rc_predictions_marker.json",
+      "sha256": "0f053ae2ca7adf1d0e1e3009cf8db61e12bb790a1b9fc75659a060191f97285f",
+      "sources": [
+        {
+          "profile": "public_real_rc",
+          "path": "runs/stage6_public_real/predictions_v0_1_public_real_v2_marker.json",
+          "predictions_added": 74,
+          "sha256": "5ba7e565f75edf0d9de459f977e5a00af070fa344cf8552bc895900e3ed54a93"
+        },
+        {
+          "profile": "non_gov_stage7_structural",
+          "path": "runs/stage7_non_gov_public/raw/structural_v2/predictions_non_gov_public_structural_v2_marker.json",
+          "predictions_added": 24,
+          "sha256": "9a8831a640bd1edf4ae3486ee9bbc9b1b9e6435d29e1364d2c2bd386b80e44e3"
+        },
+        {
+          "profile": "non_gov_stage8_reviewed",
+          "path": "runs/stage8_non_gov_public_batch2/raw/predictions_non_gov_public_batch2_marker.json",
+          "predictions_added": 18,
+          "sha256": "ba592b998f4dedf8a4580b83d4d4ef560413b75ac9ac8d11b37040908c1e24a3"
+        }
+      ]
+    },
+    "docling": {
+      "prediction_count": 116,
+      "out": "data/releases/docfailbench_v0_1_combined_public_rc_predictions_docling.json",
+      "sha256": "18925847880283526d5f2e9fadfc29a467bc95199f9fd5fe1cf7a77bc956b6d7",
+      "sources": [
+        {
+          "profile": "public_real_rc",
+          "path": "runs/stage6_public_real/predictions_v0_1_public_real_v2_docling.json",
+          "predictions_added": 74,
+          "sha256": "66f0219eee087950ce214f9c345a7a3de3b4d05c27ec996700ff83a20018d8aa"
+        },
+        {
+          "profile": "non_gov_stage7_structural",
+          "path": "runs/stage7_non_gov_public/raw/structural_v2/predictions_non_gov_public_structural_v2_docling.json",
+          "predictions_added": 24,
+          "sha256": "c5df2031125c6c3085d8e5cd59922944162cf0af316d06b4d3817d72992d2db8"
+        },
+        {
+          "profile": "non_gov_stage8_reviewed",
+          "path": "runs/stage8_non_gov_public_batch2/raw/predictions_non_gov_public_batch2_docling.json",
+          "predictions_added": 18,
+          "sha256": "bb5b8467a53af07ed5e64eae8048fe0c4e8688880b61b3a387f1745cae78aecd"
+        }
+      ]
+    },
+    "bbox": {
+      "prediction_count": 116,
+      "out": "data/releases/docfailbench_v0_1_combined_public_rc_predictions_bbox.json",
+      "sha256": "ebdc8db33c0d29f6d05979756dae7df956bd4a8da3e973c5b3f44fe0bf173456",
+      "sources": [
+        {
+          "profile": "public_real_rc",
+          "path": "runs/stage6_public_real/predictions_v0_1_public_real_v2_bbox.json",
+          "predictions_added": 74,
+          "sha256": "4905cd1ba8e3a8c733db39c66229d656be9fdeae1ac78ca026ae59ece81106f6"
+        },
+        {
+          "profile": "non_gov_stage7_structural",
+          "path": "runs/stage7_non_gov_public/raw/structural_v2/predictions_non_gov_public_structural_v2_bbox.json",
+          "predictions_added": 24,
+          "sha256": "7fb45b65c67b39c50c09bdb362e497ad64f142820a8d5d4e860406bf10110f0c"
+        },
+        {
+          "profile": "non_gov_stage8_reviewed",
+          "path": "runs/stage8_non_gov_public_batch2/raw/predictions_non_gov_public_batch2_bbox.json",
+          "predictions_added": 18,
+          "sha256": "999a7d612f9d0ee949faa0cbcd05a073ffe61874276cf616a142effdfecacc2a"
+        }
+      ]
+    }
+  },
+  "eval": {
+    "result_files": {
+      "qwen": "data/releases/docfailbench_v0_1_combined_public_rc_eval_qwen.json",
+      "plain": "data/releases/docfailbench_v0_1_combined_public_rc_eval_plain.json",
+      "paddleocr": "data/releases/docfailbench_v0_1_combined_public_rc_eval_paddleocr.json",
+      "mineru": "data/releases/docfailbench_v0_1_combined_public_rc_eval_mineru.json",
+      "marker": "data/releases/docfailbench_v0_1_combined_public_rc_eval_marker.json",
+      "docling": "data/releases/docfailbench_v0_1_combined_public_rc_eval_docling.json",
+      "bbox": "data/releases/docfailbench_v0_1_combined_public_rc_eval_bbox.json"
+    },
+    "leaderboard_json": "data/releases/docfailbench_v0_1_combined_public_rc_leaderboard.json",
+    "leaderboard_md": "data/releases/docfailbench_v0_1_combined_public_rc_leaderboard.md"
+  },
+  "source_manifest": {
+    "json": "data/releases/docfailbench_v0_1_combined_public_rc_source_manifest.json",
+    "md": "data/releases/docfailbench_v0_1_combined_public_rc_source_manifest.md"
+  },
+  "card": "data/releases/docfailbench_v0_1_combined_public_rc_card.md",
+  "files": {
+    "data/releases/docfailbench_v0_1_combined_public_rc_cases.json": "4adf382854d26ec87140fef49475dbff3b8f1f2b0a15b1d6a1388aeafcfd7eb3",
+    "data/releases/docfailbench_v0_1_combined_public_rc_leaderboard.json": "2b8a18dad4a3212d9aa030126f711b912a80bfe666e362a6f0103c671d7279a4",
+    "data/releases/docfailbench_v0_1_combined_public_rc_leaderboard.md": "e0dfc591fc8a2b2fd29f8b1052f1ee47bb178e7e886451ac58b57fbe9e93341d",
+    "data/releases/docfailbench_v0_1_combined_public_rc_source_manifest.json": "1f06a33dad1341571c97e8535c8f76339fe3e74337443474d2e7e99e02180da6",
+    "data/releases/docfailbench_v0_1_combined_public_rc_source_manifest.md": "cb16afbcf8a7e5b0a1d2491133fb0f5c8ff2465ec3651c322de26c5ad7a3aea4",
+    "data/releases/docfailbench_v0_1_combined_public_rc_card.md": "2b5363dbb63ffb801a850672f54dd81ef49a125411ebbf097c07bca50c6c1a7d",
+    "data/releases/docfailbench_v0_1_combined_public_rc_predictions_qwen.json": "ee4e40657c48b5a70ecde9940e7ef9c98f64171417897899d914b2f8cf28069d",
+    "data/releases/docfailbench_v0_1_combined_public_rc_predictions_plain.json": "5d7d5796ae04b0a2a93003dfcb26f68c7387d700f840881bb9fa6b3babd12394",
+    "data/releases/docfailbench_v0_1_combined_public_rc_predictions_paddleocr.json": "bf9ed909fe0e50c7e1a68544d4309270957d0f8a5af11d5b00f71c167c00dfb2",
+    "data/releases/docfailbench_v0_1_combined_public_rc_predictions_mineru.json": "3c73326ff72152842f952499f908ede2dcc79cb0e3957d62237f7840e9f6910c",
+    "data/releases/docfailbench_v0_1_combined_public_rc_predictions_marker.json": "0f053ae2ca7adf1d0e1e3009cf8db61e12bb790a1b9fc75659a060191f97285f",
+    "data/releases/docfailbench_v0_1_combined_public_rc_predictions_docling.json": "18925847880283526d5f2e9fadfc29a467bc95199f9fd5fe1cf7a77bc956b6d7",
+    "data/releases/docfailbench_v0_1_combined_public_rc_predictions_bbox.json": "ebdc8db33c0d29f6d05979756dae7df956bd4a8da3e973c5b3f44fe0bf173456",
+    "data/releases/docfailbench_v0_1_combined_public_rc_eval_qwen.json": "2fd3dd2fb39969eacea47ebc12a3a11b011020e966a0acf9b894a707ef4b30c2",
+    "data/releases/docfailbench_v0_1_combined_public_rc_eval_plain.json": "375707281c01d53bf4230b74440f374d22f212c5d3f89fa288acb8040f8b5306",
+    "data/releases/docfailbench_v0_1_combined_public_rc_eval_paddleocr.json": "cfe0984712ba9d466f27dbbe89cca30d1ef00507b110d260a269c722077d1150",
+    "data/releases/docfailbench_v0_1_combined_public_rc_eval_mineru.json": "6933a3d3d027726e6f6068292f184cf89a4d3d34a8885e3d7446d6966c0d16d3",
+    "data/releases/docfailbench_v0_1_combined_public_rc_eval_marker.json": "a95392548689500185ffafbcb184cbd5abeec82d156234b0448fba97ea7e11ab",
+    "data/releases/docfailbench_v0_1_combined_public_rc_eval_docling.json": "adbd6fc7af63c8b991bb116d10388158cde51ecec8497bd86e719070b7e6ebbf",
+    "data/releases/docfailbench_v0_1_combined_public_rc_eval_bbox.json": "6ddc40d054de81b1d21409e688d35dedb334d80cea88388a4f6e4673c6a8ce35",
+    "data/releases/docfailbench_v0_1_combined_public_rc_manifest.json": "20e6d1f3ac0c6224ad1de2db295f21c5c78349a89b5b2e84b5d801c37a70190b"
+  },
+  "release_notes": [
+    "Stage8 is included because source/license, second review, duplicate checks, 7-parser baselines, and metadata are complete.",
+    "Do not include Ulang deepseek-ocr2 as a baseline until provider-side image requests stop returning 5xx."
+  ]
+}
