@@ -6,6 +6,10 @@ Instead of asking whether an extracted page looks roughly right, DocFailBench ch
 
 ![DocFailBench community benchmark summary](docs/assets/community_summary.svg)
 
+![DocFailBench review and evaluation demo](docs/assets/docfailbench_review_demo.gif)
+
+_Demo: inspect a review packet, mark assertion decisions, and run a parser compare from the release artifacts._
+
 ## Why It Exists
 
 Most OCR and document parsing benchmarks report aggregate similarity. That is useful, but it does not tell a parser maintainer which fact broke. DocFailBench is built for diagnosis:
