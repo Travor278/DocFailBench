@@ -1,7 +1,7 @@
 {
   "name": "Stage7 structural-v2 parser metadata",
   "status": "staging_not_release",
-  "generated_at": "2026-05-09T09:32:05.916530+00:00",
+  "generated_at": "2026-05-09T10:39:16.958732+00:00",
   "parsers": [
     {
       "label": "bbox",

@@ -1,7 +1,7 @@
 {
   "name": "Stage7 bbox-aware element_grounded profile",
   "status": "staging_diagnostic_profile",
-  "generated_at": "2026-05-09T09:32:05.921889+00:00",
+  "generated_at": "2026-05-09T10:39:16.973378+00:00",
   "policy": {
     "main_score": "Stage7 structural-v2 keeps all 165 visually spot-checked assertions, including a small number of representative bbox-aware element_grounded checks.",
     "secondary_profiles": "Broad page-furniture/header/footer absence checks remain secondary hygiene. Future gold-region overlap checks for element_grounded should be reported as a stricter bbox-aware profile."

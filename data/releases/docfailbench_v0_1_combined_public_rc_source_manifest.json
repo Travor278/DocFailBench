@@ -22,11 +22,11 @@
     },
     {
       "path": "data/releases/docfailbench_v0_1_non_gov_public_stage7_rc_manifest.json",
-      "sha256": "66bcf8924fdfbe59800aaf66b963c10193b9870ac9ad80fdad83a25ff359df1a"
+      "sha256": "c6553148e5014d1e9327e15f1bb7c6f000e11e4388841a746f71a7606ca3e7ed"
     },
     {
       "path": "runs/stage8_non_gov_public_batch2/stage8_source_license_manifest.json",
-      "sha256": "fdd44480232fe0ab522d504a926a666f93da0223bf178aabc4b9e978e8fbfde8"
+      "sha256": "5ad0ee1fa294cbc053fa606d0e28c80dced6a64ee6da8241db2c8a04bc8745a7"
     }
   ],
   "notes": [

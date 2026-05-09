@@ -1,7 +1,7 @@
 {
   "release_name": "DocFailBench-v0.1-combined-public-rc",
   "status": "release_candidate_frozen_combined_public",
-  "generated_at": "2026-05-09T09:32:17.245804+00:00",
+  "generated_at": "2026-05-09T10:39:42.993229+00:00",
   "environment": {
     "python": "D:\\Dev\\conda-envs\\py313\\python.exe",
     "python_version": "3.13.12",
@@ -245,7 +245,7 @@
     "data/releases/docfailbench_v0_1_combined_public_rc_cases.json": "4adf382854d26ec87140fef49475dbff3b8f1f2b0a15b1d6a1388aeafcfd7eb3",
     "data/releases/docfailbench_v0_1_combined_public_rc_leaderboard.json": "2b8a18dad4a3212d9aa030126f711b912a80bfe666e362a6f0103c671d7279a4",
     "data/releases/docfailbench_v0_1_combined_public_rc_leaderboard.md": "e0dfc591fc8a2b2fd29f8b1052f1ee47bb178e7e886451ac58b57fbe9e93341d",
-    "data/releases/docfailbench_v0_1_combined_public_rc_source_manifest.json": "1f06a33dad1341571c97e8535c8f76339fe3e74337443474d2e7e99e02180da6",
+    "data/releases/docfailbench_v0_1_combined_public_rc_source_manifest.json": "7b97a0d33a4a01152fad1fd2bceb0209815508f6634e44e0c8ce754c14db9f60",
     "data/releases/docfailbench_v0_1_combined_public_rc_source_manifest.md": "cb16afbcf8a7e5b0a1d2491133fb0f5c8ff2465ec3651c322de26c5ad7a3aea4",
     "data/releases/docfailbench_v0_1_combined_public_rc_card.md": "2b5363dbb63ffb801a850672f54dd81ef49a125411ebbf097c07bca50c6c1a7d",
     "data/releases/docfailbench_v0_1_combined_public_rc_predictions_qwen.json": "ee4e40657c48b5a70ecde9940e7ef9c98f64171417897899d914b2f8cf28069d",
@@ -262,7 +262,7 @@
     "data/releases/docfailbench_v0_1_combined_public_rc_eval_marker.json": "a95392548689500185ffafbcb184cbd5abeec82d156234b0448fba97ea7e11ab",
     "data/releases/docfailbench_v0_1_combined_public_rc_eval_docling.json": "adbd6fc7af63c8b991bb116d10388158cde51ecec8497bd86e719070b7e6ebbf",
     "data/releases/docfailbench_v0_1_combined_public_rc_eval_bbox.json": "6ddc40d054de81b1d21409e688d35dedb334d80cea88388a4f6e4673c6a8ce35",
-    "data/releases/docfailbench_v0_1_combined_public_rc_manifest.json": "20e6d1f3ac0c6224ad1de2db295f21c5c78349a89b5b2e84b5d801c37a70190b"
+    "data/releases/docfailbench_v0_1_combined_public_rc_manifest.json": "9abcd78de49b124fdc1d6ee18cda3a249bf93e012b26b1d0bb7b1806622bea30"
   },
   "release_notes": [
     "Stage8 is included because source/license, second review, duplicate checks, 7-parser baselines, and metadata are complete.",
