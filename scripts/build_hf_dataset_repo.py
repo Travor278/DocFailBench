@@ -2,17 +2,26 @@ from __future__ import annotations
 
 import json
 import shutil
+import sys
 from pathlib import Path
 from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from docfailbench.hosted_safe import verify_page_file
+
+
 OUT = ROOT / "dist" / "hf_dataset_docfailbench"
 RELEASE_DIR = ROOT / "data" / "releases"
 ASSET_DIR = ROOT / "docs" / "assets"
 
 
 COMBINED_PREFIX = "docfailbench_v0_1_combined_public_rc"
+HOSTED_PREFIX = "docfailbench_v0_1_hosted_safe_rc"
+HOSTED_PAGES = ROOT / "runs" / "hosted_safe_rc" / "source_pages"
 
 
 def _load_json(path: Path) -> Any:
@@ -32,15 +41,22 @@ def _write_jsonl_cases(cases_path: Path, out_path: Path) -> None:
             f.write(json.dumps(case, ensure_ascii=False, separators=(",", ":")) + "\n")
 
 
-def _write_readme() -> None:
+def _write_readme(out: Path) -> None:
     leaderboard = _load_json(RELEASE_DIR / f"{COMBINED_PREFIX}_leaderboard.json")
     cases_payload = _load_json(RELEASE_DIR / f"{COMBINED_PREFIX}_cases.json")
     manifest = _load_json(RELEASE_DIR / f"{COMBINED_PREFIX}_manifest.json")
     source_manifest = _load_json(RELEASE_DIR / f"{COMBINED_PREFIX}_source_manifest.json")
+    hosted_cases = _load_json(RELEASE_DIR / f"{HOSTED_PREFIX}_cases.json")
+    hosted_manifest = _load_json(RELEASE_DIR / f"{HOSTED_PREFIX}_source_manifest.json")
 
     case_count = len(cases_payload["cases"])
     assertion_count = sum(len(c.get("assertions", [])) for c in cases_payload["cases"])
     profiles = cases_payload.get("profiles", {})
+    hosted_case_count = len(hosted_cases["cases"])
+    hosted_assertion_count = sum(
+        len(case.get("assertions", [])) for case in hosted_cases["cases"]
+    )
+    hosted_page_count = len(hosted_manifest["pages"])
     top_rows = sorted(leaderboard["parsers"], key=lambda p: p["score"], reverse=True)
 
     leaderboard_md = "\n".join(
@@ -103,6 +119,10 @@ configs:
   data_files:
   - split: test
     path: data/combined_public_rc/cases.jsonl
+- config_name: hosted_safe_rc
+  data_files:
+  - split: test
+    path: data/hosted_safe_rc/cases.jsonl
 ---
 
 # DocFailBench
@@ -127,7 +147,17 @@ This Hugging Face dataset repo is the community-facing data release mirror for t
 - JSONL case mirror for Dataset Viewer
 - frozen JSON artifacts, source manifest, leaderboard, and baseline predictions
 
-The source PDFs themselves are not bundled here. Use the source manifest for original URLs, checksums, license notes, and attribution.
+The parent source PDFs remain unbundled. Use the combined source manifest for original URLs, checksums, license notes, and attribution.
+
+## Hosted-Safe Auxiliary Target
+
+`DocFailBench-v0.1-hosted-safe-rc` provides identical, hash-pinned page bytes to hosted parsers:
+
+- {hosted_case_count} hosted-safe cases
+- {hosted_assertion_count} hosted-safe assertions
+- {hosted_page_count} canonical one-page PDFs
+
+Only the canonical hosted-safe pages are redistributed under `source_pages/hosted_safe_v0_1/`; this does not bundle the parent documents or change the original 116-case release.
 
 ## Profiles
 
@@ -147,6 +177,10 @@ The source PDFs themselves are not bundled here. Use the source manifest for ori
 - `releases/{COMBINED_PREFIX}_manifest.json` - checksums and artifact metadata.
 - `releases/{COMBINED_PREFIX}_predictions_*.json` - cached baseline predictions.
 - `releases/{COMBINED_PREFIX}_eval_*.json` - cached baseline eval results.
+- `data/hosted_safe_rc/cases.jsonl` - Dataset Viewer rows for the hosted-safe target.
+- `releases/{HOSTED_PREFIX}_manifest.json` - hosted-safe checksums and metadata.
+- `releases/{HOSTED_PREFIX}_source_manifest.json` - hosted-safe page hashes, licenses, and attribution.
+- `source_pages/hosted_safe_v0_1/*.pdf` - 105 canonical one-page hosted-safe inputs.
 
 ## Source And License Notes
 
@@ -188,25 +222,52 @@ If you use DocFailBench, cite the GitHub release and include the exact frozen ta
 }}
 ```
 """
-    (OUT / "README.md").write_text(text, encoding="utf-8", newline="\n")
+    (out / "README.md").write_text(text, encoding="utf-8", newline="\n")
 
 
-def main() -> int:
-    if OUT.exists():
-        shutil.rmtree(OUT)
-    OUT.mkdir(parents=True)
+def _validate_hosted_pages(hosted_pages_dir: Path) -> dict[str, Any]:
+    manifest = _load_json(RELEASE_DIR / f"{HOSTED_PREFIX}_source_manifest.json")
+    rows = manifest["pages"]
+    expected_names = {f"{row['sha256']}.pdf" for row in rows}
+    actual_names = {path.name for path in hosted_pages_dir.glob("*.pdf")}
+    if actual_names != expected_names:
+        raise ValueError("Hosted-safe page directory has missing or extra PDFs")
+    for row in rows:
+        verify_page_file(hosted_pages_dir / f"{row['sha256']}.pdf", row)
+    return manifest
 
-    _write_readme()
 
-    _copy(RELEASE_DIR / f"{COMBINED_PREFIX}_cases.json", OUT / "releases" / f"{COMBINED_PREFIX}_cases.json")
+def build(out: Path = OUT, hosted_pages_dir: Path = HOSTED_PAGES) -> Path:
+    hosted_manifest = _validate_hosted_pages(hosted_pages_dir)
+    if out.exists():
+        shutil.rmtree(out)
+    out.mkdir(parents=True)
+
+    _write_readme(out)
+
+    _copy(RELEASE_DIR / f"{COMBINED_PREFIX}_cases.json", out / "releases" / f"{COMBINED_PREFIX}_cases.json")
     _write_jsonl_cases(
         RELEASE_DIR / f"{COMBINED_PREFIX}_cases.json",
-        OUT / "data" / "combined_public_rc" / "cases.jsonl",
+        out / "data" / "combined_public_rc" / "cases.jsonl",
+    )
+    _write_jsonl_cases(
+        RELEASE_DIR / f"{HOSTED_PREFIX}_cases.json",
+        out / "data" / "hosted_safe_rc" / "cases.jsonl",
     )
 
     for path in sorted(RELEASE_DIR.glob(f"{COMBINED_PREFIX}_*")):
         if path.is_file():
-            _copy(path, OUT / "releases" / path.name)
+            _copy(path, out / "releases" / path.name)
+    for path in sorted(RELEASE_DIR.glob(f"{HOSTED_PREFIX}_*")):
+        if path.is_file():
+            _copy(path, out / "releases" / path.name)
+
+    for row in hosted_manifest["pages"]:
+        name = f"{row['sha256']}.pdf"
+        _copy(
+            hosted_pages_dir / name,
+            out / "source_pages" / "hosted_safe_v0_1" / name,
+        )
 
     for name in [
         "community_summary.svg",
@@ -216,7 +277,7 @@ def main() -> int:
         "review_formula_grounding.png",
         "submission_badges.svg",
     ]:
-        _copy(ASSET_DIR / name, OUT / "assets" / name)
+        _copy(ASSET_DIR / name, out / "assets" / name)
 
     metadata = {
         "name": "DocFailBench",
@@ -225,12 +286,34 @@ def main() -> int:
         "case_file": f"releases/{COMBINED_PREFIX}_cases.json",
         "viewer_file": "data/combined_public_rc/cases.jsonl",
     }
-    (OUT / "dataset_infos.json").write_text(
-        json.dumps({"combined_public_rc": metadata}, indent=2, ensure_ascii=False) + "\n",
+    hosted_metadata = {
+        "name": "DocFailBench Hosted-Safe RC",
+        "release": "DocFailBench-v0.1-hosted-safe-rc",
+        "github": "https://github.com/Travor278/DocFailBench",
+        "case_file": f"releases/{HOSTED_PREFIX}_cases.json",
+        "viewer_file": "data/hosted_safe_rc/cases.jsonl",
+        "source_manifest": f"releases/{HOSTED_PREFIX}_source_manifest.json",
+        "source_pages": "source_pages/hosted_safe_v0_1/",
+    }
+    (out / "dataset_infos.json").write_text(
+        json.dumps(
+            {
+                "combined_public_rc": metadata,
+                "hosted_safe_rc": hosted_metadata,
+            },
+            indent=2,
+            ensure_ascii=False,
+        )
+        + "\n",
         encoding="utf-8",
         newline="\n",
     )
-    print(f"Wrote HF dataset repo package to {OUT}")
+    return out
+
+
+def main() -> int:
+    out = build()
+    print(f"Wrote HF dataset repo package to {out}")
     return 0
 
 
