@@ -3,9 +3,12 @@ from __future__ import annotations
 import copy
 import hashlib
 import json
+import shutil
 from collections.abc import Mapping
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
+from urllib.parse import urlparse
+from urllib.request import urlopen
 
 
 PARENT_RELEASE_NAME = "DocFailBench-v0.1-combined-public-rc"
@@ -293,6 +296,12 @@ def validate_source_manifest(
             raise ValueError(f"Source page metadata is invalid: {page_sha256}")
         if row.get("hf_path") != f"{HF_PAGE_PREFIX}/{page_sha256}.pdf":
             raise ValueError(f"Source page path is not content-addressed: {page_sha256}")
+        expected_hf_url = (
+            f"https://huggingface.co/datasets/{HF_REPO_ID}/resolve/main/"
+            f"{HF_PAGE_PREFIX}/{page_sha256}.pdf"
+        )
+        if row.get("hf_url") != expected_hf_url:
+            raise ValueError(f"Source page must use its public Hugging Face URL: {page_sha256}")
         case_ids = row.get("case_ids")
         if not isinstance(case_ids, list) or not case_ids:
             raise ValueError(f"Source page has no cases: {page_sha256}")
@@ -305,3 +314,151 @@ def validate_source_manifest(
         covered_case_ids
     ) != set(expected_case_ids):
         raise ValueError("Source manifest case coverage or order is incomplete")
+
+
+def load_json_location(location: str) -> dict[str, Any]:
+    local_path = Path(location)
+    if local_path.is_file():
+        data = local_path.read_bytes()
+    else:
+        parsed = urlparse(location)
+        if parsed.scheme != "https":
+            raise ValueError("Only local paths and HTTPS URLs are supported")
+        with urlopen(location, timeout=60) as response:
+            data = response.read()
+    payload = json.loads(data.decode("utf-8"))
+    if not isinstance(payload, dict):
+        raise ValueError("JSON location must contain an object")
+    return payload
+
+
+def verify_page_file(path: Path, row: Mapping[str, Any]) -> None:
+    if not path.is_file():
+        raise FileNotFoundError(f"Hosted-safe page is missing: {path}")
+    data = path.read_bytes()
+    if len(data) != row.get("size_bytes"):
+        raise ValueError(f"Hosted-safe page size mismatch: {path.name}")
+    if sha256_bytes(data) != row.get("sha256"):
+        raise ValueError(f"Hosted-safe page SHA-256 mismatch: {path.name}")
+
+    try:
+        import fitz
+    except ImportError as exc:
+        raise RuntimeError(
+            "Install docfailbench[hosted-safe] to verify hosted-safe pages"
+        ) from exc
+    try:
+        with fitz.open(path) as document:
+            if document.page_count != 1:
+                raise ValueError(
+                    f"Hosted-safe PDF must have exactly one page: {path.name}"
+                )
+    except ValueError:
+        raise
+    except Exception as exc:
+        raise ValueError(f"Hosted-safe page is not a valid PDF: {path.name}") from exc
+
+
+def ensure_verified_cached_page(
+    path: Path,
+    row: Mapping[str, Any],
+    fetch_bytes: Callable[[str], bytes],
+) -> None:
+    if path.exists():
+        try:
+            verify_page_file(path, row)
+            return
+        except (FileNotFoundError, ValueError):
+            pass
+
+    hf_url = row.get("hf_url")
+    if not isinstance(hf_url, str) or urlparse(hf_url).scheme != "https":
+        raise ValueError("Hosted-safe page download URL must use HTTPS")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_name(f".{path.name}.download")
+    try:
+        temporary.write_bytes(fetch_bytes(hf_url))
+        verify_page_file(temporary, row)
+        temporary.replace(path)
+    finally:
+        temporary.unlink(missing_ok=True)
+
+
+def materialize_cases(
+    cases_payload: Mapping[str, Any],
+    source_manifest: Mapping[str, Any],
+    local_pages_dir: Path,
+) -> dict[str, Any]:
+    materialized = copy.deepcopy(dict(cases_payload))
+    mapping = source_manifest["case_to_sha256"]
+    rows_by_sha256 = {row["sha256"]: row for row in source_manifest["pages"]}
+    resolved_pages = local_pages_dir.resolve()
+
+    for case in materialized["cases"]:
+        case_id = case["case_id"]
+        if case_id not in mapping:
+            raise ValueError(f"Source manifest has no page for case: {case_id}")
+        page_sha256 = mapping[case_id]
+        row = rows_by_sha256.get(page_sha256)
+        if row is None:
+            raise ValueError(f"Source manifest references an unknown page: {page_sha256}")
+        original_document = copy.deepcopy(case["document"])
+        document = copy.deepcopy(original_document)
+        document.update(
+            {
+                "path": str((resolved_pages / f"{page_sha256}.pdf").resolve()),
+                "page": 1,
+                "hosted_safe_sha256": page_sha256,
+                "hosted_safe_hf_path": row["hf_path"],
+                "original": original_document,
+            }
+        )
+        case["document"] = document
+    return materialized
+
+
+def prepare_hosted_safe_inputs(
+    cases_payload: Mapping[str, Any],
+    source_manifest: Mapping[str, Any],
+    cache_dir: Path,
+    output_dir: Path,
+    fetch_bytes: Callable[[str], bytes],
+) -> Path:
+    cases = cases_payload.get("cases")
+    if not isinstance(cases, list):
+        raise ValueError("Cases payload must contain a cases list")
+    expected_case_ids = [case["case_id"] for case in cases]
+    validate_source_manifest(
+        source_manifest,
+        expected_case_ids,
+        expected_cases_sha256=canonical_json_sha256(cases_payload),
+    )
+    if output_dir.exists():
+        raise FileExistsError(f"Output directory already exists: {output_dir}")
+
+    staging = output_dir.with_name(f".{output_dir.name}.staging")
+    if staging.exists():
+        shutil.rmtree(staging)
+    try:
+        staging_pages = staging / "source_pages"
+        staging_pages.mkdir(parents=True)
+        for row in source_manifest["pages"]:
+            cached = cache_dir / f"{row['sha256']}.pdf"
+            ensure_verified_cached_page(cached, row, fetch_bytes)
+            staged = staging_pages / cached.name
+            shutil.copy2(cached, staged)
+            verify_page_file(staged, row)
+
+        materialized = materialize_cases(
+            cases_payload,
+            source_manifest,
+            output_dir / "source_pages",
+        )
+        write_json_lf(staging / "cases.json", materialized)
+        output_dir.parent.mkdir(parents=True, exist_ok=True)
+        staging.replace(output_dir)
+    except BaseException:
+        if staging.exists():
+            shutil.rmtree(staging)
+        raise
+    return output_dir / "cases.json"

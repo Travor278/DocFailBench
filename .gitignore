@@ -28,6 +28,8 @@ env/
 
 # Runtime outputs. Frozen public release artifacts live under data/releases/.
 runs/
+runs/hosted_safe_rc/
+runs/hosted_safe_inputs/
 data/raw_outputs/
 data/private/
 tmp/

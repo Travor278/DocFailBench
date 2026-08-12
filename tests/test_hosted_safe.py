@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import copy
 import json
+import subprocess
+import sys
 from pathlib import Path
 
 import pytest
@@ -17,9 +19,14 @@ from docfailbench.hosted_safe import (
     canonical_json_sha256,
     canonical_lf_sha256,
     derive_hosted_safe_cases,
+    ensure_verified_cached_page,
     extract_pdf_page,
+    load_json_location,
+    materialize_cases,
+    prepare_hosted_safe_inputs,
     sha256_bytes,
     validate_source_manifest,
+    verify_page_file,
     write_json_lf,
 )
 
@@ -109,14 +116,18 @@ def test_write_json_lf_uses_utf8_lf_and_trailing_newline(tmp_path: Path) -> None
     )
 
 
-def _write_two_page_pdf(path: Path) -> None:
+def _write_pdf(path: Path, page_count: int) -> None:
     import fitz
 
     document = fitz.open()
-    document.new_page().insert_text((72, 72), "first page")
-    document.new_page().insert_text((72, 72), "second page")
+    for page_number in range(1, page_count + 1):
+        document.new_page().insert_text((72, 72), f"page {page_number}")
     document.save(path, no_new_id=True)
     document.close()
+
+
+def _write_two_page_pdf(path: Path) -> None:
+    _write_pdf(path, 2)
 
 
 def _small_cases(source: Path, *, license_name: str = "CC0") -> dict:
@@ -250,6 +261,11 @@ def test_source_manifest_rejects_incomplete_or_wrong_case_identity(tmp_path: Pat
             expected_cases_sha256="0" * 64,
         )
 
+    signed_url = copy.deepcopy(manifest)
+    signed_url["pages"][0]["hf_url"] += "?token=secret"
+    with pytest.raises(ValueError, match="public Hugging Face URL"):
+        validate_source_manifest(signed_url, ["a", "b", "c"], expected_page_count=2)
+
 
 def test_frozen_subset_has_105_unique_pages_and_two_shared_pairs() -> None:
     parent = json.loads(PARENT.read_text(encoding="utf-8"))
@@ -264,3 +280,198 @@ def test_frozen_subset_has_105_unique_pages_and_two_shared_pairs() -> None:
     assert {key: value for key, value in by_page.items() if len(value) > 1} == (
         EXPECTED_SHARED_PAGES
     )
+
+
+def _preparation_fixture(tmp_path: Path) -> tuple[dict, dict, bytes]:
+    source = tmp_path / "seven-pages.pdf"
+    _write_pdf(source, 7)
+    cases = {
+        "release_name": HOSTED_SAFE_RELEASE_NAME,
+        "cases": [
+            {
+                "case_id": "case-a",
+                "document": {
+                    "path": str(source),
+                    "page": 7,
+                    "license": "CC0",
+                    "source_url": "https://example.test/source.pdf",
+                },
+                "assertions": [{"id": "a1", "type": "text_presence", "params": {"text": "page 7"}}],
+            },
+            {
+                "case_id": "case-b",
+                "document": {
+                    "path": str(source),
+                    "page": 7,
+                    "license": "CC0",
+                    "source_url": "https://example.test/source.pdf",
+                },
+                "assertions": [{"id": "b1", "type": "text_presence", "params": {"text": "page 7"}}],
+            },
+        ],
+    }
+    generated = tmp_path / "generated"
+    manifest = build_source_pages(cases, root=Path.cwd(), output_dir=generated)
+    page_sha256 = manifest["pages"][0]["sha256"]
+    return cases, manifest, (generated / f"{page_sha256}.pdf").read_bytes()
+
+
+def _manifest_for_download_bytes(manifest: dict, data: bytes) -> dict:
+    changed = copy.deepcopy(manifest)
+    digest = sha256_bytes(data)
+    row = changed["pages"][0]
+    row["sha256"] = digest
+    row["size_bytes"] = len(data)
+    row["hf_path"] = f"{HF_PAGE_PREFIX}/{digest}.pdf"
+    row["hf_url"] = (
+        "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/"
+        f"{HF_PAGE_PREFIX}/{digest}.pdf"
+    )
+    for case_id in changed["case_to_sha256"]:
+        changed["case_to_sha256"][case_id] = digest
+    return changed
+
+
+def test_prepare_hosted_safe_inputs_materializes_verified_page_one_cases(
+    tmp_path: Path,
+) -> None:
+    cases, manifest, pdf_bytes = _preparation_fixture(tmp_path)
+
+    materialized = prepare_hosted_safe_inputs(
+        cases,
+        manifest,
+        cache_dir=tmp_path / "cache",
+        output_dir=tmp_path / "prepared",
+        fetch_bytes=lambda url: pdf_bytes,
+    )
+
+    payload = json.loads(materialized.read_text(encoding="utf-8"))
+    assert [case["case_id"] for case in payload["cases"]] == ["case-a", "case-b"]
+    assert [case["document"]["page"] for case in payload["cases"]] == [1, 1]
+    assert all(Path(case["document"]["path"]).is_file() for case in payload["cases"])
+    assert payload["cases"][0]["document"]["original"]["page"] == 7
+    assert payload["cases"][0]["document"]["license"] == "CC0"
+    assert payload["cases"][0]["assertions"] == cases["cases"][0]["assertions"]
+    assert payload["cases"][0]["document"]["hosted_safe_sha256"] == (
+        manifest["pages"][0]["sha256"]
+    )
+
+
+@pytest.mark.parametrize(
+    "failure_kind",
+    ["missing_mapping", "wrong_size", "wrong_sha256", "malformed_pdf", "two_page_pdf"],
+)
+def test_prepare_hosted_safe_inputs_is_atomic_on_invalid_bundle(
+    tmp_path: Path,
+    failure_kind: str,
+) -> None:
+    cases, manifest, pdf_bytes = _preparation_fixture(tmp_path)
+    download_bytes = pdf_bytes
+    if failure_kind == "missing_mapping":
+        del manifest["case_to_sha256"]["case-b"]
+    elif failure_kind == "wrong_size":
+        download_bytes = pdf_bytes + b"x"
+    elif failure_kind == "wrong_sha256":
+        download_bytes = bytes([pdf_bytes[0] ^ 1]) + pdf_bytes[1:]
+    elif failure_kind == "malformed_pdf":
+        download_bytes = b"%PDF-1.4\nnot a valid PDF\n%%EOF"
+        manifest = _manifest_for_download_bytes(manifest, download_bytes)
+    elif failure_kind == "two_page_pdf":
+        two_page = tmp_path / "two-page-download.pdf"
+        _write_pdf(two_page, 2)
+        download_bytes = two_page.read_bytes()
+        manifest = _manifest_for_download_bytes(manifest, download_bytes)
+
+    with pytest.raises((ValueError, FileNotFoundError)):
+        prepare_hosted_safe_inputs(
+            cases,
+            manifest,
+            cache_dir=tmp_path / "cache",
+            output_dir=tmp_path / "prepared",
+            fetch_bytes=lambda url: download_bytes,
+        )
+
+    assert not (tmp_path / "prepared").exists()
+    assert not (tmp_path / ".prepared.staging").exists()
+
+
+def test_corrupt_cache_is_replaced_before_materialization(tmp_path: Path) -> None:
+    cases, manifest, pdf_bytes = _preparation_fixture(tmp_path)
+    page_sha256 = manifest["pages"][0]["sha256"]
+    cached = tmp_path / "cache" / f"{page_sha256}.pdf"
+    cached.parent.mkdir()
+    cached.write_bytes(b"corrupt cached bytes")
+    fetch_count = 0
+
+    def fetch_bytes(url: str) -> bytes:
+        nonlocal fetch_count
+        fetch_count += 1
+        return pdf_bytes
+
+    prepare_hosted_safe_inputs(
+        cases,
+        manifest,
+        cache_dir=tmp_path / "cache",
+        output_dir=tmp_path / "prepared",
+        fetch_bytes=fetch_bytes,
+    )
+
+    assert fetch_count == 1
+    assert cached.read_bytes() == pdf_bytes
+    verify_page_file(cached, manifest["pages"][0])
+
+
+def test_materialize_cases_does_not_mutate_input(tmp_path: Path) -> None:
+    cases, manifest, _ = _preparation_fixture(tmp_path)
+    original = copy.deepcopy(cases)
+    local_pages = tmp_path / "final" / "source_pages"
+
+    materialized = materialize_cases(cases, manifest, local_pages)
+
+    assert cases == original
+    assert materialized["cases"][0]["document"]["page"] == 1
+    assert Path(materialized["cases"][0]["document"]["path"]).is_absolute()
+
+
+def test_load_json_location_reads_local_json_and_rejects_unsafe_scheme(
+    tmp_path: Path,
+) -> None:
+    payload_path = tmp_path / "payload.json"
+    write_json_lf(payload_path, {"value": 7})
+
+    assert load_json_location(str(payload_path)) == {"value": 7}
+    with pytest.raises(ValueError, match="Only local paths and HTTPS URLs"):
+        load_json_location("http://example.test/payload.json")
+
+
+def test_prepare_hosted_safe_inputs_cli_uses_verified_cache(tmp_path: Path) -> None:
+    cases, manifest, pdf_bytes = _preparation_fixture(tmp_path)
+    cases_path = tmp_path / "cases.json"
+    manifest_path = tmp_path / "manifest.json"
+    cache_dir = tmp_path / "cache"
+    cache_dir.mkdir()
+    page_sha256 = manifest["pages"][0]["sha256"]
+    (cache_dir / f"{page_sha256}.pdf").write_bytes(pdf_bytes)
+    write_json_lf(cases_path, cases)
+    write_json_lf(manifest_path, manifest)
+
+    result = subprocess.run(
+        [
+            sys.executable,
+            "scripts/prepare_hosted_safe_inputs.py",
+            "--cases",
+            str(cases_path),
+            "--manifest",
+            str(manifest_path),
+            "--cache-dir",
+            str(cache_dir),
+            "--out-dir",
+            str(tmp_path / "prepared"),
+        ],
+        text=True,
+        capture_output=True,
+        timeout=30,
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert (tmp_path / "prepared" / "cases.json").is_file()
