@@ -1,0 +1,82 @@
+{
+  "release_name": "DocFailBench-v0.1-hosted-safe-rc",
+  "status": "release_candidate_frozen_hosted_safe",
+  "parent": {
+    "release_name": "DocFailBench-v0.1-combined-public-rc",
+    "git_commit": "09eaed881919f25158a7498203a24618cc6a2da9",
+    "cases_sha256_canonical_lf": "b84a599b215f0117a64463c7fa950af63a7438599cd168e2639b42a77302cb81"
+  },
+  "counts": {
+    "cases": 107,
+    "assertions": 821,
+    "source_pages": 105,
+    "parsers": 7
+  },
+  "source_manifest": {
+    "path": "data/releases/docfailbench_v0_1_hosted_safe_rc_source_manifest.json",
+    "sha256": "580daa81b5e2ef90d6bff7e12ddf114ffa9114c99acafeff9d8d5260ace2ac0e",
+    "total_bytes": 18159000
+  },
+  "profile": {
+    "path": "data/releases/docfailbench_v0_1_hosted_safe_rc_profile.json",
+    "sha256": "83a7cf4d8029057681af22631c032266940f8d6e311561c3f2baf429bce67909"
+  },
+  "baselines": {
+    "qwen": {
+      "passed": 529,
+      "failed": 292,
+      "score": 0.6443361753958587
+    },
+    "plain": {
+      "passed": 550,
+      "failed": 271,
+      "score": 0.6699147381242387
+    },
+    "paddleocr": {
+      "passed": 314,
+      "failed": 507,
+      "score": 0.38246041412911086
+    },
+    "mineru": {
+      "passed": 480,
+      "failed": 341,
+      "score": 0.584652862362972
+    },
+    "marker": {
+      "passed": 579,
+      "failed": 242,
+      "score": 0.705237515225335
+    },
+    "docling": {
+      "passed": 565,
+      "failed": 256,
+      "score": 0.6881851400730816
+    },
+    "bbox": {
+      "passed": 572,
+      "failed": 249,
+      "score": 0.6967113276492083
+    }
+  },
+  "files": {
+    "data/releases/docfailbench_v0_1_hosted_safe_rc_cases.json": "0419ef2969c85443c13c58a4fa56219e01a6efcb4c997eb0446b8b46965c26cf",
+    "data/releases/docfailbench_v0_1_hosted_safe_rc_eval_bbox.json": "f024cc538db8a2dd3bcd9d8087ddfcbbe1d45425d41646391e2403943cf52ec6",
+    "data/releases/docfailbench_v0_1_hosted_safe_rc_eval_docling.json": "3ed638925d56ff741f6643210bb61faadf47ff3185d2910a400ca61f927611d2",
+    "data/releases/docfailbench_v0_1_hosted_safe_rc_eval_marker.json": "66cfbd45567774b6d67f8e5f81334312da8e792f83974748d44659132d4f28bf",
+    "data/releases/docfailbench_v0_1_hosted_safe_rc_eval_mineru.json": "282bc2612800ce7f53b02395307bc974978ebbe3070b2414258068e06a4d45df",
+    "data/releases/docfailbench_v0_1_hosted_safe_rc_eval_paddleocr.json": "e0e1ae09ae8459c9ff591d20391a6a0a511aff4b78f61fa2d8f05845a8afeae2",
+    "data/releases/docfailbench_v0_1_hosted_safe_rc_eval_plain.json": "482eabc0e9d2de04f2b108dc2553917ff042bcf69da6822bb6932a238ed1fd84",
+    "data/releases/docfailbench_v0_1_hosted_safe_rc_eval_qwen.json": "1bc1ff66b217488a03f4467faa11be090557113e9facf1b7445409ff494d6e25",
+    "data/releases/docfailbench_v0_1_hosted_safe_rc_leaderboard.json": "d878ae4ca769a427c5fe3d86fd1cb1e38c3b0d7d7eab936bc900205a5be773e4",
+    "data/releases/docfailbench_v0_1_hosted_safe_rc_leaderboard.md": "9db79b0aff7f398d0fc4b4d2acf9aef929f4f5ff48160f53ea1d90d28ae01380",
+    "data/releases/docfailbench_v0_1_hosted_safe_rc_predictions_bbox.json": "54eaa5eabd338ef05b66414f858bf649ec9f6be480d9e159b1a31126104e900d",
+    "data/releases/docfailbench_v0_1_hosted_safe_rc_predictions_docling.json": "417b615d2a12cda40ac252ebdd3995c16c7633442cfcd975c0627a2a2e532778",
+    "data/releases/docfailbench_v0_1_hosted_safe_rc_predictions_marker.json": "812f26191cc6b0e8967a290d72bc80d7de6b58d3467f4df6720d3c1caaa061eb",
+    "data/releases/docfailbench_v0_1_hosted_safe_rc_predictions_mineru.json": "698c86f193000576fe92f2b637d898d1a61223c5d8184d2342db5b4ebeccbea4",
+    "data/releases/docfailbench_v0_1_hosted_safe_rc_predictions_paddleocr.json": "03d51df25ed187c8f7b441ceacbb634bd4b3d31f992e5785f3190419707ca80c",
+    "data/releases/docfailbench_v0_1_hosted_safe_rc_predictions_plain.json": "6e0dc6289287e6f7732be3179e7e4d430863d58c45ac51576aa5ed3ba0beedf5",
+    "data/releases/docfailbench_v0_1_hosted_safe_rc_predictions_qwen.json": "195535740d6ab0ab1ddf49ac1dc02a954dead05ebb9fb48bd2dcbe12f08a019c",
+    "data/releases/docfailbench_v0_1_hosted_safe_rc_profile.json": "83a7cf4d8029057681af22631c032266940f8d6e311561c3f2baf429bce67909",
+    "data/releases/docfailbench_v0_1_hosted_safe_rc_source_manifest.json": "580daa81b5e2ef90d6bff7e12ddf114ffa9114c99acafeff9d8d5260ace2ac0e"
+  }
+}

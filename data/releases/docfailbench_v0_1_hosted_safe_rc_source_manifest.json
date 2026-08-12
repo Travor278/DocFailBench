@@ -1,0 +1,1906 @@
+{
+  "release_name": "DocFailBench-v0.1-hosted-safe-rc",
+  "hf_repo_id": "Travor278/DocFailBench",
+  "hf_revision": "main",
+  "page_count": 105,
+  "case_count": 107,
+  "cases_sha256_canonical_json": "af81680ee64f35242217ed25653fd5826d3d81337c303f94ed17331d62452ad2",
+  "pages": [
+    {
+      "sha256": "5f107f4fa9f0460e3f59f49ba63f5e1da0867b8a13ae780b040518fe617adfa4",
+      "size_bytes": 30269,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/5f107f4fa9f0460e3f59f49ba63f5e1da0867b8a13ae780b040518fe617adfa4.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/5f107f4fa9f0460e3f59f49ba63f5e1da0867b8a13ae780b040518fe617adfa4.pdf",
+      "case_ids": [
+        "contract_service_001_p1"
+      ],
+      "original_path": "data/source_pdfs/placeholder/contract_service_001.pdf",
+      "original_page": 1,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "6e39241f1b20bee60be9c40b866d3bb7f6136419ee68feb2c0a78aa178288486",
+      "size_bytes": 30516,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/6e39241f1b20bee60be9c40b866d3bb7f6136419ee68feb2c0a78aa178288486.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/6e39241f1b20bee60be9c40b866d3bb7f6136419ee68feb2c0a78aa178288486.pdf",
+      "case_ids": [
+        "contract_service_001_p2"
+      ],
+      "original_path": "data/source_pdfs/placeholder/contract_service_001.pdf",
+      "original_page": 2,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "6c8442ca4b2d9f5e03945fdc8aabac7e59832ce3e355806f1b68c0e6fefe5df9",
+      "size_bytes": 54778,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/6c8442ca4b2d9f5e03945fdc8aabac7e59832ce3e355806f1b68c0e6fefe5df9.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/6c8442ca4b2d9f5e03945fdc8aabac7e59832ce3e355806f1b68c0e6fefe5df9.pdf",
+      "case_ids": [
+        "contract_service_001_p3"
+      ],
+      "original_path": "data/source_pdfs/placeholder/contract_service_001.pdf",
+      "original_page": 3,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "b4d7221b4f917c46dbb5fe111b645978b10a55abd00c8ff5401e23e416be6032",
+      "size_bytes": 54455,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/b4d7221b4f917c46dbb5fe111b645978b10a55abd00c8ff5401e23e416be6032.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/b4d7221b4f917c46dbb5fe111b645978b10a55abd00c8ff5401e23e416be6032.pdf",
+      "case_ids": [
+        "contract_service_001_p4"
+      ],
+      "original_path": "data/source_pdfs/placeholder/contract_service_001.pdf",
+      "original_page": 4,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "4d6c08723e10f3d460a087d580a63a7682d17ce8e8a889650133e8981b300cc3",
+      "size_bytes": 54434,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/4d6c08723e10f3d460a087d580a63a7682d17ce8e8a889650133e8981b300cc3.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/4d6c08723e10f3d460a087d580a63a7682d17ce8e8a889650133e8981b300cc3.pdf",
+      "case_ids": [
+        "contract_service_001_p5"
+      ],
+      "original_path": "data/source_pdfs/placeholder/contract_service_001.pdf",
+      "original_page": 5,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "dd981d78a6ee5455dec1d6926b80cb098d5a12a140172db42c2797f75fe87697",
+      "size_bytes": 54530,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/dd981d78a6ee5455dec1d6926b80cb098d5a12a140172db42c2797f75fe87697.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/dd981d78a6ee5455dec1d6926b80cb098d5a12a140172db42c2797f75fe87697.pdf",
+      "case_ids": [
+        "contract_service_001_p6"
+      ],
+      "original_path": "data/source_pdfs/placeholder/contract_service_001.pdf",
+      "original_page": 6,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "47bc5974577f7ee7f7f79d3aba5c6b9d182f179e806c74077aa68c78ea02ef07",
+      "size_bytes": 54380,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/47bc5974577f7ee7f7f79d3aba5c6b9d182f179e806c74077aa68c78ea02ef07.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/47bc5974577f7ee7f7f79d3aba5c6b9d182f179e806c74077aa68c78ea02ef07.pdf",
+      "case_ids": [
+        "contract_service_001_p7"
+      ],
+      "original_path": "data/source_pdfs/placeholder/contract_service_001.pdf",
+      "original_page": 7,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "d402dfca1b722da03e172ce96194123fdee5af40cc3f69ca6887c6e9c3942035",
+      "size_bytes": 54515,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/d402dfca1b722da03e172ce96194123fdee5af40cc3f69ca6887c6e9c3942035.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/d402dfca1b722da03e172ce96194123fdee5af40cc3f69ca6887c6e9c3942035.pdf",
+      "case_ids": [
+        "contract_service_001_p8"
+      ],
+      "original_path": "data/source_pdfs/placeholder/contract_service_001.pdf",
+      "original_page": 8,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "3d8f6f9980a754eb3ee3b57c415bf50a61fd500e38faa2ab1aa9adcdab414e4e",
+      "size_bytes": 30992,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/3d8f6f9980a754eb3ee3b57c415bf50a61fd500e38faa2ab1aa9adcdab414e4e.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/3d8f6f9980a754eb3ee3b57c415bf50a61fd500e38faa2ab1aa9adcdab414e4e.pdf",
+      "case_ids": [
+        "exam_physics_final_p2"
+      ],
+      "original_path": "data/source_pdfs/placeholder/exam_physics_final.pdf",
+      "original_page": 2,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "7455777bb2c158407650f2c96c48827e5f9a44c26ac7990f3d81f8872c36ff78",
+      "size_bytes": 36960,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/7455777bb2c158407650f2c96c48827e5f9a44c26ac7990f3d81f8872c36ff78.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/7455777bb2c158407650f2c96c48827e5f9a44c26ac7990f3d81f8872c36ff78.pdf",
+      "case_ids": [
+        "exam_physics_final_p3"
+      ],
+      "original_path": "data/source_pdfs/placeholder/exam_physics_final.pdf",
+      "original_page": 3,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "b15cd766b1089d07591d91026eaf8b19ac9d2c9e326bc656667067e6ae7ad92f",
+      "size_bytes": 36929,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/b15cd766b1089d07591d91026eaf8b19ac9d2c9e326bc656667067e6ae7ad92f.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/b15cd766b1089d07591d91026eaf8b19ac9d2c9e326bc656667067e6ae7ad92f.pdf",
+      "case_ids": [
+        "exam_physics_final_p4"
+      ],
+      "original_path": "data/source_pdfs/placeholder/exam_physics_final.pdf",
+      "original_page": 4,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "20674aa5079882548a60028011cfdb3e35bc3dd570f76e18ada38dadea938a26",
+      "size_bytes": 30758,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/20674aa5079882548a60028011cfdb3e35bc3dd570f76e18ada38dadea938a26.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/20674aa5079882548a60028011cfdb3e35bc3dd570f76e18ada38dadea938a26.pdf",
+      "case_ids": [
+        "exam_physics_final_p1"
+      ],
+      "original_path": "data/source_pdfs/placeholder/exam_physics_final.pdf",
+      "original_page": 1,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "97ce4fbf33ad91f43948b5ce1393f1efffec8e794a34ddabe6ae18078439ae5c",
+      "size_bytes": 53066,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/97ce4fbf33ad91f43948b5ce1393f1efffec8e794a34ddabe6ae18078439ae5c.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/97ce4fbf33ad91f43948b5ce1393f1efffec8e794a34ddabe6ae18078439ae5c.pdf",
+      "case_ids": [
+        "finance_annual2024_p4"
+      ],
+      "original_path": "data/source_pdfs/placeholder/finance_annual_report_2024.pdf",
+      "original_page": 4,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "982656ca38f67336cd00775a36b57a2385a82efdbb196940146d6c89e9a92247",
+      "size_bytes": 53700,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/982656ca38f67336cd00775a36b57a2385a82efdbb196940146d6c89e9a92247.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/982656ca38f67336cd00775a36b57a2385a82efdbb196940146d6c89e9a92247.pdf",
+      "case_ids": [
+        "finance_annual2024_p6"
+      ],
+      "original_path": "data/source_pdfs/placeholder/finance_annual_report_2024.pdf",
+      "original_page": 6,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "e685db8134fdf03a2cb1f0f2be6a60509725dc80da7d1c893791e2b8526d8f49",
+      "size_bytes": 52885,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/e685db8134fdf03a2cb1f0f2be6a60509725dc80da7d1c893791e2b8526d8f49.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/e685db8134fdf03a2cb1f0f2be6a60509725dc80da7d1c893791e2b8526d8f49.pdf",
+      "case_ids": [
+        "finance_annual2024_p8"
+      ],
+      "original_path": "data/source_pdfs/placeholder/finance_annual_report_2024.pdf",
+      "original_page": 8,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "8eb9a6cc79518e2580f0211e32853a8c6e5534f2ccb6e72e421617506d537dca",
+      "size_bytes": 53351,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/8eb9a6cc79518e2580f0211e32853a8c6e5534f2ccb6e72e421617506d537dca.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/8eb9a6cc79518e2580f0211e32853a8c6e5534f2ccb6e72e421617506d537dca.pdf",
+      "case_ids": [
+        "finance_annual2024_p9"
+      ],
+      "original_path": "data/source_pdfs/placeholder/finance_annual_report_2024.pdf",
+      "original_page": 9,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "5541ddf953850b2b38100013727af16126684d1e6237df9ca7039f259c5a947d",
+      "size_bytes": 31650,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/5541ddf953850b2b38100013727af16126684d1e6237df9ca7039f259c5a947d.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/5541ddf953850b2b38100013727af16126684d1e6237df9ca7039f259c5a947d.pdf",
+      "case_ids": [
+        "invoice_vat_001_p1"
+      ],
+      "original_path": "data/source_pdfs/placeholder/invoice_vat_001.pdf",
+      "original_page": 1,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "b7ba177e76788256bbccbeb91476f4353f6a4f2560d2ebdc61861ed23b71dc05",
+      "size_bytes": 30965,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/b7ba177e76788256bbccbeb91476f4353f6a4f2560d2ebdc61861ed23b71dc05.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/b7ba177e76788256bbccbeb91476f4353f6a4f2560d2ebdc61861ed23b71dc05.pdf",
+      "case_ids": [
+        "invoice_vat_001_p2"
+      ],
+      "original_path": "data/source_pdfs/placeholder/invoice_vat_001.pdf",
+      "original_page": 2,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "7be2c22baf9f16017c4dd348ce27d6a41e0d97c822b7cf5f09ed8fbc5a42e649",
+      "size_bytes": 30971,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/7be2c22baf9f16017c4dd348ce27d6a41e0d97c822b7cf5f09ed8fbc5a42e649.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/7be2c22baf9f16017c4dd348ce27d6a41e0d97c822b7cf5f09ed8fbc5a42e649.pdf",
+      "case_ids": [
+        "invoice_vat_001_p3"
+      ],
+      "original_path": "data/source_pdfs/placeholder/invoice_vat_001.pdf",
+      "original_page": 3,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "dd6c0d82ddcc1399133289b5d73fc7559df3f465c905186095d44ea705e7c709",
+      "size_bytes": 38069,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/dd6c0d82ddcc1399133289b5d73fc7559df3f465c905186095d44ea705e7c709.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/dd6c0d82ddcc1399133289b5d73fc7559df3f465c905186095d44ea705e7c709.pdf",
+      "case_ids": [
+        "invoice_vat_001_p4"
+      ],
+      "original_path": "data/source_pdfs/placeholder/invoice_vat_001.pdf",
+      "original_page": 4,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "ba30f09f5207d0c4110ae33fece4cbb78b0b686131d35fca3e487ebc1e18333a",
+      "size_bytes": 38155,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/ba30f09f5207d0c4110ae33fece4cbb78b0b686131d35fca3e487ebc1e18333a.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/ba30f09f5207d0c4110ae33fece4cbb78b0b686131d35fca3e487ebc1e18333a.pdf",
+      "case_ids": [
+        "invoice_vat_001_p5"
+      ],
+      "original_path": "data/source_pdfs/placeholder/invoice_vat_001.pdf",
+      "original_page": 5,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "3a53eca9f81409702219f32616415761279c32fd5897a2bb535664b149eef20c",
+      "size_bytes": 22322,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/3a53eca9f81409702219f32616415761279c32fd5897a2bb535664b149eef20c.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/3a53eca9f81409702219f32616415761279c32fd5897a2bb535664b149eef20c.pdf",
+      "case_ids": [
+        "zh_paper_double_column_001_p3"
+      ],
+      "original_path": "data/source_pdfs/placeholder/zh_paper_double_column_001.pdf",
+      "original_page": 3,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "01b2d931add0b7b55cc5e719c7c9e910a161c7620fc7fb80f490091c374291a1",
+      "size_bytes": 16843,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/01b2d931add0b7b55cc5e719c7c9e910a161c7620fc7fb80f490091c374291a1.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/01b2d931add0b7b55cc5e719c7c9e910a161c7620fc7fb80f490091c374291a1.pdf",
+      "case_ids": [
+        "cn_textbook_formula_002_p12",
+        "formula_visual_005_p12"
+      ],
+      "original_path": "data/source_pdfs/placeholder/cn_textbook_formula_002.pdf",
+      "original_page": 12,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "2cbc21ecda435b322f3a80e54803ae4a97ce4b3f1170838d5c302d31574c5e6d",
+      "size_bytes": 12083,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/2cbc21ecda435b322f3a80e54803ae4a97ce4b3f1170838d5c302d31574c5e6d.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/2cbc21ecda435b322f3a80e54803ae4a97ce4b3f1170838d5c302d31574c5e6d.pdf",
+      "case_ids": [
+        "finance_table_mixed_003_p8",
+        "html_table_grid_004_p8"
+      ],
+      "original_path": "data/source_pdfs/placeholder/finance_table_mixed_003.pdf",
+      "original_page": 8,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "d7efcbb2e66f2b2caaecb5f839476ae5cfa51a56819376f072d2238c5a82fb3e",
+      "size_bytes": 31380,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/d7efcbb2e66f2b2caaecb5f839476ae5cfa51a56819376f072d2238c5a82fb3e.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/d7efcbb2e66f2b2caaecb5f839476ae5cfa51a56819376f072d2238c5a82fb3e.pdf",
+      "case_ids": [
+        "slides_ai_course_001_p1"
+      ],
+      "original_path": "data/source_pdfs/placeholder/slides_ai_course_001.pdf",
+      "original_page": 1,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "f19e30c319e872f7f85a67b01b0cb5e427b4e74c57997a7b87ce6546eceede6d",
+      "size_bytes": 31594,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/f19e30c319e872f7f85a67b01b0cb5e427b4e74c57997a7b87ce6546eceede6d.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/f19e30c319e872f7f85a67b01b0cb5e427b4e74c57997a7b87ce6546eceede6d.pdf",
+      "case_ids": [
+        "slides_ai_course_001_p2"
+      ],
+      "original_path": "data/source_pdfs/placeholder/slides_ai_course_001.pdf",
+      "original_page": 2,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "3a89ea8dea5d76e6cd4138c7fc9cdb7e7cf7adf1c9917c0c6eaf6d0dc985c993",
+      "size_bytes": 31687,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/3a89ea8dea5d76e6cd4138c7fc9cdb7e7cf7adf1c9917c0c6eaf6d0dc985c993.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/3a89ea8dea5d76e6cd4138c7fc9cdb7e7cf7adf1c9917c0c6eaf6d0dc985c993.pdf",
+      "case_ids": [
+        "slides_ai_course_001_p3"
+      ],
+      "original_path": "data/source_pdfs/placeholder/slides_ai_course_001.pdf",
+      "original_page": 3,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "f6676095e7ca0f7732a5bb03b7f0aaeabf5d75dd481347c56f51e21b3db90052",
+      "size_bytes": 50542,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/f6676095e7ca0f7732a5bb03b7f0aaeabf5d75dd481347c56f51e21b3db90052.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/f6676095e7ca0f7732a5bb03b7f0aaeabf5d75dd481347c56f51e21b3db90052.pdf",
+      "case_ids": [
+        "slides_ai_course_001_p4"
+      ],
+      "original_path": "data/source_pdfs/placeholder/slides_ai_course_001.pdf",
+      "original_page": 4,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "b35e9009067362c3eb306bf0f3b76658dc32c151064faa600cfab26b8c34f44c",
+      "size_bytes": 50572,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/b35e9009067362c3eb306bf0f3b76658dc32c151064faa600cfab26b8c34f44c.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/b35e9009067362c3eb306bf0f3b76658dc32c151064faa600cfab26b8c34f44c.pdf",
+      "case_ids": [
+        "slides_ai_course_001_p5"
+      ],
+      "original_path": "data/source_pdfs/placeholder/slides_ai_course_001.pdf",
+      "original_page": 5,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "18fd55514cf77fe6ddcdc4c2cf955ba390ee7b1ab59d8818fc90fdf2a5ff606d",
+      "size_bytes": 50585,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/18fd55514cf77fe6ddcdc4c2cf955ba390ee7b1ab59d8818fc90fdf2a5ff606d.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/18fd55514cf77fe6ddcdc4c2cf955ba390ee7b1ab59d8818fc90fdf2a5ff606d.pdf",
+      "case_ids": [
+        "slides_ai_course_001_p6"
+      ],
+      "original_path": "data/source_pdfs/placeholder/slides_ai_course_001.pdf",
+      "original_page": 6,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "70c67dcf4631a65ab559cabfd669f2d7622358be180cfa67d028871864138c33",
+      "size_bytes": 30357,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/70c67dcf4631a65ab559cabfd669f2d7622358be180cfa67d028871864138c33.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/70c67dcf4631a65ab559cabfd669f2d7622358be180cfa67d028871864138c33.pdf",
+      "case_ids": [
+        "textbook_physics_v2_p05"
+      ],
+      "original_path": "data/source_pdfs/placeholder/textbook_physics_v2.pdf",
+      "original_page": 5,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "a2d1f9b935db8950e58cc4dd3431cdf0037f710f6a771d93428df9ddebdd7a2a",
+      "size_bytes": 44935,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/a2d1f9b935db8950e58cc4dd3431cdf0037f710f6a771d93428df9ddebdd7a2a.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/a2d1f9b935db8950e58cc4dd3431cdf0037f710f6a771d93428df9ddebdd7a2a.pdf",
+      "case_ids": [
+        "textbook_physics_v2_p10"
+      ],
+      "original_path": "data/source_pdfs/placeholder/textbook_physics_v2.pdf",
+      "original_page": 10,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "11a9c788d232b7db435f5e9740e7b096a58bce28da8f2176c40c4226333a39b4",
+      "size_bytes": 44856,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/11a9c788d232b7db435f5e9740e7b096a58bce28da8f2176c40c4226333a39b4.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/11a9c788d232b7db435f5e9740e7b096a58bce28da8f2176c40c4226333a39b4.pdf",
+      "case_ids": [
+        "textbook_physics_v2_p15"
+      ],
+      "original_path": "data/source_pdfs/placeholder/textbook_physics_v2.pdf",
+      "original_page": 15,
+      "source_url": "",
+      "source_page": "",
+      "license": "placeholder",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "55eb1f4670e49a53d7949baa714c7cb834a7bdbe50ab05bc43d1b8508907948e",
+      "size_bytes": 33036,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/55eb1f4670e49a53d7949baa714c7cb834a7bdbe50ab05bc43d1b8508907948e.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/55eb1f4670e49a53d7949baa714c7cb834a7bdbe50ab05bc43d1b8508907948e.pdf",
+      "case_ids": [
+        "stage6_batch2_synthetic_p01"
+      ],
+      "original_path": "runs/stage6_annotation/batch2_source_pdfs/stage6_batch2_synthetic.pdf",
+      "original_page": 1,
+      "source_url": "",
+      "source_page": "",
+      "license": "synthetic",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "48d7275bdf646832e4434927b5704f554862dc3578a12eb769abeb69f4778110",
+      "size_bytes": 33007,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/48d7275bdf646832e4434927b5704f554862dc3578a12eb769abeb69f4778110.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/48d7275bdf646832e4434927b5704f554862dc3578a12eb769abeb69f4778110.pdf",
+      "case_ids": [
+        "stage6_batch2_synthetic_p02"
+      ],
+      "original_path": "runs/stage6_annotation/batch2_source_pdfs/stage6_batch2_synthetic.pdf",
+      "original_page": 2,
+      "source_url": "",
+      "source_page": "",
+      "license": "synthetic",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "4bb07b821ef46c7614004b781e3fba26703e26e31558116f870df06a62a0c2f9",
+      "size_bytes": 32991,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/4bb07b821ef46c7614004b781e3fba26703e26e31558116f870df06a62a0c2f9.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/4bb07b821ef46c7614004b781e3fba26703e26e31558116f870df06a62a0c2f9.pdf",
+      "case_ids": [
+        "stage6_batch2_synthetic_p03"
+      ],
+      "original_path": "runs/stage6_annotation/batch2_source_pdfs/stage6_batch2_synthetic.pdf",
+      "original_page": 3,
+      "source_url": "",
+      "source_page": "",
+      "license": "synthetic",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "65130c26c75dbcc07af2733a1e80ee3fb7a4fcd36cc3757a4fb86738fa0e2e27",
+      "size_bytes": 33001,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/65130c26c75dbcc07af2733a1e80ee3fb7a4fcd36cc3757a4fb86738fa0e2e27.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/65130c26c75dbcc07af2733a1e80ee3fb7a4fcd36cc3757a4fb86738fa0e2e27.pdf",
+      "case_ids": [
+        "stage6_batch2_synthetic_p04"
+      ],
+      "original_path": "runs/stage6_annotation/batch2_source_pdfs/stage6_batch2_synthetic.pdf",
+      "original_page": 4,
+      "source_url": "",
+      "source_page": "",
+      "license": "synthetic",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "075afc31fb7c354402f6245b2b921e98ddafde5889bc433438925ba21479d35e",
+      "size_bytes": 69388,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/075afc31fb7c354402f6245b2b921e98ddafde5889bc433438925ba21479d35e.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/075afc31fb7c354402f6245b2b921e98ddafde5889bc433438925ba21479d35e.pdf",
+      "case_ids": [
+        "stage6_batch2_synthetic_p05"
+      ],
+      "original_path": "runs/stage6_annotation/batch2_source_pdfs/stage6_batch2_synthetic.pdf",
+      "original_page": 5,
+      "source_url": "",
+      "source_page": "",
+      "license": "synthetic",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "42e16c3eddf76623978af9a39955a3a6f552a87d3e32cf90dd49a3ae97a90ee4",
+      "size_bytes": 69358,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/42e16c3eddf76623978af9a39955a3a6f552a87d3e32cf90dd49a3ae97a90ee4.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/42e16c3eddf76623978af9a39955a3a6f552a87d3e32cf90dd49a3ae97a90ee4.pdf",
+      "case_ids": [
+        "stage6_batch2_synthetic_p06"
+      ],
+      "original_path": "runs/stage6_annotation/batch2_source_pdfs/stage6_batch2_synthetic.pdf",
+      "original_page": 6,
+      "source_url": "",
+      "source_page": "",
+      "license": "synthetic",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "7c13454c9d2abfbbf0abca4cc67cf23d9786d5039ba77a960375b839cb651dae",
+      "size_bytes": 69315,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/7c13454c9d2abfbbf0abca4cc67cf23d9786d5039ba77a960375b839cb651dae.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/7c13454c9d2abfbbf0abca4cc67cf23d9786d5039ba77a960375b839cb651dae.pdf",
+      "case_ids": [
+        "stage6_batch2_synthetic_p07"
+      ],
+      "original_path": "runs/stage6_annotation/batch2_source_pdfs/stage6_batch2_synthetic.pdf",
+      "original_page": 7,
+      "source_url": "",
+      "source_page": "",
+      "license": "synthetic",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "cd28063b6c683954f6e41ebe3348d253e7b7218fc120064d5d05056cf9a579af",
+      "size_bytes": 69169,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/cd28063b6c683954f6e41ebe3348d253e7b7218fc120064d5d05056cf9a579af.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/cd28063b6c683954f6e41ebe3348d253e7b7218fc120064d5d05056cf9a579af.pdf",
+      "case_ids": [
+        "stage6_batch2_synthetic_p08"
+      ],
+      "original_path": "runs/stage6_annotation/batch2_source_pdfs/stage6_batch2_synthetic.pdf",
+      "original_page": 8,
+      "source_url": "",
+      "source_page": "",
+      "license": "synthetic",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "eea1e075cdd6d271dff0deb1333cca8fce975221ffc5f7431612b80583dcb37c",
+      "size_bytes": 69172,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/eea1e075cdd6d271dff0deb1333cca8fce975221ffc5f7431612b80583dcb37c.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/eea1e075cdd6d271dff0deb1333cca8fce975221ffc5f7431612b80583dcb37c.pdf",
+      "case_ids": [
+        "stage6_batch2_synthetic_p09"
+      ],
+      "original_path": "runs/stage6_annotation/batch2_source_pdfs/stage6_batch2_synthetic.pdf",
+      "original_page": 9,
+      "source_url": "",
+      "source_page": "",
+      "license": "synthetic",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "c5cbb77b58789bf79f7db9fd167c7630f1012e783d7a3c6b3ba17d6e8faa6f12",
+      "size_bytes": 69170,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/c5cbb77b58789bf79f7db9fd167c7630f1012e783d7a3c6b3ba17d6e8faa6f12.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/c5cbb77b58789bf79f7db9fd167c7630f1012e783d7a3c6b3ba17d6e8faa6f12.pdf",
+      "case_ids": [
+        "stage6_batch2_synthetic_p10"
+      ],
+      "original_path": "runs/stage6_annotation/batch2_source_pdfs/stage6_batch2_synthetic.pdf",
+      "original_page": 10,
+      "source_url": "",
+      "source_page": "",
+      "license": "synthetic",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "ddca9fb93056046c319628b6e35033730361db8db3ef905ee3e8cff5f925827e",
+      "size_bytes": 69235,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/ddca9fb93056046c319628b6e35033730361db8db3ef905ee3e8cff5f925827e.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/ddca9fb93056046c319628b6e35033730361db8db3ef905ee3e8cff5f925827e.pdf",
+      "case_ids": [
+        "stage6_batch2_synthetic_p11"
+      ],
+      "original_path": "runs/stage6_annotation/batch2_source_pdfs/stage6_batch2_synthetic.pdf",
+      "original_page": 11,
+      "source_url": "",
+      "source_page": "",
+      "license": "synthetic",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "a34b8bcf9e81385905f13cfd90c5a6252e36333130381259351cd2cff18c260f",
+      "size_bytes": 69229,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/a34b8bcf9e81385905f13cfd90c5a6252e36333130381259351cd2cff18c260f.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/a34b8bcf9e81385905f13cfd90c5a6252e36333130381259351cd2cff18c260f.pdf",
+      "case_ids": [
+        "stage6_batch2_synthetic_p12"
+      ],
+      "original_path": "runs/stage6_annotation/batch2_source_pdfs/stage6_batch2_synthetic.pdf",
+      "original_page": 12,
+      "source_url": "",
+      "source_page": "",
+      "license": "synthetic",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "062c7d242dc628f7f732ec245a7d4dd3a0f1d3038fe0d682579c1f5df4afc950",
+      "size_bytes": 69185,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/062c7d242dc628f7f732ec245a7d4dd3a0f1d3038fe0d682579c1f5df4afc950.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/062c7d242dc628f7f732ec245a7d4dd3a0f1d3038fe0d682579c1f5df4afc950.pdf",
+      "case_ids": [
+        "stage6_batch2_synthetic_p13"
+      ],
+      "original_path": "runs/stage6_annotation/batch2_source_pdfs/stage6_batch2_synthetic.pdf",
+      "original_page": 13,
+      "source_url": "",
+      "source_page": "",
+      "license": "synthetic",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "04fac9ce6fed5627278b18fe4fd0cf74e407f0aee9515384368accfa8de4eb7f",
+      "size_bytes": 69571,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/04fac9ce6fed5627278b18fe4fd0cf74e407f0aee9515384368accfa8de4eb7f.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/04fac9ce6fed5627278b18fe4fd0cf74e407f0aee9515384368accfa8de4eb7f.pdf",
+      "case_ids": [
+        "stage6_batch2_synthetic_p14"
+      ],
+      "original_path": "runs/stage6_annotation/batch2_source_pdfs/stage6_batch2_synthetic.pdf",
+      "original_page": 14,
+      "source_url": "",
+      "source_page": "",
+      "license": "synthetic",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "571af86422422628982a46283bfa526807599a32871e088c159e4101fe9079e6",
+      "size_bytes": 69596,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/571af86422422628982a46283bfa526807599a32871e088c159e4101fe9079e6.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/571af86422422628982a46283bfa526807599a32871e088c159e4101fe9079e6.pdf",
+      "case_ids": [
+        "stage6_batch2_synthetic_p15"
+      ],
+      "original_path": "runs/stage6_annotation/batch2_source_pdfs/stage6_batch2_synthetic.pdf",
+      "original_page": 15,
+      "source_url": "",
+      "source_page": "",
+      "license": "synthetic",
+      "attribution": "",
+      "original_document_sha256": ""
+    },
+    {
+      "sha256": "cbaaa16bef2186789ce119773521b297a2b339b53e79f16e23335c7db3ef3d0d",
+      "size_bytes": 42465,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/cbaaa16bef2186789ce119773521b297a2b339b53e79f16e23335c7db3ef3d0d.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/cbaaa16bef2186789ce119773521b297a2b339b53e79f16e23335c7db3ef3d0d.pdf",
+      "case_ids": [
+        "public_real_nist_ai_rmf_p005"
+      ],
+      "original_path": "runs/stage6_public_real/source_pdfs/nist_ai_rmf_1_0.pdf",
+      "original_page": 5,
+      "source_url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+      "source_page": "",
+      "license": "U.S. federal publication; cite NIST source",
+      "attribution": "National Institute of Standards and Technology (NIST)",
+      "original_document_sha256": "7576edb531d9848825814ee88e28b1795d3a84b435b4b797d3670eafdc4a89f1"
+    },
+    {
+      "sha256": "51bfa61d328c1df4ea28f09612884342b4287dbdf739ec2a2c911f1a1fccbf47",
+      "size_bytes": 43658,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/51bfa61d328c1df4ea28f09612884342b4287dbdf739ec2a2c911f1a1fccbf47.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/51bfa61d328c1df4ea28f09612884342b4287dbdf739ec2a2c911f1a1fccbf47.pdf",
+      "case_ids": [
+        "public_real_nist_ai_rmf_p008"
+      ],
+      "original_path": "runs/stage6_public_real/source_pdfs/nist_ai_rmf_1_0.pdf",
+      "original_page": 8,
+      "source_url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+      "source_page": "",
+      "license": "U.S. federal publication; cite NIST source",
+      "attribution": "National Institute of Standards and Technology (NIST)",
+      "original_document_sha256": "7576edb531d9848825814ee88e28b1795d3a84b435b4b797d3670eafdc4a89f1"
+    },
+    {
+      "sha256": "5846e194197c71080b2096c1e60fa60bc8b47c408d8010d0ebdfe01fb0658d83",
+      "size_bytes": 57992,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/5846e194197c71080b2096c1e60fa60bc8b47c408d8010d0ebdfe01fb0658d83.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/5846e194197c71080b2096c1e60fa60bc8b47c408d8010d0ebdfe01fb0658d83.pdf",
+      "case_ids": [
+        "public_real_nist_ai_rmf_p012"
+      ],
+      "original_path": "runs/stage6_public_real/source_pdfs/nist_ai_rmf_1_0.pdf",
+      "original_page": 12,
+      "source_url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+      "source_page": "",
+      "license": "U.S. federal publication; cite NIST source",
+      "attribution": "National Institute of Standards and Technology (NIST)",
+      "original_document_sha256": "7576edb531d9848825814ee88e28b1795d3a84b435b4b797d3670eafdc4a89f1"
+    },
+    {
+      "sha256": "3bd5efc857a9711302bbc5d3376e1f1807d6cea69ad2177d3ac9308b00810058",
+      "size_bytes": 92674,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/3bd5efc857a9711302bbc5d3376e1f1807d6cea69ad2177d3ac9308b00810058.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/3bd5efc857a9711302bbc5d3376e1f1807d6cea69ad2177d3ac9308b00810058.pdf",
+      "case_ids": [
+        "public_real_nist_ai_rmf_p017"
+      ],
+      "original_path": "runs/stage6_public_real/source_pdfs/nist_ai_rmf_1_0.pdf",
+      "original_page": 17,
+      "source_url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+      "source_page": "",
+      "license": "U.S. federal publication; cite NIST source",
+      "attribution": "National Institute of Standards and Technology (NIST)",
+      "original_document_sha256": "7576edb531d9848825814ee88e28b1795d3a84b435b4b797d3670eafdc4a89f1"
+    },
+    {
+      "sha256": "2a14f6b5b3d7367e4a2cc48d9d98d094fed60055e20995a1eac17d200d90dea1",
+      "size_bytes": 57612,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/2a14f6b5b3d7367e4a2cc48d9d98d094fed60055e20995a1eac17d200d90dea1.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/2a14f6b5b3d7367e4a2cc48d9d98d094fed60055e20995a1eac17d200d90dea1.pdf",
+      "case_ids": [
+        "public_real_nist_ai_rmf_p019"
+      ],
+      "original_path": "runs/stage6_public_real/source_pdfs/nist_ai_rmf_1_0.pdf",
+      "original_page": 19,
+      "source_url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+      "source_page": "",
+      "license": "U.S. federal publication; cite NIST source",
+      "attribution": "National Institute of Standards and Technology (NIST)",
+      "original_document_sha256": "7576edb531d9848825814ee88e28b1795d3a84b435b4b797d3670eafdc4a89f1"
+    },
+    {
+      "sha256": "f91d473a21201952719fe2d5d1685ee59fb9025b6cd173c3d814dcbfe741698d",
+      "size_bytes": 141920,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/f91d473a21201952719fe2d5d1685ee59fb9025b6cd173c3d814dcbfe741698d.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/f91d473a21201952719fe2d5d1685ee59fb9025b6cd173c3d814dcbfe741698d.pdf",
+      "case_ids": [
+        "public_real_nist_sp800_53r5_p027"
+      ],
+      "original_path": "runs/stage6_public_real/source_pdfs/nist_sp800_53r5.pdf",
+      "original_page": 27,
+      "source_url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r5.pdf",
+      "source_page": "",
+      "license": "U.S. federal publication; cite NIST source",
+      "attribution": "National Institute of Standards and Technology (NIST)",
+      "original_document_sha256": "fc63bcd61715d0181dd8e85998b1e6201ae3515fc6626102101cab1841e11ec6"
+    },
+    {
+      "sha256": "24f34b4eb7341739bf7a1e76bf51e9b91ea3a836c37fa9e41f9184dd98c60b35",
+      "size_bytes": 161814,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/24f34b4eb7341739bf7a1e76bf51e9b91ea3a836c37fa9e41f9184dd98c60b35.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/24f34b4eb7341739bf7a1e76bf51e9b91ea3a836c37fa9e41f9184dd98c60b35.pdf",
+      "case_ids": [
+        "public_real_nist_sp800_53r5_p046"
+      ],
+      "original_path": "runs/stage6_public_real/source_pdfs/nist_sp800_53r5.pdf",
+      "original_page": 46,
+      "source_url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r5.pdf",
+      "source_page": "",
+      "license": "U.S. federal publication; cite NIST source",
+      "attribution": "National Institute of Standards and Technology (NIST)",
+      "original_document_sha256": "fc63bcd61715d0181dd8e85998b1e6201ae3515fc6626102101cab1841e11ec6"
+    },
+    {
+      "sha256": "d722ddb3b41bc9648a99328e5d4f08e31d83b001d43be9c268ba9edc74b06c22",
+      "size_bytes": 189905,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/d722ddb3b41bc9648a99328e5d4f08e31d83b001d43be9c268ba9edc74b06c22.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/d722ddb3b41bc9648a99328e5d4f08e31d83b001d43be9c268ba9edc74b06c22.pdf",
+      "case_ids": [
+        "public_real_nist_sp800_53r5_p087"
+      ],
+      "original_path": "runs/stage6_public_real/source_pdfs/nist_sp800_53r5.pdf",
+      "original_page": 87,
+      "source_url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r5.pdf",
+      "source_page": "",
+      "license": "U.S. federal publication; cite NIST source",
+      "attribution": "National Institute of Standards and Technology (NIST)",
+      "original_document_sha256": "fc63bcd61715d0181dd8e85998b1e6201ae3515fc6626102101cab1841e11ec6"
+    },
+    {
+      "sha256": "f26d1ef9ef54e0360ec0e2b5208f7b3a4cbdeec7acb450880c246042851d65af",
+      "size_bytes": 243906,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/f26d1ef9ef54e0360ec0e2b5208f7b3a4cbdeec7acb450880c246042851d65af.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/f26d1ef9ef54e0360ec0e2b5208f7b3a4cbdeec7acb450880c246042851d65af.pdf",
+      "case_ids": [
+        "public_real_nist_sp800_53r5_p399"
+      ],
+      "original_path": "runs/stage6_public_real/source_pdfs/nist_sp800_53r5.pdf",
+      "original_page": 399,
+      "source_url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r5.pdf",
+      "source_page": "",
+      "license": "U.S. federal publication; cite NIST source",
+      "attribution": "National Institute of Standards and Technology (NIST)",
+      "original_document_sha256": "fc63bcd61715d0181dd8e85998b1e6201ae3515fc6626102101cab1841e11ec6"
+    },
+    {
+      "sha256": "620b2a163f5dc468ca884872a1c842efdd5d16f87550e3686b8eb967aa110e2b",
+      "size_bytes": 125762,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/620b2a163f5dc468ca884872a1c842efdd5d16f87550e3686b8eb967aa110e2b.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/620b2a163f5dc468ca884872a1c842efdd5d16f87550e3686b8eb967aa110e2b.pdf",
+      "case_ids": [
+        "public_real_nist_sp800_53r5_p428"
+      ],
+      "original_path": "runs/stage6_public_real/source_pdfs/nist_sp800_53r5.pdf",
+      "original_page": 428,
+      "source_url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r5.pdf",
+      "source_page": "",
+      "license": "U.S. federal publication; cite NIST source",
+      "attribution": "National Institute of Standards and Technology (NIST)",
+      "original_document_sha256": "fc63bcd61715d0181dd8e85998b1e6201ae3515fc6626102101cab1841e11ec6"
+    },
+    {
+      "sha256": "1c54fee3103b0761e34d3f17606f56159eca400e01c53fd2c1520fc2aad56fa7",
+      "size_bytes": 152186,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/1c54fee3103b0761e34d3f17606f56159eca400e01c53fd2c1520fc2aad56fa7.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/1c54fee3103b0761e34d3f17606f56159eca400e01c53fd2c1520fc2aad56fa7.pdf",
+      "case_ids": [
+        "public_real_irs_1040_2024_p001"
+      ],
+      "original_path": "runs/stage6_public_real/source_pdfs/irs_f1040_2024.pdf",
+      "original_page": 1,
+      "source_url": "https://www.irs.gov/pub/irs-prior/f1040--2024.pdf",
+      "source_page": "",
+      "license": "U.S. federal government form; cite IRS source",
+      "attribution": "Internal Revenue Service (IRS)",
+      "original_document_sha256": "0a7a54354283044cb41373c6faabfa50955d44bdf91b4b76fa1ca2bf13f6d718"
+    },
+    {
+      "sha256": "c40d2ac5392c9f0fac1f79b17a7a252d66cc7dad563b49acd3a1e6e5f01cc2aa",
+      "size_bytes": 65899,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/c40d2ac5392c9f0fac1f79b17a7a252d66cc7dad563b49acd3a1e6e5f01cc2aa.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/c40d2ac5392c9f0fac1f79b17a7a252d66cc7dad563b49acd3a1e6e5f01cc2aa.pdf",
+      "case_ids": [
+        "public_real_irs_1040sa_2024_p001"
+      ],
+      "original_path": "runs/stage6_public_real/source_pdfs/irs_f1040_schedule_a_2024.pdf",
+      "original_page": 1,
+      "source_url": "https://www.irs.gov/pub/irs-prior/f1040sa--2024.pdf",
+      "source_page": "",
+      "license": "U.S. federal government form; cite IRS source",
+      "attribution": "Internal Revenue Service (IRS)",
+      "original_document_sha256": "4bfff9a524c6db9421527f77dc375978a3204c583e60e60fbd8f9d37bd58492a"
+    },
+    {
+      "sha256": "40eaf859efdbaf58660fb65d4301ca175573b49db76463b6d3b59395cee4dd1e",
+      "size_bytes": 118850,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/40eaf859efdbaf58660fb65d4301ca175573b49db76463b6d3b59395cee4dd1e.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/40eaf859efdbaf58660fb65d4301ca175573b49db76463b6d3b59395cee4dd1e.pdf",
+      "case_ids": [
+        "public_real_irs_1040sc_2024_p001"
+      ],
+      "original_path": "runs/stage6_public_real/source_pdfs/irs_f1040_schedule_c_2024.pdf",
+      "original_page": 1,
+      "source_url": "https://www.irs.gov/pub/irs-prior/f1040sc--2024.pdf",
+      "source_page": "",
+      "license": "U.S. federal government form; cite IRS source",
+      "attribution": "Internal Revenue Service (IRS)",
+      "original_document_sha256": "f56bfd48f3604fc015b7ea22a70c6c36535a723ba84a2b9a961bc9838d070ce6"
+    },
+    {
+      "sha256": "8abc754447a1d028bed47561654ce134b8f8fec7d91de13d451d5a24951eba26",
+      "size_bytes": 114641,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/8abc754447a1d028bed47561654ce134b8f8fec7d91de13d451d5a24951eba26.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/8abc754447a1d028bed47561654ce134b8f8fec7d91de13d451d5a24951eba26.pdf",
+      "case_ids": [
+        "public_real_irs_1040sc_2024_p002"
+      ],
+      "original_path": "runs/stage6_public_real/source_pdfs/irs_f1040_schedule_c_2024.pdf",
+      "original_page": 2,
+      "source_url": "https://www.irs.gov/pub/irs-prior/f1040sc--2024.pdf",
+      "source_page": "",
+      "license": "U.S. federal government form; cite IRS source",
+      "attribution": "Internal Revenue Service (IRS)",
+      "original_document_sha256": "f56bfd48f3604fc015b7ea22a70c6c36535a723ba84a2b9a961bc9838d070ce6"
+    },
+    {
+      "sha256": "efb06ce4f1569d3bde3f5dfd7032ef4127d95ad37abbad564baffbe2e6e53417",
+      "size_bytes": 92220,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/efb06ce4f1569d3bde3f5dfd7032ef4127d95ad37abbad564baffbe2e6e53417.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/efb06ce4f1569d3bde3f5dfd7032ef4127d95ad37abbad564baffbe2e6e53417.pdf",
+      "case_ids": [
+        "public_real_irs_1040sd_2024_p001"
+      ],
+      "original_path": "runs/stage6_public_real/source_pdfs/irs_f1040_schedule_d_2024.pdf",
+      "original_page": 1,
+      "source_url": "https://www.irs.gov/pub/irs-prior/f1040sd--2024.pdf",
+      "source_page": "",
+      "license": "U.S. federal government form; cite IRS source",
+      "attribution": "Internal Revenue Service (IRS)",
+      "original_document_sha256": "5a006b1a9a17c19af294a3da0971528276598e6a54ac4ca1670656d71476b6f5"
+    },
+    {
+      "sha256": "c14a77aacd2d268cf6efe81c1f276bd576b36bb4112d40997de7f112ba13a30e",
+      "size_bytes": 89349,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/c14a77aacd2d268cf6efe81c1f276bd576b36bb4112d40997de7f112ba13a30e.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/c14a77aacd2d268cf6efe81c1f276bd576b36bb4112d40997de7f112ba13a30e.pdf",
+      "case_ids": [
+        "public_real_irs_1040sd_2024_p002"
+      ],
+      "original_path": "runs/stage6_public_real/source_pdfs/irs_f1040_schedule_d_2024.pdf",
+      "original_page": 2,
+      "source_url": "https://www.irs.gov/pub/irs-prior/f1040sd--2024.pdf",
+      "source_page": "",
+      "license": "U.S. federal government form; cite IRS source",
+      "attribution": "Internal Revenue Service (IRS)",
+      "original_document_sha256": "5a006b1a9a17c19af294a3da0971528276598e6a54ac4ca1670656d71476b6f5"
+    },
+    {
+      "sha256": "986e6b21c403e5540084639a36bdddd345e9114fba2b1e3c72006c01a784af8c",
+      "size_bytes": 84817,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/986e6b21c403e5540084639a36bdddd345e9114fba2b1e3c72006c01a784af8c.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/986e6b21c403e5540084639a36bdddd345e9114fba2b1e3c72006c01a784af8c.pdf",
+      "case_ids": [
+        "public_real_govinfo_cfr_title1_p007"
+      ],
+      "original_path": "runs/stage6_public_real/source_pdfs/govinfo_cfr_2024_title1_vol1.pdf",
+      "original_page": 7,
+      "source_url": "https://www.govinfo.gov/content/pkg/CFR-2024-title1-vol1/pdf/CFR-2024-title1-vol1.pdf",
+      "source_page": "",
+      "license": "U.S. government publication; cite GovInfo/GPO source",
+      "attribution": "U.S. Government Publishing Office (GovInfo/GPO)",
+      "original_document_sha256": "d6981265d84ec7a32e948b3581b10ae8cecef94263d2a98365539590ef33ceb5"
+    },
+    {
+      "sha256": "9b6089fa6faa9402b4c8831392272f71af1a7fd23367a9430f7b8bc5a7925ac9",
+      "size_bytes": 100198,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/9b6089fa6faa9402b4c8831392272f71af1a7fd23367a9430f7b8bc5a7925ac9.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/9b6089fa6faa9402b4c8831392272f71af1a7fd23367a9430f7b8bc5a7925ac9.pdf",
+      "case_ids": [
+        "public_real_govinfo_cfr_title1_p014"
+      ],
+      "original_path": "runs/stage6_public_real/source_pdfs/govinfo_cfr_2024_title1_vol1.pdf",
+      "original_page": 14,
+      "source_url": "https://www.govinfo.gov/content/pkg/CFR-2024-title1-vol1/pdf/CFR-2024-title1-vol1.pdf",
+      "source_page": "",
+      "license": "U.S. government publication; cite GovInfo/GPO source",
+      "attribution": "U.S. Government Publishing Office (GovInfo/GPO)",
+      "original_document_sha256": "d6981265d84ec7a32e948b3581b10ae8cecef94263d2a98365539590ef33ceb5"
+    },
+    {
+      "sha256": "0698dacd088a4a98f4c61683bb7bcab08e36ebabd1c012948ea01f1db994e90d",
+      "size_bytes": 89804,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/0698dacd088a4a98f4c61683bb7bcab08e36ebabd1c012948ea01f1db994e90d.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/0698dacd088a4a98f4c61683bb7bcab08e36ebabd1c012948ea01f1db994e90d.pdf",
+      "case_ids": [
+        "public_real_govinfo_cfr_title1_p028"
+      ],
+      "original_path": "runs/stage6_public_real/source_pdfs/govinfo_cfr_2024_title1_vol1.pdf",
+      "original_page": 28,
+      "source_url": "https://www.govinfo.gov/content/pkg/CFR-2024-title1-vol1/pdf/CFR-2024-title1-vol1.pdf",
+      "source_page": "",
+      "license": "U.S. government publication; cite GovInfo/GPO source",
+      "attribution": "U.S. Government Publishing Office (GovInfo/GPO)",
+      "original_document_sha256": "d6981265d84ec7a32e948b3581b10ae8cecef94263d2a98365539590ef33ceb5"
+    },
+    {
+      "sha256": "c0f7419b499573da9e0e0770d901bdf3c004f302080581033f37601dbbf8b3e1",
+      "size_bytes": 89883,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/c0f7419b499573da9e0e0770d901bdf3c004f302080581033f37601dbbf8b3e1.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/c0f7419b499573da9e0e0770d901bdf3c004f302080581033f37601dbbf8b3e1.pdf",
+      "case_ids": [
+        "public_real_govinfo_cfr_title1_p035"
+      ],
+      "original_path": "runs/stage6_public_real/source_pdfs/govinfo_cfr_2024_title1_vol1.pdf",
+      "original_page": 35,
+      "source_url": "https://www.govinfo.gov/content/pkg/CFR-2024-title1-vol1/pdf/CFR-2024-title1-vol1.pdf",
+      "source_page": "",
+      "license": "U.S. government publication; cite GovInfo/GPO source",
+      "attribution": "U.S. Government Publishing Office (GovInfo/GPO)",
+      "original_document_sha256": "d6981265d84ec7a32e948b3581b10ae8cecef94263d2a98365539590ef33ceb5"
+    },
+    {
+      "sha256": "64f7e15cd9a7d9ad5fb1241008c3875c57dd7670687d761db1334c270bd8b476",
+      "size_bytes": 91286,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/64f7e15cd9a7d9ad5fb1241008c3875c57dd7670687d761db1334c270bd8b476.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/64f7e15cd9a7d9ad5fb1241008c3875c57dd7670687d761db1334c270bd8b476.pdf",
+      "case_ids": [
+        "non_gov_public_acl_ocl_corpus_p002"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/acl_2023_emnlp_main_640_ocl_corpus.pdf",
+      "original_page": 2,
+      "source_url": "https://aclanthology.org/2023.emnlp-main.640.pdf",
+      "source_page": "https://aclanthology.org/2023.emnlp-main.640/",
+      "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+      "attribution": "ACL Anthology / EMNLP 2023",
+      "original_document_sha256": "cd1508582cce54c9ab65f570d6b08c4956aca16a83782bf373be961ef98d1401"
+    },
+    {
+      "sha256": "3fa6e39f8862c1db837038f954b99224ff6677f78502a01721547e6f3476f2d3",
+      "size_bytes": 407418,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/3fa6e39f8862c1db837038f954b99224ff6677f78502a01721547e6f3476f2d3.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/3fa6e39f8862c1db837038f954b99224ff6677f78502a01721547e6f3476f2d3.pdf",
+      "case_ids": [
+        "non_gov_public_acl_ocl_corpus_p004"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/acl_2023_emnlp_main_640_ocl_corpus.pdf",
+      "original_page": 4,
+      "source_url": "https://aclanthology.org/2023.emnlp-main.640.pdf",
+      "source_page": "https://aclanthology.org/2023.emnlp-main.640/",
+      "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+      "attribution": "ACL Anthology / EMNLP 2023",
+      "original_document_sha256": "cd1508582cce54c9ab65f570d6b08c4956aca16a83782bf373be961ef98d1401"
+    },
+    {
+      "sha256": "5d81fddfcfb09b21f3f841288e00f172c2e952a3a17f443e49385290a3bb8ea5",
+      "size_bytes": 104114,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/5d81fddfcfb09b21f3f841288e00f172c2e952a3a17f443e49385290a3bb8ea5.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/5d81fddfcfb09b21f3f841288e00f172c2e952a3a17f443e49385290a3bb8ea5.pdf",
+      "case_ids": [
+        "non_gov_public_acl_ocl_corpus_p006"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/acl_2023_emnlp_main_640_ocl_corpus.pdf",
+      "original_page": 6,
+      "source_url": "https://aclanthology.org/2023.emnlp-main.640.pdf",
+      "source_page": "https://aclanthology.org/2023.emnlp-main.640/",
+      "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+      "attribution": "ACL Anthology / EMNLP 2023",
+      "original_document_sha256": "cd1508582cce54c9ab65f570d6b08c4956aca16a83782bf373be961ef98d1401"
+    },
+    {
+      "sha256": "acd608b208fa35e014d0d309a23ae38409a9a79ae4d1981ce4b0bcf2745a1a6e",
+      "size_bytes": 102091,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/acd608b208fa35e014d0d309a23ae38409a9a79ae4d1981ce4b0bcf2745a1a6e.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/acd608b208fa35e014d0d309a23ae38409a9a79ae4d1981ce4b0bcf2745a1a6e.pdf",
+      "case_ids": [
+        "non_gov_public_acl_ocl_corpus_p008"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/acl_2023_emnlp_main_640_ocl_corpus.pdf",
+      "original_page": 8,
+      "source_url": "https://aclanthology.org/2023.emnlp-main.640.pdf",
+      "source_page": "https://aclanthology.org/2023.emnlp-main.640/",
+      "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+      "attribution": "ACL Anthology / EMNLP 2023",
+      "original_document_sha256": "cd1508582cce54c9ab65f570d6b08c4956aca16a83782bf373be961ef98d1401"
+    },
+    {
+      "sha256": "8ee0753f1cfbe0277a556b4c665a92fc7f0fe83232276c3f08991fdf04fac014",
+      "size_bytes": 341722,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/8ee0753f1cfbe0277a556b4c665a92fc7f0fe83232276c3f08991fdf04fac014.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/8ee0753f1cfbe0277a556b4c665a92fc7f0fe83232276c3f08991fdf04fac014.pdf",
+      "case_ids": [
+        "non_gov_public_acl_rocling_readability_zh_p001"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/acl_2024_rocling_1_1_readability_zh.pdf",
+      "original_page": 1,
+      "source_url": "https://aclanthology.org/2024.rocling-1.1.pdf",
+      "source_page": "https://aclanthology.org/2024.rocling-1.1/",
+      "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+      "attribution": "ACL Anthology / ROCLING 2024",
+      "original_document_sha256": "dfad941296b29348629fc9840e5da00cbe02488f28326bc3c0d55c2847511ce8"
+    },
+    {
+      "sha256": "7ef4e8df97649c3d54e78cacecf232b7d5d880b2c8fd77b2854602b3efe18430",
+      "size_bytes": 277554,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/7ef4e8df97649c3d54e78cacecf232b7d5d880b2c8fd77b2854602b3efe18430.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/7ef4e8df97649c3d54e78cacecf232b7d5d880b2c8fd77b2854602b3efe18430.pdf",
+      "case_ids": [
+        "non_gov_public_acl_rocling_readability_zh_p002"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/acl_2024_rocling_1_1_readability_zh.pdf",
+      "original_page": 2,
+      "source_url": "https://aclanthology.org/2024.rocling-1.1.pdf",
+      "source_page": "https://aclanthology.org/2024.rocling-1.1/",
+      "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+      "attribution": "ACL Anthology / ROCLING 2024",
+      "original_document_sha256": "dfad941296b29348629fc9840e5da00cbe02488f28326bc3c0d55c2847511ce8"
+    },
+    {
+      "sha256": "93be0fe097de1d55fa931475e2ac5b57047944b4494d0ac1321ab92a7aefdd7f",
+      "size_bytes": 274780,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/93be0fe097de1d55fa931475e2ac5b57047944b4494d0ac1321ab92a7aefdd7f.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/93be0fe097de1d55fa931475e2ac5b57047944b4494d0ac1321ab92a7aefdd7f.pdf",
+      "case_ids": [
+        "non_gov_public_acl_rocling_readability_zh_p004"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/acl_2024_rocling_1_1_readability_zh.pdf",
+      "original_page": 4,
+      "source_url": "https://aclanthology.org/2024.rocling-1.1.pdf",
+      "source_page": "https://aclanthology.org/2024.rocling-1.1/",
+      "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+      "attribution": "ACL Anthology / ROCLING 2024",
+      "original_document_sha256": "dfad941296b29348629fc9840e5da00cbe02488f28326bc3c0d55c2847511ce8"
+    },
+    {
+      "sha256": "9cfe54b3b85c013a197bc41b57ea21563760cbb94f5e2abd3dd7eae41963e413",
+      "size_bytes": 801551,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/9cfe54b3b85c013a197bc41b57ea21563760cbb94f5e2abd3dd7eae41963e413.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/9cfe54b3b85c013a197bc41b57ea21563760cbb94f5e2abd3dd7eae41963e413.pdf",
+      "case_ids": [
+        "non_gov_public_acl_rocling_readability_zh_p006"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/acl_2024_rocling_1_1_readability_zh.pdf",
+      "original_page": 6,
+      "source_url": "https://aclanthology.org/2024.rocling-1.1.pdf",
+      "source_page": "https://aclanthology.org/2024.rocling-1.1/",
+      "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+      "attribution": "ACL Anthology / ROCLING 2024",
+      "original_document_sha256": "dfad941296b29348629fc9840e5da00cbe02488f28326bc3c0d55c2847511ce8"
+    },
+    {
+      "sha256": "3804e69ea20a0072463533aebba34b92bf3bef15f8f65d0d620df3579606395c",
+      "size_bytes": 311148,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/3804e69ea20a0072463533aebba34b92bf3bef15f8f65d0d620df3579606395c.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/3804e69ea20a0072463533aebba34b92bf3bef15f8f65d0d620df3579606395c.pdf",
+      "case_ids": [
+        "non_gov_public_acl_rocling_readability_zh_p008"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/acl_2024_rocling_1_1_readability_zh.pdf",
+      "original_page": 8,
+      "source_url": "https://aclanthology.org/2024.rocling-1.1.pdf",
+      "source_page": "https://aclanthology.org/2024.rocling-1.1/",
+      "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+      "attribution": "ACL Anthology / ROCLING 2024",
+      "original_document_sha256": "dfad941296b29348629fc9840e5da00cbe02488f28326bc3c0d55c2847511ce8"
+    },
+    {
+      "sha256": "6bad4d4a7a228f6a03b3789209987f4ce1aae11d51a7616b42a49c8286fd1c17",
+      "size_bytes": 86559,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/6bad4d4a7a228f6a03b3789209987f4ce1aae11d51a7616b42a49c8286fd1c17.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/6bad4d4a7a228f6a03b3789209987f4ce1aae11d51a7616b42a49c8286fd1c17.pdf",
+      "case_ids": [
+        "non_gov_public_acl_struc_bench_p004"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/acl_2024_naacl_short_2_struc_bench.pdf",
+      "original_page": 4,
+      "source_url": "https://aclanthology.org/2024.naacl-short.2.pdf",
+      "source_page": "https://aclanthology.org/2024.naacl-short.2/",
+      "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+      "attribution": "ACL Anthology / NAACL 2024",
+      "original_document_sha256": "21b916ea137241a734a168321980d4fc9a61ca6567ce8379e0eed48145eb8463"
+    },
+    {
+      "sha256": "db2fba5111b90291b65c1a664e8f5c94dae44be4515971a9f39fd4e9b229fb1c",
+      "size_bytes": 792026,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/db2fba5111b90291b65c1a664e8f5c94dae44be4515971a9f39fd4e9b229fb1c.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/db2fba5111b90291b65c1a664e8f5c94dae44be4515971a9f39fd4e9b229fb1c.pdf",
+      "case_ids": [
+        "non_gov_public_bmc_3d_print_models_review_p003"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/bmc_3d_print_models_systematic_review.pdf",
+      "original_page": 3,
+      "source_url": "https://threedmedprint.biomedcentral.com/counter/pdf/10.1186/s41205-024-00210-5.pdf",
+      "source_page": "https://threedmedprint.biomedcentral.com/articles/10.1186/s41205-024-00210-5",
+      "license": "CC BY 4.0; BioMed Central article notice verified",
+      "attribution": "3D Printing in Medicine / BioMed Central",
+      "original_document_sha256": "63a2b8d7d9fb1011180d752a94b88751c506bb4aa9020562a11cd79d222d977c"
+    },
+    {
+      "sha256": "93c870f2b73d2b6b57e900b21993ecf61620841c08435f1f4cf0c7207b1e6e5d",
+      "size_bytes": 645887,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/93c870f2b73d2b6b57e900b21993ecf61620841c08435f1f4cf0c7207b1e6e5d.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/93c870f2b73d2b6b57e900b21993ecf61620841c08435f1f4cf0c7207b1e6e5d.pdf",
+      "case_ids": [
+        "non_gov_public_bmc_3d_print_models_review_p005"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/bmc_3d_print_models_systematic_review.pdf",
+      "original_page": 5,
+      "source_url": "https://threedmedprint.biomedcentral.com/counter/pdf/10.1186/s41205-024-00210-5.pdf",
+      "source_page": "https://threedmedprint.biomedcentral.com/articles/10.1186/s41205-024-00210-5",
+      "license": "CC BY 4.0; BioMed Central article notice verified",
+      "attribution": "3D Printing in Medicine / BioMed Central",
+      "original_document_sha256": "63a2b8d7d9fb1011180d752a94b88751c506bb4aa9020562a11cd79d222d977c"
+    },
+    {
+      "sha256": "d3c83e98a603d3a957a6b0a28f03a091c523b3bda4d19862597209b2784da79d",
+      "size_bytes": 561142,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/d3c83e98a603d3a957a6b0a28f03a091c523b3bda4d19862597209b2784da79d.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/d3c83e98a603d3a957a6b0a28f03a091c523b3bda4d19862597209b2784da79d.pdf",
+      "case_ids": [
+        "non_gov_public_bmc_3d_print_models_review_p007"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/bmc_3d_print_models_systematic_review.pdf",
+      "original_page": 7,
+      "source_url": "https://threedmedprint.biomedcentral.com/counter/pdf/10.1186/s41205-024-00210-5.pdf",
+      "source_page": "https://threedmedprint.biomedcentral.com/articles/10.1186/s41205-024-00210-5",
+      "license": "CC BY 4.0; BioMed Central article notice verified",
+      "attribution": "3D Printing in Medicine / BioMed Central",
+      "original_document_sha256": "63a2b8d7d9fb1011180d752a94b88751c506bb4aa9020562a11cd79d222d977c"
+    },
+    {
+      "sha256": "f6e2c49744cc1e152729a98c22c304f443d5f86041e9771655784a6f9b3f8483",
+      "size_bytes": 592906,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/f6e2c49744cc1e152729a98c22c304f443d5f86041e9771655784a6f9b3f8483.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/f6e2c49744cc1e152729a98c22c304f443d5f86041e9771655784a6f9b3f8483.pdf",
+      "case_ids": [
+        "non_gov_public_bmc_3d_print_models_review_p009"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/bmc_3d_print_models_systematic_review.pdf",
+      "original_page": 9,
+      "source_url": "https://threedmedprint.biomedcentral.com/counter/pdf/10.1186/s41205-024-00210-5.pdf",
+      "source_page": "https://threedmedprint.biomedcentral.com/articles/10.1186/s41205-024-00210-5",
+      "license": "CC BY 4.0; BioMed Central article notice verified",
+      "attribution": "3D Printing in Medicine / BioMed Central",
+      "original_document_sha256": "63a2b8d7d9fb1011180d752a94b88751c506bb4aa9020562a11cd79d222d977c"
+    },
+    {
+      "sha256": "b9a0dbbd27242f2a622e7fe0a8de23451fb359bc18909876e245381d12c6bc64",
+      "size_bytes": 41162,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/b9a0dbbd27242f2a622e7fe0a8de23451fb359bc18909876e245381d12c6bc64.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/b9a0dbbd27242f2a622e7fe0a8de23451fb359bc18909876e245381d12c6bc64.pdf",
+      "case_ids": [
+        "non_gov_public_frontiers_vascular_models_p005"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/frontiers_fmedt_2023_1097850_vascular_models.pdf",
+      "original_page": 5,
+      "source_url": "https://www.frontiersin.org/journals/medical-technology/articles/10.3389/fmedt.2023.1097850/pdf",
+      "source_page": "https://www.frontiersin.org/journals/medical-technology/articles/10.3389/fmedt.2023.1097850/full",
+      "license": "CC BY; Frontiers open-access notice verified",
+      "attribution": "Frontiers in Medical Technology",
+      "original_document_sha256": "c7e80aa20e297eb526d095bcee5e302458bc5a02607ec2d59742b6ccf2cf77bc"
+    },
+    {
+      "sha256": "8d36d168de77bc253dfc95c8e0ab5c4d14eaaa1c8fc49b9f00ad001960aceb75",
+      "size_bytes": 134276,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/8d36d168de77bc253dfc95c8e0ab5c4d14eaaa1c8fc49b9f00ad001960aceb75.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/8d36d168de77bc253dfc95c8e0ab5c4d14eaaa1c8fc49b9f00ad001960aceb75.pdf",
+      "case_ids": [
+        "non_gov_public_openstax_chemistry_p049"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/openstax_chemistry.pdf",
+      "original_page": 49,
+      "source_url": "https://assets.openstax.org/oscms-prodcms/media/documents/Chemistry-LR.pdf",
+      "source_page": "https://openstax.org/details/books/chemistry",
+      "license": "CC BY 4.0; OpenStax Chemistry copyright page verified",
+      "attribution": "OpenStax",
+      "original_document_sha256": "aa56e10ea6468b9779d6e4524cf256fd7865c29b4f9ba9e5de15c4e669748f87"
+    },
+    {
+      "sha256": "7ca03b6a3064dac56c612827a2f3dd0a9f663aadb43cacaa481a3b26a32c5801",
+      "size_bytes": 168265,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/7ca03b6a3064dac56c612827a2f3dd0a9f663aadb43cacaa481a3b26a32c5801.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/7ca03b6a3064dac56c612827a2f3dd0a9f663aadb43cacaa481a3b26a32c5801.pdf",
+      "case_ids": [
+        "non_gov_public_openstax_chemistry_p109"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/openstax_chemistry.pdf",
+      "original_page": 109,
+      "source_url": "https://assets.openstax.org/oscms-prodcms/media/documents/Chemistry-LR.pdf",
+      "source_page": "https://openstax.org/details/books/chemistry",
+      "license": "CC BY 4.0; OpenStax Chemistry copyright page verified",
+      "attribution": "OpenStax",
+      "original_document_sha256": "aa56e10ea6468b9779d6e4524cf256fd7865c29b4f9ba9e5de15c4e669748f87"
+    },
+    {
+      "sha256": "ef173bfac746c01235526e4b376cbef27b9559aaba0669b20f1f758d97130ca6",
+      "size_bytes": 148967,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/ef173bfac746c01235526e4b376cbef27b9559aaba0669b20f1f758d97130ca6.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/ef173bfac746c01235526e4b376cbef27b9559aaba0669b20f1f758d97130ca6.pdf",
+      "case_ids": [
+        "non_gov_public_openstax_chemistry_p186"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/openstax_chemistry.pdf",
+      "original_page": 186,
+      "source_url": "https://assets.openstax.org/oscms-prodcms/media/documents/Chemistry-LR.pdf",
+      "source_page": "https://openstax.org/details/books/chemistry",
+      "license": "CC BY 4.0; OpenStax Chemistry copyright page verified",
+      "attribution": "OpenStax",
+      "original_document_sha256": "aa56e10ea6468b9779d6e4524cf256fd7865c29b4f9ba9e5de15c4e669748f87"
+    },
+    {
+      "sha256": "985e78c743e0770461a6fefe46180ecf33b12a27d014616e5ef7cc4cc3b73832",
+      "size_bytes": 174176,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/985e78c743e0770461a6fefe46180ecf33b12a27d014616e5ef7cc4cc3b73832.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/985e78c743e0770461a6fefe46180ecf33b12a27d014616e5ef7cc4cc3b73832.pdf",
+      "case_ids": [
+        "non_gov_public_openstax_chemistry_p257"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/openstax_chemistry.pdf",
+      "original_page": 257,
+      "source_url": "https://assets.openstax.org/oscms-prodcms/media/documents/Chemistry-LR.pdf",
+      "source_page": "https://openstax.org/details/books/chemistry",
+      "license": "CC BY 4.0; OpenStax Chemistry copyright page verified",
+      "attribution": "OpenStax",
+      "original_document_sha256": "aa56e10ea6468b9779d6e4524cf256fd7865c29b4f9ba9e5de15c4e669748f87"
+    },
+    {
+      "sha256": "42fd5cd406f7ac1fac8d01884e41e3d464825a91a775ae340b714082482c954d",
+      "size_bytes": 285424,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/42fd5cd406f7ac1fac8d01884e41e3d464825a91a775ae340b714082482c954d.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/42fd5cd406f7ac1fac8d01884e41e3d464825a91a775ae340b714082482c954d.pdf",
+      "case_ids": [
+        "non_gov_public_pmc_peerj_cs_1452_p005"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/pmc_peerj_cs_1452.pdf",
+      "original_page": 5,
+      "source_url": "https://peerj.com/articles/cs-1452.pdf?download=1",
+      "source_page": "https://peerj.com/articles/cs-1452/",
+      "license": "CC BY 4.0; PeerJ/PMC OA notice verified",
+      "attribution": "PeerJ Computer Science / PMC Open Access",
+      "original_document_sha256": "f474b6464b8f8d90e3c1c57dffe6625076c35a433425cb6ff285074d96ae675e"
+    },
+    {
+      "sha256": "d08bd7515a98bdd93f2dddff2ca2a68020c711ef21cf45aff36b6eea35d61c89",
+      "size_bytes": 110650,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/d08bd7515a98bdd93f2dddff2ca2a68020c711ef21cf45aff36b6eea35d61c89.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/d08bd7515a98bdd93f2dddff2ca2a68020c711ef21cf45aff36b6eea35d61c89.pdf",
+      "case_ids": [
+        "non_gov_public_pmc_peerj_cs_1452_p007"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/pmc_peerj_cs_1452.pdf",
+      "original_page": 7,
+      "source_url": "https://peerj.com/articles/cs-1452.pdf?download=1",
+      "source_page": "https://peerj.com/articles/cs-1452/",
+      "license": "CC BY 4.0; PeerJ/PMC OA notice verified",
+      "attribution": "PeerJ Computer Science / PMC Open Access",
+      "original_document_sha256": "f474b6464b8f8d90e3c1c57dffe6625076c35a433425cb6ff285074d96ae675e"
+    },
+    {
+      "sha256": "57ea829df817a77fc69a7e17dd41d0b6a378443f5bc730bccbd51606440a9e1a",
+      "size_bytes": 200926,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/57ea829df817a77fc69a7e17dd41d0b6a378443f5bc730bccbd51606440a9e1a.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/57ea829df817a77fc69a7e17dd41d0b6a378443f5bc730bccbd51606440a9e1a.pdf",
+      "case_ids": [
+        "non_gov_public_batch2_openstax_chemistry_p077"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/openstax_chemistry.pdf",
+      "original_page": 77,
+      "source_url": "https://assets.openstax.org/oscms-prodcms/media/documents/Chemistry-LR.pdf",
+      "source_page": "https://openstax.org/details/books/chemistry",
+      "license": "CC BY 4.0; OpenStax Chemistry copyright page verified",
+      "attribution": "OpenStax",
+      "original_document_sha256": "aa56e10ea6468b9779d6e4524cf256fd7865c29b4f9ba9e5de15c4e669748f87"
+    },
+    {
+      "sha256": "dc6938981485b8ee44e49f22ff77be5b33fe1449d5241579be859bf296596908",
+      "size_bytes": 159326,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/dc6938981485b8ee44e49f22ff77be5b33fe1449d5241579be859bf296596908.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/dc6938981485b8ee44e49f22ff77be5b33fe1449d5241579be859bf296596908.pdf",
+      "case_ids": [
+        "non_gov_public_batch2_openstax_chemistry_p188"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/openstax_chemistry.pdf",
+      "original_page": 188,
+      "source_url": "https://assets.openstax.org/oscms-prodcms/media/documents/Chemistry-LR.pdf",
+      "source_page": "https://openstax.org/details/books/chemistry",
+      "license": "CC BY 4.0; OpenStax Chemistry copyright page verified",
+      "attribution": "OpenStax",
+      "original_document_sha256": "aa56e10ea6468b9779d6e4524cf256fd7865c29b4f9ba9e5de15c4e669748f87"
+    },
+    {
+      "sha256": "230a68fd6c8184ff87010918f8c0065a8aabd2dbc5c2fe4d7cbb0de280d874f5",
+      "size_bytes": 174729,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/230a68fd6c8184ff87010918f8c0065a8aabd2dbc5c2fe4d7cbb0de280d874f5.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/230a68fd6c8184ff87010918f8c0065a8aabd2dbc5c2fe4d7cbb0de280d874f5.pdf",
+      "case_ids": [
+        "non_gov_public_batch2_openstax_chemistry_p259"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/openstax_chemistry.pdf",
+      "original_page": 259,
+      "source_url": "https://assets.openstax.org/oscms-prodcms/media/documents/Chemistry-LR.pdf",
+      "source_page": "https://openstax.org/details/books/chemistry",
+      "license": "CC BY 4.0; OpenStax Chemistry copyright page verified",
+      "attribution": "OpenStax",
+      "original_document_sha256": "aa56e10ea6468b9779d6e4524cf256fd7865c29b4f9ba9e5de15c4e669748f87"
+    },
+    {
+      "sha256": "e87c06df35b0c7eeb44a1e5b89f4c539f0a6e2a47940c50f088404ffa969e7e6",
+      "size_bytes": 367527,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/e87c06df35b0c7eeb44a1e5b89f4c539f0a6e2a47940c50f088404ffa969e7e6.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/e87c06df35b0c7eeb44a1e5b89f4c539f0a6e2a47940c50f088404ffa969e7e6.pdf",
+      "case_ids": [
+        "non_gov_public_batch2_pmc_peerj_cs_1452_p004"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/pmc_peerj_cs_1452.pdf",
+      "original_page": 4,
+      "source_url": "https://peerj.com/articles/cs-1452.pdf?download=1",
+      "source_page": "https://peerj.com/articles/cs-1452/",
+      "license": "CC BY 4.0; PeerJ/PMC OA notice verified",
+      "attribution": "PeerJ Computer Science / PMC Open Access",
+      "original_document_sha256": "f474b6464b8f8d90e3c1c57dffe6625076c35a433425cb6ff285074d96ae675e"
+    },
+    {
+      "sha256": "524f69a4e37a11ea4f21105ed919834b18706f26b6c06c43c52b29fbc7e51b48",
+      "size_bytes": 110483,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/524f69a4e37a11ea4f21105ed919834b18706f26b6c06c43c52b29fbc7e51b48.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/524f69a4e37a11ea4f21105ed919834b18706f26b6c06c43c52b29fbc7e51b48.pdf",
+      "case_ids": [
+        "non_gov_public_batch2_pmc_peerj_cs_1452_p006"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/pmc_peerj_cs_1452.pdf",
+      "original_page": 6,
+      "source_url": "https://peerj.com/articles/cs-1452.pdf?download=1",
+      "source_page": "https://peerj.com/articles/cs-1452/",
+      "license": "CC BY 4.0; PeerJ/PMC OA notice verified",
+      "attribution": "PeerJ Computer Science / PMC Open Access",
+      "original_document_sha256": "f474b6464b8f8d90e3c1c57dffe6625076c35a433425cb6ff285074d96ae675e"
+    },
+    {
+      "sha256": "ef3f2472afab72f50f8e62aef1e3e869df4930d1a4bc1dcfdacedc054ca64f5d",
+      "size_bytes": 275904,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/ef3f2472afab72f50f8e62aef1e3e869df4930d1a4bc1dcfdacedc054ca64f5d.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/ef3f2472afab72f50f8e62aef1e3e869df4930d1a4bc1dcfdacedc054ca64f5d.pdf",
+      "case_ids": [
+        "non_gov_public_batch2_acl_rocling_readability_zh_p003"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/acl_2024_rocling_1_1_readability_zh.pdf",
+      "original_page": 3,
+      "source_url": "https://aclanthology.org/2024.rocling-1.1.pdf",
+      "source_page": "https://aclanthology.org/2024.rocling-1.1/",
+      "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+      "attribution": "ACL Anthology / ROCLING 2024",
+      "original_document_sha256": "dfad941296b29348629fc9840e5da00cbe02488f28326bc3c0d55c2847511ce8"
+    },
+    {
+      "sha256": "1c0ffdbe9651aec6dcdec0e155b0fd5da67721be7e68611e54e6c7c3f8455299",
+      "size_bytes": 771228,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/1c0ffdbe9651aec6dcdec0e155b0fd5da67721be7e68611e54e6c7c3f8455299.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/1c0ffdbe9651aec6dcdec0e155b0fd5da67721be7e68611e54e6c7c3f8455299.pdf",
+      "case_ids": [
+        "non_gov_public_batch2_acl_rocling_readability_zh_p005"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/acl_2024_rocling_1_1_readability_zh.pdf",
+      "original_page": 5,
+      "source_url": "https://aclanthology.org/2024.rocling-1.1.pdf",
+      "source_page": "https://aclanthology.org/2024.rocling-1.1/",
+      "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+      "attribution": "ACL Anthology / ROCLING 2024",
+      "original_document_sha256": "dfad941296b29348629fc9840e5da00cbe02488f28326bc3c0d55c2847511ce8"
+    },
+    {
+      "sha256": "6c0235ee1f92fec6a10c4c31fec89e63eb9256d3b2aaa1829428f0bc445118b5",
+      "size_bytes": 310430,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/6c0235ee1f92fec6a10c4c31fec89e63eb9256d3b2aaa1829428f0bc445118b5.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/6c0235ee1f92fec6a10c4c31fec89e63eb9256d3b2aaa1829428f0bc445118b5.pdf",
+      "case_ids": [
+        "non_gov_public_batch2_acl_rocling_readability_zh_p007"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/acl_2024_rocling_1_1_readability_zh.pdf",
+      "original_page": 7,
+      "source_url": "https://aclanthology.org/2024.rocling-1.1.pdf",
+      "source_page": "https://aclanthology.org/2024.rocling-1.1/",
+      "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+      "attribution": "ACL Anthology / ROCLING 2024",
+      "original_document_sha256": "dfad941296b29348629fc9840e5da00cbe02488f28326bc3c0d55c2847511ce8"
+    },
+    {
+      "sha256": "49a8ab382415318f89f66547926095c216d157a44fb227feb80a459a6c9583cd",
+      "size_bytes": 159527,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/49a8ab382415318f89f66547926095c216d157a44fb227feb80a459a6c9583cd.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/49a8ab382415318f89f66547926095c216d157a44fb227feb80a459a6c9583cd.pdf",
+      "case_ids": [
+        "non_gov_public_batch2_acl_struc_bench_p003"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/acl_2024_naacl_short_2_struc_bench.pdf",
+      "original_page": 3,
+      "source_url": "https://aclanthology.org/2024.naacl-short.2.pdf",
+      "source_page": "https://aclanthology.org/2024.naacl-short.2/",
+      "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+      "attribution": "ACL Anthology / NAACL 2024",
+      "original_document_sha256": "21b916ea137241a734a168321980d4fc9a61ca6567ce8379e0eed48145eb8463"
+    },
+    {
+      "sha256": "cbe56c9fcdd91f831b34e9cd8dd45f858d0d29260ff7f6d35b2e606c93167081",
+      "size_bytes": 1023058,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/cbe56c9fcdd91f831b34e9cd8dd45f858d0d29260ff7f6d35b2e606c93167081.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/cbe56c9fcdd91f831b34e9cd8dd45f858d0d29260ff7f6d35b2e606c93167081.pdf",
+      "case_ids": [
+        "non_gov_public_batch2_acl_struc_bench_p005"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/acl_2024_naacl_short_2_struc_bench.pdf",
+      "original_page": 5,
+      "source_url": "https://aclanthology.org/2024.naacl-short.2.pdf",
+      "source_page": "https://aclanthology.org/2024.naacl-short.2/",
+      "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+      "attribution": "ACL Anthology / NAACL 2024",
+      "original_document_sha256": "21b916ea137241a734a168321980d4fc9a61ca6567ce8379e0eed48145eb8463"
+    },
+    {
+      "sha256": "1914f9d04dcdf1552850a39bf20e8197cfabc0923b990ce8efd8a224ecd09cc7",
+      "size_bytes": 92012,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/1914f9d04dcdf1552850a39bf20e8197cfabc0923b990ce8efd8a224ecd09cc7.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/1914f9d04dcdf1552850a39bf20e8197cfabc0923b990ce8efd8a224ecd09cc7.pdf",
+      "case_ids": [
+        "non_gov_public_batch2_acl_ocl_corpus_p003"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/acl_2023_emnlp_main_640_ocl_corpus.pdf",
+      "original_page": 3,
+      "source_url": "https://aclanthology.org/2023.emnlp-main.640.pdf",
+      "source_page": "https://aclanthology.org/2023.emnlp-main.640/",
+      "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+      "attribution": "ACL Anthology / EMNLP 2023",
+      "original_document_sha256": "cd1508582cce54c9ab65f570d6b08c4956aca16a83782bf373be961ef98d1401"
+    },
+    {
+      "sha256": "717011f5804b905b1c1c54c901debb434bdce29e276f388da564777906ae15af",
+      "size_bytes": 120180,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/717011f5804b905b1c1c54c901debb434bdce29e276f388da564777906ae15af.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/717011f5804b905b1c1c54c901debb434bdce29e276f388da564777906ae15af.pdf",
+      "case_ids": [
+        "non_gov_public_batch2_acl_ocl_corpus_p005"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/acl_2023_emnlp_main_640_ocl_corpus.pdf",
+      "original_page": 5,
+      "source_url": "https://aclanthology.org/2023.emnlp-main.640.pdf",
+      "source_page": "https://aclanthology.org/2023.emnlp-main.640/",
+      "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+      "attribution": "ACL Anthology / EMNLP 2023",
+      "original_document_sha256": "cd1508582cce54c9ab65f570d6b08c4956aca16a83782bf373be961ef98d1401"
+    },
+    {
+      "sha256": "d323c6ce1caf4a73efc79312b7d32baeaf81e4426de207ae9c7ae7713df42361",
+      "size_bytes": 761445,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/d323c6ce1caf4a73efc79312b7d32baeaf81e4426de207ae9c7ae7713df42361.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/d323c6ce1caf4a73efc79312b7d32baeaf81e4426de207ae9c7ae7713df42361.pdf",
+      "case_ids": [
+        "non_gov_public_batch2_acl_ocl_corpus_p007"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/acl_2023_emnlp_main_640_ocl_corpus.pdf",
+      "original_page": 7,
+      "source_url": "https://aclanthology.org/2023.emnlp-main.640.pdf",
+      "source_page": "https://aclanthology.org/2023.emnlp-main.640/",
+      "license": "CC BY 4.0; ACL Anthology post-2016 policy",
+      "attribution": "ACL Anthology / EMNLP 2023",
+      "original_document_sha256": "cd1508582cce54c9ab65f570d6b08c4956aca16a83782bf373be961ef98d1401"
+    },
+    {
+      "sha256": "9279cf28d48283898b6b36f129e18881fcb725944983e87b91e09a6617b343d4",
+      "size_bytes": 1421019,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/9279cf28d48283898b6b36f129e18881fcb725944983e87b91e09a6617b343d4.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/9279cf28d48283898b6b36f129e18881fcb725944983e87b91e09a6617b343d4.pdf",
+      "case_ids": [
+        "non_gov_public_batch2_frontiers_vascular_models_p006"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/frontiers_fmedt_2023_1097850_vascular_models.pdf",
+      "original_page": 6,
+      "source_url": "https://www.frontiersin.org/journals/medical-technology/articles/10.3389/fmedt.2023.1097850/pdf",
+      "source_page": "https://www.frontiersin.org/journals/medical-technology/articles/10.3389/fmedt.2023.1097850/full",
+      "license": "CC BY; Frontiers open-access notice verified",
+      "attribution": "Frontiers in Medical Technology",
+      "original_document_sha256": "c7e80aa20e297eb526d095bcee5e302458bc5a02607ec2d59742b6ccf2cf77bc"
+    },
+    {
+      "sha256": "fa8777dfce61915778a4c2ab50f858c12d400adb16a5593da03648cdea709090",
+      "size_bytes": 743685,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/fa8777dfce61915778a4c2ab50f858c12d400adb16a5593da03648cdea709090.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/fa8777dfce61915778a4c2ab50f858c12d400adb16a5593da03648cdea709090.pdf",
+      "case_ids": [
+        "non_gov_public_batch2_bmc_3d_print_models_review_p004"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/bmc_3d_print_models_systematic_review.pdf",
+      "original_page": 4,
+      "source_url": "https://threedmedprint.biomedcentral.com/counter/pdf/10.1186/s41205-024-00210-5.pdf",
+      "source_page": "https://threedmedprint.biomedcentral.com/articles/10.1186/s41205-024-00210-5",
+      "license": "CC BY 4.0; BioMed Central article notice verified",
+      "attribution": "3D Printing in Medicine / BioMed Central",
+      "original_document_sha256": "63a2b8d7d9fb1011180d752a94b88751c506bb4aa9020562a11cd79d222d977c"
+    },
+    {
+      "sha256": "e1278b7bbfae5b34d7e3988d7eb70c00a3681be9a00c264308ac8443bbd5d075",
+      "size_bytes": 640355,
+      "pdf_page_count": 1,
+      "hf_path": "source_pages/hosted_safe_v0_1/e1278b7bbfae5b34d7e3988d7eb70c00a3681be9a00c264308ac8443bbd5d075.pdf",
+      "hf_url": "https://huggingface.co/datasets/Travor278/DocFailBench/resolve/main/source_pages/hosted_safe_v0_1/e1278b7bbfae5b34d7e3988d7eb70c00a3681be9a00c264308ac8443bbd5d075.pdf",
+      "case_ids": [
+        "non_gov_public_batch2_bmc_3d_print_models_review_p006"
+      ],
+      "original_path": "runs/stage7_non_gov_public/source_pdfs/bmc_3d_print_models_systematic_review.pdf",
+      "original_page": 6,
+      "source_url": "https://threedmedprint.biomedcentral.com/counter/pdf/10.1186/s41205-024-00210-5.pdf",
+      "source_page": "https://threedmedprint.biomedcentral.com/articles/10.1186/s41205-024-00210-5",
+      "license": "CC BY 4.0; BioMed Central article notice verified",
+      "attribution": "3D Printing in Medicine / BioMed Central",
+      "original_document_sha256": "63a2b8d7d9fb1011180d752a94b88751c506bb4aa9020562a11cd79d222d977c"
+    }
+  ],
+  "case_to_sha256": {
+    "contract_service_001_p1": "5f107f4fa9f0460e3f59f49ba63f5e1da0867b8a13ae780b040518fe617adfa4",
+    "contract_service_001_p2": "6e39241f1b20bee60be9c40b866d3bb7f6136419ee68feb2c0a78aa178288486",
+    "contract_service_001_p3": "6c8442ca4b2d9f5e03945fdc8aabac7e59832ce3e355806f1b68c0e6fefe5df9",
+    "contract_service_001_p4": "b4d7221b4f917c46dbb5fe111b645978b10a55abd00c8ff5401e23e416be6032",
+    "contract_service_001_p5": "4d6c08723e10f3d460a087d580a63a7682d17ce8e8a889650133e8981b300cc3",
+    "contract_service_001_p6": "dd981d78a6ee5455dec1d6926b80cb098d5a12a140172db42c2797f75fe87697",
+    "contract_service_001_p7": "47bc5974577f7ee7f7f79d3aba5c6b9d182f179e806c74077aa68c78ea02ef07",
+    "contract_service_001_p8": "d402dfca1b722da03e172ce96194123fdee5af40cc3f69ca6887c6e9c3942035",
+    "exam_physics_final_p2": "3d8f6f9980a754eb3ee3b57c415bf50a61fd500e38faa2ab1aa9adcdab414e4e",
+    "exam_physics_final_p3": "7455777bb2c158407650f2c96c48827e5f9a44c26ac7990f3d81f8872c36ff78",
+    "exam_physics_final_p4": "b15cd766b1089d07591d91026eaf8b19ac9d2c9e326bc656667067e6ae7ad92f",
+    "exam_physics_final_p1": "20674aa5079882548a60028011cfdb3e35bc3dd570f76e18ada38dadea938a26",
+    "finance_annual2024_p4": "97ce4fbf33ad91f43948b5ce1393f1efffec8e794a34ddabe6ae18078439ae5c",
+    "finance_annual2024_p6": "982656ca38f67336cd00775a36b57a2385a82efdbb196940146d6c89e9a92247",
+    "finance_annual2024_p8": "e685db8134fdf03a2cb1f0f2be6a60509725dc80da7d1c893791e2b8526d8f49",
+    "finance_annual2024_p9": "8eb9a6cc79518e2580f0211e32853a8c6e5534f2ccb6e72e421617506d537dca",
+    "invoice_vat_001_p1": "5541ddf953850b2b38100013727af16126684d1e6237df9ca7039f259c5a947d",
+    "invoice_vat_001_p2": "b7ba177e76788256bbccbeb91476f4353f6a4f2560d2ebdc61861ed23b71dc05",
+    "invoice_vat_001_p3": "7be2c22baf9f16017c4dd348ce27d6a41e0d97c822b7cf5f09ed8fbc5a42e649",
+    "invoice_vat_001_p4": "dd6c0d82ddcc1399133289b5d73fc7559df3f465c905186095d44ea705e7c709",
+    "invoice_vat_001_p5": "ba30f09f5207d0c4110ae33fece4cbb78b0b686131d35fca3e487ebc1e18333a",
+    "zh_paper_double_column_001_p3": "3a53eca9f81409702219f32616415761279c32fd5897a2bb535664b149eef20c",
+    "cn_textbook_formula_002_p12": "01b2d931add0b7b55cc5e719c7c9e910a161c7620fc7fb80f490091c374291a1",
+    "finance_table_mixed_003_p8": "2cbc21ecda435b322f3a80e54803ae4a97ce4b3f1170838d5c302d31574c5e6d",
+    "slides_ai_course_001_p1": "d7efcbb2e66f2b2caaecb5f839476ae5cfa51a56819376f072d2238c5a82fb3e",
+    "slides_ai_course_001_p2": "f19e30c319e872f7f85a67b01b0cb5e427b4e74c57997a7b87ce6546eceede6d",
+    "slides_ai_course_001_p3": "3a89ea8dea5d76e6cd4138c7fc9cdb7e7cf7adf1c9917c0c6eaf6d0dc985c993",
+    "slides_ai_course_001_p4": "f6676095e7ca0f7732a5bb03b7f0aaeabf5d75dd481347c56f51e21b3db90052",
+    "slides_ai_course_001_p5": "b35e9009067362c3eb306bf0f3b76658dc32c151064faa600cfab26b8c34f44c",
+    "slides_ai_course_001_p6": "18fd55514cf77fe6ddcdc4c2cf955ba390ee7b1ab59d8818fc90fdf2a5ff606d",
+    "html_table_grid_004_p8": "2cbc21ecda435b322f3a80e54803ae4a97ce4b3f1170838d5c302d31574c5e6d",
+    "formula_visual_005_p12": "01b2d931add0b7b55cc5e719c7c9e910a161c7620fc7fb80f490091c374291a1",
+    "textbook_physics_v2_p05": "70c67dcf4631a65ab559cabfd669f2d7622358be180cfa67d028871864138c33",
+    "textbook_physics_v2_p10": "a2d1f9b935db8950e58cc4dd3431cdf0037f710f6a771d93428df9ddebdd7a2a",
+    "textbook_physics_v2_p15": "11a9c788d232b7db435f5e9740e7b096a58bce28da8f2176c40c4226333a39b4",
+    "stage6_batch2_synthetic_p01": "55eb1f4670e49a53d7949baa714c7cb834a7bdbe50ab05bc43d1b8508907948e",
+    "stage6_batch2_synthetic_p02": "48d7275bdf646832e4434927b5704f554862dc3578a12eb769abeb69f4778110",
+    "stage6_batch2_synthetic_p03": "4bb07b821ef46c7614004b781e3fba26703e26e31558116f870df06a62a0c2f9",
+    "stage6_batch2_synthetic_p04": "65130c26c75dbcc07af2733a1e80ee3fb7a4fcd36cc3757a4fb86738fa0e2e27",
+    "stage6_batch2_synthetic_p05": "075afc31fb7c354402f6245b2b921e98ddafde5889bc433438925ba21479d35e",
+    "stage6_batch2_synthetic_p06": "42e16c3eddf76623978af9a39955a3a6f552a87d3e32cf90dd49a3ae97a90ee4",
+    "stage6_batch2_synthetic_p07": "7c13454c9d2abfbbf0abca4cc67cf23d9786d5039ba77a960375b839cb651dae",
+    "stage6_batch2_synthetic_p08": "cd28063b6c683954f6e41ebe3348d253e7b7218fc120064d5d05056cf9a579af",
+    "stage6_batch2_synthetic_p09": "eea1e075cdd6d271dff0deb1333cca8fce975221ffc5f7431612b80583dcb37c",
+    "stage6_batch2_synthetic_p10": "c5cbb77b58789bf79f7db9fd167c7630f1012e783d7a3c6b3ba17d6e8faa6f12",
+    "stage6_batch2_synthetic_p11": "ddca9fb93056046c319628b6e35033730361db8db3ef905ee3e8cff5f925827e",
+    "stage6_batch2_synthetic_p12": "a34b8bcf9e81385905f13cfd90c5a6252e36333130381259351cd2cff18c260f",
+    "stage6_batch2_synthetic_p13": "062c7d242dc628f7f732ec245a7d4dd3a0f1d3038fe0d682579c1f5df4afc950",
+    "stage6_batch2_synthetic_p14": "04fac9ce6fed5627278b18fe4fd0cf74e407f0aee9515384368accfa8de4eb7f",
+    "stage6_batch2_synthetic_p15": "571af86422422628982a46283bfa526807599a32871e088c159e4101fe9079e6",
+    "public_real_nist_ai_rmf_p005": "cbaaa16bef2186789ce119773521b297a2b339b53e79f16e23335c7db3ef3d0d",
+    "public_real_nist_ai_rmf_p008": "51bfa61d328c1df4ea28f09612884342b4287dbdf739ec2a2c911f1a1fccbf47",
+    "public_real_nist_ai_rmf_p012": "5846e194197c71080b2096c1e60fa60bc8b47c408d8010d0ebdfe01fb0658d83",
+    "public_real_nist_ai_rmf_p017": "3bd5efc857a9711302bbc5d3376e1f1807d6cea69ad2177d3ac9308b00810058",
+    "public_real_nist_ai_rmf_p019": "2a14f6b5b3d7367e4a2cc48d9d98d094fed60055e20995a1eac17d200d90dea1",
+    "public_real_nist_sp800_53r5_p027": "f91d473a21201952719fe2d5d1685ee59fb9025b6cd173c3d814dcbfe741698d",
+    "public_real_nist_sp800_53r5_p046": "24f34b4eb7341739bf7a1e76bf51e9b91ea3a836c37fa9e41f9184dd98c60b35",
+    "public_real_nist_sp800_53r5_p087": "d722ddb3b41bc9648a99328e5d4f08e31d83b001d43be9c268ba9edc74b06c22",
+    "public_real_nist_sp800_53r5_p399": "f26d1ef9ef54e0360ec0e2b5208f7b3a4cbdeec7acb450880c246042851d65af",
+    "public_real_nist_sp800_53r5_p428": "620b2a163f5dc468ca884872a1c842efdd5d16f87550e3686b8eb967aa110e2b",
+    "public_real_irs_1040_2024_p001": "1c54fee3103b0761e34d3f17606f56159eca400e01c53fd2c1520fc2aad56fa7",
+    "public_real_irs_1040sa_2024_p001": "c40d2ac5392c9f0fac1f79b17a7a252d66cc7dad563b49acd3a1e6e5f01cc2aa",
+    "public_real_irs_1040sc_2024_p001": "40eaf859efdbaf58660fb65d4301ca175573b49db76463b6d3b59395cee4dd1e",
+    "public_real_irs_1040sc_2024_p002": "8abc754447a1d028bed47561654ce134b8f8fec7d91de13d451d5a24951eba26",
+    "public_real_irs_1040sd_2024_p001": "efb06ce4f1569d3bde3f5dfd7032ef4127d95ad37abbad564baffbe2e6e53417",
+    "public_real_irs_1040sd_2024_p002": "c14a77aacd2d268cf6efe81c1f276bd576b36bb4112d40997de7f112ba13a30e",
+    "public_real_govinfo_cfr_title1_p007": "986e6b21c403e5540084639a36bdddd345e9114fba2b1e3c72006c01a784af8c",
+    "public_real_govinfo_cfr_title1_p014": "9b6089fa6faa9402b4c8831392272f71af1a7fd23367a9430f7b8bc5a7925ac9",
+    "public_real_govinfo_cfr_title1_p028": "0698dacd088a4a98f4c61683bb7bcab08e36ebabd1c012948ea01f1db994e90d",
+    "public_real_govinfo_cfr_title1_p035": "c0f7419b499573da9e0e0770d901bdf3c004f302080581033f37601dbbf8b3e1",
+    "non_gov_public_acl_ocl_corpus_p002": "64f7e15cd9a7d9ad5fb1241008c3875c57dd7670687d761db1334c270bd8b476",
+    "non_gov_public_acl_ocl_corpus_p004": "3fa6e39f8862c1db837038f954b99224ff6677f78502a01721547e6f3476f2d3",
+    "non_gov_public_acl_ocl_corpus_p006": "5d81fddfcfb09b21f3f841288e00f172c2e952a3a17f443e49385290a3bb8ea5",
+    "non_gov_public_acl_ocl_corpus_p008": "acd608b208fa35e014d0d309a23ae38409a9a79ae4d1981ce4b0bcf2745a1a6e",
+    "non_gov_public_acl_rocling_readability_zh_p001": "8ee0753f1cfbe0277a556b4c665a92fc7f0fe83232276c3f08991fdf04fac014",
+    "non_gov_public_acl_rocling_readability_zh_p002": "7ef4e8df97649c3d54e78cacecf232b7d5d880b2c8fd77b2854602b3efe18430",
+    "non_gov_public_acl_rocling_readability_zh_p004": "93be0fe097de1d55fa931475e2ac5b57047944b4494d0ac1321ab92a7aefdd7f",
+    "non_gov_public_acl_rocling_readability_zh_p006": "9cfe54b3b85c013a197bc41b57ea21563760cbb94f5e2abd3dd7eae41963e413",
+    "non_gov_public_acl_rocling_readability_zh_p008": "3804e69ea20a0072463533aebba34b92bf3bef15f8f65d0d620df3579606395c",
+    "non_gov_public_acl_struc_bench_p004": "6bad4d4a7a228f6a03b3789209987f4ce1aae11d51a7616b42a49c8286fd1c17",
+    "non_gov_public_bmc_3d_print_models_review_p003": "db2fba5111b90291b65c1a664e8f5c94dae44be4515971a9f39fd4e9b229fb1c",
+    "non_gov_public_bmc_3d_print_models_review_p005": "93c870f2b73d2b6b57e900b21993ecf61620841c08435f1f4cf0c7207b1e6e5d",
+    "non_gov_public_bmc_3d_print_models_review_p007": "d3c83e98a603d3a957a6b0a28f03a091c523b3bda4d19862597209b2784da79d",
+    "non_gov_public_bmc_3d_print_models_review_p009": "f6e2c49744cc1e152729a98c22c304f443d5f86041e9771655784a6f9b3f8483",
+    "non_gov_public_frontiers_vascular_models_p005": "b9a0dbbd27242f2a622e7fe0a8de23451fb359bc18909876e245381d12c6bc64",
+    "non_gov_public_openstax_chemistry_p049": "8d36d168de77bc253dfc95c8e0ab5c4d14eaaa1c8fc49b9f00ad001960aceb75",
+    "non_gov_public_openstax_chemistry_p109": "7ca03b6a3064dac56c612827a2f3dd0a9f663aadb43cacaa481a3b26a32c5801",
+    "non_gov_public_openstax_chemistry_p186": "ef173bfac746c01235526e4b376cbef27b9559aaba0669b20f1f758d97130ca6",
+    "non_gov_public_openstax_chemistry_p257": "985e78c743e0770461a6fefe46180ecf33b12a27d014616e5ef7cc4cc3b73832",
+    "non_gov_public_pmc_peerj_cs_1452_p005": "42fd5cd406f7ac1fac8d01884e41e3d464825a91a775ae340b714082482c954d",
+    "non_gov_public_pmc_peerj_cs_1452_p007": "d08bd7515a98bdd93f2dddff2ca2a68020c711ef21cf45aff36b6eea35d61c89",
+    "non_gov_public_batch2_openstax_chemistry_p077": "57ea829df817a77fc69a7e17dd41d0b6a378443f5bc730bccbd51606440a9e1a",
+    "non_gov_public_batch2_openstax_chemistry_p188": "dc6938981485b8ee44e49f22ff77be5b33fe1449d5241579be859bf296596908",
+    "non_gov_public_batch2_openstax_chemistry_p259": "230a68fd6c8184ff87010918f8c0065a8aabd2dbc5c2fe4d7cbb0de280d874f5",
+    "non_gov_public_batch2_pmc_peerj_cs_1452_p004": "e87c06df35b0c7eeb44a1e5b89f4c539f0a6e2a47940c50f088404ffa969e7e6",
+    "non_gov_public_batch2_pmc_peerj_cs_1452_p006": "524f69a4e37a11ea4f21105ed919834b18706f26b6c06c43c52b29fbc7e51b48",
+    "non_gov_public_batch2_acl_rocling_readability_zh_p003": "ef3f2472afab72f50f8e62aef1e3e869df4930d1a4bc1dcfdacedc054ca64f5d",
+    "non_gov_public_batch2_acl_rocling_readability_zh_p005": "1c0ffdbe9651aec6dcdec0e155b0fd5da67721be7e68611e54e6c7c3f8455299",
+    "non_gov_public_batch2_acl_rocling_readability_zh_p007": "6c0235ee1f92fec6a10c4c31fec89e63eb9256d3b2aaa1829428f0bc445118b5",
+    "non_gov_public_batch2_acl_struc_bench_p003": "49a8ab382415318f89f66547926095c216d157a44fb227feb80a459a6c9583cd",
+    "non_gov_public_batch2_acl_struc_bench_p005": "cbe56c9fcdd91f831b34e9cd8dd45f858d0d29260ff7f6d35b2e606c93167081",
+    "non_gov_public_batch2_acl_ocl_corpus_p003": "1914f9d04dcdf1552850a39bf20e8197cfabc0923b990ce8efd8a224ecd09cc7",
+    "non_gov_public_batch2_acl_ocl_corpus_p005": "717011f5804b905b1c1c54c901debb434bdce29e276f388da564777906ae15af",
+    "non_gov_public_batch2_acl_ocl_corpus_p007": "d323c6ce1caf4a73efc79312b7d32baeaf81e4426de207ae9c7ae7713df42361",
+    "non_gov_public_batch2_frontiers_vascular_models_p006": "9279cf28d48283898b6b36f129e18881fcb725944983e87b91e09a6617b343d4",
+    "non_gov_public_batch2_bmc_3d_print_models_review_p004": "fa8777dfce61915778a4c2ab50f858c12d400adb16a5593da03648cdea709090",
+    "non_gov_public_batch2_bmc_3d_print_models_review_p006": "e1278b7bbfae5b34d7e3988d7eb70c00a3681be9a00c264308ac8443bbd5d075"
+  }
+}
