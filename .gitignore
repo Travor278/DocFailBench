@@ -24,6 +24,7 @@ env/
 .playwright-cli/
 .vscode/
 .idea/
+.worktrees/
 
 # Runtime outputs. Frozen public release artifacts live under data/releases/.
 runs/
