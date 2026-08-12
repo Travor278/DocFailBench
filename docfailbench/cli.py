@@ -1,6 +1,9 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
+import json
+import sys
 from pathlib import Path
 
 from .adapters.runner import run_manifest_adapter
@@ -16,6 +19,8 @@ from .compare import compare_results, render_markdown
 from .evaluator import evaluate, to_dict
 from .io import dump_json, load_cases, load_predictions
 from .issue_bundle import export_issues
+from .hosted_safe import HOSTED_SAFE_RELEASE_NAME
+from .hosted_submission import SubmissionValidationError, validate_hosted_submission
 from .models import ParserPrediction
 from .privacy import (
     build_private_profile,
@@ -133,6 +138,17 @@ def main() -> int:
     check_parser.add_argument("--out", default="", help="Optional JSON output path for duplicate report.")
     check_parser.add_argument("--fail-on-duplicates", action="store_true", help="Return nonzero if duplicates are found.")
 
+    hosted_parser = subparsers.add_parser(
+        "validate-hosted-submission",
+        help="Validate, evaluate, and summarize a hosted-safe submission.",
+    )
+    hosted_parser.add_argument("--cases", required=True, help="Hosted-safe case JSON path.")
+    hosted_parser.add_argument(
+        "--source-manifest", required=True, help="Hosted-safe source manifest JSON path."
+    )
+    hosted_parser.add_argument("--submission", required=True, help="Submission JSON path.")
+    hosted_parser.add_argument("--out", required=True, help="Validated report JSON path.")
+
     args = parser.parse_args()
     if args.command == "evaluate":
         return _evaluate(args)
@@ -152,6 +168,8 @@ def main() -> int:
         return _import_assertions(args)
     if args.command == "check-assertions":
         return _check_assertions(args)
+    if args.command == "validate-hosted-submission":
+        return _validate_hosted_submission(args)
     return 1
 
 
@@ -429,6 +447,40 @@ def _check_assertions(args: argparse.Namespace) -> int:
             return 1
     else:
         print("No duplicate assertions found.")
+    return 0
+
+
+def _validate_hosted_submission(args: argparse.Namespace) -> int:
+    try:
+        submission_path = Path(args.submission)
+        manifest_path = Path(args.source_manifest)
+        raw_submission = json.loads(submission_path.read_text(encoding="utf-8"))
+        if not isinstance(raw_submission, dict):
+            raise SubmissionValidationError("Submission JSON must contain an object")
+        source_manifest_sha256 = hashlib.sha256(manifest_path.read_bytes()).hexdigest()
+        cases = load_cases(args.cases)
+        reliability = validate_hosted_submission(
+            raw_submission,
+            [case.case_id for case in cases],
+            source_manifest_sha256,
+        )
+        predictions = load_predictions(submission_path)
+        run = evaluate(cases, predictions)
+    except (OSError, ValueError, json.JSONDecodeError, SubmissionValidationError) as exc:
+        print(f"Error: hosted submission validation failed: {exc}", file=sys.stderr)
+        return 2
+
+    dump_json(
+        args.out,
+        {
+            "verification_status": "artifact-verified/runtime-unverified",
+            "target": HOSTED_SAFE_RELEASE_NAME,
+            "source_manifest_sha256": source_manifest_sha256,
+            "reliability": reliability,
+            "evaluation": to_dict(run),
+        },
+    )
+    print(f"Validated hosted submission: {run.summary['passed']}/{run.summary['assertion_count']}")
     return 0
 
 
