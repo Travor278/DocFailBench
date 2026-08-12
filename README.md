@@ -25,13 +25,36 @@ Most OCR and document parsing benchmarks report aggregate similarity. That is us
 | Release | Status | Best use | Size |
 |---|---|---|---:|
 | `DocFailBench-v0.1-combined-public-rc` | frozen RC | recommended community comparison with broader public source diversity | 116 cases / 877 assertions |
+| `DocFailBench-v0.1-hosted-safe-rc` | frozen auxiliary RC | hosted parsers using identical hash-pinned one-page inputs | 107 cases / 821 assertions / 105 PDFs |
 | `DocFailBench-v0.1-public-real-rc` | frozen RC | smaller public-real comparison target | 74 cases / 674 main assertions |
 | `DocFailBench-v0.1-non-gov-public-stage7-rc` | frozen auxiliary RC | non-government public PDF stress test | 24 cases / 165 assertions |
 | `DocFailBench-v0.1-diagnostic` | frozen RC | local regression and failure analysis | 54 cases / 506 assertions |
 | Stage8 non-government batch2 | included audit input | second-reviewed contribution to the combined RC; original staging files kept for audit | 18 cases / 38 accepted assertions |
 
-For new parser submissions, use `DocFailBench-v0.1-combined-public-rc` unless
-you need the smaller public-real RC for a faster comparison.
+For local parser submissions, use `DocFailBench-v0.1-combined-public-rc` unless
+you need the smaller public-real RC for a faster comparison. Hosted services
+that would otherwise fetch source URLs should use the hosted-safe auxiliary
+target and its canonical page bundle.
+
+## Hosted-Safe RC
+
+`DocFailBench-v0.1-hosted-safe-rc` is an additive track for hosted parsers. It
+keeps the original 116-case / 877-assertion combined RC unchanged, excludes nine
+redistribution-policy cases, and publishes 105 content-addressed one-page PDFs
+for the remaining 107 cases / 821 assertions. Prepared inputs always use the
+same verified bytes and `page=1`.
+
+- [Hosted-safe submission and retry protocol](docs/hosted-safe-submissions.md)
+- [Hosted-safe cases](data/releases/docfailbench_v0_1_hosted_safe_rc_cases.json)
+- [Hosted-safe leaderboard](data/releases/docfailbench_v0_1_hosted_safe_rc_leaderboard.md)
+- [Hosted-safe source manifest](data/releases/docfailbench_v0_1_hosted_safe_rc_source_manifest.json)
+- [Hosted-safe artifact manifest](data/releases/docfailbench_v0_1_hosted_safe_rc_manifest.json)
+
+Verify the seven cached hosted-safe scores:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_hosted_safe_compare.ps1
+```
 
 ## Combined Public RC Leaderboard
 
@@ -252,6 +275,7 @@ Open an issue or PR with:
 - any known caveats such as OCR-only output or no bbox support.
 
 See [docs/submitting-parser-results.md](docs/submitting-parser-results.md) for the full submission flow.
+Hosted parser authors should also follow [docs/hosted-safe-submissions.md](docs/hosted-safe-submissions.md).
 For a concrete metadata example, see [docs/parser-result-submission-example.md](docs/parser-result-submission-example.md).
 
 ![DocFailBench submission labels](docs/assets/submission_badges.svg)
@@ -332,6 +356,7 @@ Key docs:
 - [Combined RC release notes](docs/release-notes-v0.1-combined-public-rc.md)
 - [Public-real RC reproducibility](docs/reproducibility-public-real-rc.md)
 - [Parser result submission](docs/submitting-parser-results.md)
+- [Hosted-safe parser submission](docs/hosted-safe-submissions.md)
 - [Parser baselines and API model settings](docs/baselines.md)
 - [Parser submission example](docs/parser-result-submission-example.md)
 - [Public PDF source plan](docs/public-pdf-sources.md)

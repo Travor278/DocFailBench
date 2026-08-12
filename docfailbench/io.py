@@ -36,7 +36,11 @@ def load_predictions(path: str | Path) -> list[ParserPrediction]:
 def dump_json(path: str | Path, payload: Any) -> None:
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    path.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
 
 
 def _load_structured(path: str | Path) -> Any:

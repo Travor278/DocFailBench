@@ -49,6 +49,16 @@ python -m docfailbench.cli evaluate `
   --out runs/submissions/YOUR_PARSER/combined_public_rc_results.json
 ```
 
+Hosted services that cannot reliably or appropriately fetch the original
+source URLs should instead use `DocFailBench-v0.1-hosted-safe-rc`. It provides
+107 cases / 821 assertions backed by 105 public, hash-verified one-page PDFs.
+Its preparation, retry, attempt-history, validation, and verification-state
+rules are defined in [hosted-safe-submissions.md](hosted-safe-submissions.md).
+
+The hosted-safe target is a separate auxiliary record. The original combined
+RC remains frozen at 116 cases / 877 assertions, and existing full-set
+submissions are not replaced when an author later submits a hosted-safe run.
+
 The smaller public-real RC remains available for faster historical comparisons:
 
 ```powershell
@@ -114,6 +124,9 @@ Schemas:
 After evaluation, confirm `summary.case_count` in the result JSON matches the
 target release case count. For the combined public RC, the target has 116 cases.
 For the smaller public-real RC, the target has 74 cases.
+For the hosted-safe RC, use `validate-hosted-submission` rather than the plain
+evaluation command so its 107-case coverage, source-manifest identity, retry
+history, reliability metrics, and 821-assertion score are checked together.
 
 ## Adding A Parser Adapter
 
@@ -154,6 +167,10 @@ A result can be listed in the README when:
 Maintainers may mark results as `unverified` until they are reproduced locally.
 README entries should be labelled `verified` or `unverified`; hosted API entries
 must include run date and requested model name.
+
+Hosted-safe records use the more precise states `submitted`,
+`artifact-verified/runtime-unverified`, and `runtime-verified`. Artifact checks
+do not imply an independent runtime execution.
 
 For API parsers, include endpoint family, model name, and run date. Do not
 submit API keys or raw provider credentials.

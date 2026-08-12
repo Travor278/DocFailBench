@@ -330,7 +330,7 @@ def _compare(args: argparse.Namespace) -> int:
     md_text = render_markdown(comparison)
     if args.out_md:
         Path(args.out_md).parent.mkdir(parents=True, exist_ok=True)
-        Path(args.out_md).write_text(md_text, encoding="utf-8")
+        Path(args.out_md).write_text(md_text, encoding="utf-8", newline="\n")
         print(f"Wrote Markdown report to {args.out_md}")
     else:
         print(md_text)
