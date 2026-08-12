@@ -20,6 +20,7 @@ yaml = ["PyYAML>=6.0"]
 fixtures = ["reportlab>=4.0"]
 smoke = ["pymupdf4llm>=0.0.17", "PyMuPDF>=1.25.0"]
 docling = ["docling>=2.0.0"]
+hosted-safe = ["PyMuPDF>=1.25.0"]
 
 [project.scripts]
 docfailbench = "docfailbench.cli:main"
